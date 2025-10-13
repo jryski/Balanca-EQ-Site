@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BalanceEQ - Circadian Nootropics for Peak Performance</title>
+    <meta name="description" content="Clinical-dose nootropics optimized for your circadian rhythm. EQ:Focus for daytime performance. EQ:Restore for evening recovery. Public COAs. Full transparency.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: #FDFBF7;
+            color: #2C3E50;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.25rem 2rem;
+            border-bottom: 1px solid rgba(44, 62, 80, 0.08);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            cursor: pointer;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1A2332;
+            letter-spacing: -0.02em;
+        }
+        
+        .logo span {
+            color: #2A9D8F;
+        }
+        
+        .nav-links {
+            display: none;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+        
+        .nav-links a {
+            color: #5A6C7D;
+            text-decoration: none;
+            transition: color 0.3s;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: #2A9D8F;
+        }
+        
+        /* Page sections */
+        .page {
+            display: none;
+            padding: 8rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        /* Hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #1A2332;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+        
+        .subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+            color: #5A6C7D;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: #1A2332;
+            letter-spacing: -0.01em;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1A2332;
+            font-weight: 600;
+        }
+        
+        /* Proof Points Banner */
+        .proof-banner {
+            background: #2A9D8F;
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            margin-top: 6rem;
+        }
+        
+        .proof-banner p {
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+        
+        /* System Overview */
+        .system-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        
+        .system-card {
+            background: white;
+            border: 2px solid #E8EDF2;
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .system-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            border-color: #2A9D8F;
+        }
+        
+        .system-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Product Grid */
+        .product-section {
+            margin-bottom: 4rem;
+        }
+        
+        .phase-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .phase-badge {
+            display: inline-block;
+            background: #E8F5F3;
+            color: #2A9D8F;
+            padding: 0.5rem 1.5rem;
+            border-radius: 24px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .product-card {
+            background: white;
+            border: 1px solid #E8EDF2;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            transition: all 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            border-color: #2A9D8F;
+        }
+        
+        .product-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .product-card h3 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .product-card p {
+            color: #5A6C7D;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        .product-launch {
+            font-size: 0.875rem;
+            color: #2A9D8F;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .product-ingredients {
+            background: #F8FAFB;
+            padding: 1rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .product-ingredients h4 {
+            font-size: 0.85rem;
+            color: #5A6C7D;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+        
+        .ingredient-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .ingredient-tag {
+            font-size: 0.75rem;
+            background: white;
+            border: 1px solid #E8EDF2;
+            color: #2A9D8F;
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        
+        .ingredient-tag:hover {
+            background: #E8F5F3;
+            border-color: #2A9D8F;
+        }
+        
+        .subscribe-btn {
+            width: 100%;
+            padding: 1rem;
+            background: #2A9D8F;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .subscribe-btn:hover {
+            background: #238276;
+            transform: translateY(-2px);
+        }
+        
+        /* Evidence Cards */
+        .evidence-card {
+            background: white;
+            border: 1px solid #E8EDF2;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .evidence-card.hidden {
+            display: none;
+        }
+        
+        /* Buttons */
+        .btn-primary {
+            background: #2A9D8F;
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .btn-primary:hover {
+            background: #238276;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #2A9D8F;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #2A9D8F;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .btn-secondary:hover {
+            background: #2A9D8F;
+            color: white;
+        }
+        
+        /* Timeline */
+        .timeline {
+            background: white;
+            border: 1px solid #E8EDF2;
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            margin: 4rem auto;
+            max-width: 900px;
+        }
+        
+        .timeline-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: start;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-badge {
+            background: #E8F5F3;
+            color: #2A9D8F;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+        }
+        
+        .timeline-content h4 {
+            margin-bottom: 0.5rem;
+            color: #1A2332;
+        }
+        
+        .timeline-content p {
+            color: #5A6C7D;
+            font-size: 0.95rem;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 35, 50, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: #5A6C7D;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .modal h3 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .modal p {
+            color: #5A6C7D;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .modal form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .modal input {
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #E8EDF2;
+            background: #F8FAFB;
+            color: #2C3E50;
+            font-size: 1rem;
+        }
+        
+        .modal input:focus {
+            outline: none;
+            border-color: #2A9D8F;
+            background: white;
+        }
+        
+        /* Footer */
+        footer {
+            background: white;
+            border-top: 1px solid #E8EDF2;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: #1A2332;
+            font-weight: 600;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: #5A6C7D;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        
+        .footer-section a:hover {
+            color: #2A9D8F;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #E8EDF2;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            color: #5A6C7D;
+            font-size: 0.875rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo" onclick="showPage('home')">
+                Balance<span>EQ</span>
+            </div>
+            <ul class="nav-links">
+                <li><a onclick="showPage('home')">Products</a></li>
+                <li><a onclick="showPage('evidence')">Evidence</a></li>
+                <li><a onclick="showPage('coas')">COAs</a></li>
+                <li><a onclick="showPage('transparency')">Transparency</a></li>
+                <li><a href="https://balasana.com" target="_blank">About Balasana</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Proof Points Banner -->
+    <div class="proof-banner">
+        <p>Clinical Dosing • Public COAs • Evidence-Based • Third-Party Tested • Made in USA</p>
+    </div>
+
+    <!-- HOME PAGE / PRODUCTS -->
+    <div id="home" class="page active">
+        <div class="hero">
+            <h1>Circadian Nootropics</h1>
+            <p class="subtitle">
+                Your brain works differently at 7AM than 7PM. We optimized for both.<br>
+                Morning focus. Evening recovery. Clinical doses. Full transparency.
+            </p>
+        </div>
+
+        <!-- System Overview -->
+        <div class="system-overview">
+            <div class="system-card">
+                <div class="system-icon">☀️</div>
+                <h3>EQ:Focus</h3>
+                <p style="color: #5A6C7D; margin-bottom: 1.5rem;">
+                    Sharpen attention without stimulants. Built for deep work and calm execution.
+                </p>
+                <p style="font-size: 0.85rem; color: #2A9D8F; font-weight: 600; margin-bottom: 1rem;">
+                    LAUNCHING APRIL 6, 2026
+                </p>
+                <button class="btn-secondary" onclick="scrollToProduct('focus')">View Formula</button>
+            </div>
+            
+            <div class="system-card">
+                <div class="system-icon">🌙</div>
+                <h3>EQ:Restore</h3>
+                <p style="color: #5A6C7D; margin-bottom: 1.5rem;">
+                    Downshift stress and wake clearer. Sleep support that helps next-day recall.
+                </p>
+                <p style="font-size: 0.85rem; color: #2A9D8F; font-weight: 600; margin-bottom: 1rem;">
+                    LAUNCHING APRIL 6, 2026
+                </p>
+                <button class="btn-secondary" onclick="scrollToProduct('restore')">View Formula</button>
+            </div>
+        </div>
+
+        <!-- What to Expect -->
+        <div class="timeline">
+            <h2 style="margin-bottom: 2rem;">What to Expect</h2>
+            <div class="timeline-item">
+                <div class="timeline-badge">Week 1</div>
+                <div class="timeline-content">
+                    <h4>Initial Adaptation</h4>
+                    <p>Subtle improvements in mental clarity and sleep onset. Your body begins adjusting.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-badge">Week 2-3</div>
+                <div class="timeline-content">
+                    <h4>Building Benefits</h4>
+                    <p>Clearer focus, better stress resilience, more consistent energy. Sleep quality improves.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-badge">Week 4+</div>
+                <div class="timeline-content">
+                    <h4>Full Support</h4>
+                    <p>Sustained cognitive performance becomes your baseline. Optimal stress response and recovery.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 1 Products -->
+        <div class="product-section" id="phase1">
+            <div class="phase-header">
+                <span class="phase-badge">Phase 1 • Launching Q1 2026</span>
+                <h2>Core System</h2>
+                <p style="color: #5A6C7D; max-width: 800px; margin: 0 auto;">
+                    Complete 24-hour cognitive support. Morning performance meets evening recovery.
+                </p>
+            </div>
+            
+            <div class="product-grid">
+                <!-- EQ:Focus -->
+                <div class="product-card" id="focus-product">
+                    <div class="product-icon">☀️</div>
+                    <h3>EQ:Focus</h3>
+                    <p>Sharpen attention without stimulants. Built for deep work, fast context-switching, and calm execution.</p>
+                    
+                    <div class="product-ingredients">
+                        <h4>Formula (6 Ingredients)</h4>
+                        <div class="ingredient-tags">
+                            <span class="ingredient-tag" onclick="showIngredient('Citicoline')">Citicoline 250mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Lion\'s Mane')">Lion's Mane 500mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Rhodiola')">Rhodiola 150mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('NALT')">NALT 300mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('L-Theanine')">L-Theanine 150mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('NR')">NR 250mg</span>
+                        </div>
+                    </div>
+                    
+                    <ul style="color: #5A6C7D; font-size: 0.875rem; margin-bottom: 1.5rem; padding-left: 1.5rem; line-height: 1.8;">
+                        <li>Supports working memory and task focus</li>
+                        <li>Promotes calm under pressure</li>
+                        <li>Supports cellular energy metabolism</li>
+                    </ul>
+                    
+                    <p class="product-launch">Launch: April 6, 2026</p>
+                    <button class="subscribe-btn" onclick="openModal('EQ:Focus')">Get Launch Notification</button>
+                </div>
+                
+                <!-- EQ:Restore -->
+                <div class="product-card" id="restore-product">
+                    <div class="product-icon">🌙</div>
+                    <h3>EQ:Restore</h3>
+                    <p>Downshift stress and wake clearer. Sleep support that also helps next-day recall.</p>
+                    
+                    <div class="product-ingredients">
+                        <h4>Formula (7 Ingredients)</h4>
+                        <div class="ingredient-tags">
+                            <span class="ingredient-tag" onclick="showIngredient('Magnesium L-Threonate')">Mag L-Threonate 1000mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Ashwagandha')">Ashwagandha 300mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Bacopa')">Bacopa 300mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('L-Theanine')">L-Theanine 200mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Phosphatidylserine')">PS 150mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Saffron')">Saffron 28mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Apigenin')">Apigenin 25mg</span>
+                        </div>
+                    </div>
+                    
+                    <ul style="color: #5A6C7D; font-size: 0.875rem; margin-bottom: 1.5rem; padding-left: 1.5rem; line-height: 1.8;">
+                        <li>Supports relaxation and sleep quality</li>
+                        <li>Helps maintain healthy stress response</li>
+                        <li>Supports memory consolidation overnight</li>
+                    </ul>
+                    
+                    <p class="product-launch">Launch: April 6, 2026</p>
+                    <button class="subscribe-btn" onclick="openModal('EQ:Restore')">Get Launch Notification</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 2 Products Preview -->
+        <div class="product-section">
+            <div class="phase-header">
+                <span class="phase-badge">Phase 2 • Coming Q3-Q4 2026</span>
+                <h2>Expanding the System</h2>
+            </div>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-icon">⚡</div>
+                    <h3>EQ:Drive</h3>
+                    <p>Clean, sustained energy for heavy lift days. No jitters.</p>
+                    <p class="product-launch">Q3 2026</p>
+                    <button class="subscribe-btn" onclick="openModal('EQ:Drive')">Get Notified</button>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-icon">🛡️</div>
+                    <h3>EQ:Foundations</h3>
+                    <p>Core omega-3s with D3/K2 for daily resilience.</p>
+                    <p class="product-launch">Q3 2026</p>
+                    <button class="subscribe-btn" onclick="openModal('EQ:Foundations')">Get Notified</button>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-icon">🛡️</div>
+                    <h3>EQ:Shield</h3>
+                    <p>Daily defense for recovery and joint comfort.</p>
+                    <p class="product-launch">Q4 2026</p>
+                    <button class="subscribe-btn" onclick="openModal('EQ:Shield')">Get Notified</button>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-icon">👁️</div>
+                    <h3>EQ:Vision</h3>
+                    <p>Protect overworked eyes from screens and glare.</p>
+                    <p class="product-launch">Q4 2026</p>
+                    <button class="subscribe-btn" onclick="openModal('EQ:Vision')">Get Notified</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EVIDENCE PAGE -->
+    <div id="evidence" class="page">
+        <div class="hero">
+            <h1>Evidence Library</h1>
+            <p class="subtitle">Every claim backed by peer-reviewed research. Browse by product.</p>
+        </div>
+
+        <div style="max-width: 900px; margin: 0 auto;">
+            <!-- Filter Tabs -->
+            <div style="display: flex; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; justify-content: center;">
+                <button class="btn-primary" style="padding: 0.75rem 1.5rem;" onclick="filterEvidence('all')">All</button>
+                <button class="btn-secondary" style="padding: 0.75rem 1.5rem;" onclick="filterEvidence('focus')">EQ:Focus</button>
+                <button class="btn-secondary" style="padding: 0.75rem 1.5rem;" onclick="filterEvidence('restore')">EQ:Restore</button>
+            </div>
+
+            <!-- Research Entries -->
+            <div id="evidenceEntries">
+                <div class="evidence-card" data-product="focus">
+                    <h3>Citicoline: Attention & Focus</h3>
+                    <div style="background: #F8FAFB; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p style="color: #2C3E50; font-weight: 500; margin-bottom: 0.5rem;">Our Dose: 250mg (Cognizin®)</p>
+                        <p style="color: #5A6C7D;">Supports working memory, attention, and cognitive function</p>
+                    </div>
+                    <div style="background: #E8F5F3; padding: 1rem; border-radius: 8px;">
+                        <p style="color: #2C3E50; font-weight: 500; margin-bottom: 0.75rem;">Research:</p>
+                        <ul style="color: #5A6C7D; font-size: 0.9rem; line-height: 1.8; padding-left: 1.25rem;">
+                            <li><a href="https://doi.org/10.3390/nu15020386" target="_blank" style="color: #2A9D8F;">Cognizin® improves attention and psychomotor speed (2023)</a></li>
+                            <li><a href="https://www.scirp.org/journal/paperinformation.aspx?paperid=19921" target="_blank" style="color: #2A9D8F;">Citicoline enhances cognitive function (2012)</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="evidence-card" data-product="restore">
+                    <h3>Magnesium L-Threonate: Sleep & Memory</h3>
+                    <div style="background: #F8FAFB; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p style="color: #2C3E50; font-weight: 500; margin-bottom: 0.5rem;">Our Dose: 1000mg (Magtein®)</p>
+                        <p style="color: #5A6C7D;">Supports sleep quality, memory consolidation, and brain magnesium</p>
+                    </div>
+                    <div style="background: #E8F5F3; padding: 1rem; border-radius: 8px;">
+                        <p style="color: #2C3E50; font-weight: 500; margin-bottom: 0.75rem;">Research:</p>
+                        <ul style="color: #5A6C7D; font-size: 0.9rem; line-height: 1.8; padding-left: 1.25rem;">
+                            <li><a href="https://doi.org/10.1016/j.neuron.2009.12.026" target="_blank" style="color: #2A9D8F;">Mag L-threonate enhances learning and memory (2010)</a></li>
+                            <li><a href="https://doi.org/10.3390/nu7095388" target="_blank" style="color: #2A9D8F;">Magnesium and sleep quality (2015)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: white; border: 1px solid #E8EDF2; border-radius: 16px;">
+                <p style="color: #5A6C7D;">Complete evidence library with all 13 ingredients launching Q1 2026</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- COAs PAGE -->
+    <div id="coas" class="page">
+        <div class="hero">
+            <h1>Certificates of Analysis</h1>
+            <p class="subtitle">Third-party testing for every batch. Public and accessible.</p>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto;">
+            <!-- Batch Lookup -->
+            <div style="background: white; border: 2px solid #2A9D8F; border-radius: 16px; padding: 3rem 2rem; margin-bottom: 3rem;">
+                <h2 style="margin-bottom: 1rem;">Batch Lookup</h2>
+                <p style="text-align: center; color: #5A6C7D; margin-bottom: 2rem;">
+                    Enter your batch number to view the complete Certificate of Analysis
+                </p>
+                
+                <div style="display: flex; flex-direction: column; gap: 1rem; max-width: 500px; margin: 0 auto;">
+                    <input 
+                        type="text" 
+                        placeholder="e.g., EQF-2026-001" 
+                        style="padding: 1rem; border-radius: 8px; border: 1px solid #E8EDF2; font-size: 1rem;"
+                    >
+                    <button class="btn-primary" style="width: 100%;" onclick="alert('COA lookup launches with first batch (April 2026)')">
+                        View COA
+                    </button>
+                </div>
+
+                <p style="text-align: center; margin-top: 2rem; color: #5A6C7D; font-size: 0.875rem;">
+                    Batch number located on bottom of bottle • Format: XXX-YYYY-###
+                </p>
+            </div>
+
+            <!-- Sample COAs -->
+            <h2 style="text-align: center; margin-bottom: 2rem;">Sample Certificates</h2>
+            
+            <div style="display: grid; gap: 1.5rem;">
+                <div style="background: white; border: 1px solid #E8EDF2; border-radius: 12px; padding: 2rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                        <div>
+                            <h3>EQ:Focus Sample COA</h3>
+                            <p style="color: #5A6C7D; font-size: 0.9rem;">Manufacturing validation batch</p>
+                        </div>
+                        <span style="background: #E8F5F3; color: #2A9D8F; padding: 0.35rem 0.75rem; border-radius: 6px; font-weight: 600;">PASS</span>
+                    </div>
+                    <div style="background: #F8FAFB; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <p style="font-weight: 500; margin-bottom: 0.5rem;">Tests Performed:</p>
+                        <ul style="font-size: 0.85rem; color: #5A6C7D; line-height: 1.8;">
+                            <li>Heavy Metals (Pb, Cd, As, Hg)</li>
+                            <li>Microbial (TPC, Yeast/Mold, E. coli, Salmonella)</li>
+                            <li>Potency Verification</li>
+                            <li>Identity (HPLC)</li>
+                        </ul>
+                    </div>
+                    <button class="btn-secondary" style="width: 100%;" onclick="alert('PDF available Q1 2026')">
+                        Download Sample
+                    </button>
+                </div>
+
+                <div style="background: white; border: 1px solid #E8EDF2; border-radius: 12px; padding: 2rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                        <div>
+                            <h3>EQ:Restore Sample COA</h3>
+                            <p style="color: #5A6C7D; font-size: 0.9rem;">Manufacturing validation batch</p>
+                        </div>
+                        <span style="background: #E8F5F3; color: #2A9D8F; padding: 0.35rem 0.75rem; border-radius: 6px; font-weight: 600;">PASS</span>
+                    </div>
+                    <div style="background: #F8FAFB; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                        <p style="font-weight: 500; margin-bottom: 0.5rem;">Tests Performed:</p>
+                        <ul style="font-size: 0.85rem; color: #5A6C7D; line-height: 1.8;">
+                            <li>Heavy Metals (Pb, Cd, As, Hg)</li>
+                            <li>Microbial (TPC, Yeast/Mold, E. coli, Salmonella)</li>
+                            <li>Potency Verification</li>
+                            <li>Identity (HPLC)</li>
+                        </ul>
+                    </div>
+                    <button class="btn-secondary" style="width: 100%;" onclick="alert('PDF available Q1 2026')">
+                        Download Sample
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TRANSPARENCY PAGE -->
+    <div id="transparency" class="page">
+        <div class="hero">
+            <h1>Complete Transparency</h1>
+            <p class="subtitle">No proprietary blends. No hidden ingredients. Every claim backed.</p>
+        </div>
+
+        <div style="max-width: 900px; margin: 0 auto;">
+            <div style="background: white; border: 1px solid #E8EDF2; border-radius: 16px; padding: 3rem; margin-bottom: 3rem;">
+                <h3 style="margin-bottom: 1.5rem;">Our Commitment</h3>
+                <ul style="color: #2C3E50; line-height: 1.8; padding-left: 1.5rem;">
+                    <li><strong>Full ingredient disclosure</strong> - Every ingredient, every dose</li>
+                    <li><strong>Clinical research</strong> - Direct links to peer-reviewed studies</li>
+                    <li><strong>Third-party testing</strong> - Independent verification of purity</li>
+                    <li><strong>Manufacturing standards</strong> - cGMP certified, FDA registered</li>
+                </ul>
+            </div>
+
+            <!-- Testing Standards -->
+            <h2 style="margin-bottom: 2rem;">Testing & Quality</h2>
+            
+            <div class="product-grid">
+                <div style="background: white; border: 1px solid #E8EDF2; border-radius: 16px; padding: 2rem;">
+                    <h4 style="color: #2A9D8F; margin-bottom: 1rem;">Third-Party Testing</h4>
+                    <ul style="color: #5A6C7D; font-size: 0.9rem; line-height: 1.8;">
+                        <li>Heavy metals (Pb, Cd, As, Hg)</li>
+                        <li>Microbial contamination</li>
+                        <li>Pesticide residues</li>
+                        <li>Potency verification</li>
+                        <li>Identity testing (HPLC)</li>
+                    </ul>
+                </div>
+                
+                <div style="background: white; border: 1px solid #E8EDF2; border-radius: 16px; padding: 2rem;">
+                    <h4 style="color: #2A9D8F; margin-bottom: 1rem;">Certifications</h4>
+                    <ul style="color: #5A6C7D; font-size: 0.9rem; line-height: 1.8;">
+                        <li>cGMP Certified Facility</li>
+                        <li>FDA Registered</li>
+                        <li>Made in USA</li>
+                        <li>ISO 9001:2015 (in process)</li>
+                        <li>NSF Certified (in process)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FAQs -->
+            <h2 style="margin-top: 4rem; margin-bottom: 2rem;">Frequently Asked Questions</h2>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <details style="background: white; border: 1px solid #E8EDF2; border-radius: 12px; padding: 1.5rem;">
+                    <summary style="cursor: pointer; font-weight: 600;">Are these FDA approved?</summary>
+                    <p style="margin-top: 1rem; color: #5A6C7D;">Dietary supplements are not FDA approved. We manufacture in FDA-registered, cGMP-certified facilities following all regulatory guidelines.</p>
+                </details>
+                
+                <details style="background: white; border: 1px solid #E8EDF2; border-radius: 12px; padding: 1.5rem;">
+                    <summary style="cursor: pointer; font-weight: 600;">Where are these manufactured?</summary>
+                    <p style="margin-top: 1rem; color: #5A6C7D;">All BalanceEQ products are manufactured in the United States in FDA-registered, cGMP-certified facilities.</p>
+                </details>
+                
+                <details style="background: white; border: 1px solid #E8EDF2; border-radius: 12px; padding: 1.5rem;">
+                    <summary style="cursor: pointer; font-weight: 600;">Can I see the test results?</summary>
+                    <p style="margin-top: 1rem; color: #5A6C7D;">Yes. Every batch has a Certificate of Analysis available via our batch lookup system. Launch date: April 6, 2026.</p>
+                </details>
+                
+                <details style="background: white; border: 1px solid #E8EDF2; border-radius: 12px; padding: 1.5rem;">
+                    <summary style="cursor: pointer; font-weight: 600;">What's your return policy?</summary>
+                    <p style="margin-top: 1rem; color: #5A6C7D;">60-day money-back guarantee. Try for 30 days minimum. Not satisfied? Full refund, no questions asked.</p>
+                </details>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>BalanceEQ</h4>
+                <p style="color: #5A6C7D; font-size: 0.875rem;">
+                    Circadian-optimized nootropics from Balasana. Clinical dosing, public COAs, full transparency.
+                </p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Products</h4>
+                <ul>
+                    <li><a onclick="showPage('home')">All Products</a></li>
+                    <li><a onclick="scrollToProduct('focus')">EQ:Focus</a></li>
+                    <li><a onclick="scrollToProduct('restore')">EQ:Restore</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Trust</h4>
+                <ul>
+                    <li><a onclick="showPage('evidence')">Evidence Library</a></li>
+                    <li><a onclick="showPage('coas')">COAs</a></li>
+                    <li><a onclick="showPage('transparency')">Transparency</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="https://balasana.com" target="_blank">About Balasana</a></li>
+                    <li><a href="mailto:hello@balance-eq.com">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 Balasana LLC. BalanceEQ is a product line of Balasana.</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="subscribeModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <h3 id="modalTitle">Get Launch Notification</h3>
+            <p>Be notified when this product launches. Plus exclusive early-bird pricing.</p>
+            
+            <form action="https://forms.office.com/Pages/ResponsePage.aspx?id=YOUR_FORM_ID" method="post" target="_blank">
+                <input type="hidden" id="productName" name="product" value="">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <input type="text" name="name" placeholder="Your name (optional)">
+                <button type="submit" class="btn-primary" style="width: 100%;">Notify Me</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Ingredient database (abbreviated for space)
+        const ingredientDatabase = {
+            'Citicoline': {
+                claim: 'Focus and attention; acetylcholine synthesis',
+                dose: '250mg (Cognizin®)',
+                products: ['EQ:Focus']
+            },
+            'Magnesium L-Threonate': {
+                claim: 'Sleep quality; memory consolidation',
+                dose: '1000mg (Magtein®)',
+                products: ['EQ:Restore']
+            }
+            // ... add all others as needed
+        };
+
+        // Navigation
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function scrollToProduct(product) {
+            showPage('home');
+            setTimeout(() => {
+                const element = document.getElementById(product + '-product');
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }, 100);
+        }
+
+        // Evidence filtering
+        function filterEvidence(filter) {
+            const cards = document.querySelectorAll('.evidence-card');
+            cards.forEach(card => {
+                if (filter === 'all') {
+                    card.classList.remove('hidden');
+                } else {
+                    const productType = card.getAttribute('data-product');
+                    card.classList.toggle('hidden', productType !== filter);
+                }
+            });
+        }
+
+        function showIngredient(name) {
+            const data = ingredientDatabase[name];
+            if (data) {
+                alert(`${name}\n\n${data.claim}\n\nOur Dose: ${data.dose}\n\nFound in: ${data.products.join(', ')}\n\nFull details in Evidence Library`);
+            } else {
+                alert('Full ingredient details coming in Evidence Library (Q1 2026)');
+            }
+        }
+
+        // Modal
+        function openModal(productName) {
+            document.getElementById('modalTitle').textContent = `Get Notified: ${productName}`;
+            document.getElementById('productName').value = productName;
+            document.getElementById('subscribeModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('subscribeModal').classList.remove('active');
+        }
+
+        document.getElementById('subscribeModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+    </script>
+</body>
+</html>
