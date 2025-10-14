@@ -57,11 +57,50 @@
             display: none;
             gap: 2rem;
             list-style: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(253, 251, 247, 0.98);
+            backdrop-filter: blur(10px);
+            flex-direction: column;
+            padding: 2rem;
+            border-bottom: 1px solid rgba(44, 62, 80, 0.08);
+        }
+        
+        .nav-links.active {
+            display: flex;
         }
         
         @media (min-width: 768px) {
             .nav-links {
                 display: flex;
+                position: static;
+                flex-direction: row;
+                padding: 0;
+                border-bottom: none;
+                background: transparent;
+            }
+        }
+        
+        .mobile-menu-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 8px;
+        }
+        
+        .mobile-menu-toggle span {
+            width: 24px;
+            height: 2px;
+            background: #2C3E50;
+            transition: all 0.3s;
+        }
+        
+        @media (min-width: 768px) {
+            .mobile-menu-toggle {
+                display: none;
             }
         }
         
@@ -536,11 +575,16 @@
             <div class="logo" onclick="showPage('home')">
                 Balance<span>EQ</span>
             </div>
-            <ul class="nav-links">
-                <li><a onclick="showPage('home')">Products</a></li>
-                <li><a onclick="showPage('evidence')">Evidence</a></li>
-                <li><a onclick="showPage('coas')">COAs</a></li>
-                <li><a onclick="showPage('transparency')">Transparency</a></li>
+            <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a onclick="showPage('home'); closeMobileMenu()">Products</a></li>
+                <li><a onclick="showPage('evidence'); closeMobileMenu()">Evidence</a></li>
+                <li><a onclick="showPage('coas'); closeMobileMenu()">COAs</a></li>
+                <li><a onclick="showPage('transparency'); closeMobileMenu()">Transparency</a></li>
                 <li><a href="https://balasana.com" target="_blank">About Balasana</a></li>
             </ul>
         </div>
@@ -689,13 +733,20 @@
             <div class="phase-header">
                 <span class="phase-badge">Phase 2 • Coming Q3-Q4 2026</span>
                 <h2>Expanding the System</h2>
+                <p style="color: #5A6C7D; max-width: 800px; margin: 0 auto;">
+                    Complete wellness support beyond cognitive performance. Energy, immunity, recovery, and vision.
+                </p>
             </div>
             
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-icon">⚡</div>
                     <h3>EQ:Drive</h3>
-                    <p>Clean, sustained energy for heavy lift days. No jitters.</p>
+                    <p><strong>Pre-Workout Energy Without Stimulant Crash</strong></p>
+                    <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">
+                        Mitochondrial energy support for training days. L-Carnitine, Coenzyme Q10, and adaptogenic energy. 
+                        No borrowed energy—real cellular ATP production for sustained performance.
+                    </p>
                     <p class="product-launch">Q3 2026</p>
                     <button class="subscribe-btn" onclick="openModal('EQ:Drive')">Get Notified</button>
                 </div>
@@ -703,7 +754,11 @@
                 <div class="product-card">
                     <div class="product-icon">🛡️</div>
                     <h3>EQ:Foundations</h3>
-                    <p>Core omega-3s with D3/K2 for daily resilience.</p>
+                    <p><strong>Essential Micronutrients for Brain Health</strong></p>
+                    <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">
+                        Fill nutritional gaps with ultra-pure Omega-3s (EPA/DHA), Vitamin D3, and K2 (MK-7). 
+                        The foundation your brain needs for optimal neurotransmitter function and long-term health.
+                    </p>
                     <p class="product-launch">Q3 2026</p>
                     <button class="subscribe-btn" onclick="openModal('EQ:Foundations')">Get Notified</button>
                 </div>
@@ -711,7 +766,11 @@
                 <div class="product-card">
                     <div class="product-icon">🛡️</div>
                     <h3>EQ:Shield</h3>
-                    <p>Daily defense for recovery and joint comfort.</p>
+                    <p><strong>Daily Anti-Inflammatory & Recovery Support</strong></p>
+                    <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">
+                        Curcumin (95% curcuminoids), Boswellia, and systemic enzymes for joint comfort and faster recovery. 
+                        Inside-out defense against exercise-induced inflammation and everyday physical stress.
+                    </p>
                     <p class="product-launch">Q4 2026</p>
                     <button class="subscribe-btn" onclick="openModal('EQ:Shield')">Get Notified</button>
                 </div>
@@ -719,7 +778,11 @@
                 <div class="product-card">
                     <div class="product-icon">👁️</div>
                     <h3>EQ:Vision</h3>
-                    <p>Protect overworked eyes from screens and glare.</p>
+                    <p><strong>Blue Light Protection & Eye Strain Relief</strong></p>
+                    <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">
+                        Lutein, Zeaxanthin, and Astaxanthin to protect overworked eyes from screens and UV. 
+                        Supports macular health, reduces digital eye strain, and helps maintain visual acuity long-term.
+                    </p>
                     <p class="product-launch">Q4 2026</p>
                     <button class="subscribe-btn" onclick="openModal('EQ:Vision')">Get Notified</button>
                 </div>
@@ -993,6 +1056,15 @@
     </div>
 
     <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+        
+        function closeMobileMenu() {
+            document.getElementById('navLinks').classList.remove('active');
+        }
+        
         // Ingredient database (abbreviated for space)
         const ingredientDatabase = {
             'Citicoline': {
