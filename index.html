@@ -281,6 +281,24 @@
             text-align: center;
         }
         
+        .product-badges {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            font-size: 0.7rem;
+            background: #E8F5F3;
+            color: #2A9D8F;
+            padding: 0.25rem 0.65rem;
+            border-radius: 12px;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+        }
+        
         .product-ingredients {
             background: #F8FAFB;
             padding: 1rem;
@@ -669,21 +687,29 @@
             </div>
             
             <div class="product-grid">
-                <!-- EQ:Focus -->
+                <!-- EQ:Focus v3.1 -->
                 <div class="product-card" id="focus-product">
                     <div class="product-icon">☀️</div>
                     <h3>EQ:Focus</h3>
+                    <div class="product-badges">
+                        <span class="badge">100% VEGAN</span>
+                        <span class="badge">ALLERGEN-FREE</span>
+                        <span class="badge">STIMULANT-FREE</span>
+                    </div>
                     <p>Sharpen attention without stimulants. Built for deep work, fast context-switching, and calm execution.</p>
                     
                     <div class="product-ingredients">
-                        <h4>Formula (6 Ingredients)</h4>
+                        <h4>Formula (9 Ingredients)</h4>
                         <div class="ingredient-tags">
                             <span class="ingredient-tag" onclick="showIngredient('Citicoline')">Citicoline 250mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('Lion\'s Mane')">Lion's Mane 500mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('Rhodiola')">Rhodiola 150mg</span>
                             <span class="ingredient-tag" onclick="showIngredient('NALT')">NALT 300mg</span>
                             <span class="ingredient-tag" onclick="showIngredient('L-Theanine')">L-Theanine 150mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Lion\'s Mane')">Lion's Mane 500mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Rhodiola')">Rhodiola 150mg</span>
                             <span class="ingredient-tag" onclick="showIngredient('NR')">NR 250mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('B6')">B6 (P-5-P) 25mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Folate')">Folate 800mcg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('B12')">B12 500mcg</span>
                         </div>
                     </div>
                     
@@ -691,35 +717,45 @@
                         <li>Supports working memory and task focus</li>
                         <li>Promotes calm under pressure</li>
                         <li>Supports cellular energy metabolism</li>
+                        <li>Optimized neurotransmitter support</li>
                     </ul>
                     
                     <p class="product-launch">Launch: April 6, 2026</p>
                     <button class="subscribe-btn" onclick="openModal('EQ:Focus')">Get Launch Notification</button>
                 </div>
                 
-                <!-- EQ:Restore -->
+                <!-- EQ:Restore v3.1 -->
                 <div class="product-card" id="restore-product">
                     <div class="product-icon">🌙</div>
                     <h3>EQ:Restore</h3>
+                    <div class="product-badges">
+                        <span class="badge">100% VEGAN</span>
+                        <span class="badge">ALLERGEN-FREE</span>
+                        <span class="badge">SOY-FREE</span>
+                    </div>
                     <p>Downshift stress and wake clearer. Sleep support that also helps next-day recall.</p>
                     
                     <div class="product-ingredients">
-                        <h4>Formula (7 Ingredients)</h4>
+                        <h4>Formula (9 Ingredients)</h4>
                         <div class="ingredient-tags">
                             <span class="ingredient-tag" onclick="showIngredient('Magnesium L-Threonate')">Mag L-Threonate 1000mg</span>
                             <span class="ingredient-tag" onclick="showIngredient('Ashwagandha')">Ashwagandha 300mg</span>
                             <span class="ingredient-tag" onclick="showIngredient('Bacopa')">Bacopa 300mg</span>
                             <span class="ingredient-tag" onclick="showIngredient('L-Theanine')">L-Theanine 200mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('Phosphatidylserine')">PS 150mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Phosphatidylserine')">PS 150mg*</span>
                             <span class="ingredient-tag" onclick="showIngredient('Saffron')">Saffron 28mg</span>
                             <span class="ingredient-tag" onclick="showIngredient('Apigenin')">Apigenin 25mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Zinc')">Zinc 15mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('B6')">B6 (P-5-P) 10mg</span>
                         </div>
+                        <p style="font-size: 0.7rem; color: #5A6C7D; margin-top: 0.5rem;">*Sunflower-derived PS</p>
                     </div>
                     
                     <ul style="color: #5A6C7D; font-size: 0.875rem; margin-bottom: 1.5rem; padding-left: 1.5rem; line-height: 1.8;">
                         <li>Supports relaxation and sleep quality</li>
                         <li>Helps maintain healthy stress response</li>
                         <li>Supports memory consolidation overnight</li>
+                        <li>Promotes optimal recovery</li>
                     </ul>
                     
                     <p class="product-launch">Launch: April 6, 2026</p>
@@ -839,7 +875,7 @@
             </div>
 
             <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: white; border: 1px solid #E8EDF2; border-radius: 16px;">
-                <p style="color: #5A6C7D;">Complete evidence library with all 13 ingredients launching Q1 2026</p>
+                <p style="color: #5A6C7D;">Complete evidence library with all ingredients launching Q1 2026</p>
             </div>
         </div>
     </div>
@@ -941,6 +977,8 @@
                     <li><strong>Clinical research</strong> - Direct links to peer-reviewed studies</li>
                     <li><strong>Third-party testing</strong> - Independent verification of purity</li>
                     <li><strong>Manufacturing standards</strong> - cGMP certified, FDA registered</li>
+                    <li><strong>100% Vegan formulas</strong> - HPMC capsules, plant-based ingredients</li>
+                    <li><strong>Allergen-free</strong> - Including soy-free phosphatidylserine (sunflower-derived)</li>
                 </ul>
             </div>
 
@@ -982,6 +1020,11 @@
                 <details style="background: white; border: 1px solid #E8EDF2; border-radius: 12px; padding: 1.5rem;">
                     <summary style="cursor: pointer; font-weight: 600;">Where are these manufactured?</summary>
                     <p style="margin-top: 1rem; color: #5A6C7D;">All BalanceEQ products are manufactured in the United States in FDA-registered, cGMP-certified facilities.</p>
+                </details>
+                
+                <details style="background: white; border: 1px solid #E8EDF2; border-radius: 12px; padding: 1.5rem;">
+                    <summary style="cursor: pointer; font-weight: 600;">Are these products vegan?</summary>
+                    <p style="margin-top: 1rem; color: #5A6C7D;">Yes! Both EQ:Focus and EQ:Restore are 100% vegan. We use HPMC (plant-based) capsules and all ingredients are derived from non-animal sources.</p>
                 </details>
                 
                 <details style="background: white; border: 1px solid #E8EDF2; border-radius: 12px; padding: 1.5rem;">
@@ -1039,19 +1082,20 @@
         </div>
     </footer>
 
-    <!-- Modal -->
+    <!-- Modal (email subscription - placeholder for future integration) -->
     <div id="subscribeModal" class="modal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal()">×</button>
             <h3 id="modalTitle">Get Launch Notification</h3>
             <p>Be notified when this product launches. Plus exclusive early-bird pricing.</p>
             
-            <form action="https://forms.office.com/Pages/ResponsePage.aspx?id=YOUR_FORM_ID" method="post" target="_blank">
+            <form id="subscribeForm" onsubmit="handleSubscribe(event)">
                 <input type="hidden" id="productName" name="product" value="">
                 <input type="email" name="email" placeholder="Enter your email" required>
                 <input type="text" name="name" placeholder="Your name (optional)">
                 <button type="submit" class="btn-primary" style="width: 100%;">Notify Me</button>
             </form>
+            <p style="font-size: 0.75rem; margin-top: 1rem;">Email integration coming soon</p>
         </div>
     </div>
 
@@ -1065,19 +1109,88 @@
             document.getElementById('navLinks').classList.remove('active');
         }
         
-        // Ingredient database (abbreviated for space)
+        // Ingredient database (abbreviated - expand as needed)
         const ingredientDatabase = {
             'Citicoline': {
                 claim: 'Focus and attention; acetylcholine synthesis',
                 dose: '250mg (Cognizin®)',
                 products: ['EQ:Focus']
             },
+            'NALT': {
+                claim: 'Supports dopamine and norepinephrine synthesis',
+                dose: '300mg',
+                products: ['EQ:Focus']
+            },
+            'L-Theanine': {
+                claim: 'Promotes calm focus; reduces stress',
+                dose: '150mg (Focus), 200mg (Restore)',
+                products: ['EQ:Focus', 'EQ:Restore']
+            },
+            'Lion\'s Mane': {
+                claim: 'Supports NGF production and neuroplasticity',
+                dose: '500mg',
+                products: ['EQ:Focus']
+            },
+            'Rhodiola': {
+                claim: 'Adaptogen supporting mental stamina',
+                dose: '150mg',
+                products: ['EQ:Focus']
+            },
+            'NR': {
+                claim: 'NAD+ precursor; cellular energy metabolism',
+                dose: '250mg (Niagen®)',
+                products: ['EQ:Focus']
+            },
+            'B6': {
+                claim: 'Cofactor for neurotransmitter synthesis (active P-5-P form)',
+                dose: '25mg (Focus), 10mg (Restore)',
+                products: ['EQ:Focus', 'EQ:Restore']
+            },
+            'Folate': {
+                claim: 'Methylation support (active L-5-MTHF form)',
+                dose: '800mcg as L-5-MTHF',
+                products: ['EQ:Focus']
+            },
+            'B12': {
+                claim: 'Energy metabolism and nerve function (active methylcobalamin)',
+                dose: '500mcg',
+                products: ['EQ:Focus']
+            },
             'Magnesium L-Threonate': {
                 claim: 'Sleep quality; memory consolidation',
                 dose: '1000mg (Magtein®)',
                 products: ['EQ:Restore']
+            },
+            'Ashwagandha': {
+                claim: 'Stress adaptation and cortisol modulation',
+                dose: '300mg (KSM-66®)',
+                products: ['EQ:Restore']
+            },
+            'Bacopa': {
+                claim: 'Memory support and cognitive function',
+                dose: '300mg',
+                products: ['EQ:Restore']
+            },
+            'Phosphatidylserine': {
+                claim: 'Supports memory and reduces cortisol (sunflower-derived, soy-free)',
+                dose: '150mg',
+                products: ['EQ:Restore']
+            },
+            'Saffron': {
+                claim: 'Mood support and sleep quality',
+                dose: '28mg (affron®)',
+                products: ['EQ:Restore']
+            },
+            'Apigenin': {
+                claim: 'GABA-A receptor modulation for relaxation',
+                dose: '25mg',
+                products: ['EQ:Restore']
+            },
+            'Zinc': {
+                claim: 'Immune and neurological function (chelated bisglycinate)',
+                dose: '15mg',
+                products: ['EQ:Restore']
             }
-            // ... add all others as needed
         };
 
         // Navigation
@@ -1113,7 +1226,7 @@
         function showIngredient(name) {
             const data = ingredientDatabase[name];
             if (data) {
-                alert(`${name}\n\n${data.claim}\n\nOur Dose: ${data.dose}\n\nFound in: ${data.products.join(', ')}\n\nFull details in Evidence Library`);
+                alert(`${name}\n\n${data.claim}\n\nOur Dose: ${data.dose}\n\nFound in: ${data.products.join(', ')}\n\nFull details in Evidence Library (Q1 2026)`);
             } else {
                 alert('Full ingredient details coming in Evidence Library (Q1 2026)');
             }
@@ -1128,6 +1241,14 @@
 
         function closeModal() {
             document.getElementById('subscribeModal').classList.remove('active');
+        }
+
+        function handleSubscribe(event) {
+            event.preventDefault();
+            // TODO: Replace with your email provider integration
+            // Options: Mailchimp, ConvertKit, Brevo (Sendinblue), EmailOctopus, etc.
+            alert('Thanks for your interest! Email integration coming soon. We\'ll notify you at launch!');
+            closeModal();
         }
 
         document.getElementById('subscribeModal').addEventListener('click', function(e) {
