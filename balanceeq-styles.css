@@ -1,0 +1,643 @@
+/* BalanceEQ Science Pages - BEM CSS with Custom Properties */
+/* Shopify-ready: These custom properties map directly to theme settings */
+
+:root {
+  --beq-bg: #FDFBF7;
+  --beq-surface: #FFFFFF;
+  --beq-surface-light: #F8FAFB;
+  --beq-border: #E8EDF2;
+  --beq-accent: #2A9D8F;
+  --beq-accent-light: #238276;
+  --beq-accent-glow: rgba(42, 157, 143, 0.12);
+  --beq-text: #2C3E50;
+  --beq-text-muted: #5A6C7D;
+  --beq-text-dim: #8B9AAD;
+  --beq-heading: #1A2332;
+  --beq-focus-accent: #2A9D8F;
+  --beq-restore-accent: #7C5CBF;
+  --beq-warning: #D4940A;
+  --beq-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ---- Layout ---- */
+.beq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 0 40px;
+}
+
+/* ---- Tab Bar ---- */
+.beq-tabs {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--beq-border);
+}
+
+.beq-tabs__btn {
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: 2px solid var(--beq-border);
+  background: transparent;
+  color: var(--beq-text-muted);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--beq-font);
+}
+
+.beq-tabs__btn--active-focus {
+  border-color: var(--beq-focus-accent);
+  background: rgba(42, 157, 143, 0.07);
+  color: var(--beq-focus-accent);
+}
+
+.beq-tabs__btn--active-restore {
+  border-color: var(--beq-restore-accent);
+  background: rgba(124, 92, 191, 0.07);
+  color: var(--beq-restore-accent);
+}
+
+/* ---- Hero ---- */
+.beq-hero {
+  padding: 24px 0 24px;
+  border-bottom: 1px solid var(--beq-border);
+  margin-bottom: 32px;
+}
+
+.beq-hero__badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.beq-hero__badge--focus {
+  background: rgba(42, 157, 143, 0.09);
+  color: var(--beq-focus-accent);
+}
+
+.beq-hero__badge--restore {
+  background: rgba(124, 92, 191, 0.09);
+  color: var(--beq-restore-accent);
+}
+
+.beq-hero__title {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  color: var(--beq-heading);
+}
+
+.beq-hero__subtitle {
+  font-size: 16px;
+  color: var(--beq-text-muted);
+  max-width: 600px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.beq-hero__meta {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--beq-text-muted);
+  flex-wrap: wrap;
+}
+
+/* ---- Section Title ---- */
+.beq-section-title {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--beq-text-dim);
+  margin-bottom: 10px;
+  margin-top: 32px;
+}
+
+.beq-section-intro {
+  font-size: 14px;
+  color: var(--beq-text-muted);
+  margin-bottom: 16px;
+}
+
+/* ---- Body Text ---- */
+.beq-body-text {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--beq-text);
+}
+
+/* ---- Problem Statement ---- */
+.beq-problem {
+  background: var(--beq-surface);
+  border: 1px solid var(--beq-border);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 24px 0;
+  border-left: 3px solid var(--beq-accent);
+}
+
+.beq-problem__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--beq-heading);
+  margin-bottom: 12px;
+}
+
+.beq-problem__text {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--beq-text);
+}
+
+/* ---- Systems Framework (Focus 2x2 grid) ---- */
+.beq-systems {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 16px 0 28px;
+}
+
+@media (max-width: 560px) {
+  .beq-systems {
+    grid-template-columns: 1fr;
+  }
+}
+
+.beq-systems__card {
+  background: var(--beq-surface);
+  border: 1px solid var(--beq-border);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.beq-systems__name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--beq-heading);
+  margin-bottom: 6px;
+}
+
+.beq-systems__summary {
+  font-size: 13px;
+  color: var(--beq-text-muted);
+  line-height: 1.5;
+}
+
+/* ---- Transition Sequence (Restore steps) ---- */
+.beq-transition {
+  margin: 16px 0 28px;
+}
+
+.beq-transition__step {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--beq-border);
+}
+
+.beq-transition__step:last-child {
+  border-bottom: none;
+}
+
+.beq-transition__number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(124, 92, 191, 0.1);
+  color: var(--beq-restore-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.beq-transition__content {
+  flex: 1;
+}
+
+.beq-transition__title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--beq-heading);
+  margin-bottom: 4px;
+}
+
+.beq-transition__desc {
+  font-size: 13px;
+  color: var(--beq-text-muted);
+  line-height: 1.5;
+}
+
+/* ---- Persona Cards ---- */
+.beq-personas {
+  margin: 16px 0 28px;
+}
+
+.beq-personas__card {
+  background: var(--beq-surface);
+  border: 1px solid var(--beq-border);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--beq-text);
+}
+
+/* ---- Timeline ---- */
+.beq-timeline {
+  margin: 16px 0 28px;
+}
+
+.beq-timeline__item {
+  display: flex;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--beq-border);
+}
+
+.beq-timeline__item:last-child {
+  border-bottom: none;
+}
+
+.beq-timeline__period {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--beq-accent);
+  white-space: nowrap;
+  min-width: 80px;
+}
+
+.beq-timeline__desc {
+  font-size: 14px;
+  color: var(--beq-text-muted);
+  line-height: 1.5;
+}
+
+/* ---- Callout Box (Caffeine FAQ, What It's Not) ---- */
+.beq-callout {
+  background: var(--beq-surface-light);
+  border: 1px solid var(--beq-border);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 16px 0 28px;
+}
+
+.beq-callout__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--beq-heading);
+  margin-bottom: 10px;
+}
+
+.beq-callout__text {
+  font-size: 14px;
+  color: var(--beq-text);
+  line-height: 1.65;
+}
+
+.beq-callout__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.beq-callout__list li {
+  font-size: 14px;
+  color: var(--beq-text);
+  line-height: 1.65;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--beq-border);
+}
+
+.beq-callout__list li:last-child {
+  border-bottom: none;
+}
+
+/* ---- Ingredient Card (list view) ---- */
+.beq-ingredient-card {
+  background: var(--beq-surface);
+  border: 1px solid var(--beq-border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.beq-ingredient-card:hover {
+  border-color: var(--beq-accent);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.beq-ingredient-card__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.beq-ingredient-card__name {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--beq-heading);
+  margin-bottom: 2px;
+}
+
+.beq-ingredient-card__branded {
+  font-size: 13px;
+  color: var(--beq-accent);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.beq-ingredient-card__tagline {
+  font-size: 14px;
+  color: var(--beq-text-muted);
+  line-height: 1.5;
+}
+
+.beq-ingredient-card__studies {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--beq-text-dim);
+}
+
+.beq-ingredient-card__dose {
+  font-size: 13px;
+  color: var(--beq-text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+  background: var(--beq-surface-light);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--beq-border);
+}
+
+/* ---- Ingredient Detail Page ---- */
+.beq-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--beq-accent);
+  cursor: pointer;
+  margin-bottom: 20px;
+  padding: 6px 0;
+  border: none;
+  background: none;
+  font-weight: 500;
+  font-family: var(--beq-font);
+}
+
+.beq-detail__title {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--beq-heading);
+  margin-bottom: 4px;
+}
+
+.beq-detail__branded {
+  margin-left: 8px;
+  font-size: 18px;
+}
+
+.beq-detail__branded--focus {
+  color: var(--beq-focus-accent);
+}
+
+.beq-detail__branded--restore {
+  color: var(--beq-restore-accent);
+}
+
+.beq-detail__tagline {
+  font-size: 16px;
+  color: var(--beq-text-muted);
+  max-width: 600px;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+/* ---- Meta Grid (dose, form, category, supplier) ---- */
+.beq-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 480px) {
+  .beq-meta-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.beq-meta-grid__item {
+  background: var(--beq-surface-light);
+  border-radius: 8px;
+  padding: 12px 14px;
+  border: 1px solid var(--beq-border);
+}
+
+.beq-meta-grid__label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--beq-text-dim);
+  margin-bottom: 4px;
+}
+
+.beq-meta-grid__value {
+  font-size: 14px;
+  color: var(--beq-heading);
+  font-weight: 500;
+}
+
+/* ---- Study Card ---- */
+.beq-study-card {
+  background: var(--beq-surface-light);
+  border: 1px solid var(--beq-border);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 12px;
+}
+
+.beq-study-card__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--beq-heading);
+  margin-bottom: 6px;
+  line-height: 1.45;
+}
+
+.beq-study-card__meta {
+  font-size: 12px;
+  color: var(--beq-text-dim);
+  margin-bottom: 10px;
+}
+
+.beq-study-card__summary {
+  font-size: 13px;
+  color: var(--beq-text-muted);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.beq-study-card__finding {
+  font-size: 13px;
+  color: var(--beq-accent);
+  font-weight: 500;
+  padding: 8px 12px;
+  background: var(--beq-accent-glow);
+  border-radius: 6px;
+  border-left: 3px solid var(--beq-accent);
+  margin-bottom: 8px;
+}
+
+.beq-study-card__links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.beq-study-card__link {
+  font-size: 12px;
+  color: var(--beq-accent);
+  text-decoration: none;
+}
+
+.beq-study-card__attr {
+  font-size: 11px;
+  color: var(--beq-text-dim);
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* ---- Supplier Link ---- */
+.beq-supplier-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--beq-accent);
+  color: var(--beq-accent);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 8px;
+  transition: all 0.2s;
+}
+
+.beq-supplier-link:hover {
+  background: var(--beq-accent-glow);
+}
+
+/* ---- Safety Box ---- */
+.beq-safety {
+  background: rgba(212, 148, 10, 0.03);
+  border: 1px solid rgba(212, 148, 10, 0.25);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-top: 32px;
+}
+
+.beq-safety__title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--beq-warning);
+  margin-bottom: 6px;
+}
+
+.beq-safety__text {
+  font-size: 13px;
+  color: var(--beq-text-muted);
+  line-height: 1.6;
+}
+
+/* ---- Footer Disclaimer ---- */
+.beq-disclaimer {
+  border-top: 1px solid var(--beq-border);
+  padding: 24px 0;
+  margin-top: 40px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--beq-text-dim);
+}
+
+/* ---- System Story ---- */
+.beq-system-story {
+  background: var(--beq-surface);
+  border: 1px solid var(--beq-border);
+  border-radius: 12px;
+  padding: 28px;
+  margin: 28px 0;
+  text-align: center;
+}
+
+.beq-system-story__headline {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--beq-heading);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.beq-system-story__body {
+  font-size: 15px;
+  color: var(--beq-text);
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto 20px;
+}
+
+.beq-system-story__glance {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  text-align: left;
+}
+
+@media (max-width: 560px) {
+  .beq-system-story__glance {
+    grid-template-columns: 1fr;
+  }
+}
+
+.beq-system-story__half {
+  background: var(--beq-surface-light);
+  border: 1px solid var(--beq-border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.beq-system-story__timing {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--beq-heading);
+  margin-bottom: 6px;
+}
+
+.beq-system-story__desc {
+  font-size: 13px;
+  color: var(--beq-text-muted);
+  line-height: 1.5;
+}

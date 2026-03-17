@@ -1,0 +1,770 @@
+{
+  "brand": {
+    "name": "BalanceEQ",
+    "tagline": "Focus when you need to perform. Restore when it is time to be present.",
+    "description": "A two-product nootropic system designed around your nervous system's natural modes.",
+    "disclaimer": "These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+    "formula_version": "3.7",
+    "system_story": {
+      "headline": "Focus when you need to perform. Restore when it is time to be present.",
+      "body": "Your brain has two modes. During the day, it needs to produce, problem-solve, and stay resilient under pressure. In the evening, it needs to shift gears, be present, and let the day go. Most supplements ignore this. They try to do everything with one formula. BalanceEQ is a two-product system because balance requires two halves.",
+      "at_a_glance": [
+        {
+          "timing": "Morning (Focus)",
+          "summary": "Build brain chemicals. Feed cellular energy. Protect against stress. Invest in brain cell growth."
+        },
+        {
+          "timing": "Evening (Restore)",
+          "summary": "Lower the noise. Engage the calming systems. Clear the stress residue. Warm the mood. Let sleep come naturally."
+        }
+      ]
+    }
+  },
+  "products": {
+    "focus": {
+      "name": "EQ:Focus",
+      "timing": "AM",
+      "serving": "2 capsules daily with breakfast",
+      "capsule_type": "Size 00 HPMC",
+      "total_actives_mg": 1648.3,
+      "ingredient_count": 12,
+      "description": "Your morning cognitive formula, designed for sustained mental clarity, calm focus, and stress resilience throughout the day. Focus feeds four systems in parallel: brain chemical production, cellular energy, neural infrastructure, and stress adaptation. Every ingredient is dosed at clinically studied levels and chosen for how it works with the rest of the formula.",
+      "problem_statement": "Here is how most people manage their cognitive performance: coffee, then more coffee, then something with sugar, then the 2pm crash. By 4pm you are wired but somehow still foggy. You got through the day, but you did not perform. You survived. Caffeine does not give you energy. It blocks the receptor that tells you that you are tired. Focus feeds the actual production of the brain chemicals that drive clarity, motivation, and processing speed.",
+      "systems_framework": [
+        {
+          "name": "The Signal",
+          "summary": "Brain chemical production. Acetylcholine for focus, dopamine for drive."
+        },
+        {
+          "name": "The Infrastructure",
+          "summary": "Brain cell health and growth. Nerve Growth Factor stimulation for long-term resilience."
+        },
+        {
+          "name": "The Power Supply",
+          "summary": "Cellular energy. NAD+ replenishment for sustained cognition."
+        },
+        {
+          "name": "The Resilience",
+          "summary": "Stress adaptation. Keeping the stress response sustainable instead of spiking and crashing."
+        }
+      ],
+      "personas": [
+        "The founder who cannot afford a bad brain day. Every meeting matters. They do not need more coffee. They need their brain to actually perform at the level the stakes require.",
+        "The professional who hits the wall at 2pm. The morning is great. Then something crashes. They do not lack discipline. They lack neurochemical sustainability.",
+        "The 45-year-old who used to be sharper. They cannot put their finger on what changed. They are not declining. They are depleting."
+      ],
+      "timeline": [
+        {
+          "period": "Days 1-7",
+          "description": "Some people notice smoother focus from citicoline and theanine. Tyrosine may help on high-pressure days immediately."
+        },
+        {
+          "period": "Weeks 2-4",
+          "description": "More consistent mental clarity. Afternoon performance holds up better. Rhodiola's stress adaptation begins building."
+        },
+        {
+          "period": "Weeks 4-8",
+          "description": "Full B-vitamin and NR effects compound. Sustained energy metabolism support."
+        },
+        {
+          "period": "Weeks 8+",
+          "description": "Lion's Mane's long-game NGF support reaches meaningful levels. This is where the infrastructure investment pays off."
+        }
+      ],
+      "caffeine_faq": "Focus does NOT replace caffeine. Many customers take Focus with their morning coffee, and the theanine in Focus actually smooths out the caffeine experience. Caffeine masks tiredness. Focus feeds performance."
+    },
+    "restore": {
+      "name": "EQ:Restore",
+      "timing": "PM",
+      "serving": "2 capsules daily with evening meal",
+      "capsule_type": "Size 00-EL HPMC",
+      "ingredient_count": 9,
+      "description": "Your evening transition formula. When the workday ends but your brain keeps running, Restore helps your nervous system shift from performance mode to presence mode. It supports the transition that gives you your evening back, so sleep comes naturally when your body is ready. Every ingredient is dosed at clinically studied levels and chosen for how it works with the rest of the formula.",
+      "problem_statement": "It is 7pm. You closed the laptop. You are physically done working. But your brain did not get the memo. You are replaying the meeting. You are composing an email you will never send. You are mentally rearranging tomorrow's calendar while your partner is telling you about their day. You are home, but you are not here. This is not a sleep problem. This is a transition problem.",
+      "transition_sequence": [
+        {
+          "step": 1,
+          "title": "Lower the noise",
+          "ingredient": "L-Theanine",
+          "description": "L-Theanine generates alpha brain waves. You stop mentally composing emails."
+        },
+        {
+          "step": 2,
+          "title": "Engage the brakes",
+          "ingredient": "Magnesium",
+          "description": "Magnesium supports GABA activity. Your nervous system begins to downshift."
+        },
+        {
+          "step": 3,
+          "title": "Clear the exhaust",
+          "ingredient": "L-Ornithine",
+          "description": "L-Ornithine clears elevated cortisol. The biochemical residue of a hard day gets cleaned up."
+        },
+        {
+          "step": 4,
+          "title": "Warm the room",
+          "ingredient": "Saffron",
+          "description": "Saffron lifts mood. You are not just relaxed. You are glad to be here."
+        },
+        {
+          "step": 5,
+          "title": "File the day",
+          "ingredient": "Bacopa",
+          "description": "Bacopa supports overnight memory consolidation. While you rest, your brain is encoding the day."
+        },
+        {
+          "step": 6,
+          "title": "Maintain the foundation",
+          "ingredient": "D3, K2, Zinc, Copper",
+          "description": "D3, K2, Zinc, Copper keep the raw materials in place. Tonight and every night."
+        }
+      ],
+      "personas": [
+        "The parent who is present but not here. Reading a bedtime story but mentally drafting a Slack response. They do not need sleep. They need the workday to actually end in their brain.",
+        "The professional who cannot downshift. Their body stopped working at 6. Their brain stopped working at 11.",
+        "The partner who is half-listening. The mental chatter is louder than the person sitting in front of them. They do not need a productivity hack. They need biochemical support to turn it off."
+      ],
+      "timeline": [
+        {
+          "period": "Days 1-7",
+          "description": "The transition may feel easier. Theanine and magnesium effects are often noticed within the first week."
+        },
+        {
+          "period": "Weeks 2-4",
+          "description": "Evenings feel more present. Saffron's mood support reaches clinical effect levels. Sleep quality improves."
+        },
+        {
+          "period": "Weeks 4-8",
+          "description": "Ornithine's cortisol-clearing effects compound. The gap between \"work brain\" and \"home brain\" narrows."
+        },
+        {
+          "period": "Weeks 8+",
+          "description": "Bacopa's memory consolidation support reaches full effect. The slow-build ingredient that rewards consistency."
+        }
+      ],
+      "what_its_not": [
+        "Restore is not a sleep supplement. It does not contain melatonin or valerian.",
+        "Restore is not a sedative. If you take it at 7pm and go to dinner, you should feel like a better version of yourself at dinner.",
+        "Restore supports the transition that makes natural sleep possible. Sleep comes because the evening actually happened."
+      ]
+    }
+  },
+  "supplier_links": {
+    "cognizin": "https://www.kyowa-usa.com/cognizin",
+    "suntheanine": "https://www.suntheanine.com",
+    "niagen": "https://www.niagenbio.com",
+    "quatrefolic": "https://www.quatrefolic.com",
+    "affron": "https://www.affron.com",
+    "magtein": "https://www.magtein.com"
+  },
+  "ingredients": {
+    "focus": [
+      {
+        "id": "citicoline",
+        "name": "Citicoline",
+        "branded": "Cognizin",
+        "supplier": "Kyowa Hakko Bio",
+        "supplier_link": "cognizin",
+        "dose": "250 mg",
+        "form": "CDP-Choline",
+        "category": "Nootropic",
+        "display_order": 1,
+        "tagline": "The brain's building block for sharper memory and focus.",
+        "why_its_here": "Citicoline (CDP-choline) is a naturally occurring compound that serves as a precursor to both phosphatidylcholine, a key component of brain cell membranes, and the neurotransmitter acetylcholine, which is critical for memory and learning. As we age, our brains produce less of these compounds. Supplementing with citicoline helps replenish them, supporting the structural integrity of neurons and keeping communication between brain cells running smoothly.",
+        "what_to_expect": "Most people notice improved mental clarity and focus within 2 to 4 weeks of consistent use. Clinical trials show measurable improvements in episodic memory (the ability to recall specific events and details) after 12 weeks. You may find it easier to concentrate during long work sessions and recall information more readily.",
+        "how_it_works": "Citicoline is studied for brain-level choline support and is broken down into choline and cytidine. Choline fuels acetylcholine production (your memory neurotransmitter), while cytidine converts to uridine, which supports the synthesis of new neuronal membranes. This dual action means citicoline both protects existing brain cells and helps build new neural connections.",
+        "safety_note": "Citicoline has an excellent safety profile. In clinical trials, it was well-tolerated with minimal side effects. It is Generally Recognized as Safe (GRAS) by the FDA.",
+        "studies": [
+          {
+            "title": "Citicoline and Memory Function in Healthy Older Adults",
+            "authors": "Nakazaki et al.",
+            "journal": "The Journal of Nutrition",
+            "year": 2021,
+            "doi": "10.1093/jn/nxab119",
+            "pmid": "33978188",
+            "summary": "100 healthy adults (50-85y) took 500mg/day Cognizin for 12 weeks. The citicoline group showed significantly greater improvements in episodic memory and composite memory scores compared to placebo.",
+            "key_finding": "Significant improvement in episodic memory (p=0.0025) and composite memory (p=0.0052) vs. placebo"
+          },
+          {
+            "title": "Citicoline Supplementation on Motor Speed and Attention in Adolescent Males",
+            "authors": "McGlade et al.",
+            "journal": "Journal of Attention Disorders",
+            "year": 2015,
+            "doi": "10.1177/1087054715593633",
+            "pmid": "26179181",
+            "summary": "75 healthy adolescent males received Cognizin citicoline (250 or 500mg) or placebo for 28 days. Citicoline improved attention, psychomotor speed, and reduced impulsivity.",
+            "key_finding": "Improved attention (p=0.02) and psychomotor speed (p=0.03) vs. placebo"
+          }
+        ]
+      },
+      {
+        "id": "l-tyrosine",
+        "name": "L-Tyrosine",
+        "branded": null,
+        "supplier": null,
+        "supplier_link": null,
+        "dose": "300 mg",
+        "form": "Free-form amino acid",
+        "category": "Amino Acid",
+        "display_order": 2,
+        "tagline": "Your brain's stress buffer for staying sharp under pressure.",
+        "why_its_here": "L-Tyrosine is a precursor amino acid that your brain uses to manufacture dopamine, norepinephrine, and epinephrine, the neurotransmitters responsible for motivation, alertness, and mental performance under stress. When you are under pressure (deadlines, sleep deprivation, multitasking), your brain burns through these neurotransmitters faster than it can replace them. Supplementing with L-Tyrosine gives your brain the raw material it needs to keep up.",
+        "what_to_expect": "L-Tyrosine works acutely, meaning you may notice benefits within the first few days of use. Expect improved focus and mental flexibility during demanding situations. It is particularly effective on days when you are juggling multiple tasks or working under time pressure.",
+        "how_it_works": "L-Tyrosine is converted to L-DOPA by the enzyme tyrosine hydroxylase, then to dopamine, and subsequently to norepinephrine. Under normal conditions, this pathway is self-regulating. But under stress, the increased firing rate of catecholamine neurons depletes available neurotransmitter stores faster than they can be replenished. Supplemental tyrosine provides extra substrate to keep the pipeline flowing.",
+        "safety_note": "L-Tyrosine is a naturally occurring amino acid found in protein-rich foods like chicken, turkey, fish, and dairy. It has a strong safety profile with no significant adverse effects at supplemental doses.",
+        "studies": [
+          {
+            "title": "Tyrosine supplementation mitigates working memory decrements during cold exposure",
+            "authors": "Mahoney et al.",
+            "journal": "Physiology & Behavior",
+            "year": 2007,
+            "doi": "10.1016/j.physbeh.2007.05.003",
+            "pmid": "17585971",
+            "summary": "19 volunteers completed cognitive tests during cold-stress conditions. Those who consumed tyrosine (300mg/kg) showed preserved working memory performance while the placebo group declined.",
+            "key_finding": "Tyrosine restored working memory accuracy under stress (p<0.05)"
+          },
+          {
+            "title": "Mesoprefrontal dopaminergic neurons: can tyrosine availability influence their functions?",
+            "authors": "Tam & Roth",
+            "journal": "Biochemical Pharmacology",
+            "year": 1997,
+            "doi": "10.1016/s0006-2952(96)00774-5",
+            "pmid": "9105394",
+            "summary": "Comprehensive review demonstrating that brain tyrosine levels directly influence prefrontal cortex dopamine function, with supplemental tyrosine restoring impaired working memory in stressed humans.",
+            "key_finding": "Tyrosine availability directly modulates prefrontal cortex cognitive performance"
+          }
+        ]
+      },
+      {
+        "id": "l-theanine-focus",
+        "name": "L-Theanine",
+        "branded": "Suntheanine",
+        "supplier": "Taiyo International",
+        "supplier_link": "suntheanine",
+        "dose": "150 mg",
+        "form": "L-isomer (enzymatically produced)",
+        "category": "Amino Acid",
+        "display_order": 3,
+        "tagline": "Calm focus without the drowsiness.",
+        "why_its_here": "L-Theanine is an amino acid found naturally in green tea that promotes a state of relaxed alertness. It is the reason tea feels different from coffee, despite both containing caffeine. In EQ:Focus, L-Theanine works synergistically with the other cognitive-enhancing ingredients by smoothing out the mental edge that can come with heightened alertness, giving you focused calm rather than jittery energy.",
+        "what_to_expect": "L-Theanine works quickly. Within 30 to 60 minutes of your dose, you may notice a subtle but real shift: your mind feels clearer, distractions fade, and it is easier to settle into deep work. Over 4 weeks of daily use, clinical studies show reduced stress-related symptoms, improved sleep quality, and enhanced verbal fluency.",
+        "how_it_works": "L-Theanine promotes alpha brain waves, the same pattern associated with meditation and creative flow states. It also supports GABA, serotonin, and dopamine activity in the brain, promoting relaxation without sedation. Suntheanine is produced through an enzymatic process that yields pure L-isomer theanine, the form identical to what is found in tea leaves.",
+        "safety_note": "L-Theanine has been granted GRAS status by the FDA. It is non-habit-forming and does not cause drowsiness. Suntheanine is the most clinically studied form of L-theanine available.",
+        "studies": [
+          {
+            "title": "Effects of L-Theanine Administration on Stress-Related Symptoms and Cognitive Functions in Healthy Adults",
+            "authors": "Hidese et al.",
+            "journal": "Nutrients",
+            "year": 2019,
+            "doi": "10.3390/nu11102362",
+            "pmid": "31623400",
+            "summary": "30 healthy adults took 200mg/day L-theanine for 4 weeks in a randomized crossover trial. The theanine group showed significant reductions in depression, anxiety, and sleep disturbance, plus improved verbal fluency and executive function.",
+            "key_finding": "Improved verbal fluency (p=0.001), executive function (p=0.031), and sleep quality vs. placebo"
+          },
+          {
+            "title": "Effects of L-Theanine on Stress and Anxiety: A Systematic Review",
+            "authors": "Williams et al.",
+            "journal": "Plant Foods for Human Nutrition",
+            "year": 2020,
+            "doi": "10.1007/s11130-019-00771-5",
+            "pmid": "31758301",
+            "summary": "Systematic review of 9 randomized controlled trials concluded that 200-400mg/day of L-theanine assists in reducing stress and anxiety in people exposed to stressful conditions.",
+            "key_finding": "200-400mg/day reduces stress and anxiety across multiple RCTs"
+          }
+        ]
+      },
+      {
+        "id": "lions-mane",
+        "name": "Lion's Mane",
+        "branded": null,
+        "supplier": null,
+        "supplier_link": null,
+        "dose": "500 mg",
+        "form": "Extract, 30% polysaccharides",
+        "category": "Medicinal Mushroom",
+        "display_order": 4,
+        "tagline": "The only mushroom clinically shown to support nerve growth.",
+        "why_its_here": "Lion's Mane (Hericium erinaceus) is a medicinal mushroom with a unique property: it stimulates the production of Nerve Growth Factor (NGF), a protein essential for the growth, maintenance, and survival of neurons. This makes it one of the only natural compounds that may actively support neuroplasticity, your brain's ability to form new connections and adapt.",
+        "what_to_expect": "Lion's Mane is a long-game ingredient. While some people report improved clarity within the first week or two, the most meaningful benefits build over 8 to 16 weeks of consistent use. Clinical trials show progressive improvements in cognitive function scores over this period. Think of it as ongoing maintenance and construction for your neural networks.",
+        "how_it_works": "Lion's Mane contains two groups of unique compounds: hericenones (found in the fruiting body) and erinacines (found in the mycelium). These compounds stimulate the synthesis of NGF, which promotes the growth and repair of neurons. Our extract is standardized to 30% polysaccharides, the bioactive fraction responsible for these effects.",
+        "safety_note": "Lion's Mane has been consumed as food in East Asia for centuries. Clinical trials report no significant adverse effects. It is considered very safe for long-term use.",
+        "studies": [
+          {
+            "title": "Improving effects of Yamabushitake (Hericium erinaceus) on mild cognitive impairment",
+            "authors": "Mori et al.",
+            "journal": "Phytotherapy Research",
+            "year": 2009,
+            "doi": "10.1002/ptr.2634",
+            "pmid": "18844328",
+            "summary": "30 subjects (50-80y) with mild cognitive impairment took Lion's Mane or placebo for 16 weeks. The Lion's Mane group showed significantly increased cognitive function scores at weeks 8, 12, and 16. Scores declined after stopping supplementation.",
+            "key_finding": "Significant cognitive improvement at weeks 8, 12, and 16 (scores increased with duration of intake)"
+          },
+          {
+            "title": "Improvement of cognitive functions by oral intake of Hericium erinaceus",
+            "authors": "Saitsu et al.",
+            "journal": "Biomedical Research",
+            "year": 2019,
+            "doi": "10.2220/biomedres.40.125",
+            "pmid": "31413233",
+            "summary": "Randomized, double-blind, placebo-controlled study showing that 12 weeks of H. erinaceus supplementation significantly improved cognitive function scores on the Mini Mental State Examination.",
+            "key_finding": "Significant improvement in MMSE scores after 12 weeks of supplementation"
+          },
+          {
+            "title": "Acute and Chronic Effects of Lion's Mane Mushroom on Cognitive Function and Mood in Young Adults",
+            "authors": "Docherty et al.",
+            "journal": "Nutrients",
+            "year": 2023,
+            "doi": "10.3390/nu15224842",
+            "pmid": "38004235",
+            "summary": "41 healthy adults (18-45y) showed faster performance on cognitive tasks after a single dose and a trend toward reduced subjective stress after 28 days of supplementation.",
+            "key_finding": "Improved speed of performance (p=0.005) after single dose; trend toward reduced stress at 28 days"
+          }
+        ]
+      },
+      {
+        "id": "rhodiola",
+        "name": "Rhodiola rosea",
+        "branded": null,
+        "supplier": null,
+        "supplier_link": null,
+        "dose": "150 mg",
+        "form": "Standardized to 3% rosavins, 1% salidroside",
+        "category": "Adaptogen",
+        "display_order": 5,
+        "tagline": "An ancient adaptogen that helps your brain perform under pressure.",
+        "why_its_here": "Rhodiola rosea is a true adaptogen, a class of herbs that help your body resist and adapt to physical and mental stress. It has been used for centuries in Scandinavian and Russian traditional medicine by workers, soldiers, and students to combat fatigue and maintain mental performance during extended periods of stress. We include it in EQ:Focus because modern life creates chronic low-grade stress that erodes cognitive performance over time.",
+        "what_to_expect": "Rhodiola tends to work within the first 1 to 2 weeks. You may notice that you feel less mentally drained at the end of long days, that your focus holds up better during extended work sessions, and that you recover more quickly from mentally taxing tasks.",
+        "how_it_works": "Rhodiola modulates the body's stress response by influencing the hypothalamic-pituitary-adrenal (HPA) axis and key neurotransmitters including serotonin, dopamine, and norepinephrine. Its active compounds, rosavins and salidroside, also have antioxidant and anti-inflammatory properties that protect brain cells from stress-induced damage. Our extract is standardized to 3% rosavins and 1% salidroside, the clinically validated ratio.",
+        "safety_note": "Rhodiola rosea has been used safely for centuries and is well-tolerated in clinical trials. No significant side effects were reported in the physicians' study above.",
+        "studies": [
+          {
+            "title": "Rhodiola rosea in stress-induced fatigue: A double-blind cross-over study",
+            "authors": "Darbinyan et al.",
+            "journal": "Phytomedicine",
+            "year": 2000,
+            "doi": "10.1016/S0944-7113(00)80055-0",
+            "pmid": "11081987",
+            "summary": "56 young, healthy physicians on night duty took Rhodiola extract or placebo. The Rhodiola group showed statistically significant improvements in associative thinking, short-term memory, calculation, concentration, and audio-visual processing speed.",
+            "key_finding": "Significant improvement in cognitive function during stressful night duty conditions"
+          },
+          {
+            "title": "Rhodiola rosea and Alzheimer's Disease: From Farm to Pharmacy",
+            "authors": "Nabavi et al.",
+            "journal": "Phytotherapy Research",
+            "year": 2016,
+            "doi": "10.1002/ptr.5569",
+            "pmid": "27059687",
+            "summary": "Comprehensive review of Rhodiola's neuroprotective effects, documenting its antioxidant, anti-inflammatory, and neuroprotective mechanisms, with potential therapeutic applications for neurodegenerative conditions.",
+            "key_finding": "Strong evidence for neuroprotection via suppression of oxidative stress and neuroinflammation"
+          }
+        ]
+      },
+      {
+        "id": "nicotinamide-riboside",
+        "name": "Nicotinamide Riboside",
+        "branded": "Niagen",
+        "supplier": "Niagen Bioscience (ChromaDex)",
+        "supplier_link": "niagen",
+        "dose": "250 mg",
+        "form": "Nicotinamide Riboside Chloride",
+        "category": "NAD+ Precursor",
+        "display_order": 6,
+        "tagline": "Fuel for your cells' energy factories.",
+        "why_its_here": "Nicotinamide Riboside (NR) is a form of vitamin B3 that your body converts into NAD+ (nicotinamide adenine dinucleotide), a coenzyme present in every living cell. NAD+ is essential for converting food into cellular energy, repairing DNA, and maintaining healthy cell function. The problem: NAD+ levels decline significantly with age, contributing to cognitive decline, reduced energy, and accelerated aging. NR is the most efficient precursor for restoring NAD+ levels.",
+        "what_to_expect": "NR works at the cellular level, so benefits are often described as a general improvement in energy, mental stamina, and resilience. Some people notice improvements within the first 2 weeks; clinical trials show measurable increases in blood NAD+ levels within the first month. The cognitive and neuroprotective benefits build over longer-term use.",
+        "how_it_works": "NR enters cells and is converted through the NR kinase pathway into NAD+. This is a more efficient pathway than other NAD+ precursors like niacin or nicotinamide. Once NAD+ levels are elevated, it supports sirtuin activity (longevity enzymes) and mitochondrial function, your cells' energy production centers. In the brain, healthy mitochondrial function is critical for sustained mental performance.",
+        "safety_note": "Niagen NR has been extensively studied in human clinical trials and holds multiple safety certifications. It was the first and only NAD+ precursor to receive two FDA GRAS notifications.",
+        "studies": [
+          {
+            "title": "A randomized placebo-controlled trial of nicotinamide riboside in older adults with mild cognitive impairment",
+            "authors": "Orr et al.",
+            "journal": "GeroScience",
+            "year": 2023,
+            "doi": "10.1007/s11357-023-00999-9",
+            "pmid": "37994989",
+            "summary": "20 subjects with MCI received NR (escalating to 1g/day) or placebo for 10 weeks. NR safely achieved a 2.6-fold increase in blood NAD+ levels (p<0.001), with no adverse effects. Cognitive metrics remained stable and epigenetic age markers showed reduction.",
+            "key_finding": "2.6-fold increase in blood NAD+ (p<0.001); reduction in epigenetic age markers"
+          },
+          {
+            "title": "Implications of NAD+ boosters in translational medicine",
+            "authors": "Kang et al.",
+            "journal": "European Journal of Clinical Investigation",
+            "year": 2020,
+            "doi": "10.1111/eci.13334",
+            "pmid": "32594513",
+            "summary": "Review of NAD+ booster research documenting declining NAD+ levels in aging and age-related diseases, and the therapeutic potential of NR for cardiometabolic and neurodegenerative conditions.",
+            "key_finding": "NAD+ decline is a hallmark of aging; NR effectively restores NAD+ pools in human trials"
+          }
+        ]
+      },
+      {
+        "id": "vitamin-b6",
+        "name": "Vitamin B6",
+        "branded": null,
+        "supplier": null,
+        "supplier_link": null,
+        "dose": "8 mg",
+        "form": "Pyridoxal-5-Phosphate (P-5-P), the active form",
+        "category": "B Vitamin",
+        "display_order": 7,
+        "tagline": "The active form your body can use immediately.",
+        "why_its_here": "Vitamin B6 is required for the synthesis of neurotransmitters including serotonin, dopamine, GABA, and norepinephrine. We use P-5-P, the bioactive coenzyme form, because it does not require liver conversion like standard pyridoxine. This means it gets to work faster and is better utilized by people with common genetic variations that can slow B6 activation.",
+        "what_to_expect": "B6 works as part of the full B-complex in EQ:Focus. You likely will not notice it individually, but it is essential for the neurotransmitter production that drives mood, focus, and cognitive performance. Consistent use supports steady-state neurochemistry.",
+        "how_it_works": "P-5-P serves as a coenzyme for over 100 enzyme reactions in the body, many of which are involved in amino acid metabolism and neurotransmitter synthesis. It is a rate-limiting cofactor for the enzymes that convert L-Tyrosine to dopamine and L-Tryptophan to serotonin.",
+        "safety_note": "Our 8mg dose is well within the safe range. The upper tolerable intake level for B6 is 100mg/day. P-5-P form reduces the risk of peripheral neuropathy associated with very high doses of synthetic pyridoxine.",
+        "studies": []
+      },
+      {
+        "id": "folate",
+        "name": "Folate",
+        "branded": "Quatrefolic",
+        "supplier": "Gnosis by Lesaffre",
+        "supplier_link": "quatrefolic",
+        "dose": "400 mcg",
+        "form": "L-5-Methyltetrahydrofolate (L-5-MTHF), the bioactive form",
+        "category": "B Vitamin",
+        "display_order": 8,
+        "tagline": "The folate form that works for everyone, even if your genes do not cooperate.",
+        "why_its_here": "Up to 60% of the population carries a variation in the MTHFR gene that reduces their ability to convert standard folic acid into the active form the body actually uses (L-5-MTHF). Quatrefolic bypasses this problem entirely by providing the already-active form. Folate is essential for methylation, the biochemical process that regulates neurotransmitter production, DNA repair, and homocysteine metabolism.",
+        "what_to_expect": "Like B6, folate is a foundational nutrient that supports the entire cognitive system. It works behind the scenes to keep methylation running properly, which in turn supports mood stability, mental clarity, and long-term brain health.",
+        "how_it_works": "L-5-MTHF is the predominant form of folate in the bloodstream and the form studied for brain-level support. Once in the brain, it donates methyl groups essential for synthesizing neurotransmitters and maintaining DNA integrity. Quatrefolic uses a glucosamine salt form for superior stability and bioavailability.",
+        "safety_note": "Quatrefolic has received a favorable GRAS opinion. Unlike synthetic folic acid, L-5-MTHF does not mask B12 deficiency and does not accumulate as unmetabolized folic acid in the bloodstream.",
+        "studies": [
+          {
+            "title": "Folate in depression: efficacy, safety, differences in formulations, and clinical issues",
+            "authors": "Fava & Mischoulon",
+            "journal": "The Journal of Clinical Psychiatry",
+            "year": 2009,
+            "doi": "10.4088/JCP.8157su1c.03",
+            "pmid": "19909688",
+            "summary": "Comprehensive review demonstrating that L-methylfolate (5-MTHF) shows efficacy as adjunctive therapy for depression, improves cognitive function in elderly patients with folate deficiency, and is more bioavailable than folic acid in individuals with MTHFR polymorphisms.",
+            "key_finding": "L-5-MTHF more bioavailable than folic acid, especially for those with MTHFR variations"
+          }
+        ]
+      },
+      {
+        "id": "vitamin-b12",
+        "name": "Vitamin B12",
+        "branded": null,
+        "supplier": null,
+        "supplier_link": null,
+        "dose": "500 mcg",
+        "form": "Methylcobalamin (methyl B12)",
+        "category": "B Vitamin",
+        "display_order": 9,
+        "tagline": "The nerve-protecting B vitamin in its most brain-ready form.",
+        "why_its_here": "B12 is critical for maintaining the myelin sheath (the protective coating around nerve fibers), synthesizing neurotransmitters, and supporting healthy homocysteine metabolism. We use methylcobalamin, the neurologically active form, rather than the more common (and cheaper) cyanocobalamin, because it participates directly in methylation reactions in the brain.",
+        "what_to_expect": "B12 supports sustained neurological health. If you have been even mildly deficient (common in vegetarians, older adults, and those on certain medications), you may notice improved energy and mental clarity within weeks.",
+        "how_it_works": "Methylcobalamin works as a cofactor for the enzyme methionine synthase, which converts homocysteine to methionine. This reaction is critical for producing S-adenosylmethionine (SAMe), the body's primary methyl donor, which is needed for neurotransmitter synthesis and DNA maintenance.",
+        "safety_note": "B12 is water-soluble with no established upper intake limit due to its excellent safety profile. Our 500mcg dose ensures adequate levels even for those with reduced absorption.",
+        "studies": []
+      },
+      {
+        "id": "b-vitamins-complex",
+        "name": "B Vitamins (B1, B2, B5, B7)",
+        "branded": null,
+        "supplier": null,
+        "supplier_link": null,
+        "dose": "B1: 10mg, B2: 10mg, B5: 15mg, B7: 300mcg",
+        "form": "B1: Thiamine HCl, B2: Riboflavin-5-Phosphate (active), B5: Calcium D-Pantothenate, B7: D-Biotin",
+        "category": "B Vitamins",
+        "display_order": 10,
+        "tagline": "The energy team that keeps your brain's engine running.",
+        "why_its_here": "B vitamins work as a team. B1 (thiamine) is essential for glucose metabolism in the brain. B2 (riboflavin) supports the electron transport chain for cellular energy production. B5 (pantothenic acid) is required for synthesizing coenzyme A, which is central to energy metabolism and acetylcholine production. B7 (biotin) supports fatty acid synthesis and amino acid metabolism. Together with B6, folate, and B12, they form a complete B-complex that supports every aspect of brain energy and neurotransmitter production.",
+        "what_to_expect": "These B vitamins support the energy metabolism that powers everything else in EQ:Focus. They work synergistically with the other ingredients to ensure your brain has the energy it needs for sustained cognitive performance.",
+        "how_it_works": "B1 enables the conversion of glucose to ATP (energy) through the pyruvate dehydrogenase complex. B2 (as riboflavin-5-phosphate, the active form) serves as a cofactor in the electron transport chain and supports the recycling of other B vitamins. B5 is the precursor to coenzyme A, which is required for the Krebs cycle and for synthesizing acetylcholine. B7 (biotin) supports carboxylase enzymes involved in gluconeogenesis and fatty acid synthesis.",
+        "safety_note": "All four B vitamins are water-soluble and well-tolerated at these doses. B2 as riboflavin-5-phosphate is the pre-activated form for improved bioavailability.",
+        "studies": []
+      }
+    ],
+    "restore": [
+      {
+        "id": "magnesium-l-threonate",
+        "name": "Magnesium L-Threonate",
+        "branded": "Magtein",
+        "supplier": "AIDP",
+        "supplier_link": "magtein",
+        "dose": "1,000 mg (72 mg elemental Mg)",
+        "form": "Magnesium L-Threonate",
+        "category": "Mineral",
+        "display_order": 1,
+        "tagline": "The form of magnesium studied for brain-level cognitive and sleep quality support.",
+        "why_its_here": "Most magnesium supplements help your muscles and bones but barely reach your brain. Magnesium L-Threonate was developed at MIT specifically to solve this problem. It is the form specifically studied for cognitive outcomes and sleep quality support, making it the foundation of Restore's transition formula. Nearly 50% of Americans are magnesium-deficient, and the brain is one of the first organs to suffer.",
+        "what_to_expect": "Many people notice it is easier to let go of the day within the first 1 to 2 weeks. The racing thoughts quiet. The transition from work mode to evening mode happens faster. Over 4 weeks, clinical trials show measurable improvements in memory and cognitive function. Sleep quality improves as a natural consequence of a brain that actually downshifted rather than one that was forced offline.",
+        "how_it_works": "Magnesium L-Threonate was developed at MIT specifically to support brain magnesium levels. Once there, magnesium supports GABA activity, your brain's primary calming signal, and promotes the parasympathetic nervous system state that lets you actually downshift after a demanding day. When brain magnesium is low, that shift does not happen well. Restore replenishes it.",
+        "safety_note": "Magtein has been granted GRAS status and has been studied in multiple human clinical trials with no significant adverse effects.",
+        "studies": [
+          {
+            "title": "Magtein-Based Formula Improves Brain Cognitive Functions in Healthy Chinese Adults",
+            "authors": "Zhang et al.",
+            "journal": "Nutrients",
+            "year": 2022,
+            "doi": "10.3390/nu14245235",
+            "pmid": "36558392",
+            "summary": "109 healthy adults (18-65y) received Magtein-based formula or placebo for 30 days. The supplementation group showed significant improvements across all 5 subcategories of The Clinical Memory Test and overall memory quotient scores. Older participants showed greater improvement.",
+            "key_finding": "Significant improvement in all memory subcategories and overall memory quotient vs. placebo in just 30 days"
+          }
+        ]
+      },
+      {
+        "id": "l-ornithine",
+        "name": "L-Ornithine",
+        "branded": null,
+        "supplier": null,
+        "supplier_link": null,
+        "dose": "400 mg",
+        "form": "L-Ornithine HCl",
+        "category": "Amino Acid",
+        "display_order": 2,
+        "tagline": "The stress cleanup crew. Clears the biochemical residue of a hard day so the transition can actually happen.",
+        "why_its_here": "L-Ornithine plays a key role in the urea cycle (ammonia detoxification) and has been shown in clinical trials to support healthy cortisol levels and improve perceived sleep quality. After a mentally demanding day, elevated cortisol can keep your nervous system in on-mode, preventing the deep restorative sleep your brain needs to consolidate memories and clear metabolic waste. L-Ornithine helps clear the biochemical residue that keeps your nervous system stuck in go-mode, so the transition to presence can actually happen.",
+        "what_to_expect": "Over 8 weeks of use, clinical studies show reduced cortisol levels, decreased feelings of anger and tension, and improved subjective sleep quality. You may notice you are less irritable in the evening, more present in conversations, and that the transition from work to home happens faster and more completely.",
+        "how_it_works": "L-Ornithine participates in the urea cycle to help clear ammonia from the body, a byproduct of protein metabolism that can contribute to fatigue. It also modulates the stress response, supporting healthy cortisol output and shifting the cortisol-to-DHEA ratio in a favorable direction. This creates a more recovery-friendly hormonal environment during sleep.",
+        "safety_note": "L-Ornithine is a naturally occurring amino acid with a strong safety profile. The 400mg dose used in EQ:Restore matches the clinically validated dose.",
+        "studies": [
+          {
+            "title": "Randomised controlled trial of the effects of L-ornithine on stress markers and sleep quality in healthy workers",
+            "authors": "Miyake et al.",
+            "journal": "Nutrition Journal",
+            "year": 2014,
+            "doi": "10.1186/1475-2891-13-53",
+            "pmid": "24889392",
+            "summary": "52 healthy Japanese adults experiencing mild stress and fatigue took 400mg/day L-Ornithine or placebo for 8 weeks. The L-Ornithine group showed significantly decreased cortisol levels and cortisol/DHEA-S ratio, reduced anger, and improved sleep quality.",
+            "key_finding": "Significant reduction in serum cortisol, improved cortisol/DHEA-S ratio, better sleep quality vs. placebo"
+          }
+        ]
+      },
+      {
+        "id": "bacopa",
+        "name": "Bacopa monnieri",
+        "branded": null,
+        "supplier": null,
+        "supplier_link": null,
+        "dose": "300 mg",
+        "form": "Extract, 50% bacosides",
+        "category": "Adaptogenic Herb",
+        "display_order": 3,
+        "tagline": "3,000 years of Ayurvedic wisdom, backed by modern meta-analyses.",
+        "why_its_here": "Bacopa monnieri has been used in Ayurvedic medicine for millennia as a medhya rasayana (intellect rejuvenator). Modern science has validated these traditional uses: meta-analyses of randomized controlled trials confirm that Bacopa supports cognitive processing speed, attention, and memory. We include it in EQ:Restore because memory consolidation happens primarily during rest, and Bacopa's benefits compound with consistent, long-term daily use. The evening dose means peak blood levels align with the brain's natural memory-filing window.",
+        "what_to_expect": "Bacopa is a slow-build ingredient. Clinical benefits typically emerge after 8 to 12 weeks of daily use. You may notice improvements in how quickly you process information, how easily you recall details, and your overall mental stamina. Some people also report reduced anxiety.",
+        "how_it_works": "Bacopa's active compounds, bacosides A and B, have antioxidant properties that protect brain cells from oxidative stress. They also support nerve impulse transmission by promoting the growth of nerve endings (dendrites), support serotonin and acetylcholine activity, and modulate dopamine activity. Our extract is standardized to 50% bacosides for consistent potency.",
+        "safety_note": "Bacopa has been used safely for thousands of years. Clinical trials report minimal side effects (primarily mild stomach upset in a small percentage of participants). Taking it with food or in the evening can minimize any GI sensitivity.",
+        "studies": [
+          {
+            "title": "Effects of Bacopa monnieri on cognitive performance, anxiety, and depression in the elderly",
+            "authors": "Calabrese et al.",
+            "journal": "Journal of Alternative and Complementary Medicine",
+            "year": 2008,
+            "doi": "10.1089/acm.2008.0018",
+            "pmid": "18611150",
+            "summary": "54 healthy elderly participants (mean age 73.5) took 300mg/day Bacopa or placebo for 12 weeks. The Bacopa group showed enhanced word recall memory, improved Stroop performance (ability to ignore irrelevant information), and decreased depression and anxiety scores.",
+            "key_finding": "Enhanced delayed word recall, improved Stroop performance, reduced depression and anxiety vs. placebo"
+          },
+          {
+            "title": "Meta-analysis of randomized controlled trials on cognitive effects of Bacopa monnieri",
+            "authors": "Kongkeaw et al.",
+            "journal": "Journal of Ethnopharmacology",
+            "year": 2014,
+            "doi": "10.1016/j.jep.2013.11.008",
+            "pmid": "24252493",
+            "summary": "Meta-analysis of 9 randomized controlled trials (518 subjects) found that Bacopa significantly improved cognitive processing speed (Trail B test: -17.9ms, p<0.001) and choice reaction time (-10.6ms, p<0.001).",
+            "key_finding": "Significant improvement in speed of attention across 9 RCTs (p<0.001)"
+          },
+          {
+            "title": "Systematic review of Bacopa monnieri in child and adolescent populations",
+            "authors": "Kean et al.",
+            "journal": "Complementary Therapies in Medicine",
+            "year": 2016,
+            "doi": "10.1016/j.ctim.2016.09.002",
+            "pmid": "27912958",
+            "summary": "Systematic review of 5 studies demonstrating significant improvements in language, memory, hyperactivity, and attention-deficit domains, with an overall effect size of d=0.42. Only 2.3% of participants reported mild side effects.",
+            "key_finding": "Consistent improvements across language, memory, and attention domains (mean effect size d=0.42)"
+          }
+        ]
+      },
+      {
+        "id": "l-theanine-restore",
+        "name": "L-Theanine",
+        "branded": "Suntheanine",
+        "supplier": "Taiyo International",
+        "supplier_link": "suntheanine",
+        "dose": "200 mg",
+        "form": "L-isomer (enzymatically produced)",
+        "category": "Amino Acid",
+        "display_order": 4,
+        "tagline": "Takes the edge off your day without taking you offline.",
+        "why_its_here": "In EQ:Restore, L-Theanine serves a different role than in EQ:Focus. At 200mg (vs. 150mg in Focus), it is the first step in evening decompression. It shifts your brain from scattered, task-switching mode into calm, present awareness. You stop mentally composing emails. You start actually hearing the conversation in front of you. It works synergistically with Magnesium L-Threonate and Saffron to support the transition from performance mode to presence mode.",
+        "what_to_expect": "Within the first few evenings, you may notice it is easier to let go of the workday. The mental chatter quiets. Over 4 weeks, clinical studies show reduced stress-related symptoms, improved sleep quality, and enhanced verbal fluency. The sleep improvements are real, but they happen because your brain actually downshifted, not because something sedated you.",
+        "how_it_works": "L-Theanine promotes alpha brain waves, the electrical pattern your brain produces during relaxed alertness. It is the state where you are calm but your mind is clear. Meditators produce alpha waves. So do people in flow states. At the chemical level, theanine works by opposing glutamate, the brain's main excitatory signal. The higher evening dose (200mg vs. 150mg in Focus) provides a stronger relaxation effect, supporting the shift from sympathetic to parasympathetic nervous system activity without causing sedation.",
+        "safety_note": "Same excellent safety profile as noted in EQ:Focus. The combined daily dose across both products (350mg) remains well within studied safe ranges of up to 900mg/day.",
+        "studies": [
+          {
+            "title": "Effects of L-Theanine Administration on Stress-Related Symptoms and Cognitive Functions in Healthy Adults",
+            "authors": "Hidese et al.",
+            "journal": "Nutrients",
+            "year": 2019,
+            "doi": "10.3390/nu11102362",
+            "pmid": "31623400",
+            "summary": "In addition to cognitive benefits, this trial showed that L-theanine significantly improved sleep quality scores (PSQI), with specific reductions in sleep latency, sleep disturbance, and need for sleep medication.",
+            "key_finding": "Significant improvement in sleep quality (PSQI, p=0.013), sleep latency, and sleep disturbance vs. placebo"
+          }
+        ]
+      },
+      {
+        "id": "saffron",
+        "name": "Saffron Extract",
+        "branded": "affron",
+        "supplier": "Pharmactive Biotech",
+        "supplier_link": "affron",
+        "dose": "28 mg",
+        "form": "Standardized to 3.5% Lepticrosalides",
+        "category": "Botanical",
+        "display_order": 5,
+        "tagline": "The ingredient that makes your evening feel worth having.",
+        "why_its_here": "Saffron (Crocus sativus) has been used therapeutically for thousands of years, and modern clinical trials have validated its mood-enhancing and sleep-improving properties. affron is a patented saffron extract standardized to a specific blend of bioactives called Lepticrosalides, which ensures consistent potency and clinical efficacy. We include it in EQ:Restore because better mood and better sleep form a virtuous cycle.",
+        "what_to_expect": "Clinical trials show meaningful improvements in mood within 4 weeks at the 28mg dose: reduced negative mood, less stress-related tension, and a genuine sense of warmth. Sleep quality improvements were also documented at this dose. Many users describe the shift as subtle but unmistakable: the evening stops being something you endure and becomes something you look forward to.",
+        "how_it_works": "affron's active compounds (crocins, safranal, and crocetin) work through multiple mechanisms. They support serotonin and GABA activity, promoting the kind of emotional warmth and presence that makes the difference between enduring your evening and enjoying it. The Lepticrosalides standardization ensures the right ratio of these compounds for consistent clinical effect.",
+        "safety_note": "affron has been studied in multiple clinical trials with no reported significant adverse effects. It is non-habit-forming and safe for long-term daily use.",
+        "studies": [
+          {
+            "title": "affron improves mood in healthy adults over 4 weeks",
+            "authors": "Kell et al.",
+            "journal": "Complementary Therapies in Medicine",
+            "year": 2017,
+            "doi": "10.1016/j.ctim.2017.06.001",
+            "pmid": "28735826",
+            "summary": "128 participants with self-reported low mood took affron at 28mg/day, 22mg/day, or placebo for 4 weeks. The 28mg dose produced a large effect size for mood improvement (d=-1.10) with significant decreases in negative mood, stress, and anxiety symptoms.",
+            "key_finding": "Large effect size for mood improvement at 28mg/day (d=-1.10, p<0.001) vs. placebo"
+          },
+          {
+            "title": "Evening saffron extract (affron) on sleep quality, cortisol, and melatonin in adults with poor sleep",
+            "authors": "Lopresti et al.",
+            "journal": "Sleep Medicine",
+            "year": 2021,
+            "doi": "10.1016/j.sleep.2021.08.001",
+            "pmid": "34438361",
+            "summary": "120 adults with poor sleep received placebo, 14mg, or 28mg affron for 28 days. Both saffron doses improved sleep quality ratings, mood after waking, and insomnia scores, with associated increases in evening melatonin concentrations.",
+            "key_finding": "Improved sleep quality, reduced insomnia symptoms, and increased evening melatonin vs. placebo"
+          },
+          {
+            "title": "Mental and physical effects of saffron extract (affron) in recreationally-active adults",
+            "authors": "Lopresti & Smith",
+            "journal": "Journal of the International Society of Sports Nutrition",
+            "year": 2022,
+            "doi": "10.1080/15502783.2022.2083455",
+            "pmid": "35813851",
+            "summary": "62 adults taking 28mg/day affron for 6 weeks showed improvements in exercise enjoyment and heart rate variability, suggesting broader benefits for stress resilience and recovery.",
+            "key_finding": "Increased exercise enjoyment (p=0.009) and heart rate variability (p=0.001) in male participants"
+          }
+        ]
+      },
+      {
+        "id": "zinc",
+        "name": "Zinc",
+        "branded": null,
+        "supplier": null,
+        "supplier_link": null,
+        "dose": "15 mg",
+        "form": "Bisglycinate chelate",
+        "category": "Mineral",
+        "display_order": 6,
+        "tagline": "Essential for brain signaling, immune function, and over 300 enzymatic reactions.",
+        "why_its_here": "Zinc is involved in over 300 enzymatic reactions and is particularly concentrated in the brain, where it plays a role in neurotransmitter release, synaptic plasticity, and neuronal signaling. It is also essential for immune function. We use bisglycinate chelate, a highly bioavailable form that is gentle on the stomach, and pair it with copper to maintain proper mineral balance.",
+        "what_to_expect": "Zinc supports overall brain health and immune resilience. If you have been zinc-deficient (common in those who eat little red meat or shellfish), you may notice improved immune function and better mood stability.",
+        "how_it_works": "In the brain, zinc ions are stored in synaptic vesicles and released during neural activity to support healthy neural signaling. It also acts as an antioxidant, protecting neurons from oxidative damage, and supports the enzymes involved in DNA repair and protein synthesis.",
+        "safety_note": "Our 15mg dose is within the recommended dietary allowance (8-11mg) to slightly above, providing a therapeutic buffer. We include 1.5mg copper to prevent zinc-induced copper deficiency, a well-known interaction.",
+        "studies": []
+      },
+      {
+        "id": "copper",
+        "name": "Copper",
+        "branded": null,
+        "supplier": null,
+        "supplier_link": null,
+        "dose": "1.5 mg",
+        "form": "Bisglycinate chelate",
+        "category": "Mineral",
+        "display_order": 7,
+        "tagline": "The zinc companion that keeps your mineral balance in check.",
+        "why_its_here": "Copper is included specifically to maintain the zinc-to-copper ratio. When you supplement zinc without copper, zinc can interfere with copper absorption over time, leading to copper deficiency. Copper is also essential in its own right: it is needed for energy production (cytochrome c oxidase), iron metabolism (ceruloplasmin), and the synthesis of neurotransmitters including norepinephrine.",
+        "what_to_expect": "Copper works behind the scenes to maintain mineral homeostasis. You will not notice it directly, but it is essential for safe, long-term zinc supplementation.",
+        "how_it_works": "Copper and zinc compete for absorption in the gut via metallothionein. By including copper in the proper ratio (roughly 10:1 zinc to copper), we prevent the competitive inhibition that would otherwise deplete your copper stores over time.",
+        "safety_note": "Our 1.5mg dose is within the recommended dietary allowance (0.9mg) and well below the upper tolerable intake level (10mg). Bisglycinate chelate form ensures gentle absorption.",
+        "studies": []
+      },
+      {
+        "id": "vitamin-d3",
+        "name": "Vitamin D3",
+        "branded": null,
+        "supplier": null,
+        "supplier_link": null,
+        "dose": "1,000 IU (25 mcg)",
+        "form": "Cholecalciferol (lichen-derived, vegan)",
+        "category": "Vitamin",
+        "display_order": 8,
+        "tagline": "The sunshine vitamin, sourced from lichen for year-round brain support.",
+        "why_its_here": "Vitamin D receptors are found throughout the brain, and D3 plays a role in neuroprotection, neurotransmitter synthesis, and immune regulation. An estimated 42% of American adults are vitamin D deficient, with rates even higher among those who work indoors or live in northern climates. We use a lichen-derived D3, making EQ:Restore suitable for vegans, and pair it with K2 for optimal calcium metabolism.",
+        "what_to_expect": "If you are deficient (which many people are), optimizing your vitamin D status can improve mood, energy, immune resilience, and sleep quality over 4 to 8 weeks.",
+        "how_it_works": "Vitamin D3 is converted in the liver to 25-hydroxyvitamin D, then activated in the kidneys (and brain) to 1,25-dihydroxyvitamin D. In the brain, it supports the expression of genes involved in neuroprotection, calcium signaling, and neurotransmitter synthesis. It also supports serotonin production, connecting it to mood regulation.",
+        "safety_note": "1,000 IU is a conservative, safe dose well below the upper tolerable intake level of 4,000 IU/day. Lichen-derived D3 provides the same cholecalciferol form found in lanolin but is suitable for plant-based diets.",
+        "studies": []
+      },
+      {
+        "id": "vitamin-k2",
+        "name": "Vitamin K2",
+        "branded": null,
+        "supplier": null,
+        "supplier_link": null,
+        "dose": "100 mcg",
+        "form": "MK-7 (natto-derived, menaquinone-7)",
+        "category": "Vitamin",
+        "display_order": 9,
+        "tagline": "The vitamin D companion that directs calcium where it belongs.",
+        "why_its_here": "Vitamin K2 works synergistically with Vitamin D3. While D3 increases calcium absorption, K2 ensures that calcium gets deposited in your bones and teeth, not in your arteries and soft tissues. Beyond this calcium-directing role, K2 also has neuroprotective properties, supporting sphingolipid metabolism in the brain. We use the MK-7 form because it has the longest half-life and highest bioavailability of all K2 forms.",
+        "what_to_expect": "K2 works synergistically with D3 for optimal mineral metabolism. Its benefits are preventive and long-term rather than immediately noticeable.",
+        "how_it_works": "K2 activates two critical proteins: osteocalcin (which binds calcium into bone) and matrix Gla protein (MGP, which prevents calcium from depositing in arteries). MK-7 from natto fermentation has a 72-hour half-life, meaning a single daily dose maintains consistently active levels of these proteins.",
+        "safety_note": "MK-7 is safe at this dose. Note: if you take blood thinners (warfarin/Coumadin), consult your healthcare provider before supplementing with K2, as it can affect INR levels.",
+        "studies": []
+      }
+    ]
+  },
+  "shopify_metaobject_schemas": {
+    "beq_ingredient": {
+      "fields": [
+        {"name": "name", "type": "single_line_text"},
+        {"name": "branded_name", "type": "single_line_text", "optional": true},
+        {"name": "supplier", "type": "single_line_text", "optional": true},
+        {"name": "supplier_link", "type": "url", "optional": true},
+        {"name": "dose", "type": "single_line_text"},
+        {"name": "form", "type": "single_line_text"},
+        {"name": "category", "type": "single_line_text"},
+        {"name": "tagline", "type": "single_line_text"},
+        {"name": "why_its_here", "type": "multi_line_text"},
+        {"name": "how_it_works", "type": "multi_line_text"},
+        {"name": "what_to_expect", "type": "multi_line_text"},
+        {"name": "safety_note", "type": "multi_line_text"},
+        {"name": "product", "type": "single_line_text"},
+        {"name": "display_order", "type": "integer"}
+      ]
+    },
+    "beq_study": {
+      "fields": [
+        {"name": "title", "type": "single_line_text"},
+        {"name": "authors", "type": "single_line_text"},
+        {"name": "journal", "type": "single_line_text"},
+        {"name": "year", "type": "integer"},
+        {"name": "doi", "type": "single_line_text"},
+        {"name": "pmid", "type": "single_line_text"},
+        {"name": "summary", "type": "multi_line_text"},
+        {"name": "key_finding", "type": "single_line_text"},
+        {"name": "ingredient_ref", "type": "metaobject_reference"}
+      ]
+    }
+  },
+  "url_map": {
+    "science": "/pages/science",
+    "focus_overview": "/pages/science/focus",
+    "restore_overview": "/pages/science/restore",
+    "ingredient_detail": "/pages/science/{product}/{ingredient_id}"
+  }
+}
