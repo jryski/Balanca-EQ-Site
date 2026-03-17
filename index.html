@@ -584,7 +584,22 @@
                 flex-direction: column;
             }
         }
+        /* Science Page Integration */
+        #science-root {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        #science-root a {
+            color: #2A9D8F;
+        }
+        #science-root a:hover {
+            color: #238276;
+        }
     </style>
+    <!-- React for Science Pages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -601,6 +616,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a onclick="showPage('home'); closeMobileMenu()">Products</a></li>
                 <li><a onclick="showPage('evidence'); closeMobileMenu()">Evidence</a></li>
+                <li><a onclick="showPage('science'); closeMobileMenu()">Science</a></li>
                 <li><a onclick="showPage('coas'); closeMobileMenu()">COAs</a></li>
                 <li><a onclick="showPage('transparency'); closeMobileMenu()">Transparency</a></li>
                 <li><a href="https://balasana.com" target="_blank">About Balasana</a></li>
@@ -632,11 +648,11 @@
                     Sharpen attention without stimulants. Built for deep work and calm execution.
                 </p>
                 <p style="font-size: 0.85rem; color: #2A9D8F; font-weight: 600; margin-bottom: 1rem;">
-                    LAUNCHING APRIL 6, 2026
+                    LAUNCHING JULY 1, 2026
                 </p>
                 <button class="btn-secondary" onclick="scrollToProduct('focus')">View Formula</button>
             </div>
-            
+
             <div class="system-card">
                 <div class="system-icon">🌙</div>
                 <h3>EQ:Restore</h3>
@@ -644,7 +660,7 @@
                     Downshift stress and wake clearer. Sleep support that helps next-day recall.
                 </p>
                 <p style="font-size: 0.85rem; color: #2A9D8F; font-weight: 600; margin-bottom: 1rem;">
-                    LAUNCHING APRIL 6, 2026
+                    LAUNCHING JULY 1, 2026
                 </p>
                 <button class="btn-secondary" onclick="scrollToProduct('restore')">View Formula</button>
             </div>
@@ -679,7 +695,7 @@
         <!-- Phase 1 Products -->
         <div class="product-section" id="phase1">
             <div class="phase-header">
-                <span class="phase-badge">Phase 1 • Launching Q1 2026</span>
+                <span class="phase-badge">Phase 1 • Launching July 2026</span>
                 <h2>Core System</h2>
                 <p style="color: #5A6C7D; max-width: 800px; margin: 0 auto;">
                     Complete 24-hour cognitive support. Morning performance meets evening recovery.
@@ -687,7 +703,7 @@
             </div>
             
             <div class="product-grid">
-                <!-- EQ:Focus v3.1 -->
+                <!-- EQ:Focus v3.7 -->
                 <div class="product-card" id="focus-product">
                     <div class="product-icon">☀️</div>
                     <h3>EQ:Focus</h3>
@@ -697,19 +713,20 @@
                         <span class="badge">STIMULANT-FREE</span>
                     </div>
                     <p>Sharpen attention without stimulants. Built for deep work, fast context-switching, and calm execution.</p>
-                    
+
                     <div class="product-ingredients">
-                        <h4>Formula (9 Ingredients)</h4>
+                        <h4>Formula (10 Ingredients)</h4>
                         <div class="ingredient-tags">
                             <span class="ingredient-tag" onclick="showIngredient('Citicoline')">Citicoline 250mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('NALT')">NALT 300mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('L-Theanine')">L-Theanine 150mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('L-Tyrosine')">L-Tyrosine 300mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('L-Theanine-Focus')">L-Theanine 150mg</span>
                             <span class="ingredient-tag" onclick="showIngredient('Lion\'s Mane')">Lion's Mane 500mg</span>
                             <span class="ingredient-tag" onclick="showIngredient('Rhodiola')">Rhodiola 150mg</span>
                             <span class="ingredient-tag" onclick="showIngredient('NR')">NR 250mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('B6')">B6 (P-5-P) 25mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('Folate')">Folate 800mcg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('B6')">B6 (P-5-P) 8mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Folate')">Folate 400mcg</span>
                             <span class="ingredient-tag" onclick="showIngredient('B12')">B12 500mcg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('B-Complex')">B1/B2/B5</span>
                         </div>
                     </div>
                     
@@ -720,35 +737,34 @@
                         <li>Optimized neurotransmitter support</li>
                     </ul>
                     
-                    <p class="product-launch">Launch: April 6, 2026</p>
+                    <p class="product-launch">Launch: July 1, 2026</p>
                     <button class="subscribe-btn" onclick="openModal('EQ:Focus')">Get Launch Notification</button>
                 </div>
                 
-                <!-- EQ:Restore v3.1 -->
+                <!-- EQ:Restore v3.7 -->
                 <div class="product-card" id="restore-product">
                     <div class="product-icon">🌙</div>
                     <h3>EQ:Restore</h3>
                     <div class="product-badges">
                         <span class="badge">100% VEGAN</span>
                         <span class="badge">ALLERGEN-FREE</span>
-                        <span class="badge">SOY-FREE</span>
+                        <span class="badge">STIMULANT-FREE</span>
                     </div>
                     <p>Downshift stress and wake clearer. Sleep support that also helps next-day recall.</p>
-                    
+
                     <div class="product-ingredients">
                         <h4>Formula (9 Ingredients)</h4>
                         <div class="ingredient-tags">
-                            <span class="ingredient-tag" onclick="showIngredient('Magnesium L-Threonate')">Mag L-Threonate 1000mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('Ashwagandha')">Ashwagandha 300mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Magnesium L-Threonate')">Mag L-Threonate 1,000mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('L-Ornithine')">L-Ornithine 400mg</span>
                             <span class="ingredient-tag" onclick="showIngredient('Bacopa')">Bacopa 300mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('L-Theanine')">L-Theanine 200mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('Phosphatidylserine')">PS 150mg*</span>
+                            <span class="ingredient-tag" onclick="showIngredient('L-Theanine-Restore')">L-Theanine 200mg</span>
                             <span class="ingredient-tag" onclick="showIngredient('Saffron')">Saffron 28mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('Apigenin')">Apigenin 25mg</span>
                             <span class="ingredient-tag" onclick="showIngredient('Zinc')">Zinc 15mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('B6')">B6 (P-5-P) 10mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Copper')">Copper 1.5mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Vitamin D3')">Vitamin D3 1,000 IU</span>
+                            <span class="ingredient-tag" onclick="showIngredient('Vitamin K2')">Vitamin K2 100mcg</span>
                         </div>
-                        <p style="font-size: 0.7rem; color: #5A6C7D; margin-top: 0.5rem;">*Sunflower-derived PS</p>
                     </div>
                     
                     <ul style="color: #5A6C7D; font-size: 0.875rem; margin-bottom: 1.5rem; padding-left: 1.5rem; line-height: 1.8;">
@@ -758,7 +774,7 @@
                         <li>Promotes optimal recovery</li>
                     </ul>
                     
-                    <p class="product-launch">Launch: April 6, 2026</p>
+                    <p class="product-launch">Launch: July 1, 2026</p>
                     <button class="subscribe-btn" onclick="openModal('EQ:Restore')">Get Launch Notification</button>
                 </div>
             </div>
@@ -875,7 +891,9 @@
             </div>
 
             <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: white; border: 1px solid #E8EDF2; border-radius: 16px;">
-                <p style="color: #5A6C7D;">Complete evidence library with all ingredients launching Q1 2026</p>
+                <p style="color: #2C3E50; font-weight: 500; margin-bottom: 0.5rem;">Full Ingredient Science Now Available</p>
+                <p style="color: #5A6C7D; margin-bottom: 1rem;">Explore detailed clinical studies, mechanisms of action, and supplier transparency for every ingredient in our formulas.</p>
+                <button class="btn-primary" onclick="showPage('science')">View Ingredient Science</button>
             </div>
         </div>
     </div>
@@ -901,7 +919,7 @@
                         placeholder="e.g., EQF-2026-001" 
                         style="padding: 1rem; border-radius: 8px; border: 1px solid #E8EDF2; font-size: 1rem;"
                     >
-                    <button class="btn-primary" style="width: 100%;" onclick="alert('COA lookup launches with first batch (April 2026)')">
+                    <button class="btn-primary" style="width: 100%;" onclick="alert('COA lookup launches with first batch (July 2026)')">
                         View COA
                     </button>
                 </div>
@@ -1029,7 +1047,7 @@
                 
                 <details style="background: white; border: 1px solid #E8EDF2; border-radius: 12px; padding: 1.5rem;">
                     <summary style="cursor: pointer; font-weight: 600;">Can I see the test results?</summary>
-                    <p style="margin-top: 1rem; color: #5A6C7D;">Yes. Every batch has a Certificate of Analysis available via our batch lookup system. Launch date: April 6, 2026.</p>
+                    <p style="margin-top: 1rem; color: #5A6C7D;">Yes. Every batch has a Certificate of Analysis available via our batch lookup system. Launch date: July 1, 2026.</p>
                 </details>
                 
                 <details style="background: white; border: 1px solid #E8EDF2; border-radius: 12px; padding: 1.5rem;">
@@ -1037,6 +1055,13 @@
                     <p style="margin-top: 1rem; color: #5A6C7D;">60-day money-back guarantee. Try for 30 days minimum. Not satisfied? Full refund, no questions asked.</p>
                 </details>
             </div>
+        </div>
+    </div>
+
+    <!-- SCIENCE PAGE (React-powered) -->
+    <div id="science" class="page">
+        <div id="science-root">
+            <p style="text-align:center; padding:4rem; color:#5A6C7D;">Loading ingredient science...</p>
         </div>
     </div>
 
@@ -1063,6 +1088,7 @@
                 <h4>Trust</h4>
                 <ul>
                     <li><a onclick="showPage('evidence')">Evidence Library</a></li>
+                    <li><a onclick="showPage('science')">Ingredient Science</a></li>
                     <li><a onclick="showPage('coas')">COAs</a></li>
                     <li><a onclick="showPage('transparency')">Transparency</a></li>
                 </ul>
@@ -1078,7 +1104,7 @@
         </div>
         
         <div class="footer-bottom">
-            <p>© 2025 Balasana LLC. BalanceEQ is a product line of Balasana.</p>
+            <p>© 2025-2026 Balasana LLC. BalanceEQ is a product line of Balasana. Formula v3.7</p>
         </div>
     </footer>
 
@@ -1109,87 +1135,127 @@
             document.getElementById('navLinks').classList.remove('active');
         }
         
-        // Ingredient database (abbreviated - expand as needed)
+        // Ingredient database v3.7
         const ingredientDatabase = {
             'Citicoline': {
                 claim: 'Focus and attention; acetylcholine synthesis',
-                dose: '250mg (Cognizin®)',
-                products: ['EQ:Focus']
+                dose: '250mg (Cognizin\u00ae)',
+                products: ['EQ:Focus'],
+                scienceId: 'citicoline', scienceProduct: 'focus'
             },
-            'NALT': {
-                claim: 'Supports dopamine and norepinephrine synthesis',
+            'L-Tyrosine': {
+                claim: 'Dopamine and norepinephrine precursor for stress resilience',
                 dose: '300mg',
-                products: ['EQ:Focus']
+                products: ['EQ:Focus'],
+                scienceId: 'l-tyrosine', scienceProduct: 'focus'
             },
             'L-Theanine': {
                 claim: 'Promotes calm focus; reduces stress',
                 dose: '150mg (Focus), 200mg (Restore)',
-                products: ['EQ:Focus', 'EQ:Restore']
+                products: ['EQ:Focus', 'EQ:Restore'],
+                scienceId: 'l-theanine-focus', scienceProduct: 'focus'
+            },
+            'L-Theanine-Focus': {
+                claim: 'Calm focus without drowsiness (Suntheanine\u00ae)',
+                dose: '150mg',
+                products: ['EQ:Focus'],
+                scienceId: 'l-theanine-focus', scienceProduct: 'focus'
+            },
+            'L-Theanine-Restore': {
+                claim: 'Deeper, more restorative sleep (Suntheanine\u00ae)',
+                dose: '200mg',
+                products: ['EQ:Restore'],
+                scienceId: 'l-theanine-restore', scienceProduct: 'restore'
             },
             'Lion\'s Mane': {
                 claim: 'Supports NGF production and neuroplasticity',
-                dose: '500mg',
-                products: ['EQ:Focus']
+                dose: '500mg (30% polysaccharides)',
+                products: ['EQ:Focus'],
+                scienceId: 'lions-mane', scienceProduct: 'focus'
             },
             'Rhodiola': {
-                claim: 'Adaptogen supporting mental stamina',
-                dose: '150mg',
-                products: ['EQ:Focus']
+                claim: 'Adaptogen supporting mental stamina under stress',
+                dose: '150mg (3% rosavins, 1% salidroside)',
+                products: ['EQ:Focus'],
+                scienceId: 'rhodiola', scienceProduct: 'focus'
             },
             'NR': {
                 claim: 'NAD+ precursor; cellular energy metabolism',
-                dose: '250mg (Niagen®)',
-                products: ['EQ:Focus']
+                dose: '250mg (Niagen\u00ae)',
+                products: ['EQ:Focus'],
+                scienceId: 'nicotinamide-riboside', scienceProduct: 'focus'
             },
             'B6': {
                 claim: 'Cofactor for neurotransmitter synthesis (active P-5-P form)',
-                dose: '25mg (Focus), 10mg (Restore)',
-                products: ['EQ:Focus', 'EQ:Restore']
+                dose: '8mg',
+                products: ['EQ:Focus'],
+                scienceId: 'vitamin-b6', scienceProduct: 'focus'
             },
             'Folate': {
-                claim: 'Methylation support (active L-5-MTHF form)',
-                dose: '800mcg as L-5-MTHF',
-                products: ['EQ:Focus']
+                claim: 'Methylation support (Quatrefolic\u00ae active L-5-MTHF form)',
+                dose: '400mcg (Quatrefolic\u00ae)',
+                products: ['EQ:Focus'],
+                scienceId: 'folate', scienceProduct: 'focus'
             },
             'B12': {
-                claim: 'Energy metabolism and nerve function (active methylcobalamin)',
+                claim: 'Nerve protection and energy (active methylcobalamin)',
                 dose: '500mcg',
-                products: ['EQ:Focus']
+                products: ['EQ:Focus'],
+                scienceId: 'vitamin-b12', scienceProduct: 'focus'
+            },
+            'B-Complex': {
+                claim: 'Energy trio for brain metabolism (B1, B2, B5)',
+                dose: 'B1: 10mg, B2: 10mg, B5: 15mg',
+                products: ['EQ:Focus'],
+                scienceId: 'b-vitamins-complex', scienceProduct: 'focus'
             },
             'Magnesium L-Threonate': {
-                claim: 'Sleep quality; memory consolidation',
-                dose: '1000mg (Magtein®)',
-                products: ['EQ:Restore']
+                claim: 'Only magnesium form proven to cross blood-brain barrier',
+                dose: '1,000mg (Magtein\u00ae)',
+                products: ['EQ:Restore'],
+                scienceId: 'magnesium-l-threonate', scienceProduct: 'restore'
             },
-            'Ashwagandha': {
-                claim: 'Stress adaptation and cortisol modulation',
-                dose: '300mg (KSM-66®)',
-                products: ['EQ:Restore']
+            'L-Ornithine': {
+                claim: 'Lowers cortisol; supports overnight recovery',
+                dose: '400mg',
+                products: ['EQ:Restore'],
+                scienceId: 'l-ornithine', scienceProduct: 'restore'
             },
             'Bacopa': {
-                claim: 'Memory support and cognitive function',
-                dose: '300mg',
-                products: ['EQ:Restore']
-            },
-            'Phosphatidylserine': {
-                claim: 'Supports memory and reduces cortisol (sunflower-derived, soy-free)',
-                dose: '150mg',
-                products: ['EQ:Restore']
+                claim: 'Memory and cognitive processing speed',
+                dose: '300mg (50% bacosides)',
+                products: ['EQ:Restore'],
+                scienceId: 'bacopa', scienceProduct: 'restore'
             },
             'Saffron': {
-                claim: 'Mood support and sleep quality',
-                dose: '28mg (affron®)',
-                products: ['EQ:Restore']
-            },
-            'Apigenin': {
-                claim: 'GABA-A receptor modulation for relaxation',
-                dose: '25mg',
-                products: ['EQ:Restore']
+                claim: 'Mood support and sleep quality (affron\u00ae)',
+                dose: '28mg (affron\u00ae)',
+                products: ['EQ:Restore'],
+                scienceId: 'saffron', scienceProduct: 'restore'
             },
             'Zinc': {
-                claim: 'Immune and neurological function (chelated bisglycinate)',
+                claim: 'Brain signaling, immune function (chelated bisglycinate)',
                 dose: '15mg',
-                products: ['EQ:Restore']
+                products: ['EQ:Restore'],
+                scienceId: 'zinc', scienceProduct: 'restore'
+            },
+            'Copper': {
+                claim: 'Zinc companion for mineral balance',
+                dose: '1.5mg (bisglycinate chelate)',
+                products: ['EQ:Restore'],
+                scienceId: 'copper', scienceProduct: 'restore'
+            },
+            'Vitamin D3': {
+                claim: 'Neuroprotection and immune support (lichen-derived, vegan)',
+                dose: '1,000 IU',
+                products: ['EQ:Restore'],
+                scienceId: 'vitamin-d3', scienceProduct: 'restore'
+            },
+            'Vitamin K2': {
+                claim: 'Vitamin D companion; directs calcium metabolism',
+                dose: '100mcg (MK-7)',
+                products: ['EQ:Restore'],
+                scienceId: 'vitamin-k2', scienceProduct: 'restore'
             }
         };
 
@@ -1198,6 +1264,8 @@
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
             window.scrollTo(0, 0);
+            // Dispatch event for React science page mounting
+            window.dispatchEvent(new CustomEvent('pageChanged', { detail: { pageId: pageId } }));
         }
 
         function scrollToProduct(product) {
@@ -1224,11 +1292,17 @@
         }
 
         function showIngredient(name) {
-            const data = ingredientDatabase[name];
-            if (data) {
-                alert(`${name}\n\n${data.claim}\n\nOur Dose: ${data.dose}\n\nFound in: ${data.products.join(', ')}\n\nFull details in Evidence Library (Q1 2026)`);
-            } else {
-                alert('Full ingredient details coming in Evidence Library (Q1 2026)');
+            var data = ingredientDatabase[name];
+            if (data && data.scienceId) {
+                // Navigate to the React science page for this ingredient
+                showPage('science');
+                setTimeout(function() {
+                    if (window.sciencePageNavigate) {
+                        window.sciencePageNavigate(data.scienceId, data.scienceProduct);
+                    }
+                }, 150);
+            } else if (data) {
+                alert(name + '\n\n' + data.claim + '\n\nOur Dose: ' + data.dose + '\n\nFound in: ' + data.products.join(', '));
             }
         }
 
@@ -1254,6 +1328,780 @@
         document.getElementById('subscribeModal').addEventListener('click', function(e) {
             if (e.target === this) closeModal();
         });
+    </script>
+    <!-- React Science Pages -->
+    <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    const SUPPLIER_LINKS = {
+      cognizin: "https://www.kyowa-usa.com/cognizin",
+      suntheanine: "https://www.suntheanine.com",
+      niagen: "https://www.niagenbio.com",
+      quatrefolic: "https://www.quatrefolic.com",
+      affron: "https://www.affron.com",
+      magtein: "https://www.magtein.com",
+    };
+
+    const FOCUS_INGREDIENTS = [
+      {
+        id: "citicoline",
+        name: "Citicoline",
+        branded: "Cognizin\u00ae",
+        supplier: "Kyowa Hakko Bio",
+        supplierLink: SUPPLIER_LINKS.cognizin,
+        dose: "250 mg",
+        form: "CDP-Choline",
+        category: "Nootropic",
+        tagline: "The brain\u2019s building block for sharper memory and focus.",
+        whyItsHere: "Citicoline (CDP-choline) is a naturally occurring compound that serves as a precursor to both phosphatidylcholine, a key component of brain cell membranes, and the neurotransmitter acetylcholine, which is critical for memory and learning. As we age, our brains produce less of these compounds. Supplementing with citicoline helps replenish them, supporting the structural integrity of neurons and keeping communication between brain cells running smoothly.",
+        whatToExpect: "Most people notice improved mental clarity and focus within 2 to 4 weeks of consistent use. Clinical trials show measurable improvements in episodic memory (the ability to recall specific events and details) after 12 weeks. You may find it easier to concentrate during long work sessions and recall information more readily.",
+        howItWorks: "Citicoline crosses the blood-brain barrier and is broken down into choline and cytidine. Choline fuels acetylcholine production (your \"memory neurotransmitter\"), while cytidine converts to uridine, which supports the synthesis of new neuronal membranes. This dual action means citicoline both protects existing brain cells and helps build new neural connections.",
+        studies: [
+          { title: "Citicoline and Memory Function in Healthy Older Adults", authors: "Nakazaki et al.", journal: "The Journal of Nutrition", year: 2021, doi: "10.1093/jn/nxab119", pmid: "33978188", summary: "100 healthy adults (50-85y) took 500mg/day Cognizin\u00ae for 12 weeks. The citicoline group showed significantly greater improvements in episodic memory and composite memory scores compared to placebo.", keyFinding: "Significant improvement in episodic memory (p=0.0025) and composite memory (p=0.0052) vs. placebo" },
+          { title: "Citicoline Supplementation on Motor Speed and Attention in Adolescent Males", authors: "McGlade et al.", journal: "Journal of Attention Disorders", year: 2015, doi: "10.1177/1087054715593633", pmid: "26179181", summary: "75 healthy adolescent males received Cognizin\u00ae citicoline (250 or 500mg) or placebo for 28 days. Citicoline improved attention, psychomotor speed, and reduced impulsivity.", keyFinding: "Improved attention (p=0.02) and psychomotor speed (p=0.03) vs. placebo" }
+        ],
+        safetyNote: "Citicoline has an excellent safety profile. In clinical trials, it was well-tolerated with minimal side effects. It is Generally Recognized as Safe (GRAS) by the FDA."
+      },
+      {
+        id: "l-tyrosine", name: "L-Tyrosine", branded: null, supplier: null, supplierLink: null,
+        dose: "300 mg", form: "Free-form amino acid", category: "Amino Acid",
+        tagline: "Your brain\u2019s stress buffer for staying sharp under pressure.",
+        whyItsHere: "L-Tyrosine is a precursor amino acid that your brain uses to manufacture dopamine, norepinephrine, and epinephrine, the neurotransmitters responsible for motivation, alertness, and mental performance under stress. When you\u2019re under pressure (deadlines, sleep deprivation, multitasking), your brain burns through these neurotransmitters faster than it can replace them. Supplementing with L-Tyrosine gives your brain the raw material it needs to keep up.",
+        whatToExpect: "L-Tyrosine works acutely, meaning you may notice benefits within the first few days of use. Expect improved focus and mental flexibility during demanding situations. It\u2019s particularly effective on days when you\u2019re juggling multiple tasks or working under time pressure.",
+        howItWorks: "L-Tyrosine is converted to L-DOPA by the enzyme tyrosine hydroxylase, then to dopamine, and subsequently to norepinephrine. Under normal conditions, this pathway is self-regulating. But under stress, the increased firing rate of catecholamine neurons depletes available neurotransmitter stores faster than they can be replenished. Supplemental tyrosine provides extra substrate to keep the pipeline flowing.",
+        studies: [
+          { title: "Tyrosine supplementation mitigates working memory decrements during cold exposure", authors: "Mahoney et al.", journal: "Physiology & Behavior", year: 2007, doi: "10.1016/j.physbeh.2007.05.003", pmid: "17585971", summary: "19 volunteers completed cognitive tests during cold-stress conditions. Those who consumed tyrosine (300mg/kg) showed preserved working memory performance while the placebo group declined.", keyFinding: "Tyrosine restored working memory accuracy under stress (p<0.05)" },
+          { title: "Mesoprefrontal dopaminergic neurons: can tyrosine availability influence their functions?", authors: "Tam & Roth", journal: "Biochemical Pharmacology", year: 1997, doi: "10.1016/s0006-2952(96)00774-5", pmid: "9105394", summary: "Comprehensive review demonstrating that brain tyrosine levels directly influence prefrontal cortex dopamine function, with supplemental tyrosine restoring impaired working memory in stressed humans.", keyFinding: "Tyrosine availability directly modulates prefrontal cortex cognitive performance" }
+        ],
+        safetyNote: "L-Tyrosine is a naturally occurring amino acid found in protein-rich foods like chicken, turkey, fish, and dairy. It has a strong safety profile with no significant adverse effects at supplemental doses."
+      },
+      {
+        id: "l-theanine-focus", name: "L-Theanine", branded: "Suntheanine\u00ae", supplier: "Taiyo International", supplierLink: SUPPLIER_LINKS.suntheanine,
+        dose: "150 mg", form: "L-isomer (enzymatically produced)", category: "Amino Acid",
+        tagline: "Calm focus without the drowsiness.",
+        whyItsHere: "L-Theanine is an amino acid found naturally in green tea that promotes a state of relaxed alertness. It\u2019s the reason tea feels different from coffee, despite both containing caffeine. In EQ:Focus, L-Theanine works synergistically with the other cognitive-enhancing ingredients by smoothing out the mental edge that can come with heightened alertness, giving you focused calm rather than jittery energy.",
+        whatToExpect: "L-Theanine works quickly. Within 30 to 60 minutes of your dose, you may notice a subtle but real shift: your mind feels clearer, distractions fade, and it\u2019s easier to settle into deep work. Over 4 weeks of daily use, clinical studies show reduced stress-related symptoms, improved sleep quality, and enhanced verbal fluency.",
+        howItWorks: "L-Theanine crosses the blood-brain barrier and increases the production of alpha brain waves, the same pattern associated with meditation and creative flow states. It also modulates levels of GABA, serotonin, and dopamine in the brain, promoting relaxation without sedation. Suntheanine\u00ae is produced through an enzymatic process that yields pure L-isomer theanine, the form identical to what\u2019s found in tea leaves.",
+        studies: [
+          { title: "Effects of L-Theanine Administration on Stress-Related Symptoms and Cognitive Functions in Healthy Adults", authors: "Hidese et al.", journal: "Nutrients", year: 2019, doi: "10.3390/nu11102362", pmid: "31623400", summary: "30 healthy adults took 200mg/day L-theanine for 4 weeks in a randomized crossover trial. The theanine group showed significant reductions in depression, anxiety, and sleep disturbance, plus improved verbal fluency and executive function.", keyFinding: "Improved verbal fluency (p=0.001), executive function (p=0.031), and sleep quality vs. placebo" },
+          { title: "Effects of L-Theanine on Stress and Anxiety: A Systematic Review", authors: "Williams et al.", journal: "Plant Foods for Human Nutrition", year: 2020, doi: "10.1007/s11130-019-00771-5", pmid: "31758301", summary: "Systematic review of 9 randomized controlled trials concluded that 200-400mg/day of L-theanine assists in reducing stress and anxiety in people exposed to stressful conditions.", keyFinding: "200-400mg/day reduces stress and anxiety across multiple RCTs" }
+        ],
+        safetyNote: "L-Theanine has been granted GRAS status by the FDA. It is non-habit-forming and does not cause drowsiness. Suntheanine\u00ae is the most clinically studied form of L-theanine available."
+      },
+      {
+        id: "lions-mane", name: "Lion\u2019s Mane", branded: null, supplier: null, supplierLink: null,
+        dose: "500 mg", form: "Extract, 30% polysaccharides", category: "Medicinal Mushroom",
+        tagline: "The only mushroom clinically shown to support nerve growth.",
+        whyItsHere: "Lion\u2019s Mane (Hericium erinaceus) is a medicinal mushroom with a unique property: it stimulates the production of Nerve Growth Factor (NGF), a protein essential for the growth, maintenance, and survival of neurons. This makes it one of the only natural compounds that may actively support neuroplasticity, your brain\u2019s ability to form new connections and adapt.",
+        whatToExpect: "Lion\u2019s Mane is a long-game ingredient. While some people report improved clarity within the first week or two, the most meaningful benefits build over 8 to 16 weeks of consistent use. Clinical trials show progressive improvements in cognitive function scores over this period. Think of it as ongoing maintenance and construction for your neural networks.",
+        howItWorks: "Lion\u2019s Mane contains two groups of unique compounds: hericenones (found in the fruiting body) and erinacines (found in the mycelium). These compounds stimulate the synthesis of NGF, which promotes the growth and repair of neurons. Our extract is standardized to 30% polysaccharides, the bioactive fraction responsible for these effects.",
+        studies: [
+          { title: "Improving effects of Yamabushitake (Hericium erinaceus) on mild cognitive impairment", authors: "Mori et al.", journal: "Phytotherapy Research", year: 2009, doi: "10.1002/ptr.2634", pmid: "18844328", summary: "30 subjects (50-80y) with mild cognitive impairment took Lion\u2019s Mane or placebo for 16 weeks. The Lion\u2019s Mane group showed significantly increased cognitive function scores at weeks 8, 12, and 16. Scores declined after stopping supplementation.", keyFinding: "Significant cognitive improvement at weeks 8, 12, and 16 (scores increased with duration of intake)" },
+          { title: "Improvement of cognitive functions by oral intake of Hericium erinaceus", authors: "Saitsu et al.", journal: "Biomedical Research", year: 2019, doi: "10.2220/biomedres.40.125", pmid: "31413233", summary: "Randomized, double-blind, placebo-controlled study showing that 12 weeks of H. erinaceus supplementation significantly improved cognitive function scores on the Mini Mental State Examination.", keyFinding: "Significant improvement in MMSE scores after 12 weeks of supplementation" },
+          { title: "Acute and Chronic Effects of Lion\u2019s Mane Mushroom on Cognitive Function and Mood in Young Adults", authors: "Docherty et al.", journal: "Nutrients", year: 2023, doi: "10.3390/nu15224842", pmid: "38004235", summary: "41 healthy adults (18-45y) showed faster performance on cognitive tasks after a single dose and a trend toward reduced subjective stress after 28 days of supplementation.", keyFinding: "Improved speed of performance (p=0.005) after single dose; trend toward reduced stress at 28 days" }
+        ],
+        safetyNote: "Lion\u2019s Mane has been consumed as food in East Asia for centuries. Clinical trials report no significant adverse effects. It is considered very safe for long-term use."
+      },
+      {
+        id: "rhodiola", name: "Rhodiola rosea", branded: null, supplier: null, supplierLink: null,
+        dose: "150 mg", form: "Standardized to 3% rosavins, 1% salidroside", category: "Adaptogen",
+        tagline: "An ancient adaptogen that helps your brain perform under pressure.",
+        whyItsHere: "Rhodiola rosea is a true adaptogen, a class of herbs that help your body resist and adapt to physical and mental stress. It has been used for centuries in Scandinavian and Russian traditional medicine by workers, soldiers, and students to combat fatigue and maintain mental performance during extended periods of stress. We include it in EQ:Focus because modern life creates chronic low-grade stress that erodes cognitive performance over time.",
+        whatToExpect: "Rhodiola tends to work within the first 1 to 2 weeks. You may notice that you feel less mentally drained at the end of long days, that your focus holds up better during extended work sessions, and that you recover more quickly from mentally taxing tasks.",
+        howItWorks: "Rhodiola modulates the body\u2019s stress response by influencing the hypothalamic-pituitary-adrenal (HPA) axis and key neurotransmitters including serotonin, dopamine, and norepinephrine. Its active compounds, rosavins and salidroside, also have antioxidant and anti-inflammatory properties that protect brain cells from stress-induced damage. Our extract is standardized to 3% rosavins and 1% salidroside, the clinically validated ratio.",
+        studies: [
+          { title: "Rhodiola rosea in stress-induced fatigue: A double-blind cross-over study", authors: "Darbinyan et al.", journal: "Phytomedicine", year: 2000, doi: "10.1016/S0944-7113(00)80055-0", pmid: "11081987", summary: "56 young, healthy physicians on night duty took Rhodiola extract or placebo. The Rhodiola group showed statistically significant improvements in associative thinking, short-term memory, calculation, concentration, and audio-visual processing speed.", keyFinding: "Significant improvement in cognitive function during stressful night duty conditions" },
+          { title: "Rhodiola rosea and Alzheimer\u2019s Disease: From Farm to Pharmacy", authors: "Nabavi et al.", journal: "Phytotherapy Research", year: 2016, doi: "10.1002/ptr.5569", pmid: "27059687", summary: "Comprehensive review of Rhodiola\u2019s neuroprotective effects, documenting its antioxidant, anti-inflammatory, and neuroprotective mechanisms, with potential therapeutic applications for neurodegenerative conditions.", keyFinding: "Strong evidence for neuroprotection via suppression of oxidative stress and neuroinflammation" }
+        ],
+        safetyNote: "Rhodiola rosea has been used safely for centuries and is well-tolerated in clinical trials. No significant side effects were reported in the physicians\u2019 study above."
+      },
+      {
+        id: "nicotinamide-riboside", name: "Nicotinamide Riboside", branded: "Niagen\u00ae", supplier: "Niagen Bioscience (ChromaDex)", supplierLink: SUPPLIER_LINKS.niagen,
+        dose: "250 mg", form: "Nicotinamide Riboside Chloride", category: "NAD+ Precursor",
+        tagline: "Fuel for your cells\u2019 energy factories.",
+        whyItsHere: "Nicotinamide Riboside (NR) is a form of vitamin B3 that your body converts into NAD+ (nicotinamide adenine dinucleotide), a coenzyme present in every living cell. NAD+ is essential for converting food into cellular energy, repairing DNA, and maintaining healthy cell function. The problem: NAD+ levels decline significantly with age, contributing to cognitive decline, reduced energy, and accelerated aging. NR is the most efficient precursor for restoring NAD+ levels.",
+        whatToExpect: "NR works at the cellular level, so benefits are often described as a general improvement in energy, mental stamina, and resilience. Some people notice improvements within the first 2 weeks; clinical trials show measurable increases in blood NAD+ levels within the first month. The cognitive and neuroprotective benefits build over longer-term use.",
+        howItWorks: "NR enters cells and is converted through the NR kinase pathway into NAD+. This is a more efficient pathway than other NAD+ precursors like niacin or nicotinamide. Once NAD+ levels are elevated, it activates sirtuins (longevity enzymes) and supports mitochondrial function, your cells\u2019 energy production centers. In the brain, healthy mitochondrial function is critical for sustained mental performance.",
+        studies: [
+          { title: "A randomized placebo-controlled trial of nicotinamide riboside in older adults with mild cognitive impairment", authors: "Orr et al.", journal: "GeroScience", year: 2023, doi: "10.1007/s11357-023-00999-9", pmid: "37994989", summary: "20 subjects with MCI received NR (escalating to 1g/day) or placebo for 10 weeks. NR safely achieved a 2.6-fold increase in blood NAD+ levels (p<0.001), with no adverse effects. Cognitive metrics remained stable and epigenetic age markers showed reduction.", keyFinding: "2.6-fold increase in blood NAD+ (p<0.001); reduction in epigenetic age markers" },
+          { title: "Implications of NAD+ boosters in translational medicine", authors: "Kang et al.", journal: "European Journal of Clinical Investigation", year: 2020, doi: "10.1111/eci.13334", pmid: "32594513", summary: "Review of NAD+ booster research documenting declining NAD+ levels in aging and age-related diseases, and the therapeutic potential of NR for cardiometabolic and neurodegenerative conditions.", keyFinding: "NAD+ decline is a hallmark of aging; NR effectively restores NAD+ pools in human trials" }
+        ],
+        safetyNote: "Niagen\u00ae NR has been extensively studied in human clinical trials and holds multiple safety certifications. It was the first and only NAD+ precursor to receive two FDA GRAS notifications."
+      },
+      {
+        id: "vitamin-b6", name: "Vitamin B6", branded: null, supplier: null, supplierLink: null,
+        dose: "8 mg", form: "Pyridoxal-5-Phosphate (P-5-P), the active form", category: "B Vitamin",
+        tagline: "The active form your body can use immediately.",
+        whyItsHere: "Vitamin B6 is required for the synthesis of neurotransmitters including serotonin, dopamine, GABA, and norepinephrine. We use P-5-P, the bioactive coenzyme form, because it doesn\u2019t require liver conversion like standard pyridoxine. This means it gets to work faster and is better utilized by people with common genetic variations that can slow B6 activation.",
+        whatToExpect: "B6 works as part of the full B-complex in EQ:Focus. You likely won\u2019t notice it individually, but it\u2019s essential for the neurotransmitter production that drives mood, focus, and cognitive performance. Consistent use supports steady-state neurochemistry.",
+        howItWorks: "P-5-P serves as a coenzyme for over 100 enzyme reactions in the body, many of which are involved in amino acid metabolism and neurotransmitter synthesis. It\u2019s a rate-limiting cofactor for the enzymes that convert L-Tyrosine to dopamine and L-Tryptophan to serotonin.",
+        studies: [],
+        safetyNote: "Our 8mg dose is well within the safe range. The upper tolerable intake level for B6 is 100mg/day. P-5-P form reduces the risk of peripheral neuropathy associated with very high doses of synthetic pyridoxine."
+      },
+      {
+        id: "folate", name: "Folate", branded: "Quatrefolic\u00ae", supplier: "Gnosis by Lesaffre", supplierLink: SUPPLIER_LINKS.quatrefolic,
+        dose: "400 mcg", form: "L-5-Methyltetrahydrofolate (L-5-MTHF), the bioactive form", category: "B Vitamin",
+        tagline: "The folate form that works for everyone, even if your genes don\u2019t cooperate.",
+        whyItsHere: "Up to 60% of the population carries a variation in the MTHFR gene that reduces their ability to convert standard folic acid into the active form the body actually uses (L-5-MTHF). Quatrefolic\u00ae bypasses this problem entirely by providing the already-active form. Folate is essential for methylation, the biochemical process that regulates neurotransmitter production, DNA repair, and homocysteine metabolism.",
+        whatToExpect: "Like B6, folate is a foundational nutrient that supports the entire cognitive system. It works behind the scenes to keep methylation running properly, which in turn supports mood stability, mental clarity, and long-term brain health.",
+        howItWorks: "L-5-MTHF is the predominant form of folate in the bloodstream and the only form that crosses the blood-brain barrier. Once in the brain, it donates methyl groups essential for synthesizing neurotransmitters and maintaining DNA integrity. Quatrefolic\u00ae uses a glucosamine salt form for superior stability and bioavailability.",
+        studies: [
+          { title: "Folate in depression: efficacy, safety, differences in formulations, and clinical issues", authors: "Fava & Mischoulon", journal: "The Journal of Clinical Psychiatry", year: 2009, doi: "10.4088/JCP.8157su1c.03", pmid: "19909688", summary: "Comprehensive review demonstrating that L-methylfolate (5-MTHF) shows efficacy as adjunctive therapy for depression, improves cognitive function in elderly patients with folate deficiency, and is more bioavailable than folic acid in individuals with MTHFR polymorphisms.", keyFinding: "L-5-MTHF more bioavailable than folic acid, especially for those with MTHFR variations" }
+        ],
+        safetyNote: "Quatrefolic\u00ae has received a favorable GRAS opinion. Unlike synthetic folic acid, L-5-MTHF does not mask B12 deficiency and does not accumulate as unmetabolized folic acid in the bloodstream."
+      },
+      {
+        id: "vitamin-b12", name: "Vitamin B12", branded: null, supplier: null, supplierLink: null,
+        dose: "500 mcg", form: "Methylcobalamin (methyl B12)", category: "B Vitamin",
+        tagline: "The nerve-protecting B vitamin in its most brain-ready form.",
+        whyItsHere: "B12 is critical for maintaining the myelin sheath (the protective coating around nerve fibers), synthesizing neurotransmitters, and supporting healthy homocysteine metabolism. We use methylcobalamin, the neurologically active form, rather than the more common (and cheaper) cyanocobalamin, because it participates directly in methylation reactions in the brain.",
+        whatToExpect: "B12 supports sustained neurological health. If you\u2019ve been even mildly deficient (common in vegetarians, older adults, and those on certain medications), you may notice improved energy and mental clarity within weeks.",
+        howItWorks: "Methylcobalamin works as a cofactor for the enzyme methionine synthase, which converts homocysteine to methionine. This reaction is critical for producing S-adenosylmethionine (SAMe), the body\u2019s primary methyl donor, which is needed for neurotransmitter synthesis and DNA maintenance.",
+        studies: [],
+        safetyNote: "B12 is water-soluble with no established upper intake limit due to its excellent safety profile. Our 500mcg dose ensures adequate levels even for those with reduced absorption."
+      },
+      {
+        id: "b-vitamins-complex", name: "B Vitamins (B1, B2, B5)", branded: null, supplier: null, supplierLink: null,
+        dose: "B1: 10mg, B2: 10mg, B5: 15mg", form: "B1: Thiamine HCl, B2: Riboflavin-5-Phosphate (active), B5: Calcium D-Pantothenate", category: "B Vitamins",
+        tagline: "The energy trio that keeps your brain\u2019s engine running.",
+        whyItsHere: "B vitamins work as a team. B1 (thiamine) is essential for glucose metabolism in the brain. B2 (riboflavin) supports the electron transport chain for cellular energy production. B5 (pantothenic acid) is required for synthesizing coenzyme A, which is central to energy metabolism and acetylcholine production. Together with B6, folate, and B12, they form a complete B-complex that supports every aspect of brain energy and neurotransmitter production.",
+        whatToExpect: "These B vitamins support the energy metabolism that powers everything else in EQ:Focus. They work synergistically with the other ingredients to ensure your brain has the energy it needs for sustained cognitive performance.",
+        howItWorks: "B1 enables the conversion of glucose to ATP (energy) through the pyruvate dehydrogenase complex. B2 (as riboflavin-5-phosphate, the active form) serves as a cofactor in the electron transport chain and supports the recycling of other B vitamins. B5 is the precursor to coenzyme A, which is required for the Krebs cycle and for synthesizing acetylcholine.",
+        studies: [],
+        safetyNote: "All three B vitamins are water-soluble and well-tolerated at these doses. B2 as riboflavin-5-phosphate is the pre-activated form for improved bioavailability."
+      }
+    ];
+
+    const RESTORE_INGREDIENTS = [
+      {
+        id: "magnesium-l-threonate", name: "Magnesium L-Threonate", branded: "Magtein\u00ae", supplier: "AIDP", supplierLink: SUPPLIER_LINKS.magtein,
+        dose: "1,000 mg (72 mg elemental Mg)", form: "Magnesium L-Threonate", category: "Mineral",
+        tagline: "The only form of magnesium proven to cross the blood-brain barrier.",
+        whyItsHere: "Most magnesium supplements help your muscles and bones but barely reach your brain. Magnesium L-Threonate was developed at MIT specifically to solve this problem. It\u2019s the only form shown to effectively raise brain magnesium levels, which supports synaptic density, neural plasticity, and healthy sleep architecture. Nearly 50% of Americans are magnesium-deficient, and the brain is one of the first organs to suffer.",
+        whatToExpect: "Many people notice improved sleep quality within the first 1 to 2 weeks. Over 4 weeks, clinical trials show measurable improvements in memory and cognitive function. You may find it easier to wind down at night and wake up feeling more mentally refreshed.",
+        howItWorks: "The L-threonate molecule acts as a carrier that helps magnesium cross the blood-brain barrier more effectively than other forms. Once in the brain, magnesium regulates NMDA receptors (involved in learning and memory) and supports synaptic plasticity. It also promotes relaxation by activating the parasympathetic nervous system and regulating GABA, your brain\u2019s calming neurotransmitter.",
+        studies: [
+          { title: "Magtein-Based Formula Improves Brain Cognitive Functions in Healthy Chinese Adults", authors: "Zhang et al.", journal: "Nutrients", year: 2022, doi: "10.3390/nu14245235", pmid: "36558392", summary: "109 healthy adults (18-65y) received Magtein\u00ae-based formula or placebo for 30 days. The supplementation group showed significant improvements across all 5 subcategories of The Clinical Memory Test and overall memory quotient scores. Older participants showed greater improvement.", keyFinding: "Significant improvement in all memory subcategories and overall memory quotient vs. placebo in just 30 days" }
+        ],
+        safetyNote: "Magtein\u00ae has been granted GRAS status and has been studied in multiple human clinical trials with no significant adverse effects."
+      },
+      {
+        id: "l-ornithine", name: "L-Ornithine", branded: null, supplier: null, supplierLink: null,
+        dose: "400 mg", form: "L-Ornithine HCl", category: "Amino Acid",
+        tagline: "The stress-lowering amino acid that helps you actually recover overnight.",
+        whyItsHere: "L-Ornithine plays a key role in the urea cycle (ammonia detoxification) and has been shown to lower cortisol levels and improve perceived sleep quality. After a mentally demanding day, elevated cortisol can keep your nervous system in \"on\" mode, preventing the deep restorative sleep your brain needs to consolidate memories and clear metabolic waste. L-Ornithine helps shift the balance toward recovery.",
+        whatToExpect: "Over 8 weeks of use, clinical studies show reduced cortisol levels, decreased feelings of anger and tension, and improved subjective sleep quality. You may notice that you wake up feeling more rested and that your overall stress resilience improves.",
+        howItWorks: "L-Ornithine participates in the urea cycle to help clear ammonia from the body, a byproduct of protein metabolism that can contribute to fatigue. It also modulates the HPA axis (your stress response system), reducing cortisol output and shifting the cortisol-to-DHEA ratio in a favorable direction. This creates a more recovery-friendly hormonal environment during sleep.",
+        studies: [
+          { title: "Randomised controlled trial of the effects of L-ornithine on stress markers and sleep quality in healthy workers", authors: "Miyake et al.", journal: "Nutrition Journal", year: 2014, doi: "10.1186/1475-2891-13-53", pmid: "24889392", summary: "52 healthy Japanese adults experiencing mild stress and fatigue took 400mg/day L-Ornithine or placebo for 8 weeks. The L-Ornithine group showed significantly decreased cortisol levels and cortisol/DHEA-S ratio, reduced anger, and improved sleep quality.", keyFinding: "Significant reduction in serum cortisol, improved cortisol/DHEA-S ratio, better sleep quality vs. placebo" }
+        ],
+        safetyNote: "L-Ornithine is a naturally occurring amino acid with a strong safety profile. The 400mg dose used in EQ:Restore matches the clinically validated dose."
+      },
+      {
+        id: "bacopa", name: "Bacopa monnieri", branded: null, supplier: null, supplierLink: null,
+        dose: "300 mg", form: "Extract, 50% bacosides", category: "Adaptogenic Herb",
+        tagline: "3,000 years of Ayurvedic wisdom, backed by modern meta-analyses.",
+        whyItsHere: "Bacopa monnieri has been used in Ayurvedic medicine for millennia as a \"medhya rasayana\" (intellect rejuvenator). Modern science has validated these traditional uses: meta-analyses of randomized controlled trials confirm that Bacopa improves cognitive processing speed, attention, and memory. We include it in EQ:Restore because its benefits compound with consistent, long-term use, making the PM dose ideal.",
+        whatToExpect: "Bacopa is a slow-build ingredient. Clinical benefits typically emerge after 8 to 12 weeks of daily use. You may notice improvements in how quickly you process information, how easily you recall details, and your overall mental stamina. Some people also report reduced anxiety.",
+        howItWorks: "Bacopa\u2019s active compounds, bacosides A and B, have antioxidant properties that protect brain cells from oxidative stress. They also enhance nerve impulse transmission by supporting the growth of nerve endings (dendrites), increase serotonin and acetylcholine levels, and modulate dopamine activity. Our extract is standardized to 50% bacosides for consistent potency.",
+        studies: [
+          { title: "Effects of Bacopa monnieri on cognitive performance, anxiety, and depression in the elderly", authors: "Calabrese et al.", journal: "Journal of Alternative and Complementary Medicine", year: 2008, doi: "10.1089/acm.2008.0018", pmid: "18611150", summary: "54 healthy elderly participants (mean age 73.5) took 300mg/day Bacopa or placebo for 12 weeks. The Bacopa group showed enhanced word recall memory, improved Stroop performance (ability to ignore irrelevant information), and decreased depression and anxiety scores.", keyFinding: "Enhanced delayed word recall, improved Stroop performance, reduced depression and anxiety vs. placebo" },
+          { title: "Meta-analysis of randomized controlled trials on cognitive effects of Bacopa monnieri", authors: "Kongkeaw et al.", journal: "Journal of Ethnopharmacology", year: 2014, doi: "10.1016/j.jep.2013.11.008", pmid: "24252493", summary: "Meta-analysis of 9 randomized controlled trials (518 subjects) found that Bacopa significantly improved cognitive processing speed (Trail B test: -17.9ms, p<0.001) and choice reaction time (-10.6ms, p<0.001).", keyFinding: "Significant improvement in speed of attention across 9 RCTs (p<0.001)" },
+          { title: "Systematic review of Bacopa monnieri in child and adolescent populations", authors: "Kean et al.", journal: "Complementary Therapies in Medicine", year: 2016, doi: "10.1016/j.ctim.2016.09.002", pmid: "27912958", summary: "Systematic review of 5 studies demonstrating significant improvements in language, memory, hyperactivity, and attention-deficit domains, with an overall effect size of d=0.42. Only 2.3% of participants reported mild side effects.", keyFinding: "Consistent improvements across language, memory, and attention domains (mean effect size d=0.42)" }
+        ],
+        safetyNote: "Bacopa has been used safely for thousands of years. Clinical trials report minimal side effects (primarily mild stomach upset in a small percentage of participants). Taking it with food or in the evening can minimize any GI sensitivity."
+      },
+      {
+        id: "l-theanine-restore", name: "L-Theanine", branded: "Suntheanine\u00ae", supplier: "Taiyo International", supplierLink: SUPPLIER_LINKS.suntheanine,
+        dose: "200 mg", form: "L-isomer (enzymatically produced)", category: "Amino Acid",
+        tagline: "Your nighttime dose for deeper, more restorative sleep.",
+        whyItsHere: "In EQ:Restore, L-Theanine serves a different role than in EQ:Focus. At this higher dose (200mg vs. 150mg in Focus), taken in the evening, it promotes the relaxation response that helps you transition into restful sleep. It works synergistically with Magnesium L-Threonate and Saffron to create a calming environment for your nervous system.",
+        whatToExpect: "Within the first few nights, you may notice it\u2019s easier to quiet your mind before sleep. Over 4 weeks, clinical studies show significant improvements in sleep latency (time to fall asleep), sleep disturbance, and overall sleep quality.",
+        howItWorks: "At this dose, L-Theanine increases alpha brain wave activity, which is associated with a relaxed but alert state (the precursor to sleep). It also increases GABA production, your brain\u2019s primary inhibitory neurotransmitter, helping to calm neural activity. The higher evening dose provides a stronger relaxation effect without causing sedation.",
+        studies: [
+          { title: "Effects of L-Theanine Administration on Stress-Related Symptoms and Cognitive Functions in Healthy Adults", authors: "Hidese et al.", journal: "Nutrients", year: 2019, doi: "10.3390/nu11102362", pmid: "31623400", summary: "In addition to cognitive benefits, this trial showed that L-theanine significantly improved sleep quality scores (PSQI), with specific reductions in sleep latency, sleep disturbance, and need for sleep medication.", keyFinding: "Significant improvement in sleep quality (PSQI, p=0.013), sleep latency, and sleep disturbance vs. placebo" }
+        ],
+        safetyNote: "Same excellent safety profile as noted in EQ:Focus. The combined daily dose across both products (350mg) remains well within studied safe ranges of up to 900mg/day."
+      },
+      {
+        id: "saffron", name: "Saffron Extract", branded: "affron\u00ae", supplier: "Pharmactive Biotech", supplierLink: SUPPLIER_LINKS.affron,
+        dose: "28 mg", form: "Standardized to 3.5% Lepticrosalides\u00ae", category: "Botanical",
+        tagline: "The world\u2019s most precious spice, clinically proven for mood and sleep.",
+        whyItsHere: "Saffron (Crocus sativus) has been used therapeutically for thousands of years, and modern clinical trials have validated its mood-enhancing and sleep-improving properties. affron\u00ae is a patented saffron extract standardized to a specific blend of bioactives called Lepticrosalides\u00ae, which ensures consistent potency and clinical efficacy. We include it in EQ:Restore because better mood and better sleep form a virtuous cycle.",
+        whatToExpect: "Clinical trials show significant improvements in mood (reduced negative mood, anxiety, and stress-related symptoms) within 4 weeks at the 28mg dose. Sleep quality improvements, including better subjective sleep ratings and increased evening melatonin levels, were also documented at this dose. Many users describe waking up in a noticeably better mood.",
+        howItWorks: "affron\u00ae\u2019s active compounds (crocins, safranal, and crocetin) work through multiple mechanisms. They modulate serotonin reuptake (similar in concept to SSRIs, but gentler), support GABA activity, and have been shown to increase evening melatonin production, your body\u2019s natural sleep hormone. The Lepticrosalides\u00ae standardization ensures the right ratio of these compounds for clinical effect.",
+        studies: [
+          { title: "affron\u00ae improves mood in healthy adults over 4 weeks", authors: "Kell et al.", journal: "Complementary Therapies in Medicine", year: 2017, doi: "10.1016/j.ctim.2017.06.001", pmid: "28735826", summary: "128 participants with self-reported low mood took affron\u00ae at 28mg/day, 22mg/day, or placebo for 4 weeks. The 28mg dose produced a large effect size for mood improvement (d=-1.10) with significant decreases in negative mood, stress, and anxiety symptoms.", keyFinding: "Large effect size for mood improvement at 28mg/day (d=-1.10, p<0.001) vs. placebo" },
+          { title: "Evening saffron extract (affron\u00ae) on sleep quality, cortisol, and melatonin in adults with poor sleep", authors: "Lopresti et al.", journal: "Sleep Medicine", year: 2021, doi: "10.1016/j.sleep.2021.08.001", pmid: "34438361", summary: "120 adults with poor sleep received placebo, 14mg, or 28mg affron\u00ae for 28 days. Both saffron doses improved sleep quality ratings, mood after waking, and insomnia scores, with associated increases in evening melatonin concentrations.", keyFinding: "Improved sleep quality, reduced insomnia symptoms, and increased evening melatonin vs. placebo" },
+          { title: "Mental and physical effects of saffron extract (affron\u00ae) in recreationally-active adults", authors: "Lopresti & Smith", journal: "Journal of the International Society of Sports Nutrition", year: 2022, doi: "10.1080/15502783.2022.2083455", pmid: "35813851", summary: "62 adults taking 28mg/day affron\u00ae for 6 weeks showed improvements in exercise enjoyment and heart rate variability, suggesting broader benefits for stress resilience and recovery.", keyFinding: "Increased exercise enjoyment (p=0.009) and heart rate variability (p=0.001) in male participants" }
+        ],
+        safetyNote: "affron\u00ae has been studied in multiple clinical trials with no reported significant adverse effects. It is non-habit-forming and safe for long-term daily use."
+      },
+      {
+        id: "zinc", name: "Zinc", branded: null, supplier: null, supplierLink: null,
+        dose: "15 mg", form: "Bisglycinate chelate", category: "Mineral",
+        tagline: "Essential for brain signaling, immune function, and over 300 enzymatic reactions.",
+        whyItsHere: "Zinc is involved in over 300 enzymatic reactions and is particularly concentrated in the brain, where it plays a role in neurotransmitter release, synaptic plasticity, and neuronal signaling. It\u2019s also essential for immune function. We use bisglycinate chelate, a highly bioavailable form that is gentle on the stomach, and pair it with copper to maintain proper mineral balance.",
+        whatToExpect: "Zinc supports overall brain health and immune resilience. If you\u2019ve been zinc-deficient (common in those who eat little red meat or shellfish), you may notice improved immune function and better mood stability.",
+        howItWorks: "In the brain, zinc ions are stored in synaptic vesicles and released during neural activity to modulate NMDA and GABA receptors. It also acts as an antioxidant, protecting neurons from oxidative damage, and supports the enzymes involved in DNA repair and protein synthesis.",
+        studies: [],
+        safetyNote: "Our 15mg dose is within the recommended dietary allowance (8-11mg) to slightly above, providing a therapeutic buffer. We include 1.5mg copper to prevent zinc-induced copper deficiency, a well-known interaction."
+      },
+      {
+        id: "copper", name: "Copper", branded: null, supplier: null, supplierLink: null,
+        dose: "1.5 mg", form: "Bisglycinate chelate", category: "Mineral",
+        tagline: "The zinc companion that keeps your mineral balance in check.",
+        whyItsHere: "Copper is included specifically to maintain the zinc-to-copper ratio. When you supplement zinc without copper, zinc can interfere with copper absorption over time, leading to copper deficiency. Copper is also essential in its own right: it\u2019s needed for energy production (cytochrome c oxidase), iron metabolism (ceruloplasmin), and the synthesis of neurotransmitters including norepinephrine.",
+        whatToExpect: "Copper works behind the scenes to maintain mineral homeostasis. You won\u2019t notice it directly, but it\u2019s essential for safe, long-term zinc supplementation.",
+        howItWorks: "Copper and zinc compete for absorption in the gut via metallothionein. By including copper in the proper ratio (roughly 10:1 zinc to copper), we prevent the competitive inhibition that would otherwise deplete your copper stores over time.",
+        studies: [],
+        safetyNote: "Our 1.5mg dose is within the recommended dietary allowance (0.9mg) and well below the upper tolerable intake level (10mg). Bisglycinate chelate form ensures gentle absorption."
+      },
+      {
+        id: "vitamin-d3", name: "Vitamin D3", branded: null, supplier: null, supplierLink: null,
+        dose: "1,000 IU (25 mcg)", form: "Cholecalciferol (lichen-derived, vegan)", category: "Vitamin",
+        tagline: "The sunshine vitamin, sourced from lichen for year-round brain support.",
+        whyItsHere: "Vitamin D receptors are found throughout the brain, and D3 plays a role in neuroprotection, neurotransmitter synthesis, and immune regulation. An estimated 42% of American adults are vitamin D deficient, with rates even higher among those who work indoors or live in northern climates. We use a lichen-derived D3, making EQ:Restore suitable for vegans, and pair it with K2 for optimal calcium metabolism.",
+        whatToExpect: "If you\u2019re deficient (which many people are), optimizing your vitamin D status can improve mood, energy, immune resilience, and sleep quality over 4 to 8 weeks.",
+        howItWorks: "Vitamin D3 is converted in the liver to 25-hydroxyvitamin D, then activated in the kidneys (and brain) to 1,25-dihydroxyvitamin D. In the brain, it modulates the expression of genes involved in neuroprotection, calcium signaling, and neurotransmitter synthesis. It also supports serotonin production, connecting it to mood regulation.",
+        studies: [],
+        safetyNote: "1,000 IU is a conservative, safe dose well below the upper tolerable intake level of 4,000 IU/day. Lichen-derived D3 provides the same cholecalciferol form found in lanolin but is suitable for plant-based diets."
+      },
+      {
+        id: "vitamin-k2", name: "Vitamin K2", branded: null, supplier: null, supplierLink: null,
+        dose: "100 mcg", form: "MK-7 (natto-derived, menaquinone-7)", category: "Vitamin",
+        tagline: "The vitamin D companion that directs calcium where it belongs.",
+        whyItsHere: "Vitamin K2 works synergistically with Vitamin D3. While D3 increases calcium absorption, K2 ensures that calcium gets deposited in your bones and teeth, not in your arteries and soft tissues. Beyond this calcium-directing role, K2 also has neuroprotective properties, supporting sphingolipid metabolism in the brain. We use the MK-7 form because it has the longest half-life and highest bioavailability of all K2 forms.",
+        whatToExpect: "K2 works synergistically with D3 for optimal mineral metabolism. Its benefits are preventive and long-term rather than immediately noticeable.",
+        howItWorks: "K2 activates two critical proteins: osteocalcin (which binds calcium into bone) and matrix Gla protein (MGP, which prevents calcium from depositing in arteries). MK-7 from natto fermentation has a 72-hour half-life, meaning a single daily dose maintains consistently active levels of these proteins.",
+        studies: [],
+        safetyNote: "MK-7 is safe at this dose. Note: if you take blood thinners (warfarin/Coumadin), consult your healthcare provider before supplementing with K2, as it can affect INR levels."
+      }
+    ];
+
+    // ---- Light Theme Colors ----
+    const sciColors = {
+      bg: "#FDFBF7",
+      surface: "#FFFFFF",
+      surfaceLight: "#F8FAFB",
+      border: "#E8EDF2",
+      accent: "#2A9D8F",
+      accentLight: "#238276",
+      accentGlow: "rgba(42, 157, 143, 0.12)",
+      text: "#2C3E50",
+      textMuted: "#5A6C7D",
+      textDim: "#8B9AAD",
+      focus: "#2A9D8F",
+      restore: "#7C5CBF",
+      heading: "#1A2332",
+      tag: "#F8FAFB",
+      studyBg: "#F8FAFB",
+      warning: "#D4940A",
+    };
+
+    const sciStyles = {
+      container: {
+        maxWidth: 800,
+        margin: "0 auto",
+        padding: "0 0 40px",
+      },
+      hero: {
+        padding: "24px 0 24px",
+        borderBottom: "1px solid " + sciColors.border,
+        marginBottom: 32,
+      },
+      heroTitle: {
+        fontSize: 32,
+        fontWeight: 600,
+        letterSpacing: "-0.02em",
+        marginBottom: 8,
+        color: sciColors.heading,
+      },
+      heroSub: {
+        fontSize: 16,
+        color: sciColors.textMuted,
+        maxWidth: 600,
+        marginBottom: 20,
+      },
+      productBadge: function(color) { return {
+        display: "inline-block",
+        padding: "4px 12px",
+        borderRadius: 20,
+        fontSize: 12,
+        fontWeight: 600,
+        letterSpacing: "0.05em",
+        textTransform: "uppercase",
+        background: color + "18",
+        color: color,
+        marginBottom: 12,
+      }; },
+      tabBar: {
+        display: "flex",
+        gap: 12,
+        justifyContent: "center",
+        marginBottom: 32,
+        paddingBottom: 20,
+        borderBottom: "1px solid " + sciColors.border,
+      },
+      tabBtn: function(active, color) { return {
+        padding: "8px 20px",
+        borderRadius: 8,
+        border: active ? "2px solid " + color : "2px solid " + sciColors.border,
+        background: active ? color + "12" : "transparent",
+        color: active ? color : sciColors.textMuted,
+        fontSize: 14,
+        fontWeight: 600,
+        cursor: "pointer",
+        transition: "all 0.2s",
+      }; },
+      ingredientCard: {
+        background: sciColors.surface,
+        border: "1px solid " + sciColors.border,
+        borderRadius: 12,
+        padding: 24,
+        marginBottom: 12,
+        cursor: "pointer",
+        transition: "all 0.2s",
+      },
+      ingredientCardHover: {
+        borderColor: sciColors.accent,
+        boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
+      },
+      cardRow: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "flex-start",
+        gap: 12,
+      },
+      cardName: {
+        fontSize: 17,
+        fontWeight: 600,
+        color: sciColors.heading,
+        marginBottom: 2,
+      },
+      cardBranded: {
+        fontSize: 13,
+        color: sciColors.accent,
+        fontWeight: 500,
+        marginBottom: 4,
+      },
+      cardTagline: {
+        fontSize: 14,
+        color: sciColors.textMuted,
+        lineHeight: 1.5,
+      },
+      cardDose: {
+        fontSize: 13,
+        color: sciColors.textMuted,
+        fontWeight: 500,
+        whiteSpace: "nowrap",
+        background: sciColors.tag,
+        padding: "4px 10px",
+        borderRadius: 6,
+        border: "1px solid " + sciColors.border,
+      },
+      backBtn: {
+        display: "inline-flex",
+        alignItems: "center",
+        gap: 6,
+        fontSize: 13,
+        color: sciColors.accent,
+        cursor: "pointer",
+        marginBottom: 20,
+        padding: "6px 0",
+        border: "none",
+        background: "none",
+        fontWeight: 500,
+      },
+      sectionTitle: {
+        fontSize: 13,
+        fontWeight: 600,
+        letterSpacing: "0.08em",
+        textTransform: "uppercase",
+        color: sciColors.textDim,
+        marginBottom: 10,
+        marginTop: 32,
+      },
+      bodyText: {
+        fontSize: 15,
+        lineHeight: 1.75,
+        color: sciColors.text,
+      },
+      metaGrid: {
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gap: 10,
+        marginBottom: 28,
+      },
+      metaItem: {
+        background: sciColors.surfaceLight,
+        borderRadius: 8,
+        padding: "12px 14px",
+        border: "1px solid " + sciColors.border,
+      },
+      metaLabel: {
+        fontSize: 11,
+        fontWeight: 600,
+        letterSpacing: "0.08em",
+        textTransform: "uppercase",
+        color: sciColors.textDim,
+        marginBottom: 4,
+      },
+      metaValue: {
+        fontSize: 14,
+        color: sciColors.heading,
+        fontWeight: 500,
+      },
+      studyCard: {
+        background: sciColors.studyBg,
+        border: "1px solid " + sciColors.border,
+        borderRadius: 10,
+        padding: 20,
+        marginBottom: 12,
+      },
+      studyTitle: {
+        fontSize: 14,
+        fontWeight: 600,
+        color: sciColors.heading,
+        marginBottom: 6,
+        lineHeight: 1.45,
+      },
+      studyMeta: {
+        fontSize: 12,
+        color: sciColors.textDim,
+        marginBottom: 10,
+      },
+      studySummary: {
+        fontSize: 13,
+        color: sciColors.textMuted,
+        lineHeight: 1.6,
+        marginBottom: 10,
+      },
+      keyFinding: {
+        fontSize: 13,
+        color: sciColors.accent,
+        fontWeight: 500,
+        padding: "8px 12px",
+        background: sciColors.accentGlow,
+        borderRadius: 6,
+        borderLeft: "3px solid " + sciColors.accent,
+        marginBottom: 8,
+      },
+      doiLink: {
+        fontSize: 12,
+        color: sciColors.accent,
+        textDecoration: "none",
+      },
+      supplierLink: {
+        display: "inline-flex",
+        alignItems: "center",
+        gap: 6,
+        padding: "8px 16px",
+        borderRadius: 8,
+        border: "1px solid " + sciColors.accent,
+        color: sciColors.accent,
+        fontSize: 13,
+        fontWeight: 500,
+        textDecoration: "none",
+        marginTop: 8,
+        transition: "all 0.2s",
+      },
+      safetyBox: {
+        background: sciColors.warning + "08",
+        border: "1px solid " + sciColors.warning + "40",
+        borderRadius: 8,
+        padding: "16px 20px",
+        marginTop: 32,
+      },
+      safetyTitle: {
+        fontSize: 13,
+        fontWeight: 600,
+        color: sciColors.warning,
+        marginBottom: 6,
+      },
+      safetyText: {
+        fontSize: 13,
+        color: sciColors.textMuted,
+        lineHeight: 1.6,
+      },
+      footer: {
+        borderTop: "1px solid " + sciColors.border,
+        padding: "24px 0",
+        marginTop: 40,
+        textAlign: "center",
+        fontSize: 12,
+        color: sciColors.textDim,
+      },
+      pubmedAttr: {
+        fontSize: 11,
+        color: sciColors.textDim,
+        marginTop: 4,
+        fontStyle: "italic",
+      },
+    };
+
+    function StudyCard({ study }) {
+      return (
+        <div style={sciStyles.studyCard}>
+          <div style={sciStyles.studyTitle}>{study.title}</div>
+          <div style={sciStyles.studyMeta}>
+            {study.authors} &middot; {study.journal} ({study.year})
+          </div>
+          <div style={sciStyles.studySummary}>{study.summary}</div>
+          <div style={sciStyles.keyFinding}>{study.keyFinding}</div>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 8, flexWrap: "wrap", gap: 8 }}>
+            <a href={"https://doi.org/" + study.doi} target="_blank" rel="noopener noreferrer" style={sciStyles.doiLink}>
+              DOI: {study.doi} &#8599;
+            </a>
+            <a href={"https://pubmed.ncbi.nlm.nih.gov/" + study.pmid + "/"} target="_blank" rel="noopener noreferrer" style={sciStyles.doiLink}>
+              PubMed: {study.pmid} &#8599;
+            </a>
+          </div>
+          <div style={sciStyles.pubmedAttr}>Study retrieved from PubMed / National Library of Medicine</div>
+        </div>
+      );
+    }
+
+    function IngredientPage({ ingredient, product, onBack }) {
+      var productColor = product === "focus" ? sciColors.focus : sciColors.restore;
+      var productLabel = product === "focus" ? "EQ:Focus (AM)" : "EQ:Restore (PM)";
+      return (
+        <div style={sciStyles.container}>
+          <button style={sciStyles.backBtn} onClick={onBack}>
+            &larr; Back to {productLabel}
+          </button>
+          <div style={sciStyles.productBadge(productColor)}>{productLabel}</div>
+          <h1 style={{ ...sciStyles.heroTitle, fontSize: 28 }}>
+            {ingredient.name}
+            {ingredient.branded && <span style={{ color: productColor, marginLeft: 8, fontSize: 18 }}>{ingredient.branded}</span>}
+          </h1>
+          <p style={{ ...sciStyles.heroSub, marginBottom: 28 }}>{ingredient.tagline}</p>
+
+          <div style={sciStyles.metaGrid}>
+            <div style={sciStyles.metaItem}>
+              <div style={sciStyles.metaLabel}>Dose per serving</div>
+              <div style={sciStyles.metaValue}>{ingredient.dose}</div>
+            </div>
+            <div style={sciStyles.metaItem}>
+              <div style={sciStyles.metaLabel}>Form</div>
+              <div style={sciStyles.metaValue}>{ingredient.form}</div>
+            </div>
+            <div style={sciStyles.metaItem}>
+              <div style={sciStyles.metaLabel}>Category</div>
+              <div style={sciStyles.metaValue}>{ingredient.category}</div>
+            </div>
+            <div style={sciStyles.metaItem}>
+              <div style={sciStyles.metaLabel}>Supplier</div>
+              <div style={sciStyles.metaValue}>{ingredient.supplier || "Generic (multi-source)"}</div>
+            </div>
+          </div>
+
+          <div style={sciStyles.sectionTitle}>Why It&rsquo;s in {product === "focus" ? "EQ:Focus" : "EQ:Restore"}</div>
+          <p style={sciStyles.bodyText}>{ingredient.whyItsHere}</p>
+
+          <div style={sciStyles.sectionTitle}>How It Works</div>
+          <p style={sciStyles.bodyText}>{ingredient.howItWorks}</p>
+
+          <div style={sciStyles.sectionTitle}>What to Expect</div>
+          <p style={sciStyles.bodyText}>{ingredient.whatToExpect}</p>
+
+          {ingredient.studies.length > 0 && (
+            <>
+              <div style={sciStyles.sectionTitle}>Clinical Evidence</div>
+              <p style={{ fontSize: 13, color: sciColors.textMuted, marginBottom: 16 }}>
+                Based on articles retrieved from PubMed, National Library of Medicine.
+              </p>
+              {ingredient.studies.map(function(s, i) { return <StudyCard key={i} study={s} />; })}
+            </>
+          )}
+
+          {ingredient.supplierLink && (
+            <>
+              <div style={sciStyles.sectionTitle}>Supplier Transparency</div>
+              <p style={{ fontSize: 14, color: sciColors.textMuted, marginBottom: 8 }}>
+                We source {ingredient.branded || ingredient.name} directly from {ingredient.supplier}. Learn more about their research, quality standards, and certifications:
+              </p>
+              <a href={ingredient.supplierLink} target="_blank" rel="noopener noreferrer" style={sciStyles.supplierLink}>
+                Visit {ingredient.supplier} &#8599;
+              </a>
+            </>
+          )}
+
+          <div style={sciStyles.safetyBox}>
+            <div style={sciStyles.safetyTitle}>Safety Profile</div>
+            <div style={sciStyles.safetyText}>{ingredient.safetyNote}</div>
+          </div>
+
+          <div style={sciStyles.footer}>
+            &copy; {new Date().getFullYear()} BalanceEQ. These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
+          </div>
+        </div>
+      );
+    }
+
+    function ProductOverview({ product, ingredients, onIngredientClick }) {
+      var [hoveredId, setHoveredId] = useState(null);
+      var isFocus = product === "focus";
+      var productColor = isFocus ? sciColors.focus : sciColors.restore;
+      var productName = isFocus ? "EQ:Focus" : "EQ:Restore";
+      var productTime = isFocus ? "AM" : "PM";
+      var productDesc = isFocus
+        ? "Your morning cognitive stack, designed for sustained mental clarity, sharp focus, and stress resilience throughout the day. Every ingredient is dosed at clinically studied levels and chosen for how it works with the rest of the formula."
+        : "Your evening recovery stack, designed to lower cortisol, deepen sleep quality, and support overnight brain repair. Every ingredient is dosed at clinically studied levels and chosen for how it works with the rest of the formula.";
+
+      return (
+        <div style={sciStyles.container}>
+          <div style={sciStyles.hero}>
+            <div style={sciStyles.productBadge(productColor)}>{productTime} Formula</div>
+            <h2 style={sciStyles.heroTitle}>{productName}</h2>
+            <p style={sciStyles.heroSub}>{productDesc}</p>
+            <div style={{ display: "flex", gap: 16, fontSize: 13, color: sciColors.textMuted, flexWrap: "wrap" }}>
+              <span>Serving size: 2 capsules daily</span>
+              <span>&middot;</span>
+              <span>{ingredients.length} active ingredients</span>
+              <span>&middot;</span>
+              <span>{ingredients.filter(function(i) { return i.studies.length > 0; }).length} with linked clinical studies</span>
+            </div>
+          </div>
+
+          <div style={sciStyles.sectionTitle}>Ingredients</div>
+          <p style={{ fontSize: 14, color: sciColors.textMuted, marginBottom: 16 }}>
+            Click any ingredient for the full science deep-dive, clinical studies, and supplier information.
+          </p>
+
+          {ingredients.map(function(ing) {
+            return (
+              <div
+                key={ing.id}
+                style={{
+                  ...sciStyles.ingredientCard,
+                  ...(hoveredId === ing.id ? sciStyles.ingredientCardHover : {}),
+                }}
+                onMouseEnter={function() { setHoveredId(ing.id); }}
+                onMouseLeave={function() { setHoveredId(null); }}
+                onClick={function() { onIngredientClick(ing.id); }}
+              >
+                <div style={sciStyles.cardRow}>
+                  <div style={{ flex: 1 }}>
+                    <div style={sciStyles.cardName}>{ing.name}</div>
+                    {ing.branded && <div style={sciStyles.cardBranded}>{ing.branded} by {ing.supplier}</div>}
+                    <div style={sciStyles.cardTagline}>{ing.tagline}</div>
+                    {ing.studies.length > 0 && (
+                      <div style={{ marginTop: 6, fontSize: 12, color: sciColors.textDim }}>
+                        {ing.studies.length} clinical {ing.studies.length === 1 ? "study" : "studies"} linked
+                      </div>
+                    )}
+                  </div>
+                  <div style={sciStyles.cardDose}>{ing.dose}</div>
+                </div>
+              </div>
+            );
+          })}
+
+          <div style={sciStyles.footer}>
+            &copy; {new Date().getFullYear()} BalanceEQ. These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
+          </div>
+        </div>
+      );
+    }
+
+    function BalanceEQSciencePages() {
+      var [page, setPage] = useState("focus-overview");
+      var [selectedIngredient, setSelectedIngredient] = useState(null);
+
+      // Bridge: expose navigation function for vanilla JS ingredient tags
+      useEffect(function() {
+        window.sciencePageNavigate = function(ingredientId, product) {
+          setSelectedIngredient({ id: ingredientId, product: product });
+          setPage("ingredient");
+          window.scrollTo(0, 0);
+        };
+        return function() { delete window.sciencePageNavigate; };
+      }, []);
+
+      var handleIngredientClick = function(id, product) {
+        setSelectedIngredient({ id: id, product: product });
+        setPage("ingredient");
+        window.scrollTo(0, 0);
+      };
+
+      var handleBack = function(product) {
+        setSelectedIngredient(null);
+        setPage(product + "-overview");
+        window.scrollTo(0, 0);
+      };
+
+      var renderPage = function() {
+        if (page === "ingredient" && selectedIngredient) {
+          var list = selectedIngredient.product === "focus" ? FOCUS_INGREDIENTS : RESTORE_INGREDIENTS;
+          var ing = list.find(function(i) { return i.id === selectedIngredient.id; });
+          if (ing) {
+            return (
+              <IngredientPage
+                ingredient={ing}
+                product={selectedIngredient.product}
+                onBack={function() { handleBack(selectedIngredient.product); }}
+              />
+            );
+          }
+        }
+        if (page === "restore-overview") {
+          return (
+            <ProductOverview
+              product="restore"
+              ingredients={RESTORE_INGREDIENTS}
+              onIngredientClick={function(id) { handleIngredientClick(id, "restore"); }}
+            />
+          );
+        }
+        return (
+          <ProductOverview
+            product="focus"
+            ingredients={FOCUS_INGREDIENTS}
+            onIngredientClick={function(id) { handleIngredientClick(id, "focus"); }}
+          />
+        );
+      };
+
+      return (
+        <div style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" }}>
+          <div style={sciStyles.tabBar}>
+            <button
+              style={sciStyles.tabBtn(
+                page === "focus-overview" || (page === "ingredient" && selectedIngredient && selectedIngredient.product === "focus"),
+                sciColors.focus
+              )}
+              onClick={function() { setSelectedIngredient(null); setPage("focus-overview"); }}
+            >
+              EQ:Focus (AM)
+            </button>
+            <button
+              style={sciStyles.tabBtn(
+                page === "restore-overview" || (page === "ingredient" && selectedIngredient && selectedIngredient.product === "restore"),
+                sciColors.restore
+              )}
+              onClick={function() { setSelectedIngredient(null); setPage("restore-overview"); }}
+            >
+              EQ:Restore (PM)
+            </button>
+          </div>
+          {renderPage()}
+        </div>
+      );
+    }
+
+    // Lazy mount: only render React when science page is first shown
+    var scienceRootMounted = false;
+    window.addEventListener('pageChanged', function(e) {
+      if (e.detail.pageId === 'science' && !scienceRootMounted) {
+        var container = document.getElementById('science-root');
+        if (container) {
+          var root = ReactDOM.createRoot(container);
+          root.render(<BalanceEQSciencePages />);
+          scienceRootMounted = true;
+        }
+      }
+    });
     </script>
 </body>
 </html>
