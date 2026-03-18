@@ -598,6 +598,23 @@
         #science-root a:hover {
             color: #238276;
         }
+
+        /* Product accent dots (replacing emoji icons) */
+        .accent-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+        }
+        .accent-dot--focus {
+            background: #2A9D8F;
+        }
+        .accent-dot--restore {
+            background: #7C5CBF;
+        }
+        .accent-dot--roadmap {
+            background: #E8EDF2;
+        }
     </style>
     <!-- BalanceEQ Science Styles -->
     <link rel="stylesheet" href="balanceeq-styles.css">
@@ -624,7 +641,8 @@
                 <li><a onclick="showPage('science'); closeMobileMenu()">Science</a></li>
                 <li><a onclick="showPage('coas'); closeMobileMenu()">COAs</a></li>
                 <li><a onclick="showPage('transparency'); closeMobileMenu()">Transparency</a></li>
-                <li><a href="https://balasana.com" target="_blank">About Balasana</a></li>
+                <li><a onclick="showPage('learn'); closeMobileMenu()">Learn</a></li>
+                <li><a onclick="showPage('ourstory'); closeMobileMenu()">Our Story</a></li>
             </ul>
         </div>
     </nav>
@@ -647,7 +665,7 @@
         <!-- System Overview -->
         <div class="system-overview">
             <div class="system-card">
-                <div class="system-icon">☀️</div>
+                <div class="accent-dot accent-dot--focus"></div>
                 <h3>EQ:Focus</h3>
                 <p style="color: #5A6C7D; margin-bottom: 1.5rem;">
                     Sharpen attention without stimulants. Built for deep work and calm execution.
@@ -659,7 +677,7 @@
             </div>
 
             <div class="system-card">
-                <div class="system-icon">🌙</div>
+                <div class="accent-dot accent-dot--restore"></div>
                 <h3>EQ:Restore</h3>
                 <p style="color: #5A6C7D; margin-bottom: 1.5rem;">
                     Shift gears from work mode to presence mode. Be here for the hours that matter most.
@@ -710,7 +728,7 @@
             <div class="product-grid">
                 <!-- EQ:Focus v3.7 -->
                 <div class="product-card" id="focus-product">
-                    <div class="product-icon">☀️</div>
+                    <div class="accent-dot accent-dot--focus"></div>
                     <h3>EQ:Focus</h3>
                     <div class="product-badges">
                         <span class="badge">100% VEGAN</span>
@@ -748,7 +766,7 @@
                 
                 <!-- EQ:Restore v3.7 -->
                 <div class="product-card" id="restore-product">
-                    <div class="product-icon">🌙</div>
+                    <div class="accent-dot accent-dot--restore"></div>
                     <h3>EQ:Restore</h3>
                     <div class="product-badges">
                         <span class="badge">100% VEGAN</span>
@@ -797,19 +815,19 @@
             
             <div class="product-grid">
                 <div class="product-card">
-                    <div class="product-icon">⚡</div>
+                    <div class="accent-dot accent-dot--roadmap"></div>
                     <h3>EQ:Drive</h3>
                     <p><strong>Pre-Workout Energy Without Stimulant Crash</strong></p>
                     <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">
                         Mitochondrial energy support for training days. L-Carnitine, Coenzyme Q10, and adaptogenic energy. 
-                        No borrowed energy—real cellular ATP production for sustained performance.
+                        No borrowed energy. Real cellular ATP production for sustained performance.
                     </p>
                     <p class="product-launch">Post-Launch</p>
                     <button class="subscribe-btn" onclick="openModal('EQ:Drive')">Get Notified</button>
                 </div>
                 
                 <div class="product-card">
-                    <div class="product-icon">🛡️</div>
+                    <div class="accent-dot accent-dot--roadmap"></div>
                     <h3>EQ:Foundations</h3>
                     <p><strong>Essential Micronutrients for Brain Health</strong></p>
                     <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">
@@ -821,7 +839,7 @@
                 </div>
                 
                 <div class="product-card">
-                    <div class="product-icon">🛡️</div>
+                    <div class="accent-dot accent-dot--roadmap"></div>
                     <h3>EQ:Shield</h3>
                     <p><strong>Daily Anti-Inflammatory & Recovery Support</strong></p>
                     <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">
@@ -833,7 +851,7 @@
                 </div>
                 
                 <div class="product-card">
-                    <div class="product-icon">👁️</div>
+                    <div class="accent-dot accent-dot--roadmap"></div>
                     <h3>EQ:Vision</h3>
                     <p><strong>Blue Light Protection & Eye Strain Relief</strong></p>
                     <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">
@@ -845,7 +863,7 @@
                 </div>
 
                 <div class="product-card">
-                    <div class="product-icon">😴</div>
+                    <div class="accent-dot accent-dot--roadmap"></div>
                     <h3>EQ:Sleep</h3>
                     <p><strong>Sleep-Onset Support for the Afternoon Coffee Crowd</strong></p>
                     <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">
@@ -1175,6 +1193,356 @@
         </div>
     </div>
 
+    <!-- LEARN PAGE -->
+    <div id="learn" class="page">
+        <div class="hero">
+            <h1>Learn</h1>
+            <p class="subtitle">The science behind cognitive performance and evening recovery. No jargon. Full receipts.</p>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto;">
+            <!-- Article Index -->
+            <div id="learn-index">
+                <div class="evidence-card" style="cursor: pointer;" onclick="showArticle('brain-wont-stop')">
+                    <h3>Why Your Brain Won't Stop Working When You Do</h3>
+                    <p style="color: #5A6C7D; margin-bottom: 0.5rem;">Your brain didn't get the memo that you stopped working.</p>
+                    <p style="color: #8B9AAD; font-size: 0.85rem;">5 min read</p>
+                </div>
+                <div class="evidence-card" style="cursor: pointer;" onclick="showArticle('2pm-wall')">
+                    <h3>The 2pm Wall Is Not a Discipline Problem</h3>
+                    <p style="color: #5A6C7D; margin-bottom: 0.5rem;">The 2pm crash is not about discipline. It is about chemistry.</p>
+                    <p style="color: #8B9AAD; font-size: 0.85rem;">5 min read</p>
+                </div>
+                <div class="evidence-card" style="cursor: pointer;" onclick="showArticle('running-on-empty')">
+                    <h3>You're Not Losing Your Edge. You're Running on Empty.</h3>
+                    <p style="color: #5A6C7D; margin-bottom: 0.5rem;">You are not getting dumber. You are running on fumes.</p>
+                    <p style="color: #8B9AAD; font-size: 0.85rem;">5 min read</p>
+                </div>
+                <div class="evidence-card" style="cursor: pointer;" onclick="showArticle('evening-brain')">
+                    <h3>What Actually Happens to Your Brain Between 6pm and 10pm</h3>
+                    <p style="color: #5A6C7D; margin-bottom: 0.5rem;">The hours between work and sleep are not dead time. They are when your brain is supposed to transition, consolidate, and prepare.</p>
+                    <p style="color: #8B9AAD; font-size: 0.85rem;">5 min read</p>
+                </div>
+            </div>
+
+            <!-- Article 1: Brain Won't Stop -->
+            <article id="article-brain-wont-stop" class="learn-article" style="display: none;">
+                <button class="btn-secondary" style="margin-bottom: 2rem; font-size: 0.85rem; padding: 0.5rem 1rem;" onclick="showArticle('index')">&larr; Back to articles</button>
+                <h2 style="margin-bottom: 0.5rem; text-align: left;">Why Your Brain Won't Stop Working When You Do</h2>
+                <p style="color: #8B9AAD; font-size: 0.85rem; margin-bottom: 2rem;">5 min read</p>
+
+                <div style="color: #2C3E50; line-height: 1.85; font-size: 1rem;">
+                    <p style="margin-bottom: 1.25rem;">It is 7pm. You closed the laptop. You are physically done working. But your brain did not get the memo.</p>
+
+                    <p style="margin-bottom: 1.25rem;">You are replaying the meeting. You are composing an email you will never send. You are mentally rearranging tomorrow's calendar while your partner is telling you about their day. You are home, but you are not here.</p>
+
+                    <p style="margin-bottom: 1.25rem;">This is not a willpower problem. It is a neurochemistry problem. And there is a growing body of research that explains exactly why it happens.</p>
+
+                    <h3 style="margin-top: 2rem;">The cortisol problem</h3>
+                    <p style="margin-bottom: 1.25rem;">When you work under pressure, your body produces cortisol. That is normal. Cortisol sharpens attention, mobilizes energy, and helps you perform. The problem is what happens after the pressure stops.</p>
+
+                    <p style="margin-bottom: 1.25rem;">For many people, cortisol does not come down when the workday ends. A 2012 study in the journal <em>Stress</em> (Osterberg and colleagues) followed workers experiencing occupational burnout and found that elevated evening cortisol was a defining feature of burnout, not just a byproduct. Their bodies stayed in "on" mode long after the workday ended, and this pattern was associated with impaired cognitive recovery.</p>
+
+                    <p style="margin-bottom: 1.25rem;">A separate 2017 study in the <em>International Journal of Environmental Research and Public Health</em> (Zoccola and colleagues) found something even more specific: the simple act of ruminating about work, replaying events in your head, predicted elevated evening cortisol levels regardless of how stressful the actual workday was. In other words, it is not the stress itself that keeps you wired. It is the mental replay.</p>
+
+                    <h3 style="margin-top: 2rem;">Why "just relax" does not work</h3>
+                    <p style="margin-bottom: 1.25rem;">The researchers who study this distinction use the term "psychological detachment." It was first described by Sonnentag and Fritz in a 2007 paper in the <em>Journal of Occupational Health Psychology</em> that became foundational in recovery research. Their finding was straightforward: "not working" and "recovering from work" are not the same thing. You can stop working at 5pm and still not begin recovering until much later, if at all.</p>
+
+                    <p style="margin-bottom: 1.25rem;">The reason is neurochemical. Your sympathetic nervous system, the one that keeps you alert and reactive, does not have an off switch you can flip with a decision. The transition from sympathetic (performance mode) to parasympathetic (recovery mode) is a biochemical process that depends on specific signals: GABA activity increasing, cortisol clearing, alpha brain wave patterns emerging.</p>
+
+                    <h3 style="margin-top: 2rem;">What the research suggests</h3>
+                    <p style="margin-bottom: 1.25rem;">A 2019 randomized controlled trial published in <em>Nutrients</em> (Hidese and colleagues) studied 30 healthy adults over four weeks. Those who took 200mg of L-theanine daily showed significant reductions in stress-related symptoms including depression, anxiety, and sleep disturbance, along with improved verbal fluency and executive function. L-theanine promotes alpha brain waves, the electrical pattern associated with relaxed alertness.</p>
+
+                    <p style="margin-bottom: 1.25rem;">A 2014 randomized controlled trial in the <em>Nutrition Journal</em> (Miyake and colleagues) studied 52 office workers over eight weeks. Those who took 400mg of L-ornithine daily showed significantly reduced evening cortisol levels, an improved cortisol-to-DHEA ratio, decreased anger and tension, and better subjective sleep quality compared to placebo. The amino acid appeared to help clear the biochemical residue of the workday.</p>
+
+                    <p style="margin-bottom: 1.25rem;">These are not exotic interventions. They are specific, well-studied compounds that support the transition your body is trying to make every evening but often cannot complete on its own.</p>
+
+                    <p style="margin-bottom: 1.25rem;">The transition from work to presence is not something you can think your way into. It is a physiological event. And like most physiological events, it can be supported.</p>
+
+                    <div style="background: #F8FAFB; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; border-left: 3px solid #2A9D8F;">
+                        <p style="color: #5A6C7D; font-size: 0.9rem;">This is part of the science behind how we formulated <a onclick="showPage('science')" style="color: #2A9D8F; cursor: pointer;">EQ:Restore</a>.</p>
+                    </div>
+
+                    <h3 style="margin-top: 2rem;">Sources</h3>
+                    <div style="font-size: 0.85rem; color: #5A6C7D; line-height: 1.8;">
+                        <p style="margin-bottom: 0.75rem;"><strong>Miyake M, et al.</strong> "Randomised controlled trial of the effects of L-ornithine on stress markers and sleep quality in healthy workers." <em>Nutrition Journal</em>, 2014. <a href="https://doi.org/10.1186/1475-2891-13-53" target="_blank" style="color: #2A9D8F;">DOI</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/24889392/" target="_blank" style="color: #2A9D8F;">PubMed</a>. Key finding: L-Ornithine significantly reduced serum cortisol and improved sleep quality vs. placebo in office workers over 8 weeks.</p>
+                        <p style="margin-bottom: 0.75rem;"><strong>Hidese S, et al.</strong> "Effects of L-Theanine Administration on Stress-Related Symptoms and Cognitive Functions in Healthy Adults." <em>Nutrients</em>, 2019. <a href="https://doi.org/10.3390/nu11102362" target="_blank" style="color: #2A9D8F;">DOI</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/31623400/" target="_blank" style="color: #2A9D8F;">PubMed</a>. Key finding: Improved verbal fluency, executive function, and sleep quality vs. placebo.</p>
+                        <p style="margin-bottom: 0.75rem;"><strong>Zoccola PM, et al.</strong> "Rumination predicts heightened responding in cortisol." <em>Int J Environ Res Public Health</em>, 2017. <a href="https://doi.org/10.3390/ijerph14111365" target="_blank" style="color: #2A9D8F;">DOI</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/29120379/" target="_blank" style="color: #2A9D8F;">PubMed</a>. Key finding: Work-related rumination predicted elevated evening cortisol independent of workday stress.</p>
+                        <p style="margin-bottom: 0.75rem;"><strong>Osterberg K, et al.</strong> "Cognitive performance in patients with burnout." <em>Stress</em>, 2012. <a href="https://doi.org/10.3109/10253890.2011.648972" target="_blank" style="color: #2A9D8F;">DOI</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/22168599/" target="_blank" style="color: #2A9D8F;">PubMed</a>. Key finding: Burnout associated with elevated evening cortisol and impaired cognitive recovery.</p>
+                        <p style="margin-bottom: 0.75rem;"><strong>Sonnentag S, Fritz C.</strong> "The Recovery Experience Questionnaire." <em>J Occupational Health Psychology</em>, 2007. Key finding: Psychological detachment from work is distinct from merely stopping work, and is required for genuine recovery.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem; padding: 1rem; background: #F8FAFB; border-radius: 8px; font-size: 0.8rem; color: #8B9AAD; text-align: center;">
+                    These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
+                </div>
+            </article>
+
+            <!-- Article 2: 2pm Wall -->
+            <article id="article-2pm-wall" class="learn-article" style="display: none;">
+                <button class="btn-secondary" style="margin-bottom: 2rem; font-size: 0.85rem; padding: 0.5rem 1rem;" onclick="showArticle('index')">&larr; Back to articles</button>
+                <h2 style="margin-bottom: 0.5rem; text-align: left;">The 2pm Wall Is Not a Discipline Problem</h2>
+                <p style="color: #8B9AAD; font-size: 0.85rem; margin-bottom: 2rem;">5 min read</p>
+
+                <div style="color: #2C3E50; line-height: 1.85; font-size: 1rem;">
+                    <p style="margin-bottom: 1.25rem;">The 2pm crash is not about discipline. It is about chemistry.</p>
+
+                    <p style="margin-bottom: 1.25rem;">Every afternoon, millions of people hit a wall. Focus dissolves. Reading the same paragraph three times. Staring at a screen without processing. Reaching for coffee or sugar because something has to change. Most people blame themselves. They think they need more sleep, more willpower, or more caffeine.</p>
+
+                    <p style="margin-bottom: 1.25rem;">The reality is more specific and more fixable than that.</p>
+
+                    <h3 style="margin-top: 2rem;">Adenosine: the molecule behind the wall</h3>
+                    <p style="margin-bottom: 1.25rem;">From the moment you wake up, your brain accumulates a molecule called adenosine. Adenosine is a byproduct of neural activity. The more your brain works, the more adenosine builds up, and the more it pushes you toward sleep. A 2015 review in <em>Current Topics in Behavioral Neurosciences</em> (Urry and Landolt) documented how adenosine interacts with your circadian system to create predictable troughs in cognitive performance, with the early afternoon being one of the most vulnerable windows.</p>
+
+                    <p style="margin-bottom: 1.25rem;">Caffeine works by blocking adenosine receptors. It does not remove adenosine or produce energy. It temporarily blocks the signal that tells you you are tired. When the caffeine wears off, all that accumulated adenosine floods in at once. That is the crash.</p>
+
+                    <h3 style="margin-top: 2rem;">The neurotransmitter side</h3>
+                    <p style="margin-bottom: 1.25rem;">There is a parallel problem happening at the neurotransmitter level. Dopamine and norepinephrine, the chemicals responsible for motivation, alertness, and the ability to hold information in working memory, are produced from precursor amino acids. Under sustained cognitive demand, your brain can use these faster than it replaces them.</p>
+
+                    <p style="margin-bottom: 1.25rem;">A 2007 study in <em>Physiology and Behavior</em> (Mahoney and colleagues) tested this directly. They put 19 volunteers through cognitive testing under stress conditions. Those who had received the amino acid L-tyrosine, the precursor to dopamine, maintained their working memory performance. The placebo group declined. Tyrosine did not boost performance above baseline. It prevented the decline that stress and sustained demand would normally cause.</p>
+
+                    <h3 style="margin-top: 2rem;">Adaptogens and sustained demand</h3>
+                    <p style="margin-bottom: 1.25rem;">The other side of the equation is stress resilience. A 2000 study in <em>Phytomedicine</em> (Darbinyan and colleagues) studied 56 young physicians on overnight duty. Those who took Rhodiola rosea extract showed statistically significant improvements in associative thinking, short-term memory, calculation, and concentration compared to placebo. The herb did not eliminate fatigue. It helped the brain maintain performance during extended demand, which is exactly what the afternoon requires.</p>
+
+                    <p style="margin-bottom: 1.25rem;">The 2pm wall is not a character flaw. It is the predictable result of adenosine accumulation, neurotransmitter depletion, and circadian biology. These are systems that can be supported with the right inputs at the right time.</p>
+
+                    <div style="background: #F8FAFB; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; border-left: 3px solid #2A9D8F;">
+                        <p style="color: #5A6C7D; font-size: 0.9rem;">This is part of the science behind how we formulated <a onclick="showPage('science')" style="color: #2A9D8F; cursor: pointer;">EQ:Focus</a>.</p>
+                    </div>
+
+                    <h3 style="margin-top: 2rem;">Sources</h3>
+                    <div style="font-size: 0.85rem; color: #5A6C7D; line-height: 1.8;">
+                        <p style="margin-bottom: 0.75rem;"><strong>Mahoney CR, et al.</strong> "Tyrosine supplementation mitigates working memory decrements during cold exposure." <em>Physiology &amp; Behavior</em>, 2007. <a href="https://doi.org/10.1016/j.physbeh.2007.05.003" target="_blank" style="color: #2A9D8F;">DOI</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/17585971/" target="_blank" style="color: #2A9D8F;">PubMed</a>. Key finding: Tyrosine restored working memory accuracy under stress conditions.</p>
+                        <p style="margin-bottom: 0.75rem;"><strong>Darbinyan V, et al.</strong> "Rhodiola rosea in stress-induced fatigue." <em>Phytomedicine</em>, 2000. <a href="https://doi.org/10.1016/S0944-7113(00)80055-0" target="_blank" style="color: #2A9D8F;">DOI</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/11081987/" target="_blank" style="color: #2A9D8F;">PubMed</a>. Key finding: Significant improvement in cognitive function during stressful night duty conditions.</p>
+                        <p style="margin-bottom: 0.75rem;"><strong>Urry E, Landolt HP.</strong> "Adenosine, caffeine, and performance: from cognitive neuroscience of sleep to sleep pharmacogenetics." <em>Curr Top Behav Neurosci</em>, 2015. <a href="https://doi.org/10.1007/7854_2014_274" target="_blank" style="color: #2A9D8F;">DOI</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/24549722/" target="_blank" style="color: #2A9D8F;">PubMed</a>. Key finding: Adenosine and circadian rhythm create predictable performance troughs; caffeine cannot substitute for genuine neurochemical support.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem; padding: 1rem; background: #F8FAFB; border-radius: 8px; font-size: 0.8rem; color: #8B9AAD; text-align: center;">
+                    These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
+                </div>
+            </article>
+
+            <!-- Article 3: Running on Empty -->
+            <article id="article-running-on-empty" class="learn-article" style="display: none;">
+                <button class="btn-secondary" style="margin-bottom: 2rem; font-size: 0.85rem; padding: 0.5rem 1rem;" onclick="showArticle('index')">&larr; Back to articles</button>
+                <h2 style="margin-bottom: 0.5rem; text-align: left;">You're Not Losing Your Edge. You're Running on Empty.</h2>
+                <p style="color: #8B9AAD; font-size: 0.85rem; margin-bottom: 2rem;">5 min read</p>
+
+                <div style="color: #2C3E50; line-height: 1.85; font-size: 1rem;">
+                    <p style="margin-bottom: 1.25rem;">You are not getting dumber. You are running on fumes.</p>
+
+                    <p style="margin-bottom: 1.25rem;">Somewhere in your 30s or 40s, something shifted. You used to hold six things in your head at once. Now you walk into a room and forget why you are there. Names slip. The word you want is on the tip of your tongue but will not come. You are not less capable. You are less supplied.</p>
+
+                    <p style="margin-bottom: 1.25rem;">What most people experience as "cognitive decline" in midlife is not the brain breaking down. It is the brain running out of the raw materials it needs to perform at the level it used to.</p>
+
+                    <h3 style="margin-top: 2rem;">The NAD+ problem</h3>
+                    <p style="margin-bottom: 1.25rem;">One of the most important molecules in your body is NAD+ (nicotinamide adenine dinucleotide). It is a coenzyme present in every living cell, essential for converting food into cellular energy, repairing DNA, and maintaining healthy cell function. A 2020 review in the <em>European Journal of Clinical Investigation</em> (Kang and colleagues) documented something that has become a central finding in aging research: NAD+ levels decline significantly with age, and this decline is associated with cognitive impairment, reduced energy, and accelerated cellular aging.</p>
+
+                    <p style="margin-bottom: 1.25rem;">In 2023, a randomized placebo-controlled trial published in <em>GeroScience</em> (Orr and colleagues) studied 20 older adults with mild cognitive impairment. Those who received nicotinamide riboside, a precursor to NAD+, achieved a 2.6-fold increase in blood NAD+ levels with no adverse effects. The study also showed reductions in epigenetic age markers, suggesting that restoring NAD+ may support not just energy but biological age at the cellular level.</p>
+
+                    <h3 style="margin-top: 2rem;">Acetylcholine: the memory molecule</h3>
+                    <p style="margin-bottom: 1.25rem;">Another system that declines with age is acetylcholine production. Acetylcholine is the neurotransmitter most directly involved in forming and retrieving memories. A 2021 randomized controlled trial in <em>The Journal of Nutrition</em> (Nakazaki and colleagues) studied 100 healthy adults aged 50 to 85. Those who received 500mg per day of citicoline, a precursor to acetylcholine, showed significantly greater improvements in episodic memory (the ability to recall specific events and details) and composite memory scores compared to placebo over 12 weeks.</p>
+
+                    <h3 style="margin-top: 2rem;">Neuroplasticity: the long game</h3>
+                    <p style="margin-bottom: 1.25rem;">Beyond the chemical supply issue, there is also the question of neural infrastructure. A 2018 review in <em>Current Opinion in Psychiatry</em> (Braidy and colleagues) highlighted that NAD+ and its precursors support not just energy production but also the sirtuin pathways involved in neuroprotection and brain cell repair.</p>
+
+                    <p style="margin-bottom: 1.25rem;">And a 2009 study in <em>Phytotherapy Research</em> (Mori and colleagues) showed that Lion's Mane mushroom, which stimulates Nerve Growth Factor production, improved cognitive function scores in older adults with mild cognitive impairment over 16 weeks. Scores increased progressively at weeks 8, 12, and 16, then declined after stopping supplementation, suggesting the benefit was real, measurable, and dependent on consistent use.</p>
+
+                    <p style="margin-bottom: 1.25rem;">The story these studies tell is not about inevitable decline. It is about maintainable systems that have been allowed to deplete. The brain is not a machine that wears out. It is a biological system that needs specific inputs to maintain its performance. When those inputs decline, performance follows. When they are restored, capacity returns.</p>
+
+                    <div style="background: #F8FAFB; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; border-left: 3px solid #2A9D8F;">
+                        <p style="color: #5A6C7D; font-size: 0.9rem;">This is part of the science behind how we formulated <a onclick="showPage('science')" style="color: #2A9D8F; cursor: pointer;">EQ:Focus</a>.</p>
+                    </div>
+
+                    <h3 style="margin-top: 2rem;">Sources</h3>
+                    <div style="font-size: 0.85rem; color: #5A6C7D; line-height: 1.8;">
+                        <p style="margin-bottom: 0.75rem;"><strong>Orr ME, et al.</strong> "A randomized placebo-controlled trial of nicotinamide riboside in older adults with mild cognitive impairment." <em>GeroScience</em>, 2023. <a href="https://doi.org/10.1007/s11357-023-00999-9" target="_blank" style="color: #2A9D8F;">DOI</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/37994989/" target="_blank" style="color: #2A9D8F;">PubMed</a>. Key finding: 2.6-fold increase in blood NAD+ levels; reduction in epigenetic age markers.</p>
+                        <p style="margin-bottom: 0.75rem;"><strong>Kang BE, et al.</strong> "Implications of NAD+ boosters in translational medicine." <em>Eur J Clin Invest</em>, 2020. <a href="https://doi.org/10.1111/eci.13334" target="_blank" style="color: #2A9D8F;">DOI</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/32594513/" target="_blank" style="color: #2A9D8F;">PubMed</a>. Key finding: NAD+ decline is a hallmark of aging; NR effectively restores NAD+ pools in human trials.</p>
+                        <p style="margin-bottom: 0.75rem;"><strong>Nakazaki E, et al.</strong> "Citicoline and Memory Function in Healthy Older Adults." <em>The Journal of Nutrition</em>, 2021. <a href="https://doi.org/10.1093/jn/nxab119" target="_blank" style="color: #2A9D8F;">DOI</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/33978188/" target="_blank" style="color: #2A9D8F;">PubMed</a>. Key finding: Significant improvement in episodic memory and composite memory vs. placebo.</p>
+                        <p style="margin-bottom: 0.75rem;"><strong>Mori K, et al.</strong> "Improving effects of the mushroom Yamabushitake on mild cognitive impairment." <em>Phytotherapy Research</em>, 2009. <a href="https://doi.org/10.1002/ptr.2634" target="_blank" style="color: #2A9D8F;">DOI</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/18844328/" target="_blank" style="color: #2A9D8F;">PubMed</a>. Key finding: Significant cognitive improvement at weeks 8, 12, and 16 of supplementation.</p>
+                        <p style="margin-bottom: 0.75rem;"><strong>Braidy N, et al.</strong> "Role of Nicotinamide Adenine Dinucleotide and Related Precursors as Therapeutic Targets for Age-Related Degenerative Diseases." <em>Curr Opin Psychiatry</em>, 2018. <a href="https://doi.org/10.1097/YCO.0000000000000394" target="_blank" style="color: #2A9D8F;">DOI</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/29232252/" target="_blank" style="color: #2A9D8F;">PubMed</a>. Key finding: NAD+ precursors support neuroprotection and sirtuin pathways critical for brain health.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem; padding: 1rem; background: #F8FAFB; border-radius: 8px; font-size: 0.8rem; color: #8B9AAD; text-align: center;">
+                    These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
+                </div>
+            </article>
+
+            <!-- Article 4: Evening Brain -->
+            <article id="article-evening-brain" class="learn-article" style="display: none;">
+                <button class="btn-secondary" style="margin-bottom: 2rem; font-size: 0.85rem; padding: 0.5rem 1rem;" onclick="showArticle('index')">&larr; Back to articles</button>
+                <h2 style="margin-bottom: 0.5rem; text-align: left;">What Actually Happens to Your Brain Between 6pm and 10pm</h2>
+                <p style="color: #8B9AAD; font-size: 0.85rem; margin-bottom: 2rem;">5 min read</p>
+
+                <div style="color: #2C3E50; line-height: 1.85; font-size: 1rem;">
+                    <p style="margin-bottom: 1.25rem;">The hours between work and sleep are not dead time. They are when your brain is supposed to transition, consolidate, and prepare. But for most people, this window gets hijacked.</p>
+
+                    <p style="margin-bottom: 1.25rem;">There is a specific neurochemical sequence your brain needs to complete every evening. When it completes successfully, you feel present during your evening, your mood is good, you fall asleep naturally, and you wake up sharp. When it does not, you feel wired, distracted, emotionally flat, and you wonder why sleep is so hard.</p>
+
+                    <h3 style="margin-top: 2rem;">Phase 1: The transition (6pm to 7pm)</h3>
+                    <p style="margin-bottom: 1.25rem;">The first thing that needs to happen is a shift from sympathetic (fight or flight) to parasympathetic (rest and digest) nervous system activity. This requires GABA, your brain's primary calming neurotransmitter, to increase relative to glutamate, the excitatory signal. Magnesium supports this process. A 2022 study in <em>Nutrients</em> (Zhang and colleagues) found that a magnesium L-threonate formula significantly improved all five subcategories of clinical memory testing and overall memory quotient scores in 109 healthy adults over just 30 days. The form matters: L-threonate was specifically developed for brain-level support.</p>
+
+                    <h3 style="margin-top: 2rem;">Phase 2: Mood and presence (7pm to 9pm)</h3>
+                    <p style="margin-bottom: 1.25rem;">Once the transition begins, the quality of your evening depends largely on serotonin and mood-related neurotransmitter activity. A 2017 randomized controlled trial in <em>Complementary Therapies in Medicine</em> (Kell and colleagues) studied 128 participants with self-reported low mood. Those who took 28mg per day of a standardized saffron extract for four weeks showed a large effect size for mood improvement (d = -1.10), with significant decreases in negative mood, stress, and anxiety symptoms.</p>
+
+                    <p style="margin-bottom: 1.25rem;">A follow-up study in 2021 in <em>Sleep Medicine</em> (Lopresti and colleagues) found that the same saffron extract, taken in the evening, improved subjective sleep quality, mood after waking, and insomnia scores, with associated increases in evening melatonin concentrations. The mood improvement was not a side effect of better sleep. The better sleep was a downstream consequence of improved mood and neurochemistry.</p>
+
+                    <h3 style="margin-top: 2rem;">Phase 3: Memory consolidation (during sleep)</h3>
+                    <p style="margin-bottom: 1.25rem;">The final phase happens while you sleep, but it depends on everything that came before it. Memory consolidation, the process of filing the day's experiences into long-term storage, requires deep sleep stages that are only accessible when the transition and mood phases complete properly.</p>
+
+                    <p style="margin-bottom: 1.25rem;">A 2008 study in the <em>Journal of Alternative and Complementary Medicine</em> (Calabrese and colleagues) found that 300mg per day of Bacopa monnieri over 12 weeks enhanced delayed word recall, improved the ability to ignore irrelevant information (Stroop performance), and reduced depression and anxiety scores in healthy elderly participants. A 2014 meta-analysis of nine randomized controlled trials (Kongkeaw and colleagues, <em>Journal of Ethnopharmacology</em>) confirmed that Bacopa significantly improves cognitive processing speed across populations.</p>
+
+                    <p style="margin-bottom: 1.25rem;">The evening is not downtime. It is a sequence. When each phase gets what it needs, the entire night works better, and the next morning starts from a higher baseline.</p>
+
+                    <div style="background: #F8FAFB; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; border-left: 3px solid #2A9D8F;">
+                        <p style="color: #5A6C7D; font-size: 0.9rem;">This is part of the science behind how we formulated <a onclick="showPage('science')" style="color: #2A9D8F; cursor: pointer;">EQ:Restore</a>.</p>
+                    </div>
+
+                    <h3 style="margin-top: 2rem;">Sources</h3>
+                    <div style="font-size: 0.85rem; color: #5A6C7D; line-height: 1.8;">
+                        <p style="margin-bottom: 0.75rem;"><strong>Zhang C, et al.</strong> "Magtein-Based Formula Improves Brain Cognitive Functions in Healthy Chinese Adults." <em>Nutrients</em>, 2022. <a href="https://doi.org/10.3390/nu14245235" target="_blank" style="color: #2A9D8F;">DOI</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/36558392/" target="_blank" style="color: #2A9D8F;">PubMed</a>. Key finding: Significant improvement in all memory subcategories and overall memory quotient in 30 days.</p>
+                        <p style="margin-bottom: 0.75rem;"><strong>Kell G, et al.</strong> "affron improves mood in healthy adults over 4 weeks." <em>Complementary Therapies in Medicine</em>, 2017. <a href="https://doi.org/10.1016/j.ctim.2017.06.001" target="_blank" style="color: #2A9D8F;">DOI</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/28735826/" target="_blank" style="color: #2A9D8F;">PubMed</a>. Key finding: Large effect size for mood improvement at 28mg/day (d = -1.10) vs. placebo.</p>
+                        <p style="margin-bottom: 0.75rem;"><strong>Lopresti AL, et al.</strong> "Evening saffron extract on sleep quality, cortisol, and melatonin." <em>Sleep Medicine</em>, 2021. <a href="https://doi.org/10.1016/j.sleep.2021.08.001" target="_blank" style="color: #2A9D8F;">DOI</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/34438361/" target="_blank" style="color: #2A9D8F;">PubMed</a>. Key finding: Improved sleep quality, reduced insomnia symptoms, increased evening melatonin.</p>
+                        <p style="margin-bottom: 0.75rem;"><strong>Calabrese C, et al.</strong> "Effects of Bacopa monnieri on cognitive performance, anxiety, and depression in the elderly." <em>J Alt Comp Med</em>, 2008. <a href="https://doi.org/10.1089/acm.2008.0018" target="_blank" style="color: #2A9D8F;">DOI</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/18611150/" target="_blank" style="color: #2A9D8F;">PubMed</a>. Key finding: Enhanced delayed word recall, improved Stroop performance, reduced depression and anxiety.</p>
+                        <p style="margin-bottom: 0.75rem;"><strong>Kongkeaw C, et al.</strong> "Meta-analysis of randomized controlled trials on cognitive effects of Bacopa monnieri." <em>J Ethnopharmacology</em>, 2014. <a href="https://doi.org/10.1016/j.jep.2013.11.008" target="_blank" style="color: #2A9D8F;">DOI</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/24252493/" target="_blank" style="color: #2A9D8F;">PubMed</a>. Key finding: Significant improvement in speed of attention across 9 RCTs.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem; padding: 1rem; background: #F8FAFB; border-radius: 8px; font-size: 0.8rem; color: #8B9AAD; text-align: center;">
+                    These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <!-- OUR STORY PAGE -->
+    <div id="ourstory" class="page">
+        <div class="hero">
+            <h1>Our Story</h1>
+            <p class="subtitle">We are a family building something real. Here are our stories.</p>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto;">
+            <!-- Story Toggle -->
+            <div id="storyToggle" style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 3rem;">
+                <button class="btn-primary" style="padding: 0.75rem 1.5rem;" onclick="showStory('jesse')">Jesse's Story</button>
+                <button class="btn-secondary" style="padding: 0.75rem 1.5rem;" onclick="showStory('amanda')">Amanda's Story</button>
+            </div>
+
+            <!-- Jesse's Story -->
+            <article id="story-jesse" class="story-content">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                    <div style="width: 56px; height: 56px; border-radius: 50%; background: #2A9D8F; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem;">JR</div>
+                    <div>
+                        <h2 style="margin-bottom: 0.25rem;">Jesse Ryski</h2>
+                        <p style="color: #5A6C7D; font-size: 0.9rem;">Co-Founder &bull; The Why Behind It All</p>
+                    </div>
+                </div>
+
+                <div style="color: #2C3E50; line-height: 1.8; font-size: 1rem;">
+                    <p style="font-weight: 600; font-size: 1.1rem; color: #1A2332; margin-bottom: 1.5rem;">I want to talk about why I'm creating this brand.</p>
+
+                    <p style="margin-bottom: 1.25rem;">It started with us wanting to create something to make money. We thought we could build a business that would provide income, so we decided on a clothing line based on yoga wear and fitness. We thought, okay, athleisure is popular, people are into this, and we were already in that world. Amanda was doing a lot of yoga and working out all the time, so it felt obvious.</p>
+
+                    <p style="margin-bottom: 1.25rem;">But after getting it rolling we realized we were doing it for the wrong reason. I always go back to why. <strong>Why are we doing this?</strong> And there was no why. The why was money. That's not a good reason to build something. So we let it go for a while.</p>
+
+                    <p style="margin-bottom: 1.25rem;">I focused on work. I focused on mental health. I focused on patience and being present. I tried to understand why I felt stressed, what that stress did to me, how it affected my brain, and how that affected my body.</p>
+
+                    <p style="margin-bottom: 1.25rem;">I read books. I read white papers and research papers. I researched ingredients. I tried supplements. I meditated. I practiced mindfulness. I did breathing exercises. I deleted social media. I put my phone down. I went outside. I started to feel clear again.</p>
+
+                    <p style="margin-bottom: 1.25rem;">At the same time, Amanda was going through her own transition, starting with her body. She had two children and wanted to regain her self-confidence and feel like herself again. She found a group of girls who shared that same mindset. They held each other accountable. She completely changed. She regained her self-image.</p>
+
+                    <p style="margin-bottom: 1.25rem;">Both of us taking accountability for ourselves, and showing up for each other, started to pay off. It paid off for each of us on our own, and for us as a couple, and for our kids, and for our family. We were happier, calmer, more present. We slept better. Mornings were better. Getting the kids to school was better. We bonded. We enjoyed the simple moments again.</p>
+
+                    <p style="margin-bottom: 1.25rem;">I got promoted. I took on more responsibility. When I was at work, I was at work. I was focused.</p>
+
+                    <p style="margin-bottom: 1.25rem;">I found a supplement that helped me focus. I found another that helped me stay calm. I found one that finally helped me sleep. Before I knew it, I had a shelf full of bottles. I shared them with Amanda, and she felt the difference too. We started saying, <em>why doesn't anyone just make a version of this that actually targets what people need, instead of forcing you to buy five different things.</em></p>
+
+                    <p style="margin-bottom: 1.25rem;">We were happy. We felt better. And as much as we wished that first business had worked just so we could build something together, we knew it wasn't the right thing. The reason behind it was wrong.</p>
+
+                    <p style="font-weight: 600; font-size: 1.1rem; color: #1A2332; margin-bottom: 1.25rem;">So we started over.</p>
+
+                    <p style="margin-bottom: 1.25rem;">We started building something new. At first it took a bunch of different shapes. Over time it got clearer. What we were building wasn't just a product. It was a lifestyle change that we had both quietly stepped into, separately and together. And we wanted to share that.</p>
+
+                    <p style="margin-bottom: 1.25rem;">So we started writing down everything we could do to help people.</p>
+
+                    <ul style="margin-bottom: 1.25rem; padding-left: 1.5rem; line-height: 2;">
+                        <li>How stress affects your body.</li>
+                        <li>How social media messes with your head and your attention.</li>
+                        <li>How constant scrolling and constant screens train you to need noise all the time.</li>
+                        <li>How everything is fighting for your attention.</li>
+                        <li>How hard it is to find quiet right now.</li>
+                        <li>How the tension in the world presses on you even when you think you're tuning it out.</li>
+                    </ul>
+
+                    <p style="margin-bottom: 1.25rem;">It all affects us, whether we see it or not.</p>
+
+                    <p style="margin-bottom: 1.25rem;"><strong>There is no silver bullet.</strong> There is no "do this once and you're fixed." There is no pill that makes it all go away. It's a process, and it's ongoing. We want to talk about that honestly.</p>
+
+                    <p style="margin-bottom: 1.25rem;">So we're repurposing Balasana. Balasana is Sanskrit for "child's pose," and it was supposed to be our clothing line. Now it's something different. It will be a place to help you find focus and peace. To re-center your life. To find balance. To find your people.</p>
+
+                    <p style="margin-bottom: 1.25rem;">And we'll fund it with products that actually help. We'll hold ourselves accountable to doing the research and sharing the research. Making sure it's safe, tested, and real. Only including ingredients that actually need to be there, at the right doses. Making sure it's safe for most people, and calling it out when it isn't. Only putting things in front of you that bring value to the person using them, not just to the person selling them.</p>
+
+                    <p style="margin-bottom: 1.25rem;">We are not some giant corporate, faceless organization. <strong>We are a family.</strong> We want to grow that family to include other people who are on this same path and help however we can. I want to work less and enjoy more of my life. I want that for you too.</p>
+
+                    <p style="margin-bottom: 1.25rem;">Our ad campaigns are not going to be about getting louder. They're going to be about stepping back. We're putting out an open bounty for any creator or influencer who wants to take a real day off, shut it down, and not be seen. We'll ask you to slow down. To stop scrolling. We'll push the idea that you are not less than. That different doesn't mean worse. We'll say out loud that perfection is fake and you'll kill yourself chasing it. We'll keep saying that there is beauty in imperfection. We'll keep saying that every single one of us is trying to hold it together.</p>
+
+                    <p style="margin-bottom: 1.25rem;">Along the way, we're going to teach. I plan to sponsor creators making content that will actually improve your quality of life or teach you a skill. Something that pulls you away from your screen, not deeper into it.</p>
+
+                    <p style="font-weight: 600; font-size: 1.1rem; color: #1A2332;">We don't have all the answers. We're building something real. If any of this already feels like where you are, you're part of it.</p>
+                </div>
+
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button class="btn-secondary" onclick="showStory('amanda')">Read Amanda's Story</button>
+                </div>
+            </article>
+
+            <!-- Amanda's Story -->
+            <article id="story-amanda" class="story-content" style="display: none;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                    <div style="width: 56px; height: 56px; border-radius: 50%; background: #7C5CBF; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem;">AR</div>
+                    <div>
+                        <h2 style="margin-bottom: 0.25rem;">Amanda Ryski</h2>
+                        <p style="color: #5A6C7D; font-size: 0.9rem;">Co-Founder &bull; The Heart of the Mission</p>
+                    </div>
+                </div>
+
+                <div style="color: #2C3E50; line-height: 1.8; font-size: 1rem;">
+                    <p style="font-weight: 600; font-size: 1.1rem; color: #1A2332; margin-bottom: 1.5rem;">My why.</p>
+
+                    <p style="margin-bottom: 1.25rem;">My husband's words are always, "why not." But as the professional nay sayer of our household, I am generally the one to lead with caution. We began our Balasana journey years back, with a dream of making a good side hustle. As a stay at home mom of two who lives in leggings most days, that felt comfortable, it made sense in that moment. We soon realized that while yes, we could make some money in an over populated market of aesthetically pleasing athleisure wear and lux fabrics, there was no real passion there to move forward. During the fizzle out phase, we challenged each other to find that passion.</p>
+
+                    <p style="margin-bottom: 1.25rem;">My personal story may look a lot like yours. I like to consider myself a jack of all trades, master of none. The common threads of my professional life pre-kids was making people feel beautiful, feel healthier, and feel seen. Be it the years of hair and makeup, or the years of dentistry, my passion was in helping and educating others. That passion still shows up time to time, and in new ways. The ultimate thing I wanted most in the world was to be, Mom. It's what I am most proud of, and will always strive to be better at.</p>
+
+                    <p style="margin-bottom: 1.25rem;">Any new mom will understand that navigating through motherhood while losing and finding new versions of yourself is challenging. I've thrived and I've merely survived different stages over the last 7 years in that role. A very important lesson I've learned that stays true through each phase is that old saying <strong>"I cannot pour from an empty cup"</strong>.</p>
+
+                    <p style="margin-bottom: 1.25rem;">The never ending mental lists, the over stimulation, the mom guilt, the "I have nothing left to give" as I fall asleep on the couch each night. As parents we have these battles with ourselves, trying our best to be everything to everyone. There feels like there's not enough time in the day to achieve everything we want to despite all our efforts. We're burnt out. But perhaps we just need a little help...</p>
+
+                    <p style="font-weight: 600; font-size: 1.1rem; color: #1A2332; margin-bottom: 1.25rem;">I like to call this new phase, the shift.</p>
+
+                    <p style="margin-bottom: 1.25rem;">Everything we choose to put our energy towards is a domino effect. Making small but tangible changes over time made all the difference. We are what we feed our minds and our bodies. I took a step back from doom scrolling. Moved my body consistently. Learned to meditate. Started speaking and thinking more positively instead of negatively. Supported my gut with healthier food and nutrients. Found new hobbies that sparked joy. <strong>I filled my cup.</strong></p>
+
+                    <p style="margin-bottom: 1.25rem;">In return I was able to care best for my family because I was able to care for myself. Self care truly is not selfish. It's necessary. That's when it all came full circle.</p>
+
+                    <p style="margin-bottom: 1.25rem;">We found passion in the peeling back of layers and poured what we had learned individually and together to create a lifestyle and wellness brand that was already seamlessly intertwined within our days. We're striving to build a community. A place where we can culminate together with one common goal of showing up as better versions of ourselves than yesterday.</p>
+
+                    <p style="margin-bottom: 1.25rem;"><strong>No one thing, or pill, will ever be a fix all.</strong> But I believe with intentional living, and healthy daily habits, you can find the balance to keep thriving in your ever changing home and work life. We hope to be a part of your story, lighten your load, support and help guide you on this journey back to yourself.</p>
+
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: #F8FAFB; border-radius: 12px; border-left: 3px solid #7C5CBF;">
+                        <p style="color: #5A6C7D; margin-bottom: 0.5rem;">Welcome to our family,</p>
+                        <p style="color: #1A2332; font-weight: 600;">Amanda Ryski, Co-Founder of Balasana/BalanceEQ</p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button class="btn-secondary" onclick="showStory('jesse')">Read Jesse's Story</button>
+                </div>
+            </article>
+        </div>
+    </div>
+
     <!-- SCIENCE PAGE (React-powered) -->
     <div id="science" class="page">
         <div id="science-root">
@@ -1208,13 +1576,14 @@
                     <li><a onclick="showPage('science')">Ingredient Science</a></li>
                     <li><a onclick="showPage('coas')">COAs</a></li>
                     <li><a onclick="showPage('transparency')">Transparency</a></li>
+                    <li><a onclick="showPage('learn')">Learn</a></li>
                 </ul>
             </div>
             
             <div class="footer-section">
                 <h4>Company</h4>
                 <ul>
-                    <li><a href="https://balasana.com" target="_blank">About Balasana</a></li>
+                    <li><a onclick="showPage('ourstory')">Our Story</a></li>
                     <li><a href="mailto:hello@balance-eq.com">Contact</a></li>
                 </ul>
             </div>
@@ -1383,6 +1752,30 @@
             window.scrollTo(0, 0);
             // Dispatch event for React science page mounting
             window.dispatchEvent(new CustomEvent('pageChanged', { detail: { pageId: pageId } }));
+        }
+
+        function showArticle(slug) {
+            var index = document.getElementById('learn-index');
+            var articles = document.querySelectorAll('.learn-article');
+            if (slug === 'index') {
+                index.style.display = 'block';
+                articles.forEach(function(a) { a.style.display = 'none'; });
+            } else {
+                index.style.display = 'none';
+                articles.forEach(function(a) { a.style.display = 'none'; });
+                var target = document.getElementById('article-' + slug);
+                if (target) target.style.display = 'block';
+            }
+            window.scrollTo(0, 0);
+        }
+
+        function showStory(person) {
+            document.getElementById('story-jesse').style.display = person === 'jesse' ? 'block' : 'none';
+            document.getElementById('story-amanda').style.display = person === 'amanda' ? 'block' : 'none';
+            var btns = document.getElementById('storyToggle').querySelectorAll('button');
+            btns[0].className = person === 'jesse' ? 'btn-primary' : 'btn-secondary';
+            btns[1].className = person === 'amanda' ? 'btn-primary' : 'btn-secondary';
+            window.scrollTo(0, 0);
         }
 
         function scrollToProduct(product) {
@@ -1744,9 +2137,9 @@
       var [loading, setLoading] = useState(!CONTENT);
       var [hash, setHash] = useState(window.location.hash || "#/science/focus");
 
-      // Load content from JSON
+      // Load content from JSON (fetch for hosted, inline fallback for file://)
       useEffect(function() {
-        if (CONTENT) { return; }
+        if (CONTENT) { setData(CONTENT); setLoading(false); return; }
         fetch("balanceeq-content.json")
           .then(function(r) { return r.json(); })
           .then(function(json) {
@@ -1754,7 +2147,14 @@
             setData(json);
             setLoading(false);
           })
-          .catch(function() { setLoading(false); });
+          .catch(function() {
+            // Fallback: load inline if fetch fails (e.g. file:// protocol)
+            if (window.__BALANCEEQ_CONTENT) {
+              CONTENT = window.__BALANCEEQ_CONTENT;
+              setData(window.__BALANCEEQ_CONTENT);
+            }
+            setLoading(false);
+          });
       }, []);
 
       // Hash-based routing
