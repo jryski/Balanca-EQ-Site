@@ -152,7 +152,6 @@
   "supplier_links": {
     "cognizin": "https://www.kyowa-usa.com/cognizin",
     "suntheanine": "https://www.suntheanine.com",
-    "niagen": "https://www.niagenbio.com",
     "quatrefolic": "https://www.quatrefolic.com",
     "affron": "https://www.affron.com",
     "magtein": "https://www.magtein.com"
@@ -362,9 +361,9 @@
       {
         "id": "nicotinamide-riboside",
         "name": "Nicotinamide Riboside",
-        "branded": "Niagen",
-        "supplier": "Niagen Bioscience (ChromaDex)",
-        "supplier_link": "niagen",
+        "branded": "",
+        "supplier": "Generic NR (Nicotinamide Riboside Chloride)",
+        "supplier_link": "",
         "dose": "250 mg",
         "form": "Nicotinamide Riboside Chloride",
         "category": "NAD+ Precursor",
@@ -373,7 +372,7 @@
         "why_its_here": "Nicotinamide Riboside (NR) is a form of vitamin B3 that your body converts into NAD+ (nicotinamide adenine dinucleotide), a coenzyme present in every living cell. NAD+ is essential for converting food into cellular energy, repairing DNA, and maintaining healthy cell function. The problem: NAD+ levels decline significantly with age, contributing to cognitive decline, reduced energy, and accelerated aging. NR is the most efficient precursor for restoring NAD+ levels.",
         "what_to_expect": "NR works at the cellular level, so benefits are often described as a general improvement in energy, mental stamina, and resilience. Some people notice improvements within the first 2 weeks; clinical trials show measurable increases in blood NAD+ levels within the first month. The cognitive and neuroprotective benefits build over longer-term use.",
         "how_it_works": "NR enters cells and is converted through the NR kinase pathway into NAD+. This is a more efficient pathway than other NAD+ precursors like niacin or nicotinamide. Once NAD+ levels are elevated, it supports sirtuin activity (longevity enzymes) and mitochondrial function, your cells' energy production centers. In the brain, healthy mitochondrial function is critical for sustained mental performance.",
-        "safety_note": "Niagen NR has been extensively studied in human clinical trials and holds multiple safety certifications. It was the first and only NAD+ precursor to receive two FDA GRAS notifications.",
+        "safety_note": "Nicotinamide Riboside (NR) has been extensively studied in human clinical trials and holds multiple safety certifications. It was the first and only NAD+ precursor to receive two FDA GRAS notifications.",
         "studies": [
           {
             "title": "A randomized placebo-controlled trial of nicotinamide riboside in older adults with mild cognitive impairment",

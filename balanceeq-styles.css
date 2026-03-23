@@ -2,21 +2,21 @@
 /* Shopify-ready: These custom properties map directly to theme settings */
 
 :root {
-  --beq-bg: #FDFBF7;
-  --beq-surface: #FFFFFF;
-  --beq-surface-light: #F8FAFB;
-  --beq-border: #E8EDF2;
-  --beq-accent: #2A9D8F;
-  --beq-accent-light: #238276;
-  --beq-accent-glow: rgba(42, 157, 143, 0.12);
-  --beq-text: #2C3E50;
-  --beq-text-muted: #5A6C7D;
-  --beq-text-dim: #8B9AAD;
-  --beq-heading: #1A2332;
-  --beq-focus-accent: #2A9D8F;
-  --beq-restore-accent: #7C5CBF;
+  --beq-bg: #0a0a0a;
+  --beq-surface: #1a1a1a;
+  --beq-surface-light: #222222;
+  --beq-border: #333333;
+  --beq-accent: #00ae94;
+  --beq-accent-light: #00c9ab;
+  --beq-accent-glow: rgba(0, 174, 148, 0.12);
+  --beq-text: #cccccc;
+  --beq-text-muted: #999999;
+  --beq-text-dim: #666666;
+  --beq-heading: #ffffff;
+  --beq-focus-accent: #00ae94;
+  --beq-restore-accent: #008bd8;
   --beq-warning: #D4940A;
-  --beq-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --beq-font: 'Walkway', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 /* ---- Layout ---- */
@@ -51,13 +51,13 @@
 
 .beq-tabs__btn--active-focus {
   border-color: var(--beq-focus-accent);
-  background: rgba(42, 157, 143, 0.07);
+  background: rgba(0, 174, 148, 0.07);
   color: var(--beq-focus-accent);
 }
 
 .beq-tabs__btn--active-restore {
   border-color: var(--beq-restore-accent);
-  background: rgba(124, 92, 191, 0.07);
+  background: rgba(0, 139, 216, 0.07);
   color: var(--beq-restore-accent);
 }
 
@@ -80,12 +80,12 @@
 }
 
 .beq-hero__badge--focus {
-  background: rgba(42, 157, 143, 0.09);
+  background: rgba(0, 174, 148, 0.09);
   color: var(--beq-focus-accent);
 }
 
 .beq-hero__badge--restore {
-  background: rgba(124, 92, 191, 0.09);
+  background: rgba(0, 139, 216, 0.09);
   color: var(--beq-restore-accent);
 }
 
@@ -214,7 +214,7 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: rgba(124, 92, 191, 0.1);
+  background: rgba(0, 139, 216, 0.1);
   color: var(--beq-restore-accent);
   display: flex;
   align-items: center;

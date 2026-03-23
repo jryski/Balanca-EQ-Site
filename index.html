@@ -4,38 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BalanceEQ - Circadian Nootropics for Peak Performance</title>
-    <meta name="description" content="Clinical-dose nootropics optimized for your circadian rhythm. EQ:Focus for daytime performance. EQ:Restore for evening presence. Public COAs. Full transparency.">
+    <meta name="description" content="Evidence-based nootropics optimized for your circadian rhythm. EQ:Focus for daytime performance. EQ:Restore for evening presence. Public COAs. Full transparency.">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
+    <!-- Walkway Brand Font -->
     <style>
+        @font-face {
+            font-family: 'Walkway';
+            src: url('assets/fonts/Walkway rounded.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Walkway';
+            src: url('assets/fonts/Walkway SemiBold.ttf') format('truetype');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Walkway';
+            src: url('assets/fonts/Walkway Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Walkway';
+            src: url('assets/fonts/Walkway Black.ttf') format('truetype');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --beq-bg: #0a0a0a;
+            --beq-bg-light: #f5f5f5;
+            --beq-surface: #1a1a1a;
+            --beq-surface-light: #ffffff;
+            --beq-border: #333333;
+            --beq-border-light: #e0e0e0;
+            --beq-accent: #00ae94;
+            --beq-accent-hover: #00c9ab;
+            --beq-focus-accent: #00ae94;
+            --beq-focus-dark: #042b23;
+            --beq-restore-accent: #008bd8;
+            --beq-restore-dark: #001721;
+            --beq-text: #ffffff;
+            --beq-text-light: #1a1a1a;
+            --beq-text-muted: #999999;
+            --beq-text-muted-light: #666666;
+            --beq-heading: #ffffff;
+            --beq-heading-light: #1a1a1a;
+            --beq-font: 'Walkway', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-            background: #FDFBF7;
-            color: #2C3E50;
+            font-family: var(--beq-font);
+            background: var(--beq-bg);
+            color: var(--beq-text);
             line-height: 1.6;
             overflow-x: hidden;
         }
-        
+
         /* Navigation */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(253, 251, 247, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 10, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             z-index: 1000;
-            padding: 1.25rem 2rem;
-            border-bottom: 1px solid rgba(44, 62, 80, 0.08);
+            padding: 1rem 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
-        
+
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -43,19 +96,18 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             cursor: pointer;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #1A2332;
-            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
         }
-        
-        .logo span {
-            color: #2A9D8F;
+
+        .logo img {
+            height: 32px;
+            width: auto;
         }
-        
+
         .nav-links {
             display: none;
             gap: 2rem;
@@ -64,17 +116,17 @@
             top: 100%;
             left: 0;
             right: 0;
-            background: rgba(253, 251, 247, 0.98);
-            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(20px);
             flex-direction: column;
             padding: 2rem;
-            border-bottom: 1px solid rgba(44, 62, 80, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
-        
+
         .nav-links.active {
             display: flex;
         }
-        
+
         @media (min-width: 768px) {
             .nav-links {
                 display: flex;
@@ -85,7 +137,7 @@
                 background: transparent;
             }
         }
-        
+
         .mobile-menu-toggle {
             display: flex;
             flex-direction: column;
@@ -93,197 +145,275 @@
             cursor: pointer;
             padding: 8px;
         }
-        
+
         .mobile-menu-toggle span {
             width: 24px;
             height: 2px;
-            background: #2C3E50;
+            background: #ffffff;
             transition: all 0.3s;
         }
-        
+
         @media (min-width: 768px) {
             .mobile-menu-toggle {
                 display: none;
             }
         }
-        
+
         .nav-links a {
-            color: #5A6C7D;
+            color: #cccccc;
             text-decoration: none;
             transition: color 0.3s;
             cursor: pointer;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 500;
+            letter-spacing: 0.01em;
         }
-        
+
         .nav-links a:hover {
-            color: #2A9D8F;
+            color: var(--beq-accent);
         }
-        
+
         /* Page sections */
         .page {
             display: none;
-            padding: 8rem 2rem 4rem;
-            max-width: 1200px;
-            margin: 0 auto;
             min-height: 100vh;
         }
-        
+
         .page.active {
             display: block;
         }
-        
+
+        /* Page inner content wrapper */
+        .page-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section alternating backgrounds */
+        .section-dark {
+            background: var(--beq-bg);
+            color: var(--beq-text);
+            padding: 5rem 2rem;
+        }
+
+        .section-light {
+            background: var(--beq-bg-light);
+            color: var(--beq-text-light);
+            padding: 5rem 2rem;
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Wave divider between sections */
+        .wave-divider {
+            height: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        .wave-divider--dark-to-light {
+            background: var(--beq-bg-light);
+        }
+        .wave-divider--light-to-dark {
+            background: var(--beq-bg);
+        }
+        .wave-divider svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
         /* Hero */
         .hero {
             text-align: center;
-            margin-bottom: 4rem;
+            padding: 10rem 2rem 5rem;
+            background: var(--beq-bg);
+            position: relative;
         }
-        
+
+        .hero-logo {
+            margin-bottom: 2rem;
+        }
+        .hero-logo img {
+            height: 48px;
+            width: auto;
+        }
+
         h1 {
             font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 600;
+            font-weight: 800;
             margin-bottom: 1.5rem;
-            color: #1A2332;
-            letter-spacing: -0.02em;
+            color: var(--beq-heading);
+            letter-spacing: -0.03em;
             line-height: 1.1;
         }
-        
+
         .subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
-            color: #5A6C7D;
-            margin-bottom: 2rem;
+            font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+            color: #cccccc;
+            margin-bottom: 2.5rem;
             font-weight: 400;
+            line-height: 1.7;
         }
-        
+
         h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 600;
+            font-size: clamp(1.75rem, 4vw, 2.75rem);
+            font-weight: 700;
             margin-bottom: 1.5rem;
             text-align: center;
-            color: #1A2332;
-            letter-spacing: -0.01em;
+            letter-spacing: -0.02em;
         }
-        
+
+        .section-dark h2 { color: var(--beq-heading); }
+        .section-light h2 { color: var(--beq-heading-light); }
+
         h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: #1A2332;
-            font-weight: 600;
+            font-weight: 700;
+            letter-spacing: -0.01em;
         }
-        
-        /* Proof Points Banner */
+
+        .section-dark h3 { color: var(--beq-heading); }
+        .section-light h3 { color: var(--beq-heading-light); }
+
+        /* Proof Points / Scrolling Banner */
         .proof-banner {
-            background: #2A9D8F;
-            color: white;
-            padding: 1.5rem 2rem;
+            background: var(--beq-surface);
+            color: var(--beq-accent);
+            padding: 0.85rem 2rem;
             text-align: center;
-            margin-top: 6rem;
+            margin-top: 0;
+            border-bottom: 1px solid var(--beq-border);
+            position: fixed;
+            top: 58px;
+            width: 100%;
+            z-index: 999;
+            overflow: hidden;
         }
-        
+
         .proof-banner p {
-            font-size: 1.1rem;
-            font-weight: 500;
-            letter-spacing: 0.02em;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
-        
+
         /* System Overview */
         .system-overview {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin: 4rem 0;
+            margin: 3rem 0;
         }
-        
+
         .system-card {
-            background: white;
-            border: 2px solid #E8EDF2;
+            background: var(--beq-surface);
+            border: 1px solid var(--beq-border);
             border-radius: 16px;
-            padding: 3rem 2rem;
+            padding: 2.5rem 2rem;
             text-align: center;
             transition: all 0.3s;
         }
-        
+
         .system-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-            border-color: #2A9D8F;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 174, 148, 0.08);
+            border-color: var(--beq-accent);
         }
-        
-        .system-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
+
+        /* Product logo in cards */
+        .product-logo {
+            display: block;
+            height: 44px;
+            width: auto;
+            margin: 0 auto 1.5rem;
         }
-        
+
         /* Product Grid */
         .product-section {
             margin-bottom: 4rem;
         }
-        
+
         .phase-header {
             text-align: center;
             margin-bottom: 3rem;
         }
-        
+
         .phase-badge {
             display: inline-block;
-            background: #E8F5F3;
-            color: #2A9D8F;
+            background: rgba(0, 174, 148, 0.1);
+            color: var(--beq-accent);
             padding: 0.5rem 1.5rem;
             border-radius: 24px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
+            border: 1px solid rgba(0, 174, 148, 0.2);
         }
-        
+
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
-        
+
         .product-card {
-            background: white;
-            border: 1px solid #E8EDF2;
+            background: var(--beq-surface);
+            border: 1px solid var(--beq-border);
             border-radius: 16px;
             padding: 2.5rem 2rem;
             transition: all 0.3s;
         }
-        
+
+        .product-card--light {
+            background: var(--beq-surface-light);
+            border: 1px solid var(--beq-border-light);
+        }
+
         .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-            border-color: #2A9D8F;
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+            border-color: var(--beq-accent);
         }
-        
-        .product-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            text-align: center;
+
+        .product-card--light:hover {
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
         }
-        
+
         .product-card h3 {
             text-align: center;
             margin-bottom: 1rem;
         }
-        
+
         .product-card p {
-            color: #5A6C7D;
+            color: var(--beq-text-muted);
             margin-bottom: 1rem;
             font-size: 0.95rem;
             line-height: 1.7;
         }
-        
+
+        .product-card--light p {
+            color: var(--beq-text-muted-light);
+        }
+
         .product-launch {
             font-size: 0.875rem;
-            color: #2A9D8F;
+            color: var(--beq-accent);
             font-weight: 600;
             margin-bottom: 1.5rem;
             text-align: center;
+            letter-spacing: 0.03em;
         }
-        
+
         .product-badges {
             display: flex;
             gap: 0.5rem;
@@ -291,167 +421,183 @@
             margin-bottom: 1rem;
             flex-wrap: wrap;
         }
-        
+
         .badge {
-            font-size: 0.7rem;
-            background: #E8F5F3;
-            color: #2A9D8F;
-            padding: 0.25rem 0.65rem;
+            font-size: 0.65rem;
+            background: rgba(0, 174, 148, 0.1);
+            color: var(--beq-accent);
+            padding: 0.3rem 0.7rem;
             border-radius: 12px;
             font-weight: 600;
-            letter-spacing: 0.03em;
+            letter-spacing: 0.05em;
+            border: 1px solid rgba(0, 174, 148, 0.15);
         }
-        
+
         .product-ingredients {
-            background: #F8FAFB;
+            background: rgba(255, 255, 255, 0.04);
             padding: 1rem;
             border-radius: 12px;
             margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.06);
         }
-        
+
         .product-ingredients h4 {
-            font-size: 0.85rem;
-            color: #5A6C7D;
+            font-size: 0.8rem;
+            color: var(--beq-text-muted);
             margin-bottom: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             font-weight: 600;
         }
-        
+
         .ingredient-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
         }
-        
+
         .ingredient-tag {
             font-size: 0.75rem;
-            background: white;
-            border: 1px solid #E8EDF2;
-            color: #2A9D8F;
+            background: rgba(0, 174, 148, 0.08);
+            border: 1px solid rgba(0, 174, 148, 0.2);
+            color: var(--beq-accent);
             padding: 0.35rem 0.85rem;
             border-radius: 20px;
             cursor: pointer;
             transition: all 0.2s;
             font-weight: 500;
         }
-        
+
         .ingredient-tag:hover {
-            background: #E8F5F3;
-            border-color: #2A9D8F;
+            background: rgba(0, 174, 148, 0.18);
+            border-color: var(--beq-accent);
         }
-        
+
         .subscribe-btn {
             width: 100%;
             padding: 1rem;
-            background: #2A9D8F;
+            background: var(--beq-accent);
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 24px;
             font-size: 1rem;
-            font-weight: 500;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
+            font-family: var(--beq-font);
+            letter-spacing: 0.01em;
         }
-        
+
         .subscribe-btn:hover {
-            background: #238276;
+            background: var(--beq-accent-hover);
             transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 174, 148, 0.25);
         }
-        
+
         /* Evidence Cards */
         .evidence-card {
-            background: white;
-            border: 1px solid #E8EDF2;
+            background: var(--beq-surface);
+            border: 1px solid var(--beq-border);
             border-radius: 16px;
             padding: 2rem;
             margin-bottom: 2rem;
         }
-        
+
+        .section-light .evidence-card {
+            background: var(--beq-surface-light);
+            border-color: var(--beq-border-light);
+        }
+
         .evidence-card.hidden {
             display: none;
         }
-        
+
         /* Buttons */
         .btn-primary {
-            background: #2A9D8F;
+            background: var(--beq-accent);
             color: white;
             padding: 1rem 2.5rem;
             border: none;
-            border-radius: 8px;
+            border-radius: 24px;
             font-size: 1rem;
-            font-weight: 500;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
             display: inline-block;
             text-decoration: none;
+            font-family: var(--beq-font);
+            letter-spacing: 0.01em;
         }
-        
+
         .btn-primary:hover {
-            background: #238276;
+            background: var(--beq-accent-hover);
             transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 174, 148, 0.25);
         }
-        
+
         .btn-secondary {
             background: transparent;
-            color: #2A9D8F;
+            color: var(--beq-accent);
             padding: 0.75rem 1.5rem;
-            border: 2px solid #2A9D8F;
-            border-radius: 8px;
+            border: 2px solid var(--beq-accent);
+            border-radius: 24px;
             font-size: 0.95rem;
-            font-weight: 500;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
             display: inline-block;
             text-decoration: none;
+            font-family: var(--beq-font);
         }
-        
+
         .btn-secondary:hover {
-            background: #2A9D8F;
+            background: var(--beq-accent);
             color: white;
         }
-        
+
         /* Timeline */
         .timeline {
-            background: white;
-            border: 1px solid #E8EDF2;
+            background: var(--beq-surface);
+            border: 1px solid var(--beq-border);
             border-radius: 16px;
             padding: 3rem 2rem;
-            margin: 4rem auto;
+            margin: 3rem auto;
             max-width: 900px;
         }
-        
+
         .timeline-item {
             display: flex;
             gap: 1.5rem;
             align-items: start;
             margin-bottom: 2rem;
         }
-        
+
         .timeline-item:last-child {
             margin-bottom: 0;
         }
-        
+
         .timeline-badge {
-            background: #E8F5F3;
-            color: #2A9D8F;
+            background: rgba(0, 174, 148, 0.1);
+            color: var(--beq-accent);
             font-weight: 600;
             padding: 0.5rem 1rem;
             border-radius: 8px;
             white-space: nowrap;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            border: 1px solid rgba(0, 174, 148, 0.15);
         }
-        
+
         .timeline-content h4 {
             margin-bottom: 0.5rem;
-            color: #1A2332;
+            color: var(--beq-heading);
+            font-weight: 600;
         }
-        
+
         .timeline-content p {
-            color: #5A6C7D;
+            color: var(--beq-text-muted);
             font-size: 0.95rem;
         }
-        
+
         /* Modal */
         .modal {
             display: none;
@@ -460,76 +606,79 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(26, 35, 50, 0.7);
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
             z-index: 2000;
             align-items: center;
             justify-content: center;
         }
-        
+
         .modal.active {
             display: flex;
         }
-        
+
         .modal-content {
-            background: white;
+            background: var(--beq-surface);
+            border: 1px solid var(--beq-border);
             border-radius: 16px;
             padding: 2.5rem;
             max-width: 500px;
             width: 90%;
             position: relative;
         }
-        
+
         .modal-close {
             position: absolute;
             top: 1.5rem;
             right: 1.5rem;
             background: none;
             border: none;
-            color: #5A6C7D;
+            color: var(--beq-text-muted);
             font-size: 1.5rem;
             cursor: pointer;
         }
-        
+
         .modal h3 {
             text-align: center;
             margin-bottom: 1rem;
+            color: var(--beq-heading);
         }
-        
+
         .modal p {
-            color: #5A6C7D;
+            color: var(--beq-text-muted);
             margin-bottom: 2rem;
             text-align: center;
         }
-        
+
         .modal form {
             display: flex;
             flex-direction: column;
             gap: 1rem;
         }
-        
+
         .modal input {
             padding: 1rem;
-            border-radius: 8px;
-            border: 1px solid #E8EDF2;
-            background: #F8FAFB;
-            color: #2C3E50;
+            border-radius: 12px;
+            border: 1px solid var(--beq-border);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--beq-text);
             font-size: 1rem;
+            font-family: var(--beq-font);
         }
-        
+
         .modal input:focus {
             outline: none;
-            border-color: #2A9D8F;
-            background: white;
+            border-color: var(--beq-accent);
+            background: rgba(0, 174, 148, 0.05);
         }
-        
+
         /* Footer */
         footer {
-            background: white;
-            border-top: 1px solid #E8EDF2;
-            padding: 3rem 2rem;
-            margin-top: 4rem;
+            background: var(--beq-bg);
+            border-top: 1px solid var(--beq-border);
+            padding: 4rem 2rem 2rem;
         }
-        
+
         .footer-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -537,69 +686,93 @@
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
         }
-        
+
+        .footer-logo {
+            height: 28px;
+            width: auto;
+            margin-bottom: 1rem;
+        }
+
         .footer-section h4 {
             margin-bottom: 1rem;
-            font-size: 1rem;
-            color: #1A2332;
-            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--beq-heading);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
-        
+
         .footer-section ul {
             list-style: none;
         }
-        
+
         .footer-section ul li {
             margin-bottom: 0.5rem;
         }
-        
+
         .footer-section a {
-            color: #5A6C7D;
+            color: var(--beq-text-muted);
             text-decoration: none;
             font-size: 0.9rem;
             transition: color 0.3s;
             cursor: pointer;
         }
-        
+
         .footer-section a:hover {
-            color: #2A9D8F;
+            color: var(--beq-accent);
         }
-        
+
         .footer-bottom {
-            border-top: 1px solid #E8EDF2;
-            margin-top: 2rem;
+            border-top: 1px solid var(--beq-border);
+            margin-top: 3rem;
             padding-top: 2rem;
             text-align: center;
         }
-        
+
         .footer-bottom p {
-            color: #5A6C7D;
-            font-size: 0.875rem;
+            color: #666666;
+            font-size: 0.8rem;
         }
-        
+
         /* Responsive */
         @media (max-width: 768px) {
             .product-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .timeline-item {
                 flex-direction: column;
             }
+
+            .hero {
+                padding: 8rem 1.5rem 3rem;
+            }
+
+            .section-dark, .section-light {
+                padding: 3rem 1.5rem;
+            }
         }
+
         /* Science Page Integration */
         #science-root {
             max-width: 900px;
             margin: 0 auto;
-        }
-        #science-root a {
-            color: #2A9D8F;
-        }
-        #science-root a:hover {
-            color: #238276;
+            padding: 7rem 2rem 2rem;
         }
 
-        /* Product accent dots (replacing emoji icons) */
+        #science-root .beq-tabs {
+            position: relative;
+            z-index: 1;
+            background: transparent;
+        }
+        #science-root a {
+            color: var(--beq-accent);
+        }
+        #science-root a:hover {
+            color: var(--beq-accent-hover);
+        }
+
+        /* Accent dot (kept for roadmap items) */
         .accent-dot {
             width: 8px;
             height: 8px;
@@ -607,13 +780,187 @@
             margin: 0 auto 1.5rem;
         }
         .accent-dot--focus {
-            background: #2A9D8F;
+            background: var(--beq-focus-accent);
         }
         .accent-dot--restore {
-            background: #7C5CBF;
+            background: var(--beq-restore-accent);
         }
         .accent-dot--roadmap {
-            background: #E8EDF2;
+            background: var(--beq-border);
+        }
+
+        /* Light section overrides for inline-styled content */
+        .section-light .evidence-card h3,
+        .section-light h3,
+        .section-light h4 {
+            color: var(--beq-heading-light);
+        }
+
+        .section-light .timeline {
+            background: #ffffff !important;
+            border-color: #e0e0e0 !important;
+        }
+
+        .section-light .timeline h2 {
+            color: #1a1a1a !important;
+        }
+
+        .section-light .timeline-badge {
+            background: rgba(0, 174, 148, 0.1);
+            color: #00ae94;
+        }
+
+        .section-light .timeline-content h4 {
+            color: #1a1a1a !important;
+        }
+
+        .section-light .timeline-content p {
+            color: #666666 !important;
+        }
+
+        .section-light .btn-secondary {
+            color: var(--beq-accent);
+            border-color: var(--beq-accent);
+        }
+
+        .section-light .product-card {
+            background: #ffffff !important;
+            border-color: #e0e0e0 !important;
+        }
+
+        .section-light .product-card:hover {
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08) !important;
+        }
+
+        .section-light .product-card p,
+        .section-light p {
+            color: #666666 !important;
+        }
+
+        .section-light .product-card h3 {
+            color: #1a1a1a !important;
+        }
+
+        .section-light .product-ingredients {
+            background: #f5f5f5 !important;
+            border-color: #e0e0e0 !important;
+        }
+
+        .section-light .product-ingredients h4 {
+            color: #666666 !important;
+        }
+
+        .section-light .phase-badge {
+            background: rgba(0, 174, 148, 0.08);
+            color: #00ae94;
+        }
+
+        .section-light h2 {
+            color: #1a1a1a !important;
+        }
+
+        .section-light h1 {
+            color: #1a1a1a !important;
+        }
+
+        /* Details/FAQ styling */
+        .section-light details {
+            background: var(--beq-surface-light);
+            border-color: var(--beq-border-light);
+        }
+
+        .section-dark details {
+            background: var(--beq-surface);
+            border: 1px solid var(--beq-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .section-dark details summary {
+            color: var(--beq-heading);
+        }
+
+        .section-dark details p {
+            color: var(--beq-text-muted);
+        }
+
+        /* Learn article cards on dark bg */
+        .evidence-card h3 {
+            color: var(--beq-heading);
+        }
+        .section-dark .evidence-card p {
+            color: var(--beq-text-muted);
+        }
+
+        /* Story pages */
+        .story-content {
+            color: var(--beq-text);
+        }
+
+        /* Evidence page inline style overrides */
+        .section-dark [style*="background: #F8FAFB"],
+        .section-dark [style*="background: white"] {
+            background: rgba(255, 255, 255, 0.04) !important;
+            border: 1px solid var(--beq-border) !important;
+        }
+
+        .section-dark [style*="color: #2C3E50"] {
+            color: #cccccc !important;
+        }
+
+        .section-dark [style*="color: #5A6C7D"] {
+            color: var(--beq-text-muted) !important;
+        }
+
+        .section-dark [style*="color: #8B9AAD"] {
+            color: #666666 !important;
+        }
+
+        .section-dark [style*="color: #1A2332"] {
+            color: var(--beq-heading) !important;
+        }
+
+        .section-dark [style*="color: #2A9D8F"] {
+            color: var(--beq-accent) !important;
+        }
+
+        .section-dark [style*="background: #E8F5F3"] {
+            background: rgba(0, 174, 148, 0.08) !important;
+        }
+
+        .section-dark [style*="background: white; border: 1px solid #E8EDF2"],
+        .section-dark [style*="background: white; border: 2px solid #2A9D8F"] {
+            background: var(--beq-surface) !important;
+            border-color: var(--beq-border) !important;
+        }
+
+        .section-dark input[style] {
+            background: rgba(255, 255, 255, 0.05) !important;
+            border-color: var(--beq-border) !important;
+            color: var(--beq-text) !important;
+        }
+
+        .section-dark ul[style*="color: #5A6C7D"] li,
+        .section-dark ul[style*="color: #2C3E50"] li {
+            color: var(--beq-text-muted) !important;
+        }
+
+        .section-dark summary {
+            color: var(--beq-heading) !important;
+        }
+
+        .section-dark [style*="border-left: 3px solid #2A9D8F"] {
+            border-left-color: var(--beq-accent) !important;
+        }
+
+        .section-dark [style*="border-left: 3px solid #008bd8"] {
+            border-left-color: var(--beq-restore-accent) !important;
+        }
+
+        /* Branded ingredient highlight in tables */
+        .ingredient-branded {
+            font-weight: 700;
+            color: var(--beq-accent);
         }
     </style>
     <!-- BalanceEQ Science Styles -->
@@ -628,7 +975,7 @@
     <nav>
         <div class="nav-container">
             <div class="logo" onclick="showPage('home')">
-                Balance<span>EQ</span>
+                <img src="assets/EQ-horizontal-white.svg" alt="BalanceEQ" />
             </div>
             <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
                 <span></span>
@@ -649,49 +996,56 @@
 
     <!-- Proof Points Banner -->
     <div class="proof-banner">
-        <p>Clinical Dosing • Public COAs • Evidence-Based • Third-Party Tested • Made in USA</p>
+        <p>Evidence-Based Doses &bull; Public COAs &bull; Full Transparency &bull; Third-Party Tested &bull; Made in USA</p>
     </div>
 
     <!-- HOME PAGE / PRODUCTS -->
     <div id="home" class="page active">
         <div class="hero">
+            <div class="hero-logo">
+                <img src="assets/EQ-horizontal-white.svg" alt="BalanceEQ" />
+            </div>
             <h1>Circadian Nootropics</h1>
             <p class="subtitle">
                 Your brain works differently at 7AM than 7PM. We optimized for both.<br>
-                Focus when you need to perform. Restore when it's time to be present. Clinical doses. Full transparency.
+                Focus when you need to perform. Restore when it is time to be present. Evidence-based doses. Full transparency.
             </p>
         </div>
 
         <!-- System Overview -->
+        <div class="section-dark">
+            <div class="section-inner">
         <div class="system-overview">
             <div class="system-card">
-                <div class="accent-dot accent-dot--focus"></div>
-                <h3>EQ:Focus</h3>
-                <p style="color: #5A6C7D; margin-bottom: 1.5rem;">
+                <img src="assets/EQ-Focus-horizontal-dark-bg.svg" alt="EQ:Focus" class="product-logo" />
+                <p style="color: #999999; margin-bottom: 1.5rem;">
                     Sharpen attention without stimulants. Built for deep work and calm execution.
                 </p>
-                <p style="font-size: 0.85rem; color: #2A9D8F; font-weight: 600; margin-bottom: 1rem;">
+                <p style="font-size: 0.8rem; color: var(--beq-accent); font-weight: 600; margin-bottom: 1rem; letter-spacing: 0.05em;">
                     LAUNCHING JULY 1, 2026
                 </p>
                 <button class="btn-secondary" onclick="scrollToProduct('focus')">View Formula</button>
             </div>
 
             <div class="system-card">
-                <div class="accent-dot accent-dot--restore"></div>
-                <h3>EQ:Restore</h3>
-                <p style="color: #5A6C7D; margin-bottom: 1.5rem;">
+                <img src="assets/EQ-Restore-horizontal-dark-bg.svg" alt="EQ:Restore" class="product-logo" />
+                <p style="color: #999999; margin-bottom: 1.5rem;">
                     Shift gears from work mode to presence mode. Be here for the hours that matter most.
                 </p>
-                <p style="font-size: 0.85rem; color: #2A9D8F; font-weight: 600; margin-bottom: 1rem;">
+                <p style="font-size: 0.8rem; color: var(--beq-accent); font-weight: 600; margin-bottom: 1rem; letter-spacing: 0.05em;">
                     LAUNCHING JULY 1, 2026
                 </p>
                 <button class="btn-secondary" onclick="scrollToProduct('restore')">View Formula</button>
             </div>
         </div>
+            </div>
+        </div>
 
         <!-- What to Expect -->
+        <div class="section-light">
+            <div class="section-inner">
         <div class="timeline">
-            <h2 style="margin-bottom: 2rem;">What to Expect</h2>
+            <h2 style="margin-bottom: 2rem; color: var(--beq-heading-light);">What to Expect</h2>
             <div class="timeline-item">
                 <div class="timeline-badge">Week 1</div>
                 <div class="timeline-content">
@@ -714,8 +1068,12 @@
                 </div>
             </div>
         </div>
+            </div>
+        </div>
 
         <!-- Phase 1 Products -->
+        <div class="section-dark">
+            <div class="section-inner">
         <div class="product-section" id="phase1">
             <div class="phase-header">
                 <span class="phase-badge">Phase 1 • Launching July 2026</span>
@@ -728,8 +1086,8 @@
             <div class="product-grid">
                 <!-- EQ:Focus v3.7 -->
                 <div class="product-card" id="focus-product">
-                    <div class="accent-dot accent-dot--focus"></div>
-                    <h3>EQ:Focus</h3>
+                    <img src="assets/EQ-Focus-horizontal-dark-bg.svg" alt="EQ:Focus" class="product-logo" />
+                    <h3 style="display:none;">EQ:Focus</h3>
                     <div class="product-badges">
                         <span class="badge">100% VEGAN</span>
                         <span class="badge">ALLERGEN-FREE</span>
@@ -745,7 +1103,7 @@
                             <span class="ingredient-tag" onclick="showIngredient('L-Theanine-Focus')">L-Theanine 150mg (Suntheanine)</span>
                             <span class="ingredient-tag" onclick="showIngredient('Lion\'s Mane')">Lion's Mane 500mg</span>
                             <span class="ingredient-tag" onclick="showIngredient('Rhodiola')">Rhodiola 150mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('NR')">NR 250mg (Niagen)</span>
+                            <span class="ingredient-tag" onclick="showIngredient('NR')">NR 250mg</span>
                             <span class="ingredient-tag" onclick="showIngredient('B6')">B6 (P-5-P) 8mg</span>
                             <span class="ingredient-tag" onclick="showIngredient('Folate')">Folate 400mcg (Quatrefolic)</span>
                             <span class="ingredient-tag" onclick="showIngredient('B12')">B12 500mcg</span>
@@ -766,8 +1124,8 @@
                 
                 <!-- EQ:Restore v3.7 -->
                 <div class="product-card" id="restore-product">
-                    <div class="accent-dot accent-dot--restore"></div>
-                    <h3>EQ:Restore</h3>
+                    <img src="assets/EQ-Restore-horizontal-dark-bg.svg" alt="EQ:Restore" class="product-logo" />
+                    <h3 style="display:none;">EQ:Restore</h3>
                     <div class="product-badges">
                         <span class="badge">100% VEGAN</span>
                         <span class="badge">ALLERGEN-FREE</span>
@@ -802,14 +1160,18 @@
                 </div>
             </div>
         </div>
+            </div>
+        </div>
 
         <!-- Phase 2 Products Preview -->
+        <div class="section-light">
+            <div class="section-inner">
         <div class="product-section">
             <div class="phase-header">
                 <span class="phase-badge">Phase 2 • Post-Launch Roadmap</span>
                 <h2>Expanding the System</h2>
                 <p style="color: #5A6C7D; max-width: 800px; margin: 0 auto;">
-                    Once the core system proves itself, the BalanceEQ platform expands. Each future product follows the same principles: branded ingredients, clinical doses, full transparency.
+                    Once the core system proves itself, the BalanceEQ platform expands. Each future product follows the same principles: branded ingredients, evidence-based doses, full transparency.
                 </p>
             </div>
             
@@ -874,11 +1236,15 @@
                 </div>
             </div>
         </div>
+            </div>
+        </div>
     </div>
 
     <!-- EVIDENCE PAGE -->
     <div id="evidence" class="page">
-        <div class="hero">
+        <div class="section-dark" style="padding-top: 8rem;">
+            <div class="section-inner">
+        <div style="text-align: center; margin-bottom: 4rem;">
             <h1>Evidence Library</h1>
             <p class="subtitle">Every claim backed by peer-reviewed research. Browse by product.</p>
         </div>
@@ -1011,9 +1377,9 @@
                 </div>
 
                 <div class="evidence-card" data-product="focus">
-                    <h3>Nicotinamide Riboside (Niagen&reg;): Cellular Energy</h3>
+                    <h3>Nicotinamide Riboside (NR): Cellular Energy</h3>
                     <div style="background: #F8FAFB; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
-                        <p style="color: #2C3E50; font-weight: 500; margin-bottom: 0.5rem;">Our Dose: 250mg (Niagen&reg;)</p>
+                        <p style="color: #2C3E50; font-weight: 500; margin-bottom: 0.5rem;">Our Dose: 250mg Nicotinamide Riboside (NR)</p>
                         <p style="color: #5A6C7D;">Supports NAD+ replenishment and cellular energy metabolism</p>
                     </div>
                     <div style="background: #E8F5F3; padding: 1rem; border-radius: 8px;">
@@ -1031,11 +1397,15 @@
                 <button class="btn-primary" onclick="showPage('science')">View Ingredient Science</button>
             </div>
         </div>
+            </div>
+        </div>
     </div>
 
     <!-- COAs PAGE -->
     <div id="coas" class="page">
-        <div class="hero">
+        <div class="section-dark" style="padding-top: 8rem;">
+            <div class="section-inner">
+        <div style="text-align: center; margin-bottom: 4rem;">
             <h1>Certificates of Analysis</h1>
             <p class="subtitle">Third-party testing for every batch. Public and accessible.</p>
         </div>
@@ -1113,11 +1483,15 @@
                 </div>
             </div>
         </div>
+            </div>
+        </div>
     </div>
 
     <!-- TRANSPARENCY PAGE -->
     <div id="transparency" class="page">
-        <div class="hero">
+        <div class="section-dark" style="padding-top: 8rem;">
+            <div class="section-inner">
+        <div style="text-align: center; margin-bottom: 4rem;">
             <h1>Complete Transparency</h1>
             <p class="subtitle">No proprietary blends. No hidden ingredients. Every claim backed.</p>
         </div>
@@ -1191,11 +1565,15 @@
                 </details>
             </div>
         </div>
+            </div>
+        </div>
     </div>
 
     <!-- LEARN PAGE -->
     <div id="learn" class="page">
-        <div class="hero">
+        <div class="section-dark" style="padding-top: 8rem;">
+            <div class="section-inner">
+        <div style="text-align: center; margin-bottom: 4rem;">
             <h1>Learn</h1>
             <p class="subtitle">The science behind cognitive performance and evening recovery. No jargon. Full receipts.</p>
         </div>
@@ -1415,11 +1793,15 @@
                 </div>
             </article>
         </div>
+            </div>
+        </div>
     </div>
 
     <!-- OUR STORY PAGE -->
     <div id="ourstory" class="page">
-        <div class="hero">
+        <div class="section-dark" style="padding-top: 8rem;">
+            <div class="section-inner">
+        <div style="text-align: center; margin-bottom: 4rem;">
             <h1>Our Story</h1>
             <p class="subtitle">We are a family building something real. Here are our stories.</p>
         </div>
@@ -1502,7 +1884,7 @@
             <!-- Amanda's Story -->
             <article id="story-amanda" class="story-content" style="display: none;">
                 <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
-                    <div style="width: 56px; height: 56px; border-radius: 50%; background: #7C5CBF; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem;">AR</div>
+                    <div style="width: 56px; height: 56px; border-radius: 50%; background: #008bd8; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem;">AR</div>
                     <div>
                         <h2 style="margin-bottom: 0.25rem;">Amanda Ryski</h2>
                         <p style="color: #5A6C7D; font-size: 0.9rem;">Co-Founder &bull; The Heart of the Mission</p>
@@ -1530,7 +1912,7 @@
 
                     <p style="margin-bottom: 1.25rem;"><strong>No one thing, or pill, will ever be a fix all.</strong> But I believe with intentional living, and healthy daily habits, you can find the balance to keep thriving in your ever changing home and work life. We hope to be a part of your story, lighten your load, support and help guide you on this journey back to yourself.</p>
 
-                    <div style="margin-top: 2rem; padding: 1.5rem; background: #F8FAFB; border-radius: 12px; border-left: 3px solid #7C5CBF;">
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: #F8FAFB; border-radius: 12px; border-left: 3px solid #008bd8;">
                         <p style="color: #5A6C7D; margin-bottom: 0.5rem;">Welcome to our family,</p>
                         <p style="color: #1A2332; font-weight: 600;">Amanda Ryski, Co-Founder of Balasana/BalanceEQ</p>
                     </div>
@@ -1541,12 +1923,16 @@
                 </div>
             </article>
         </div>
+            </div>
+        </div>
     </div>
 
     <!-- SCIENCE PAGE (React-powered) -->
     <div id="science" class="page">
-        <div id="science-root">
-            <p style="text-align:center; padding:4rem; color:#5A6C7D;">Loading ingredient science...</p>
+        <div class="section-dark" style="min-height: 100vh; padding-top: 0;">
+            <div id="science-root">
+                <p style="text-align:center; padding:4rem; color:#999;">Loading ingredient science...</p>
+            </div>
         </div>
     </div>
 
@@ -1554,9 +1940,9 @@
     <footer>
         <div class="footer-container">
             <div class="footer-section">
-                <h4>BalanceEQ</h4>
-                <p style="color: #5A6C7D; font-size: 0.875rem;">
-                    Circadian-optimized nootropics from Balasana. Clinical dosing, public COAs, full transparency.
+                <img src="assets/EQ-horizontal-white.svg" alt="BalanceEQ" class="footer-logo" />
+                <p style="color: #666666; font-size: 0.85rem; line-height: 1.6;">
+                    Circadian-optimized nootropics from Balasana. Evidence-based doses, public COAs, full transparency.
                 </p>
             </div>
             
@@ -1667,7 +2053,7 @@
             },
             'NR': {
                 claim: 'NAD+ precursor; cellular energy metabolism',
-                dose: '250mg (Niagen\u00ae)',
+                dose: '250mg NR',
                 products: ['EQ:Focus'],
                 scienceId: 'nicotinamide-riboside', scienceProduct: 'focus'
             },
