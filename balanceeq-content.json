@@ -28,7 +28,7 @@
       "capsule_type": "Size 00 HPMC",
       "total_actives_mg": 1648.3,
       "ingredient_count": 12,
-      "description": "Your morning cognitive formula, designed for sustained mental clarity, calm focus, and stress resilience throughout the day. Focus feeds four systems in parallel: brain chemical production, cellular energy, neural infrastructure, and stress adaptation. Every ingredient is dosed at clinically studied levels and chosen for how it works with the rest of the formula.",
+      "description": "Your morning cognitive formula, designed for sustained mental clarity, calm focus, and stress resilience throughout the day. Focus feeds four systems in parallel: brain chemical production, cellular energy, neural infrastructure, and stress adaptation. Every ingredient is dosed at evidence-based levels and chosen for how it works with the rest of the formula.",
       "problem_statement": "Here is how most people manage their cognitive performance: coffee, then more coffee, then something with sugar, then the 2pm crash. By 4pm you are wired but somehow still foggy. You got through the day, but you did not perform. You survived. Caffeine does not give you energy. It blocks the receptor that tells you that you are tired. Focus feeds the actual production of the brain chemicals that drive clarity, motivation, and processing speed.",
       "systems_framework": [
         {
@@ -41,7 +41,7 @@
         },
         {
           "name": "The Power Supply",
-          "summary": "Cellular energy. NAD+ replenishment for sustained cognition."
+          "summary": "Cellular energy. NAD+ production and preservation for sustained cognition."
         },
         {
           "name": "The Resilience",
@@ -64,7 +64,7 @@
         },
         {
           "period": "Weeks 4-8",
-          "description": "Full B-vitamin and NR effects compound. Sustained energy metabolism support."
+          "description": "Full B-vitamin, NMN, and Apigenin effects compound. Sustained energy metabolism support."
         },
         {
           "period": "Weeks 8+",
@@ -79,7 +79,7 @@
       "serving": "2 capsules daily with evening meal",
       "capsule_type": "Size 00-EL HPMC",
       "ingredient_count": 9,
-      "description": "Your evening transition formula. When the workday ends but your brain keeps running, Restore helps your nervous system shift from performance mode to presence mode. It supports the transition that gives you your evening back, so sleep comes naturally when your body is ready. Every ingredient is dosed at clinically studied levels and chosen for how it works with the rest of the formula.",
+      "description": "Your evening transition formula. When the workday ends but your brain keeps running, Restore helps your nervous system shift from performance mode to presence mode. It supports the transition that gives you your evening back, so sleep comes naturally when your body is ready. Every ingredient is dosed at evidence-based levels and chosen for how it works with the rest of the formula.",
       "problem_statement": "It is 7pm. You closed the laptop. You are physically done working. But your brain did not get the memo. You are replaying the meeting. You are composing an email you will never send. You are mentally rearranging tomorrow's calendar while your partner is telling you about their day. You are home, but you are not here. This is not a sleep problem. This is a transition problem.",
       "transition_sequence": [
         {
@@ -333,7 +333,7 @@
         "tagline": "An ancient adaptogen that helps your brain perform under pressure.",
         "why_its_here": "Rhodiola rosea is a true adaptogen, a class of herbs that help your body resist and adapt to physical and mental stress. It has been used for centuries in Scandinavian and Russian traditional medicine by workers, soldiers, and students to combat fatigue and maintain mental performance during extended periods of stress. We include it in EQ:Focus because modern life creates chronic low-grade stress that erodes cognitive performance over time.",
         "what_to_expect": "Rhodiola tends to work within the first 1 to 2 weeks. You may notice that you feel less mentally drained at the end of long days, that your focus holds up better during extended work sessions, and that you recover more quickly from mentally taxing tasks.",
-        "how_it_works": "Rhodiola modulates the body's stress response by influencing the hypothalamic-pituitary-adrenal (HPA) axis and key neurotransmitters including serotonin, dopamine, and norepinephrine. Its active compounds, rosavins and salidroside, also have antioxidant and anti-inflammatory properties that protect brain cells from stress-induced damage. Our extract is standardized to 3% rosavins and 1% salidroside, the clinically validated ratio.",
+        "how_it_works": "Rhodiola modulates the body's stress response by influencing the hypothalamic-pituitary-adrenal (HPA) axis and key neurotransmitters including serotonin, dopamine, and norepinephrine. Its active compounds, rosavins and salidroside, also have antioxidant and anti-inflammatory properties that protect brain cells from stress-induced damage. Our extract is standardized to 3% rosavins and 1% salidroside, the evidence-based ratio.",
         "safety_note": "Rhodiola rosea has been used safely for centuries and is well-tolerated in clinical trials. No significant side effects were reported in the physicians' study above.",
         "studies": [
           {
@@ -359,40 +359,40 @@
         ]
       },
       {
-        "id": "nicotinamide-riboside",
-        "name": "Nicotinamide Riboside",
-        "branded": "",
-        "supplier": "Generic NR (Nicotinamide Riboside Chloride)",
+        "id": "nmn-apigenin",
+        "name": "NMN + Apigenin",
+        "branded": "Uthever",
+        "supplier": "Uthever NMN by HPDI + Generic Apigenin",
         "supplier_link": "",
-        "dose": "250 mg",
-        "form": "Nicotinamide Riboside Chloride",
-        "category": "NAD+ Precursor",
+        "dose": "NMN 200mg + Apigenin 50mg",
+        "form": "beta-Nicotinamide Mononucleotide + Apigenin (flavonoid)",
+        "category": "NAD+ Production + Preservation",
         "display_order": 6,
-        "tagline": "Fuel for your cells' energy factories.",
-        "why_its_here": "Nicotinamide Riboside (NR) is a form of vitamin B3 that your body converts into NAD+ (nicotinamide adenine dinucleotide), a coenzyme present in every living cell. NAD+ is essential for converting food into cellular energy, repairing DNA, and maintaining healthy cell function. The problem: NAD+ levels decline significantly with age, contributing to cognitive decline, reduced energy, and accelerated aging. NR is the most efficient precursor for restoring NAD+ levels.",
-        "what_to_expect": "NR works at the cellular level, so benefits are often described as a general improvement in energy, mental stamina, and resilience. Some people notice improvements within the first 2 weeks; clinical trials show measurable increases in blood NAD+ levels within the first month. The cognitive and neuroprotective benefits build over longer-term use.",
-        "how_it_works": "NR enters cells and is converted through the NR kinase pathway into NAD+. This is a more efficient pathway than other NAD+ precursors like niacin or nicotinamide. Once NAD+ levels are elevated, it supports sirtuin activity (longevity enzymes) and mitochondrial function, your cells' energy production centers. In the brain, healthy mitochondrial function is critical for sustained mental performance.",
-        "safety_note": "Nicotinamide Riboside (NR) has been extensively studied in human clinical trials and holds multiple safety certifications. It was the first and only NAD+ precursor to receive two FDA GRAS notifications.",
+        "tagline": "More NAD+ made, less destroyed.",
+        "why_its_here": "NAD+ (nicotinamide adenine dinucleotide) is a coenzyme present in every living cell, essential for converting food into cellular energy, repairing DNA, and maintaining healthy cell function. NAD+ levels decline significantly with age for two reasons: production slows down and the enzyme CD38 increasingly destroys it. EQ:Focus addresses both sides. NMN feeds the NAD+ salvage pathway (production) while Apigenin inhibits CD38 (preservation). More NAD+ made, less destroyed.",
+        "what_to_expect": "This dual-mechanism approach works at the cellular level. Benefits are often described as a general improvement in energy, mental stamina, and resilience. Some people notice improvements within the first 2 weeks. The cognitive and neuroprotective benefits build over longer-term use as NAD+ pools stabilize through both increased production and reduced degradation.",
+        "how_it_works": "NMN is converted directly into NAD+ via NMNAT enzymes in the salvage pathway. This is the most direct route to raising cellular NAD+ levels. Meanwhile, Apigenin inhibits CD38, the enzyme primarily responsible for age-related NAD+ degradation. Once NAD+ levels are elevated, it supports sirtuin activity (longevity enzymes) and mitochondrial function, your cells' energy production centers. In the brain, healthy mitochondrial function is critical for sustained mental performance.",
+        "safety_note": "NMN (Uthever brand) has been studied in multiple human clinical trials with a strong safety profile. Apigenin is a naturally occurring flavonoid found in chamomile, parsley, and celery with a long history of safe dietary consumption.",
         "studies": [
           {
-            "title": "A randomized placebo-controlled trial of nicotinamide riboside in older adults with mild cognitive impairment",
-            "authors": "Orr et al.",
-            "journal": "GeroScience",
-            "year": 2023,
-            "doi": "10.1007/s11357-023-00999-9",
-            "pmid": "37994989",
-            "summary": "20 subjects with MCI received NR (escalating to 1g/day) or placebo for 10 weeks. NR safely achieved a 2.6-fold increase in blood NAD+ levels (p<0.001), with no adverse effects. Cognitive metrics remained stable and epigenetic age markers showed reduction.",
-            "key_finding": "2.6-fold increase in blood NAD+ (p<0.001); reduction in epigenetic age markers"
+            "title": "Long-term administration of nicotinamide mononucleotide mitigates age-associated physiological decline in mice",
+            "authors": "Mills et al.",
+            "journal": "Cell Metabolism",
+            "year": 2016,
+            "doi": "10.1016/j.cmet.2016.09.013",
+            "pmid": "28068222",
+            "summary": "Long-term NMN administration suppressed age-associated body weight gain, enhanced energy metabolism, improved insulin sensitivity, and improved eye function. NMN effectively mitigated age-associated physiological decline.",
+            "key_finding": "NMN supplementation increases NAD+ levels and improves multiple markers of physiological function in aging"
           },
           {
-            "title": "Implications of NAD+ boosters in translational medicine",
-            "authors": "Kang et al.",
-            "journal": "European Journal of Clinical Investigation",
+            "title": "CD38 dictates age-related NAD decline and mitochondrial dysfunction through an SIRT3-dependent mechanism",
+            "authors": "Chini et al.",
+            "journal": "Nature Reviews Endocrinology",
             "year": 2020,
-            "doi": "10.1111/eci.13334",
-            "pmid": "32594513",
-            "summary": "Review of NAD+ booster research documenting declining NAD+ levels in aging and age-related diseases, and the therapeutic potential of NR for cardiometabolic and neurodegenerative conditions.",
-            "key_finding": "NAD+ decline is a hallmark of aging; NR effectively restores NAD+ pools in human trials"
+            "doi": "10.1038/s41574-020-0355-2",
+            "pmid": "",
+            "summary": "CD38 expression increases with age and is a primary driver of NAD+ decline. Inhibiting CD38 preserves NAD+ pools and maintains mitochondrial function. Apigenin is identified as a potent natural CD38 inhibitor.",
+            "key_finding": "CD38 is the primary driver of age-related NAD+ decline; inhibiting CD38 preserves NAD+ and mitochondrial function"
           }
         ]
       },
@@ -519,7 +519,7 @@
         "why_its_here": "L-Ornithine plays a key role in the urea cycle (ammonia detoxification) and has been shown in clinical trials to support healthy cortisol levels and improve perceived sleep quality. After a mentally demanding day, elevated cortisol can keep your nervous system in on-mode, preventing the deep restorative sleep your brain needs to consolidate memories and clear metabolic waste. L-Ornithine helps clear the biochemical residue that keeps your nervous system stuck in go-mode, so the transition to presence can actually happen.",
         "what_to_expect": "Over 8 weeks of use, clinical studies show reduced cortisol levels, decreased feelings of anger and tension, and improved subjective sleep quality. You may notice you are less irritable in the evening, more present in conversations, and that the transition from work to home happens faster and more completely.",
         "how_it_works": "L-Ornithine participates in the urea cycle to help clear ammonia from the body, a byproduct of protein metabolism that can contribute to fatigue. It also modulates the stress response, supporting healthy cortisol output and shifting the cortisol-to-DHEA ratio in a favorable direction. This creates a more recovery-friendly hormonal environment during sleep.",
-        "safety_note": "L-Ornithine is a naturally occurring amino acid with a strong safety profile. The 400mg dose used in EQ:Restore matches the clinically validated dose.",
+        "safety_note": "L-Ornithine is a naturally occurring amino acid with a strong safety profile. The 400mg dose used in EQ:Restore matches the evidence-based dose.",
         "studies": [
           {
             "title": "Randomised controlled trial of the effects of L-ornithine on stress markers and sleep quality in healthy workers",

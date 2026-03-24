@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BalanceEQ - Circadian Nootropics for Peak Performance</title>
-    <meta name="description" content="Clinical-dose nootropics optimized for your circadian rhythm. EQ:Focus for daytime performance. EQ:Restore for evening recovery. Public COAs. Full transparency.">
+    <meta name="description" content="Evidence-based nootropics optimized for your circadian rhythm. EQ:Focus for daytime performance. EQ:Restore for evening recovery. Public COAs. Full transparency.">
     
     <style>
         * {
@@ -557,7 +557,7 @@
             <h1>Circadian Nootropics</h1>
             <p class="subtitle">
                 Your brain works differently at 7AM than 7PM. We optimized for both.<br>
-                Morning focus. Evening recovery. Clinical doses. Full transparency.
+                Morning focus. Evening recovery. Evidence-based doses. Full transparency.
             </p>
         </div>
 

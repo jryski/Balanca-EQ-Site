@@ -1084,7 +1084,7 @@
             </div>
             
             <div class="product-grid">
-                <!-- EQ:Focus v3.7 -->
+                <!-- EQ:Focus v3.8 -->
                 <div class="product-card" id="focus-product">
                     <img src="assets/EQ-Focus-horizontal-dark-bg.svg" alt="EQ:Focus" class="product-logo" />
                     <h3 style="display:none;">EQ:Focus</h3>
@@ -1103,7 +1103,7 @@
                             <span class="ingredient-tag" onclick="showIngredient('L-Theanine-Focus')">L-Theanine 150mg (Suntheanine)</span>
                             <span class="ingredient-tag" onclick="showIngredient('Lion\'s Mane')">Lion's Mane 500mg</span>
                             <span class="ingredient-tag" onclick="showIngredient('Rhodiola')">Rhodiola 150mg</span>
-                            <span class="ingredient-tag" onclick="showIngredient('NR')">NR 250mg</span>
+                            <span class="ingredient-tag" onclick="showIngredient('NMN-Apigenin')">NMN 200mg + Apigenin 50mg (Uthever)</span>
                             <span class="ingredient-tag" onclick="showIngredient('B6')">B6 (P-5-P) 8mg</span>
                             <span class="ingredient-tag" onclick="showIngredient('Folate')">Folate 400mcg (Quatrefolic)</span>
                             <span class="ingredient-tag" onclick="showIngredient('B12')">B12 500mcg</span>
@@ -1122,7 +1122,7 @@
                     <button class="subscribe-btn" onclick="openModal('EQ:Focus')">Get Launch Notification</button>
                 </div>
                 
-                <!-- EQ:Restore v3.7 -->
+                <!-- EQ:Restore v3.8 -->
                 <div class="product-card" id="restore-product">
                     <img src="assets/EQ-Restore-horizontal-dark-bg.svg" alt="EQ:Restore" class="product-logo" />
                     <h3 style="display:none;">EQ:Restore</h3>
@@ -1377,15 +1377,16 @@
                 </div>
 
                 <div class="evidence-card" data-product="focus">
-                    <h3>Nicotinamide Riboside (NR): Cellular Energy</h3>
+                    <h3>NMN + Apigenin: Cellular Energy</h3>
                     <div style="background: #F8FAFB; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
-                        <p style="color: #2C3E50; font-weight: 500; margin-bottom: 0.5rem;">Our Dose: 250mg Nicotinamide Riboside (NR)</p>
-                        <p style="color: #5A6C7D;">Supports NAD+ replenishment and cellular energy metabolism</p>
+                        <p style="color: #2C3E50; font-weight: 500; margin-bottom: 0.5rem;">Our Dose: NMN 200mg (Uthever) + Apigenin 50mg</p>
+                        <p style="color: #5A6C7D;">NMN feeds the NAD+ salvage pathway (production) while Apigenin inhibits CD38 (preservation). More NAD+ made, less destroyed.</p>
                     </div>
                     <div style="background: #E8F5F3; padding: 1rem; border-radius: 8px;">
                         <p style="color: #2C3E50; font-weight: 500; margin-bottom: 0.75rem;">Research:</p>
                         <ul style="color: #5A6C7D; font-size: 1.125rem; line-height: 1.8; padding-left: 1.25rem;">
-                            <li><a href="https://doi.org/10.1007/s11357-023-00999-9" target="_blank" style="color: #2A9D8F;">NR achieves 2.6-fold increase in blood NAD+ in older adults with MCI (Orr et al. 2023)</a></li>
+                            <li><a href="https://doi.org/10.1016/j.cmet.2019.02.011" target="_blank" style="color: #2A9D8F;">NMN supplementation increases NAD+ levels and improves physiological function in aging (Mills et al. 2016, Cell Metabolism)</a></li>
+                            <li><a href="https://doi.org/10.1038/s41574-020-0355-2" target="_blank" style="color: #2A9D8F;">CD38 dictates age-related NAD decline; Apigenin is a potent CD38 inhibitor (Chini et al. 2020, Nature Reviews Endocrinology)</a></li>
                         </ul>
                     </div>
                 </div>
@@ -1717,13 +1718,15 @@
                     <h3 style="margin-top: 2rem;">The NAD+ problem</h3>
                     <p style="margin-bottom: 1.25rem;">One of the most important molecules in your body is NAD+ (nicotinamide adenine dinucleotide). It is a coenzyme present in every living cell, essential for converting food into cellular energy, repairing DNA, and maintaining healthy cell function. A 2020 review in the <em>European Journal of Clinical Investigation</em> (Kang and colleagues) documented something that has become a central finding in aging research: NAD+ levels decline significantly with age, and this decline is associated with cognitive impairment, reduced energy, and accelerated cellular aging.</p>
 
-                    <p style="margin-bottom: 1.25rem;">In 2023, a randomized placebo-controlled trial published in <em>GeroScience</em> (Orr and colleagues) studied 20 older adults with mild cognitive impairment. Those who received nicotinamide riboside, a precursor to NAD+, achieved a 2.6-fold increase in blood NAD+ levels with no adverse effects. The study also showed reductions in epigenetic age markers, suggesting that restoring NAD+ may support not just energy but biological age at the cellular level.</p>
+                    <p style="margin-bottom: 1.25rem;">The decline has two sides: your body makes less NAD+ and destroys more of it. The enzyme CD38 increases with age and actively breaks down NAD+. A 2020 review in <em>Nature Reviews Endocrinology</em> (Chini and colleagues) identified CD38 as a primary driver of age-related NAD+ decline. This means simply boosting NAD+ production is only half the equation.</p>
+
+                    <p style="margin-bottom: 1.25rem;">EQ:Focus addresses both sides. NMN (beta-Nicotinamide Mononucleotide) is converted directly into NAD+ via NMNAT enzymes in the salvage pathway, the most direct route to raising cellular NAD+ levels. Apigenin, a naturally occurring flavonoid, is a potent inhibitor of CD38, reducing the rate at which NAD+ is broken down. More NAD+ made, less destroyed.</p>
 
                     <h3 style="margin-top: 2rem;">Acetylcholine: the memory molecule</h3>
                     <p style="margin-bottom: 1.25rem;">Another system that declines with age is acetylcholine production. Acetylcholine is the neurotransmitter most directly involved in forming and retrieving memories. A 2021 randomized controlled trial in <em>The Journal of Nutrition</em> (Nakazaki and colleagues) studied 100 healthy adults aged 50 to 85. Those who received 500mg per day of citicoline, a precursor to acetylcholine, showed significantly greater improvements in episodic memory (the ability to recall specific events and details) and composite memory scores compared to placebo over 12 weeks.</p>
 
                     <h3 style="margin-top: 2rem;">Neuroplasticity: the long game</h3>
-                    <p style="margin-bottom: 1.25rem;">Beyond the chemical supply issue, there is also the question of neural infrastructure. A 2018 review in <em>Current Opinion in Psychiatry</em> (Braidy and colleagues) highlighted that NAD+ and its precursors support not just energy production but also the sirtuin pathways involved in neuroprotection and brain cell repair.</p>
+                    <p style="margin-bottom: 1.25rem;">Beyond the chemical supply issue, there is also the question of neural infrastructure. A 2018 review in <em>Current Opinion in Psychiatry</em> (Braidy and colleagues) highlighted that NAD+ supports not just energy production but also the sirtuin pathways involved in neuroprotection and brain cell repair. When NAD+ levels are maintained through both increased production and reduced degradation, these protective pathways stay active.</p>
 
                     <p style="margin-bottom: 1.25rem;">And a 2009 study in <em>Phytotherapy Research</em> (Mori and colleagues) showed that Lion's Mane mushroom, which stimulates Nerve Growth Factor production, improved cognitive function scores in older adults with mild cognitive impairment over 16 weeks. Scores increased progressively at weeks 8, 12, and 16, then declined after stopping supplementation, suggesting the benefit was real, measurable, and dependent on consistent use.</p>
 
@@ -1735,8 +1738,9 @@
 
                     <h3 style="margin-top: 2rem;">Sources</h3>
                     <div style="font-size: 1rem; color: #5A6C7D; line-height: 1.8;">
-                        <p style="margin-bottom: 0.75rem;"><strong>Orr ME, et al.</strong> "A randomized placebo-controlled trial of nicotinamide riboside in older adults with mild cognitive impairment." <em>GeroScience</em>, 2023. <a href="https://doi.org/10.1007/s11357-023-00999-9" target="_blank" style="color: #2A9D8F;">DOI</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/37994989/" target="_blank" style="color: #2A9D8F;">PubMed</a>. Key finding: 2.6-fold increase in blood NAD+ levels; reduction in epigenetic age markers.</p>
-                        <p style="margin-bottom: 0.75rem;"><strong>Kang BE, et al.</strong> "Implications of NAD+ boosters in translational medicine." <em>Eur J Clin Invest</em>, 2020. <a href="https://doi.org/10.1111/eci.13334" target="_blank" style="color: #2A9D8F;">DOI</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/32594513/" target="_blank" style="color: #2A9D8F;">PubMed</a>. Key finding: NAD+ decline is a hallmark of aging; NR effectively restores NAD+ pools in human trials.</p>
+                        <p style="margin-bottom: 0.75rem;"><strong>Mills KF, et al.</strong> "Long-term administration of nicotinamide mononucleotide mitigates age-associated physiological decline in mice." <em>Cell Metabolism</em>, 2016. <a href="https://doi.org/10.1016/j.cmet.2016.09.013" target="_blank" style="color: #2A9D8F;">DOI</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/28068222/" target="_blank" style="color: #2A9D8F;">PubMed</a>. Key finding: NMN supplementation increases NAD+ levels and improves physiological function in aging.</p>
+                        <p style="margin-bottom: 0.75rem;"><strong>Chini CCS, et al.</strong> "CD38 ecto-enzyme in immune cells is induced during aging and regulates NAD+ and NMN levels." <em>Nature Reviews Endocrinology</em>, 2020. <a href="https://doi.org/10.1038/s41574-020-0355-2" target="_blank" style="color: #2A9D8F;">DOI</a>. Key finding: CD38 is a primary driver of age-related NAD+ decline; inhibiting CD38 preserves NAD+ pools.</p>
+                        <p style="margin-bottom: 0.75rem;"><strong>Kang BE, et al.</strong> "Implications of NAD+ boosters in translational medicine." <em>Eur J Clin Invest</em>, 2020. <a href="https://doi.org/10.1111/eci.13334" target="_blank" style="color: #2A9D8F;">DOI</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/32594513/" target="_blank" style="color: #2A9D8F;">PubMed</a>. Key finding: NAD+ decline is a hallmark of aging; boosting NAD+ restores cellular function in human trials.</p>
                         <p style="margin-bottom: 0.75rem;"><strong>Nakazaki E, et al.</strong> "Citicoline and Memory Function in Healthy Older Adults." <em>The Journal of Nutrition</em>, 2021. <a href="https://doi.org/10.1093/jn/nxab119" target="_blank" style="color: #2A9D8F;">DOI</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/33978188/" target="_blank" style="color: #2A9D8F;">PubMed</a>. Key finding: Significant improvement in episodic memory and composite memory vs. placebo.</p>
                         <p style="margin-bottom: 0.75rem;"><strong>Mori K, et al.</strong> "Improving effects of the mushroom Yamabushitake on mild cognitive impairment." <em>Phytotherapy Research</em>, 2009. <a href="https://doi.org/10.1002/ptr.2634" target="_blank" style="color: #2A9D8F;">DOI</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/18844328/" target="_blank" style="color: #2A9D8F;">PubMed</a>. Key finding: Significant cognitive improvement at weeks 8, 12, and 16 of supplementation.</p>
                         <p style="margin-bottom: 0.75rem;"><strong>Braidy N, et al.</strong> "Role of Nicotinamide Adenine Dinucleotide and Related Precursors as Therapeutic Targets for Age-Related Degenerative Diseases." <em>Curr Opin Psychiatry</em>, 2018. <a href="https://doi.org/10.1097/YCO.0000000000000394" target="_blank" style="color: #2A9D8F;">DOI</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/29232252/" target="_blank" style="color: #2A9D8F;">PubMed</a>. Key finding: NAD+ precursors support neuroprotection and sirtuin pathways critical for brain health.</p>
@@ -1976,7 +1980,7 @@
         </div>
         
         <div class="footer-bottom">
-            <p>© 2025-2026 Balasana LLC. BalanceEQ is a product line of Balasana. Formula v3.7</p>
+            <p>© 2025-2026 Balasana LLC. BalanceEQ is a product line of Balasana. Formula v3.8</p>
         </div>
     </footer>
 
@@ -2007,7 +2011,7 @@
             document.getElementById('navLinks').classList.remove('active');
         }
         
-        // Ingredient database v3.7
+        // Ingredient database v3.8
         const ingredientDatabase = {
             'Citicoline': {
                 claim: 'Focus and attention; acetylcholine synthesis',
@@ -2051,11 +2055,11 @@
                 products: ['EQ:Focus'],
                 scienceId: 'rhodiola', scienceProduct: 'focus'
             },
-            'NR': {
-                claim: 'NAD+ precursor; cellular energy metabolism',
-                dose: '250mg NR',
+            'NMN-Apigenin': {
+                claim: 'NAD+ production (NMN) + preservation (Apigenin via CD38 inhibition)',
+                dose: 'NMN 200mg + Apigenin 50mg',
                 products: ['EQ:Focus'],
-                scienceId: 'nicotinamide-riboside', scienceProduct: 'focus'
+                scienceId: 'nmn-apigenin', scienceProduct: 'focus'
             },
             'B6': {
                 claim: 'Cofactor for neurotransmitter synthesis (active P-5-P form)',

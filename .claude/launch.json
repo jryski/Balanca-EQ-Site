@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "beq-site",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["http-server", "C:\\Users\\Balance-EQ\\Balanca-EQ-Site", "-p", "8080", "-c-1"],
+      "port": 8080
+    }
+  ]
+}
