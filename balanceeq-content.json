@@ -730,33 +730,41 @@
   "shopify_metaobject_schemas": {
     "beq_ingredient": {
       "fields": [
-        {"name": "name", "type": "single_line_text"},
-        {"name": "branded_name", "type": "single_line_text", "optional": true},
-        {"name": "supplier", "type": "single_line_text", "optional": true},
-        {"name": "supplier_link", "type": "url", "optional": true},
-        {"name": "dose", "type": "single_line_text"},
-        {"name": "form", "type": "single_line_text"},
-        {"name": "category", "type": "single_line_text"},
-        {"name": "tagline", "type": "single_line_text"},
-        {"name": "why_its_here", "type": "multi_line_text"},
-        {"name": "how_it_works", "type": "multi_line_text"},
-        {"name": "what_to_expect", "type": "multi_line_text"},
-        {"name": "safety_note", "type": "multi_line_text"},
-        {"name": "product", "type": "single_line_text"},
-        {"name": "display_order", "type": "integer"}
+        { "name": "name", "type": "single_line_text" },
+        {
+          "name": "branded_name",
+          "type": "single_line_text",
+          "optional": true
+        },
+        {
+          "name": "supplier",
+          "type": "single_line_text",
+          "optional": true
+        },
+        { "name": "supplier_link", "type": "url", "optional": true },
+        { "name": "dose", "type": "single_line_text" },
+        { "name": "form", "type": "single_line_text" },
+        { "name": "category", "type": "single_line_text" },
+        { "name": "tagline", "type": "single_line_text" },
+        { "name": "why_its_here", "type": "multi_line_text" },
+        { "name": "how_it_works", "type": "multi_line_text" },
+        { "name": "what_to_expect", "type": "multi_line_text" },
+        { "name": "safety_note", "type": "multi_line_text" },
+        { "name": "product", "type": "single_line_text" },
+        { "name": "display_order", "type": "integer" }
       ]
     },
     "beq_study": {
       "fields": [
-        {"name": "title", "type": "single_line_text"},
-        {"name": "authors", "type": "single_line_text"},
-        {"name": "journal", "type": "single_line_text"},
-        {"name": "year", "type": "integer"},
-        {"name": "doi", "type": "single_line_text"},
-        {"name": "pmid", "type": "single_line_text"},
-        {"name": "summary", "type": "multi_line_text"},
-        {"name": "key_finding", "type": "single_line_text"},
-        {"name": "ingredient_ref", "type": "metaobject_reference"}
+        { "name": "title", "type": "single_line_text" },
+        { "name": "authors", "type": "single_line_text" },
+        { "name": "journal", "type": "single_line_text" },
+        { "name": "year", "type": "integer" },
+        { "name": "doi", "type": "single_line_text" },
+        { "name": "pmid", "type": "single_line_text" },
+        { "name": "summary", "type": "multi_line_text" },
+        { "name": "key_finding", "type": "single_line_text" },
+        { "name": "ingredient_ref", "type": "metaobject_reference" }
       ]
     }
   },

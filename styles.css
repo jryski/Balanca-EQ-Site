@@ -1,0 +1,1981 @@
+/* =============================================================================
+   BalanceEQ Stylesheet
+   -----------------------------------------------------------------------------
+   Structure:
+     1. CSS Custom Properties (variables)
+     2. Site Styles            — main pages (Home, Products, Evidence, COAs,
+                                 Transparency, Learn etc.)
+     3. Science Page Styles    — BEM-prefixed classes used by the React-powered
+                                 Science page (rendered via Babel from index.html,
+                                 reads data from balanceeq-content.json)
+   ============================================================================= */
+
+/* =============================================================================
+   1. CSS Custom Properties
+   ============================================================================= */
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/raleway-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/raleway-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/raleway-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("assets/fonts/raleway-900.woff2") format("woff2");
+}
+
+:root {
+  /* Primary colors */
+  --jade: #00ae94;
+  --pacific: #008bd8;
+  --raven: #191819;
+
+  /* Secondary colors */
+  --persian-green: #89e0d1;
+  --light-sky-blue: #7fcae5;
+
+  /* Grayscale */
+  --white: #ffffff;
+  --space: #9da2b3;
+  --pure-black: #000000;
+
+  /* ----- Backgrounds ----- */
+  --beq-bg-light: #f5f5f5;
+  --beq-surface: #1a1a1a;
+  --beq-border: #333333;
+  --beq-border-light: #e0e0e0;
+
+  /* ----- Accents ----- */
+  --beq-focus-dark: #042b23;
+  --beq-restore-dark: #001721;
+  --beq-warning: #d4940a;
+
+  /* ----- Typography ----- */
+  --font-primary:
+    "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Science page context overrides.
+   The Science page expects slightly different values for these variables.
+   Scoping them to .beq-container keeps the override local to that page. */
+.beq-container {
+  --white: #222222;
+  --beq-text: #cccccc;
+}
+
+/* =============================================================================
+   2. Site Styles
+   -----------------------------------------------------------------------------
+   Originally inline in index.html <style> block. These styles cover the main
+   site: nav, hero, sections, product cards, footer, modal, etc.
+   ============================================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--pure-black);
+  color: var(--beq-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--white);
+  z-index: 2;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 25px;
+  width: auto;
+}
+
+.nav-links {
+  gap: 2rem;
+  list-style: none;
+  display: flex;
+  position: static;
+  flex-direction: row;
+  padding: 0;
+  border-bottom: none;
+  background: transparent;
+}
+
+.nav-links.active {
+  display: flex;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  background: transparent;
+  border: none;
+  width: 44px;
+  height: 44px;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--raven);
+  transition: transform 0.35s ease, opacity 0.2s ease;
+  transform-origin: center;
+}
+
+/* Morph to X when menu is open */
+.mobile-menu-toggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.mobile-menu-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.mobile-menu-toggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.nav-links a {
+  color: #595959;
+  text-decoration: none;
+  transition: color 0.3s;
+  cursor: pointer;
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.nav-links a:hover {
+  color: var(--jade);
+}
+
+/* Hero form */
+
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 12px 9px 22px rgba(0, 0, 0, 0.273);
+}
+
+/* Opaque white card with brutalist hard-offset shadow.
+   Uses #ffffff directly (not var(--white)) because .beq-container
+   overrides --white for the Science page's dark-themed elements. */
+.brick {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 2.5rem 2rem 1.75rem;
+  box-shadow: 16px 18px 0 var(--raven);
+}
+
+.form-wrapper {
+  border-radius: 51px;
+  flex-basis: 40%;
+
+  & .klaviyo-form {
+    border-top: 1px solid #ddd;
+    border-radius: 50px;
+
+    & form {
+      padding-top: 3rem !important;
+    }
+  }
+}
+
+/* Page sections */
+.page {
+  display: none;
+  min-height: 100vh;
+  position: relative; /* anchor for the pseudo-elements */
+  overflow: hidden; /* clip the off-canvas glyphs */
+  isolation: isolate; /* keep stacking context contained */
+  background: linear-gradient(
+    180deg,
+    #aeaeae 0%,
+    #d8d8d8 20%,
+    #ececec 100%
+  );
+}
+
+/* Decorative side glyphs — applied to every page automatically */
+.page::before,
+.page::after {
+  content: "";
+  position: absolute;
+  width: 756px;
+  height: 756px; /* pseudo-elements need explicit size */
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.page::before {
+  background-image: url("assets/vector-left.svg");
+  left: -477px;
+  top: -1%;
+}
+
+.page::after {
+  background-image: url("assets/vector-right.svg");
+  right: -477px;
+  bottom: -14%;
+}
+
+/* Make sure page content sits above the decorative layer */
+.page > * {
+  position: relative;
+  z-index: 1;
+}
+
+.page.active {
+  display: block;
+}
+
+/* Page inner content wrapper */
+.page-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section alternating backgrounds */
+.inner-pages {
+  color: var(--beq-text);
+  padding: 5rem 2rem;
+}
+
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Wave divider between sections */
+.wave-divider {
+  height: 60px;
+  position: relative;
+  overflow: hidden;
+}
+.wave-divider--dark-to-light {
+  background: var(--beq-bg-light);
+}
+.wave-divider--light-to-dark {
+  background: var(--pure-black);
+}
+.wave-divider svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 10rem 2rem 5rem;
+  background: var(--pure-black);
+  position: relative;
+}
+
+.hero-logo {
+  margin-bottom: 2rem;
+}
+.hero-logo img {
+  height: 48px;
+  width: auto;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+  color: var(--raven);
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3,
+p {
+  color: var(--raven);
+}
+
+/* Proof Points / Scrolling Banner */
+.proof-banner {
+  color: var(--jade);
+  padding: 0.85rem 2rem;
+  text-align: center;
+  margin-top: 0;
+  border-bottom: 1px solid var(--beq-border);
+  position: fixed;
+  top: 58px;
+  width: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.proof-banner p {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* System Overview */
+.system-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+/* Product logo in cards */
+.product-logo {
+  display: block;
+  height: 44px;
+  width: auto;
+  margin: 0 auto 1.5rem;
+}
+
+/* Product Grid */
+.product-section {
+  margin-bottom: 4rem;
+}
+
+.phase-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.phase-badge {
+  display: inline-block;
+  background: rgba(0, 174, 148, 0.1);
+  color: var(--jade);
+  padding: 0.5rem 1.5rem;
+  border-radius: 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid rgba(0, 174, 148, 0.2);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.product-launch {
+  font-size: 1.125rem;
+  color: var(--jade);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.product-badges {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 1rem;
+  background: rgba(0, 174, 148, 0.1);
+  color: var(--jade);
+  padding: 0.3rem 0.7rem;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(0, 174, 148, 0.15);
+}
+
+.product-ingredients {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.product-ingredients h4 {
+  font-size: 1rem;
+  color: var(--space);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.ingredient-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.ingredient-tag {
+  font-size: 1rem;
+  background: rgba(0, 174, 148, 0.08);
+  border: 1px solid rgba(0, 174, 148, 0.2);
+  color: var(--jade);
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.ingredient-tag:hover {
+  background: rgba(0, 174, 148, 0.18);
+  border-color: var(--jade);
+}
+
+.subscribe-btn {
+  width: 100%;
+  padding: 1rem;
+  background: var(--jade);
+  color: white;
+  border: none;
+  border-radius: 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: var(--font-primary);
+  letter-spacing: 0.01em;
+}
+
+.subscribe-btn:hover {
+  background: var(--persian-green);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 174, 148, 0.25);
+}
+
+/* Evidence Cards */
+.evidence-card {
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Evidence card — dose and research inner blocks.
+   Classes added by migration from inline styles (was class-less divs). */
+.evidence-card__dose {
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.evidence-card__dose p:first-child {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.evidence-card__research {
+  padding: 1rem;
+  border-radius: 8px;
+  border: solid 2px #d8d8d8;
+}
+
+.evidence-card__research > p {
+  color: #2c3e50;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.evidence-card__research ul {
+  color: #5a6c7d;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  padding-left: 1.25rem;
+}
+
+.evidence-card__research a {
+  color: var(--pacific);
+  font-weight: 600;
+}
+
+.evidence-card.hidden {
+  display: none;
+}
+
+/* Buttons — shared base */
+.btn-primary,
+.btn-secondary,
+.btn-focus,
+.btn-restore,
+.btn-all {
+  border-radius: 24px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  font-family: var(--font-primary);
+  transition:
+    color 0.3s,
+    background 0.3s,
+    border-color 0.3s,
+    box-shadow 0.3s,
+    transform 0.3s;
+}
+
+/* Primary — filled jade CTA */
+.btn-primary {
+  background: var(--jade);
+  color: white;
+  padding: 1rem 2.5rem;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}
+
+.btn-primary:hover {
+  background: var(--persian-green);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 174, 148, 0.25);
+}
+
+/* Secondary — outlined jade, for filters and toggles */
+.btn-secondary {
+  background: transparent;
+  color: var(--jade);
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--jade);
+  font-size: 1.125rem;
+}
+
+.btn-secondary:hover {
+  background: var(--jade);
+  color: white;
+}
+
+/* Filter buttons — evidence page toggles */
+.btn-focus,
+.btn-restore,
+.btn-all {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}
+
+/* Focus filter — outlined jade */
+.btn-focus {
+  background: transparent;
+  color: var(--jade);
+  border-color: var(--jade);
+}
+
+/* Restore filter — outlined pacific */
+.btn-restore {
+  background: transparent;
+  color: var(--pacific);
+  border-color: var(--pacific);
+}
+
+/* All filter — gradient border (jade → pacific, 135°).
+   Dual-background trick: white fills the padding-box interior,
+   the gradient fills the border-box behind the transparent border. */
+.btn-all {
+  background:
+    linear-gradient(#dadada, #dad8d8) padding-box,
+    linear-gradient(135deg, var(--jade), var(--pacific)) border-box;
+  border-color: transparent;
+  color: var(--raven);
+}
+
+/* Active states — toggled on click, no hover */
+.btn-focus-active {
+  background: var(--jade);
+  border-color: var(--jade);
+  color: white;
+}
+
+.btn-restore-active {
+  background: var(--pacific);
+  border-color: var(--pacific);
+  color: white;
+}
+
+.btn-all-active {
+  background: linear-gradient(135deg, var(--jade), var(--pacific));
+  border-color: transparent;
+  color: white;
+}
+
+/* Timeline */
+.timeline {
+  border: 1px solid var(--beq-border);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  margin: 3rem auto;
+  max-width: 900px;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-badge {
+  background: rgba(0, 174, 148, 0.1);
+  color: var(--jade);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  font-size: 1rem;
+  border: 1px solid rgba(0, 174, 148, 0.15);
+}
+
+.timeline-content h4 {
+  margin-bottom: 0.5rem;
+  color: var(--white);
+  font-weight: 600;
+}
+
+.timeline-content p {
+  color: var(--space);
+  font-size: 1.125rem;
+}
+
+/* Footer */
+footer {
+  background: var(--pure-black);
+  border-top: 1px solid var(--beq-border);
+  padding: 4rem 2rem 2rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-info {
+  flex-basis: 30%;
+  & .footer-bio {
+    color: var(--space);
+    padding-left: 3.3rem;
+  }
+}
+
+.footer-links {
+  display: flex;
+  flex-basis: 70%;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  & .footer-section {
+    padding: 0 2rem;
+  }
+
+  & .footer-section:first-child {
+    padding-left: 4rem;
+  }
+}
+
+.footer-logo {
+  height: 28px;
+  width: auto;
+  margin-bottom: 1rem;
+}
+
+.footer-section h4 {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: var(--white);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+  color: var(--space);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.footer-section a:hover {
+  color: var(--jade);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--beq-border);
+  margin-top: 3rem;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #666666;
+  font-size: 1rem;
+}
+
+/* Science Page Integration */
+#science-root {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem 2rem;
+}
+
+#science-root .beq-tabs {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+#science-root a {
+  color: var(--jade);
+}
+#science-root a:hover {
+  color: var(--persian-green);
+}
+
+/* Accent dot (kept for roadmap items) */
+.accent-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+}
+.accent-dot--focus {
+  background: var(--jade);
+}
+.accent-dot--restore {
+  background: var(--pacific);
+}
+.accent-dot--roadmap {
+  background: var(--beq-border);
+}
+
+/* Details/FAQ styling */
+
+.inner-pages details {
+  border: 1px solid var(--beq-border);
+  border-radius: 12px;
+  background-color: var(--white);
+  padding-bottom: 1.5rem;
+}
+
+.inner-pages details summary {
+  color: var(--raven);
+  cursor: pointer;
+  padding: 1.5rem 1.5rem 0;
+}
+
+.inner-pages details p {
+  color: var(--space);
+  padding: 0 1.5rem;
+}
+
+/* Learn page article-index previews — clickable cards with brick treatment */
+#learn-index .evidence-card {
+  cursor: pointer;
+}
+
+#learn-index .evidence-card p {
+  margin-bottom: 0.5rem;
+}
+
+#learn-index .evidence-card p:last-child {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+/* Evidence page details/summary accordions */
+.inner-pages summary {
+  color: var(--raven);
+}
+
+/* Branded ingredient highlight in tables */
+.ingredient-branded {
+  font-weight: 700;
+  color: var(--jade);
+}
+
+/* =============================================================================
+   3. Science Page Styles
+   -----------------------------------------------------------------------------
+   BEM-prefixed classes (.beq-*). Used by the React-powered Science page.
+   Originally lived in balanceeq-styles.css.
+   ============================================================================= */
+
+/* ---- Layout ---- */
+.beq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 0 40px;
+}
+
+/* ---- Tab Bar ---- */
+.beq-tabs {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--beq-border);
+}
+
+.beq-tabs__btn {
+  padding: 10px 40px;
+  min-width: 180px;
+  border-radius: 24px;
+  border: 2px solid #6a6a6a;
+  background: transparent;
+  color: #6a6a6a;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-primary);
+}
+
+.beq-tabs__btn--active-focus {
+  background: var(--jade);
+  border-color: var(--jade);
+  color: white;
+}
+
+.beq-tabs__btn--active-restore {
+  background: var(--pacific);
+  border-color: var(--pacific);
+  color: white;
+}
+
+/* ---- Hero ---- */
+.beq-hero {
+  padding: 24px 0 24px;
+  margin-bottom: 32px;
+}
+
+.beq-hero__badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.beq-hero__badge--focus {
+  background: var(--jade);
+  color: white;
+}
+
+.beq-hero__badge--restore {
+  background: var(--pacific);
+  color: white;
+}
+
+.beq-hero__title {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  color: var(--raven);
+}
+
+.beq-hero__subtitle {
+  font-size: 16px;
+  color: var(--raven);
+  max-width: 600px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.beq-hero__meta {
+  display: flex;
+  gap: 16px;
+  font-size: 18px;
+  color: var(--raven);
+  flex-wrap: wrap;
+}
+
+& .focus-details-wrapper {
+  display: flex;
+  flex-direction: row;
+
+  & span {
+    color: var(--raven);
+    font-size: 18px;
+  }
+
+  & .focus-detail {
+    font-weight: 600;
+
+    &:first-of-type {
+      margin-left: 6.75rem;
+    }
+  }
+
+  & .dot {
+    margin: 0 20px;
+  }
+}
+
+/* ---- Section Title ---- */
+.beq-section-title {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  margin-top: 32px;
+}
+
+.beq-section-intro {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+/* ---- Body Text ---- */
+.beq-body-text {
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+/* ---- Problem Statement ---- */
+.beq-problem {
+  border-radius: 12px;
+  padding: 24px;
+  margin: 24px 0;
+  border-left: 3px solid var(--jade);
+}
+
+.beq-problem__title {
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.beq-problem__text {
+  font-size: 18px;
+}
+
+/* ---- Systems Framework (Focus 2x2 grid) ---- */
+.beq-systems {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 16px 0 28px;
+}
+
+.beq-systems__card {
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.beq-systems__name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--raven);
+  margin-bottom: 6px;
+}
+
+.beq-systems__summary {
+  font-size: 18px;
+  color: var(--raven);
+  line-height: 1.5;
+}
+
+/* ---- Transition Sequence (Restore steps) ---- */
+.beq-transition {
+  margin: 16px 0 28px;
+}
+
+.beq-transition__step {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--beq-border);
+}
+
+.beq-transition__step:last-child {
+  border-bottom: none;
+}
+
+.beq-transition__number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--pacific) 10%, transparent);
+  color: var(--pacific);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.beq-transition__content {
+  flex: 1;
+}
+
+.beq-transition__title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.beq-transition__desc {
+  font-size: 18px;
+  color: var(--space);
+  line-height: 1.5;
+}
+
+/* ---- Persona Cards ---- */
+.beq-personas {
+  margin: 16px 0 28px;
+}
+
+.beq-personas__card {
+  border: 1px solid var(--beq-border);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* ---- Timeline ---- */
+.beq-timeline {
+  margin: 16px 0 28px;
+}
+
+.beq-timeline__item {
+  display: flex;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--beq-border);
+}
+
+.beq-timeline__item:last-child {
+  border-bottom: none;
+}
+
+.beq-timeline__period {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--jade);
+  white-space: nowrap;
+  min-width: 80px;
+}
+
+.beq-timeline__desc {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* ---- Callout Box (Caffeine FAQ, What It's Not) ---- */
+.beq-callout {
+  border: 1px solid var(--beq-border);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 16px 0 28px;
+}
+
+.beq-callout__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.beq-callout__text {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.beq-callout__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.beq-callout__list li {
+  font-size: 16px;
+  line-height: 1.65;
+  padding: 6px 0;
+}
+
+.beq-callout__list li:last-child {
+  border-bottom: none;
+}
+
+/* ---- Ingredient Card (list view) ---- */
+.beq-ingredient-card {
+  border: 1px solid var(--beq-border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.beq-ingredient-card:hover {
+  border-color: var(--jade);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.beq-ingredient-card__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.beq-ingredient-card__name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 2px;
+}
+
+.beq-ingredient-card__branded {
+  font-size: 18px;
+  color: var(--jade);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.beq-ingredient-card__tagline {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.beq-ingredient-card__studies {
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+.beq-ingredient-card__dose {
+  font-size: 18px;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--beq-border);
+}
+
+/* ---- Ingredient Detail Page ---- */
+.beq-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 18px;
+  color: var(--jade);
+  cursor: pointer;
+  margin-bottom: 20px;
+  padding: 6px 0;
+  border: none;
+  background: none;
+  font-weight: 500;
+  font-family: var(--font-primary);
+}
+
+.beq-detail__title {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.beq-detail__branded {
+  margin-left: 8px;
+  font-size: 18px;
+}
+
+.beq-detail__branded--focus {
+  color: var(--jade);
+}
+
+.beq-detail__branded--restore {
+  color: var(--pacific);
+}
+
+.beq-detail__tagline {
+  font-size: 16px;
+  color: var(--space);
+  max-width: 600px;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+/* ---- Meta Grid (dose, form, category, supplier) ---- */
+.beq-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.beq-meta-grid__item {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 12px 14px;
+  border: 1px solid var(--beq-border);
+}
+
+.beq-meta-grid__label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--space);
+  margin-bottom: 4px;
+}
+
+.beq-meta-grid__value {
+  font-size: 16px;
+  color: var(--white);
+  font-weight: 500;
+}
+
+/* ---- Study Card ---- */
+.beq-study-card {
+  background: var(--white);
+  border: 1px solid var(--beq-border);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 12px;
+}
+
+.beq-study-card__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 6px;
+  line-height: 1.45;
+}
+
+.beq-study-card__meta {
+  font-size: 12px;
+  color: var(--space);
+  margin-bottom: 10px;
+}
+
+.beq-study-card__summary {
+  font-size: 18px;
+  color: var(--space);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.beq-study-card__finding {
+  font-size: 18px;
+  color: var(--jade);
+  font-weight: 500;
+  padding: 8px 12px;
+  background: var(--jade);
+  border-radius: 6px;
+  border-left: 3px solid var(--jade);
+  margin-bottom: 8px;
+}
+
+.beq-study-card__links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.beq-study-card__link {
+  font-size: 12px;
+  color: var(--jade);
+  text-decoration: none;
+}
+
+.beq-study-card__attr {
+  font-size: 11px;
+  color: var(--space);
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* ---- Supplier Link ---- */
+.beq-supplier-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--jade);
+  color: var(--jade);
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 8px;
+  transition: all 0.2s;
+}
+
+.beq-supplier-link:hover {
+  background: var(--jade);
+}
+
+/* ---- Safety Box ---- */
+.beq-safety {
+  background: rgba(212, 148, 10, 0.03);
+  border: 1px solid rgba(212, 148, 10, 0.25);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-top: 32px;
+}
+
+.beq-safety__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--beq-warning);
+  margin-bottom: 6px;
+}
+
+.beq-safety__text {
+  font-size: 18px;
+  color: var(--space);
+  line-height: 1.6;
+}
+
+/* ---- Footer Disclaimer ---- */
+.beq-disclaimer {
+  border-top: 1px solid var(--beq-border);
+  padding: 24px 0;
+  margin-top: 40px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--raven);
+  background-color: transparent;
+}
+
+/* ---- System Story ---- */
+.beq-system-story {
+  border: 1px solid var(--beq-border);
+  border-radius: 12px;
+  padding: 28px;
+  margin: 28px 0;
+  text-align: center;
+}
+
+.beq-system-story__headline {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.beq-system-story__body {
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto 20px;
+}
+
+.beq-system-story__glance {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  text-align: left;
+}
+
+.beq-system-story__half {
+  border: 1px solid var(--beq-border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.beq-system-story__timing {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.beq-system-story__desc {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* =============================================================================
+   Hero / Products Section
+   -----------------------------------------------------------------------------
+   Used on the home page as the primary hero. Two product launch cards
+   (EQ:Focus and EQ:Restore) sit on a light gradient background, with
+   bottle images overlapping the top of each card.
+
+   Append this entire block to the end of styles.css.
+   Uses existing CSS variables from the :root block at the top of the file.
+   ============================================================================= */
+
+/* ----- Section container ----- */
+.hero-products {
+  position: relative;
+  padding: 12rem 1.5rem 7rem;
+}
+
+/* ----- Inner wrapper (constrains width, sits above decorative layer) ----- */
+.hero-products__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hero-copy-wrapper {
+  flex-basis: 58%;
+  border-radius: 50px;
+  padding: 2rem;
+}
+
+.hero-products__intro {
+  margin: 0 auto 3rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0 1rem;
+}
+
+.hero-products__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--raven);
+
+  & img {
+    width: 60px;
+    height: auto;
+  }
+}
+
+.hero-products__eyebrow-icon {
+  width: 28px;
+  height: 28px;
+  color: #ffc845; /* eyebrow star color */
+  flex-shrink: 0;
+}
+
+.hero-products__headline {
+  font-size: clamp(4rem, 4.5vw, 3.25rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--raven);
+  margin-bottom: 2.5rem;
+}
+
+.hero-products__subhead {
+  font-size: 2rem;
+  line-height: 1.6;
+  color: var(--raven);
+  max-width: 600px;
+}
+
+.partner-logo-bar {
+  margin: 0 auto 1.5rem;
+
+  & h3 {
+    width: 100%;
+    margin-bottom: 0;
+    padding-left: 2rem;
+  }
+
+  & .partner-logos-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    & img {
+      width: 130px;
+      padding: 1rem;
+
+      &:first-of-type {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}
+
+/* ----- Cards grid ----- */
+.hero-products__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.75rem;
+  max-width: 1100px;
+  margin: 15rem auto 0;
+}
+
+/* =============================================================================
+   Product launch card
+   ============================================================================= */
+
+.launch-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Bottle wrapper: positioned so the image overlaps the top edge of the card. */
+.launch-card__bottle {
+  position: absolute;
+  top: -11.5rem;
+  max-width: 300px;
+  left: 150px;
+}
+
+.launch-card__bottle img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Bottle placeholder used until you swap in the real <img>. Safe to delete. */
+.launch-card__bottle-placeholder {
+  aspect-ratio: 0.55;
+  border-radius: 18px 18px 12px 12px;
+  background: linear-gradient(
+    180deg,
+    #2a2622 0%,
+    #4a3a2c 18%,
+    #5c3a1f 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ----- Brand row (logo icon + product name) ----- */
+.launch-card__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.launch-card__brand-icon {
+  width: 120px;
+}
+
+.launch-card__name {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--raven);
+  line-height: 1;
+}
+
+.launch-card__name span {
+  font-weight: 400;
+}
+
+/* ----- Launch date ----- */
+.launch-card__launch {
+  font-size: 0.875rem;
+  color: var(--raven);
+  margin-bottom: 1rem;
+}
+
+.launch-card__launch strong {
+  font-weight: 700;
+}
+
+/* ----- Feature tags row (STIMULANT-FREE • ALLERGEN-FREE • 100% VEGAN) ----- */
+.launch-card__tags,
+.launch-card__benefits,
+.launch-card__ingredients {
+  list-style-type: none;
+}
+
+.launch-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem 1.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--raven);
+  margin-bottom: 1.25rem;
+}
+
+/* ----- Benefits checklist (circular check icon drawn in CSS) ----- */
+.launch-card__benefits {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.launch-card__benefit {
+  font-size: 0.9375rem;
+  color: var(--raven);
+  line-height: 1.45;
+  display: flex;
+  align-items: center;
+
+  & span {
+    margin-left: 10px;
+  }
+}
+
+.launch-card__check {
+  width: 36px;
+  height: auto;
+}
+
+/* ----- Formula label + ingredient pills ----- */
+.launch-card__formula-label {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--raven);
+  margin-bottom: 0.75rem;
+}
+
+.launch-card__ingredients {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.launch-card__ingredient {
+  padding: 0.375rem 0.875rem;
+  border: 1px solid var(--pacific); /* default; per-card variant overrides below */
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  color: var(--raven);
+  white-space: nowrap;
+}
+
+/* ----- CTA button ----- */
+.launch-card__cta {
+  align-self: flex-start;
+  background: var(--pacific);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.625rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  margin-top: auto;
+  transition:
+    background 150ms ease,
+    transform 150ms ease;
+}
+
+.launch-card__cta:hover {
+  background: var(--light-sky-blue);
+  color: var(--raven);
+}
+
+.launch-card__cta:active {
+  transform: translateY(1px);
+}
+
+/* ----- Per-product accent overrides ----- */
+.launch-card--focus .launch-card__ingredient {
+  border-color: var(--jade);
+}
+.launch-card--restore .launch-card__ingredient {
+  border-color: var(--pacific);
+}
+
+/* =============================================================================
+   Responsive
+   ============================================================================= */
+
+/* Hero intro: center stacked children at large-tablet and below.
+   The form-wrapper also gets a top margin so it does not touch the hero copy. */
+@media (max-width: 1135px) {
+  .hero-copy-wrapper {
+    flex-basis: 80%;
+  }
+
+  .form-wrapper {
+    flex-basis: 80%;
+
+    & .klaviyo-form {
+      padding: 0 6rem;
+    }
+  }
+
+  .hero-products__intro {
+    justify-content: center;
+  }
+
+  .hero-products__intro .form-wrapper {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  /* Show hamburger button */
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  /* Collapse nav links into dropdown by default */
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    background: var(--white);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+  }
+
+  /* Expand when toggled */
+  .nav-links.active {
+    max-height: 500px;
+    padding: 1rem 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 1rem 2rem;
+  }
+
+  .page::before,
+  .page::after {
+    width: 100px;
+    height: 100px;
+    opacity: 0.3;
+  }
+
+  .hero-copy-wrapper,
+  .form-wrapper {
+    flex-basis: 100%;
+  }
+
+  .launch-card__bottle {
+    display: none;
+  }
+
+  .hero-products__grid {
+    margin: 7rem auto 0;
+  }
+
+  .brick {
+    padding: 2.5rem 2rem 1.75rem;
+  }
+}
+
+/* Footer stacks vertically at small tablet sizes and below */
+@media (max-width: 830px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footer-info,
+  .footer-links {
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
+
+    & .footer-section {
+      padding: 0 1rem;
+    }
+
+    & .footer-section:first-child {
+      padding-left: 3.3rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-products {
+    padding: 4rem 2rem 5rem;
+  }
+
+  .hero-products__intro {
+    margin-bottom: 3rem;
+  }
+
+  .hero-products__grid {
+    grid-template-columns: 1fr;
+    gap: 7rem; /* extra gap so the overlapping bottles do not collide */
+  }
+
+  .form-wrapper .klaviyo-form {
+    padding: 0;
+  }
+
+  .launch-card {
+    padding: 6.5rem 1.5rem 1.5rem;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+  }
+
+  .hero {
+    padding: 8rem 1.5rem 3rem;
+  }
+
+  .inner-pages {
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .beq-system-story__glance {
+    grid-template-columns: 1fr;
+  }
+
+  .beq-systems {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
+
+    & .footer-section {
+      padding: 0 1rem;
+    }
+
+    & .footer-section:first-child {
+      padding-left: 0;
+    }
+  }
+
+  .footer-info > .footer-bio {
+    padding-left: 0rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .beq-meta-grid {
+    grid-template-columns: 1fr;
+  }
+}
