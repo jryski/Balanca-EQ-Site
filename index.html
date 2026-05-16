@@ -81,10 +81,8 @@
           </li>
           <li>
             <a
-              onclick="
-                showPage('coas');
-                closeMobileMenu();
-              "
+              href="coa/"
+              onclick="closeMobileMenu()"
               >COAs</a
             >
           </li>
@@ -2347,7 +2345,7 @@
               <li>
                 <a onclick="showPage('science')">Ingredient Science</a>
               </li>
-              <li><a onclick="showPage('coas')">COAs</a></li>
+              <li><a href="coa/">COAs</a></li>
               <li>
                 <a onclick="showPage('transparency')">Transparency</a>
               </li>
@@ -2551,6 +2549,14 @@
           new CustomEvent("pageChanged", { detail: { pageId: pageId } }),
         );
       }
+
+      // Auto-navigate from hash (supports links from standalone pages like /coa/)
+      (function () {
+        var hash = window.location.hash.replace("#", "");
+        if (hash && document.getElementById(hash)) {
+          showPage(hash);
+        }
+      })();
 
       function showArticle(slug) {
         var index = document.getElementById("learn-index");

@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Certificates of Analysis | BalanceEQ</title>
+    <meta
+      name="description"
+      content="Independent third-party testing for every BalanceEQ production batch. Look up your batch number and see the full Certificate of Analysis."
+    />
+
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="../">
+            <img
+              src="../assets/EQ-horizontal-light-bg-black.svg"
+              alt="BalanceEQ"
+            />
+          </a>
+        </div>
+        <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+          <li>
+            <a href="../" onclick="closeMobileMenu()">Products</a>
+          </li>
+          <li>
+            <a href="../#evidence" onclick="closeMobileMenu()">Evidence</a>
+          </li>
+          <li>
+            <a href="../#science" onclick="closeMobileMenu()">Science</a>
+          </li>
+          <li>
+            <a href="./" class="active-link" onclick="closeMobileMenu()">COAs</a>
+          </li>
+          <li>
+            <a href="../#transparency" onclick="closeMobileMenu()">Transparency</a>
+          </li>
+          <li>
+            <a href="../#learn" onclick="closeMobileMenu()">Learn</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- COAs PAGE -->
+    <div class="page active">
+      <div class="inner-pages" style="padding-top: 8rem">
+        <div class="section-inner">
+          <div style="text-align: center; margin-bottom: 4rem">
+            <p class="hero-products__eyebrow">
+              <img
+                src="../assets/cream-offset-checkmark.svg"
+                class="hero-products__eyebrow-icon"
+                alt="offset lemon yellow checkmark"
+              />
+              Independent Testing
+            </p>
+            <h1 class="hero-products__headline">
+              Certificates of Analysis
+            </h1>
+            <p
+              class="hero-products__subhead"
+              style="margin-left: auto; margin-right: auto"
+            >
+              Independent third-party testing for every production batch.
+              Look up your batch number, see the full report.
+              <strong>What's on the label is what's in the bottle.</strong>
+            </p>
+          </div>
+
+          <div style="max-width: 800px; margin: 0 auto">
+            <!-- Batch Lookup -->
+            <div
+              style="
+                background: white;
+                border: 2px solid #2a9d8f;
+                border-radius: 16px;
+                padding: 3rem 2rem;
+                margin-bottom: 3rem;
+              "
+            >
+              <h2 style="margin-bottom: 1rem">Batch Lookup</h2>
+              <p
+                style="
+                  text-align: center;
+                  color: #5a6c7d;
+                  margin-bottom: 2rem;
+                "
+              >
+                Enter your batch number to view the complete Certificate of
+                Analysis
+              </p>
+
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 1rem;
+                  max-width: 500px;
+                  margin: 0 auto;
+                "
+              >
+                <input
+                  type="text"
+                  placeholder="e.g., EQF-2026-001"
+                  style="
+                    padding: 1rem;
+                    border-radius: 8px;
+                    border: 1px solid #e8edf2;
+                    font-size: 1rem;
+                  "
+                />
+                <button
+                  class="btn-secondary"
+                  style="width: 100%"
+                  onclick="
+                    alert(
+                      'COA lookup launches with first batch (July 2026)',
+                    )
+                  "
+                >
+                  View COA
+                </button>
+              </div>
+
+              <p
+                style="
+                  text-align: center;
+                  margin-top: 2rem;
+                  color: #5a6c7d;
+                  font-size: 1.125rem;
+                "
+              >
+                Batch number located on bottom of bottle • Format:
+                XXX-YYYY-###
+              </p>
+            </div>
+
+            <!-- Sample COAs -->
+            <h2 style="text-align: center; margin-bottom: 2rem">
+              Sample Certificates
+            </h2>
+
+            <div style="display: grid; gap: 1.5rem">
+              <div
+                style="
+                  background: white;
+                  border: 1px solid #e8edf2;
+                  border-radius: 12px;
+                  padding: 2rem;
+                "
+              >
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 1rem;
+                  "
+                >
+                  <div>
+                    <h3>EQ:Focus Sample COA</h3>
+                    <p style="color: #5a6c7d; font-size: 1.125rem">
+                      Manufacturing validation batch
+                    </p>
+                  </div>
+                  <span
+                    style="
+                      background: #e8f5f3;
+                      color: #2a9d8f;
+                      padding: 0.35rem 0.75rem;
+                      border-radius: 6px;
+                      font-weight: 600;
+                    "
+                    >PASS</span
+                  >
+                </div>
+                <div
+                  style="
+                    background: #f8fafb;
+                    padding: 1rem;
+                    border-radius: 8px;
+                    margin-bottom: 1rem;
+                  "
+                >
+                  <p style="font-weight: 500; margin-bottom: 0.5rem">
+                    Tests Performed:
+                  </p>
+                  <ul
+                    style="
+                      font-size: 1rem;
+                      color: #5a6c7d;
+                      line-height: 1.8;
+                    "
+                  >
+                    <li>Heavy Metals (Pb, Cd, As, Hg)</li>
+                    <li>
+                      Microbial (TPC, Yeast/Mold, E. coli, Salmonella)
+                    </li>
+                    <li>Potency Verification</li>
+                    <li>Identity (HPLC)</li>
+                  </ul>
+                </div>
+                <button
+                  class="btn-secondary"
+                  style="width: 100%"
+                  onclick="alert('PDF available Q1 2026')"
+                >
+                  Download Sample
+                </button>
+              </div>
+
+              <div
+                style="
+                  background: white;
+                  border: 1px solid #e8edf2;
+                  border-radius: 12px;
+                  padding: 2rem;
+                "
+              >
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 1rem;
+                  "
+                >
+                  <div>
+                    <h3>EQ:Restore Sample COA</h3>
+                    <p style="color: #5a6c7d; font-size: 1.125rem">
+                      Manufacturing validation batch
+                    </p>
+                  </div>
+                  <span
+                    style="
+                      background: #e8f5f3;
+                      color: #2a9d8f;
+                      padding: 0.35rem 0.75rem;
+                      border-radius: 6px;
+                      font-weight: 600;
+                    "
+                    >PASS</span
+                  >
+                </div>
+                <div
+                  style="
+                    background: #f8fafb;
+                    padding: 1rem;
+                    border-radius: 8px;
+                    margin-bottom: 1rem;
+                  "
+                >
+                  <p style="font-weight: 500; margin-bottom: 0.5rem">
+                    Tests Performed:
+                  </p>
+                  <ul
+                    style="
+                      font-size: 1rem;
+                      color: #5a6c7d;
+                      line-height: 1.8;
+                    "
+                  >
+                    <li>Heavy Metals (Pb, Cd, As, Hg)</li>
+                    <li>
+                      Microbial (TPC, Yeast/Mold, E. coli, Salmonella)
+                    </li>
+                    <li>Potency Verification</li>
+                    <li>Identity (HPLC)</li>
+                  </ul>
+                </div>
+                <button
+                  class="btn-secondary"
+                  style="width: 100%"
+                  onclick="alert('PDF available Q1 2026')"
+                >
+                  Download Sample
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section footer-info">
+          <a href="../">
+            <img
+              src="../assets/EQ-horizontal-white.svg"
+              alt="BalanceEQ"
+              class="footer-logo"
+            />
+          </a>
+          <p class="footer-bio">
+            Circadian-optimized nootropics from Balasana. Evidence-based
+            doses, public COAs, full transparency.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-section">
+            <h4>Products</h4>
+            <ul>
+              <li><a href="../">All Products</a></li>
+              <li><a href="../#home">EQ:Focus</a></li>
+              <li><a href="../#home">EQ:Restore</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Trust</h4>
+            <ul>
+              <li><a href="../#evidence">Evidence Library</a></li>
+              <li><a href="../#science">Ingredient Science</a></li>
+              <li><a href="./">COAs</a></li>
+              <li><a href="../#transparency">Transparency</a></li>
+              <li><a href="../#learn">Learn</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="mailto:hello@balance-eq.com">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © 2025-2026 Balasana LLC. BalanceEQ is a product line of
+          Balasana.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      function toggleMobileMenu() {
+        document.getElementById("navLinks").classList.toggle("active");
+        document
+          .querySelector(".mobile-menu-toggle")
+          .classList.toggle("is-open");
+      }
+
+      function closeMobileMenu() {
+        document.getElementById("navLinks").classList.remove("active");
+        document
+          .querySelector(".mobile-menu-toggle")
+          .classList.remove("is-open");
+      }
+    </script>
+  </body>
+</html>
