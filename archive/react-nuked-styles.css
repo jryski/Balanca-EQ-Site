@@ -187,7 +187,7 @@ nav {
 
 .glass {
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(2px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 12px 9px 22px rgba(0, 0, 0, 0.273);
 }
@@ -320,7 +320,7 @@ nav {
 }
 
 h1 {
-  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 400;
   margin-bottom: 1.5rem;
   letter-spacing: -0.03em;
@@ -730,14 +730,6 @@ p {
   }
 }
 
-/* Auto-alternate offset direction on children */
-.offset-alternate > .offset-outer-wrapper:nth-child(odd) {
-  padding: 0.5rem 1rem 1rem 0.4rem;
-}
-.offset-alternate > .offset-outer-wrapper:nth-child(even) {
-  padding: 1rem 0.4rem 0.5rem 1rem;
-}
-
 /* COA */
 
 .coas-container {
@@ -776,412 +768,6 @@ p {
       left: 4px;
       z-index: -1;
     }
-  }
-}
-
-/* =============================================================================
-   Science Page
-   -------------------------------------------------------------------------- */
-
-/* Layout */
-.science-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 2rem 2rem;
-}
-
-/* Toggle buttons */
-.science-toggle {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-
-.science-toggle__btn {
-  padding: 0.5rem 1.5rem;
-  border-radius: 24px;
-  border: 2px solid var(--raven);
-  background: transparent;
-  color: var(--raven);
-  font-family: var(--font-primary);
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition:
-    background-color 0.2s,
-    color 0.2s,
-    border-color 0.2s;
-}
-
-.science-toggle__btn--active-focus {
-  background: var(--jade);
-  border-color: var(--jade);
-  color: white;
-}
-
-.science-toggle__btn--active-restore {
-  background: var(--pacific);
-  border-color: var(--pacific);
-  color: white;
-}
-
-/* Product containers — show/hide */
-.science-product {
-  display: none;
-}
-
-.science-product.active {
-  display: block;
-}
-
-/* Badge */
-.science-badge {
-  display: inline-block;
-  padding: 0.25rem 0.75rem;
-  border-radius: 24px;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.science-badge--focus {
-  background: var(--jade);
-  color: white;
-}
-
-.science-badge--restore {
-  background: var(--pacific);
-  color: white;
-}
-
-/* Hero block */
-.science-hero {
-  text-align: center;
-  margin-bottom: 2.5rem;
-}
-
-.science-hero__name {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--raven);
-  margin: 0.5rem 0;
-}
-
-.science-hero__desc {
-  font-size: 1.125rem;
-  line-height: 1.6;
-  margin-bottom: 0.75rem;
-}
-
-.science-hero__meta {
-  font-size: 1.2rem;
-}
-
-/* Section title — used before every content block */
-.science-section-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--raven);
-  margin: 2rem 0 1rem;
-}
-
-/* Section intro text */
-.science-section-intro {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-
-/* Body text — used in ingredient detail prose sections */
-.science-body-text {
-  font-size: 1rem;
-  color: var(--raven);
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-}
-
-/* Card grid — personas, systems framework */
-.science-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-/* Callout box — caffeine FAQ, what-it's-not, safety profile */
-.science-callout {
-  background: var(--beq-bg-light);
-  border-radius: 12px;
-  padding: 1.5rem 2rem;
-  margin-bottom: 1.5rem;
-  color: var(--raven);
-  line-height: 1.7;
-}
-
-.science-callout ul {
-  padding-left: 1.25rem;
-  margin: 0;
-}
-
-.science-callout li {
-  margin-bottom: 0.5rem;
-}
-
-/* Timeline — what to expect */
-.science-timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.science-timeline__item {
-  display: flex;
-  gap: 1rem;
-  align-items: baseline;
-}
-
-.science-timeline__period {
-  font-weight: 700;
-  color: var(--raven);
-  white-space: nowrap;
-  min-width: 100px;
-}
-
-.science-timeline__desc {
-  color: var(--raven);
-  line-height: 1.6;
-}
-
-/* Numbered steps — transition sequence */
-.science-steps {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1.5rem;
-}
-
-.science-step {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  align-items: flex-start;
-}
-
-.science-step__number {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: var(--pacific);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  flex-shrink: 0;
-}
-
-.science-step__content {
-  flex: 1;
-}
-
-.science-step__title {
-  font-weight: 600;
-  color: var(--raven);
-  margin-bottom: 0.25rem;
-}
-
-.science-step__desc {
-  line-height: 1.6;
-}
-
-/* Meta grid — ingredient detail (dose, form, category, supplier) */
-.science-meta {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  background: var(--beq-bg-light);
-  border-radius: 12px;
-}
-
-.science-meta__label {
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.25rem;
-}
-
-.science-meta__value {
-  font-weight: 600;
-  color: var(--raven);
-}
-
-/* Study card */
-.science-study {
-  border: 1px solid #e8edf2;
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 1rem;
-  background: white;
-}
-
-.science-study__title {
-  font-weight: 600;
-  color: var(--raven);
-  margin-bottom: 0.5rem;
-}
-
-.science-study__meta {
-  margin-bottom: 0.75rem;
-}
-
-.science-study__summary {
-  color: var(--raven);
-  line-height: 1.6;
-  margin-bottom: 0.75rem;
-}
-
-.science-study__finding {
-  font-style: italic;
-  color: var(--raven);
-  border-left: 3px solid var(--jade);
-  padding-left: 1rem;
-  margin-bottom: 0.75rem;
-}
-
-.science-study__links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.science-study__link {
-  color: var(--jade);
-  text-decoration: none;
-}
-
-.science-study__link:hover {
-  color: var(--persian-green);
-}
-
-.science-study__attr {
-  margin-top: 0.75rem;
-}
-
-/* Supplier link */
-.science-supplier-link {
-  display: inline-block;
-  color: var(--jade);
-  font-weight: 600;
-  text-decoration: none;
-  margin-bottom: 1.5rem;
-}
-
-.science-supplier-link:hover {
-  color: var(--persian-green);
-}
-
-/* Ingredient card — inner content layout */
-.science-ingredient-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 1rem;
-  cursor: pointer;
-}
-
-.science-ingredient-name {
-  font-weight: 600;
-  color: var(--raven);
-  margin-bottom: 0.25rem;
-}
-
-.science-ingredient-branded {
-  color: var(--jade);
-  margin-bottom: 0.25rem;
-}
-
-.science-ingredient-studies {
-  color: var(--jade);
-  font-weight: 500;
-  margin-top: 0.5rem;
-}
-
-.science-ingredient-dose {
-  font-weight: 700;
-  color: var(--raven);
-  white-space: nowrap;
-}
-
-/* Back button */
-.science-back-btn {
-  background: white;
-  border: none;
-  color: var(--raven);
-  font-family: var(--font-primary);
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  padding: 0.4rem 1.2rem;
-  margin-bottom: 1.5rem;
-  margin-right: 2rem;
-  border-radius: 25px;
-}
-
-.science-back-btn:hover {
-  color: var(--white);
-  background: rgb(94, 94, 94);
-}
-
-/* Disclaimer */
-.science-disclaimer {
-  text-align: center;
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #e8edf2;
-}
-
-/* System story (shown on both products) */
-.science-story {
-  text-align: center;
-  margin-top: 3rem;
-  padding: 2rem 0;
-}
-
-.science-story__headline {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--raven);
-  margin-bottom: 1rem;
-}
-
-.science-story__body {
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-}
-
-.science-story__glance {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  text-align: left;
-}
-
-.science-story__timing {
-  font-weight: 700;
-  color: var(--raven);
-  margin-bottom: 0.25rem;
-}
-
-.science-story__desc {
-  line-height: 1.5;
-}
-
-@media (max-width: 560px) {
-  .science-meta {
-    grid-template-columns: 1fr;
-  }
-  .science-story__glance {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -1345,7 +931,7 @@ footer {
 /* ----- Section container ----- */
 .hero-products {
   position: relative;
-  padding: 10rem 1.5rem 7rem;
+  padding: 12rem 1.5rem 7rem;
 }
 
 /* ----- Inner wrapper (constrains width, sits above decorative layer) ----- */
@@ -1395,14 +981,16 @@ footer {
 }
 
 .hero-products__headline {
+  font-size: clamp(4rem, 4.5vw, 3.25rem);
   font-weight: 400;
   line-height: 1.15;
   letter-spacing: -0.015em;
   color: var(--raven);
+  margin-bottom: 2.5rem;
 }
 
 .hero-products__subhead {
-  font-size: clamp(1.2rem, 4vw, 2rem);
+  font-size: 2rem;
   line-height: 1.6;
   color: var(--raven);
   max-width: 600px;
@@ -1482,6 +1070,7 @@ footer {
   justify-content: center;
   padding-bottom: 1rem;
   color: rgba(255, 255, 255, 0.6);
+  font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-align: center;
@@ -1513,6 +1102,7 @@ footer {
 
 /* ----- Launch date ----- */
 .launch-card__launch {
+  font-size: 0.875rem;
   color: var(--raven);
   margin-bottom: 1rem;
 }
@@ -1532,6 +1122,7 @@ footer {
   display: flex;
   flex-wrap: wrap;
   gap: 0.875rem 1.25rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   color: var(--raven);
@@ -1547,6 +1138,7 @@ footer {
 }
 
 .launch-card__benefit {
+  font-size: 0.9375rem;
   color: var(--raven);
   line-height: 1.45;
   display: flex;
@@ -1564,6 +1156,7 @@ footer {
 
 /* ----- Formula label + ingredient pills ----- */
 .launch-card__formula-label {
+  font-size: 0.9375rem;
   font-weight: 600;
   color: var(--raven);
   margin-bottom: 0.75rem;
@@ -1580,6 +1173,7 @@ footer {
   padding: 0.375rem 0.875rem;
   border: 1px solid var(--pacific); /* default; per-card variant overrides below */
   border-radius: 999px;
+  font-size: 0.8125rem;
   color: var(--raven);
   white-space: nowrap;
 }
@@ -1592,6 +1186,7 @@ footer {
   border: none;
   border-radius: 999px;
   padding: 0.625rem 1.5rem;
+  font-size: 0.875rem;
   font-weight: 600;
   font-family: inherit;
   cursor: pointer;
@@ -1686,19 +1281,24 @@ footer {
     padding: 1rem 2rem;
   }
 
+  .page::before,
+  .page::after {
+    width: 100px;
+    height: 100px;
+    opacity: 0.3;
+  }
+
   .hero-copy-wrapper,
   .form-wrapper {
     flex-basis: 100%;
   }
 
-  .hero-products__grid {
-    margin: 15rem auto 0;
-    grid-template-columns: 1fr;
-    gap: 7rem;
+  .launch-card__bottle {
+    display: none;
   }
 
-  .launch-card:nth-of-type(2) {
-    margin-top: 10rem;
+  .hero-products__grid {
+    margin: 7rem auto 0;
   }
 
   .brick {
@@ -1733,8 +1333,17 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .hero-products {
+    padding: 4rem 2rem 5rem;
+  }
+
   .hero-products__intro {
     margin-bottom: 3rem;
+  }
+
+  .hero-products__grid {
+    grid-template-columns: 1fr;
+    gap: 7rem; /* extra gap so the overlapping bottles do not collide */
   }
 
   .form-wrapper .klaviyo-form {
@@ -1760,23 +1369,11 @@ footer {
   .inner-pages {
     padding: 3rem 1.5rem;
   }
-
-  .science-container {
-    padding: 0 1rem 2rem;
-  }
 }
 
 @media (max-width: 560px) {
   .coas-container .coa-outer-wrapper .coa-inner-wrapper {
     padding: 1rem;
-  }
-
-  .hero-products {
-    padding: 10rem 1rem 5rem;
-  }
-
-  .hero-copy-wrapper {
-    padding: 1.5rem;
   }
 
   .footer-links {
@@ -1795,3 +1392,5 @@ footer {
     padding-left: 0rem;
   }
 }
+
+

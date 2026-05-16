@@ -24,17 +24,6 @@
       async=""
       src="https://static.klaviyo.com/onsite/js/X7Awu7/klaviyo.js"
     ></script>
-
-    <!-- React for Science Pages -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"
-      crossorigin
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"
-      crossorigin
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
   </head>
   <body>
     <!-- Navigation -->
@@ -80,11 +69,7 @@
             >
           </li>
           <li>
-            <a
-              href="coa/"
-              onclick="closeMobileMenu()"
-              >COAs</a
-            >
+            <a href="coa/" onclick="closeMobileMenu()">COAs</a>
           </li>
           <li>
             <a
@@ -2279,7 +2264,7 @@
         <div
           style="
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
             padding: 8rem 2rem 0;
           "
         >
@@ -2301,10 +2286,37 @@
             <strong>Biology, not marketing.</strong>
           </p>
         </div>
-        <div id="science-root">
-          <p style="text-align: center; padding: 4rem; color: #999">
-            Loading ingredient science...
-          </p>
+
+        <div class="science-container">
+          <!-- Toggle buttons -->
+          <div class="science-toggle">
+            <button
+              class="science-toggle__btn science-toggle__btn--active-focus"
+              onclick="scienceToggle('focus')"
+              id="science-btn-focus"
+            >
+              EQ:Focus (AM)
+            </button>
+            <button
+              class="science-toggle__btn"
+              onclick="scienceToggle('restore')"
+              id="science-btn-restore"
+            >
+              EQ:Restore (PM)
+            </button>
+          </div>
+
+          <!-- Focus overview (populated by JS) -->
+          <div
+            id="science-overview-focus"
+            class="science-product active"
+          ></div>
+
+          <!-- Restore overview (populated by JS) -->
+          <div id="science-overview-restore" class="science-product"></div>
+
+          <!-- Ingredient detail (single template, populated on click) -->
+          <div id="science-detail" class="science-product"></div>
         </div>
       </div>
     </div>
@@ -2544,19 +2556,15 @@
           .forEach((p) => p.classList.remove("active"));
         document.getElementById(pageId).classList.add("active");
         window.scrollTo(0, 0);
-        // Dispatch event for React science page mounting
-        window.dispatchEvent(
-          new CustomEvent("pageChanged", { detail: { pageId: pageId } }),
-        );
       }
 
       // Auto-navigate from hash (supports links from standalone pages like /coa/)
-      (function () {
+      document.addEventListener("DOMContentLoaded", function () {
         var hash = window.location.hash.replace("#", "");
         if (hash && document.getElementById(hash)) {
           showPage(hash);
         }
-      })();
+      });
 
       function showArticle(slug) {
         var index = document.getElementById("learn-index");
@@ -2685,658 +2693,458 @@
         closeModal();
       }
 
-      document
-        .getElementById("subscribeModal")
-        .addEventListener("click", function (e) {
+      var modalEl = document.getElementById("subscribeModal");
+      if (modalEl) {
+        modalEl.addEventListener("click", function (e) {
           if (e.target === this) closeModal();
         });
-    </script>
-    <!-- React Science Pages (reads from balanceeq-content.json, styled via balanceeq-styles.css) -->
-    <script type="text/babel">
-      const { useState, useEffect } = React;
-
-      // Content is loaded from balanceeq-content.json
-      var CONTENT = null;
-      var ASSET_BASE = "/assets/";
-
-      // --- Components that read from CONTENT ---
-
-      function StudyCard({ study }) {
-        return (
-          <figure className="beq-study-card">
-            <div className="beq-study-card__title">{study.title}</div>
-            <div className="beq-study-card__meta">
-              {study.authors} &middot; {study.journal} ({study.year})
-            </div>
-            <div className="beq-study-card__summary">{study.summary}</div>
-            <figcaption className="beq-study-card__finding">
-              {study.key_finding}
-            </figcaption>
-            <div className="beq-study-card__links">
-              <a
-                href={"https://doi.org/" + study.doi}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="beq-study-card__link"
-              >
-                DOI: {study.doi} &#8599;
-              </a>
-              {study.pmid && (
-                <a
-                  href={
-                    "https://pubmed.ncbi.nlm.nih.gov/" + study.pmid + "/"
-                  }
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="beq-study-card__link"
-                >
-                  PubMed: {study.pmid} &#8599;
-                </a>
-              )}
-            </div>
-            <div className="beq-study-card__attr">
-              Study retrieved from PubMed / National Library of Medicine
-            </div>
-          </figure>
-        );
       }
 
-      function SystemsFramework({ systems }) {
-        return (
-          <div className="beq-systems">
-            {systems.map(function (s, i) {
-              return (
-                <div key={i} className="beq-systems__card brick">
-                  <div className="beq-systems__name">{s.name}</div>
-                  <div className="beq-systems__summary">{s.summary}</div>
-                </div>
-              );
-            })}
-          </div>
-        );
-      }
+      // =========================================================================
+      //  Science Page — vanilla JS (replaces React)
+      // =========================================================================
 
-      function TransitionSequence({ steps }) {
-        return (
-          <ol
-            className="beq-transition"
-            style={{
-              listStyle: "none",
-              padding: 0,
-              margin: "16px 0 28px",
-            }}
-          >
-            {steps.map(function (s) {
-              return (
-                <li key={s.step} className="beq-transition__step">
-                  <div className="beq-transition__number">{s.step}</div>
-                  <div className="beq-transition__content">
-                    <div className="beq-transition__title">{s.title}</div>
-                    <div className="beq-transition__desc">
-                      {s.description}
-                    </div>
-                  </div>
-                </li>
-              );
-            })}
-          </ol>
-        );
-      }
+      var scienceData = null;
+      var scienceLoaded = false;
+      var scienceCurrentProduct = "focus";
 
-      function PersonaCards({ personas }) {
-        return (
-          <div className="beq-personas">
-            {personas.map(function (p, i) {
-              return (
-                <div key={i} className="beq-personas__card">
-                  {p}
-                </div>
-              );
-            })}
-          </div>
-        );
-      }
-
-      function Timeline({ items }) {
-        return (
-          <div className="beq-timeline">
-            {items.map(function (t, i) {
-              return (
-                <div key={i} className="beq-timeline__item">
-                  <div className="beq-timeline__period">{t.period}</div>
-                  <div className="beq-timeline__desc">{t.description}</div>
-                </div>
-              );
-            })}
-          </div>
-        );
-      }
-
-      function IngredientPage({
-        ingredient,
-        product,
-        onBack,
-        supplierLinks,
-      }) {
-        var isFocus = product === "focus";
-        var productLabel = isFocus ? "EQ:Focus (AM)" : "EQ:Restore (PM)";
-        var badgeClass =
-          "beq-hero__badge " +
-          (isFocus
-            ? "beq-hero__badge--focus"
-            : "beq-hero__badge--restore");
-        var brandedClass =
-          "beq-detail__branded " +
-          (isFocus
-            ? "beq-detail__branded--focus"
-            : "beq-detail__branded--restore");
-        var resolvedLink =
-          ingredient.supplier_link && supplierLinks
-            ? supplierLinks[ingredient.supplier_link]
-            : null;
-
-        return (
-          <article className="beq-container">
-            <button className="beq-back-btn" onClick={onBack}>
-              &larr; Back to {productLabel}
-            </button>
-            <div className={badgeClass}>{productLabel}</div>
-            <h1 className="beq-detail__title">
-              {ingredient.name}
-              {ingredient.branded && (
-                <span className={brandedClass}>{ingredient.branded}</span>
-              )}
-            </h1>
-            <p className="beq-detail__tagline">{ingredient.tagline}</p>
-
-            <dl className="beq-meta-grid">
-              <div className="beq-meta-grid__item">
-                <dt className="beq-meta-grid__label">Dose per serving</dt>
-                <dd className="beq-meta-grid__value">{ingredient.dose}</dd>
-              </div>
-              <div className="beq-meta-grid__item">
-                <dt className="beq-meta-grid__label">Form</dt>
-                <dd className="beq-meta-grid__value">{ingredient.form}</dd>
-              </div>
-              <div className="beq-meta-grid__item">
-                <dt className="beq-meta-grid__label">Category</dt>
-                <dd className="beq-meta-grid__value">
-                  {ingredient.category}
-                </dd>
-              </div>
-              <div className="beq-meta-grid__item">
-                <dt className="beq-meta-grid__label">Supplier</dt>
-                <dd className="beq-meta-grid__value">
-                  {ingredient.supplier || "Generic (multi-source)"}
-                </dd>
-              </div>
-            </dl>
-
-            <h2 className="beq-section-title">
-              Why It Is in {isFocus ? "EQ:Focus" : "EQ:Restore"}
-            </h2>
-            <p className="beq-body-text">{ingredient.why_its_here}</p>
-
-            <h2 className="beq-section-title">How It Works</h2>
-            <p className="beq-body-text">{ingredient.how_it_works}</p>
-
-            <h2 className="beq-section-title">What to Expect</h2>
-            <p className="beq-body-text">{ingredient.what_to_expect}</p>
-
-            {ingredient.studies && ingredient.studies.length > 0 && (
-              <section>
-                <h2 className="beq-section-title">Clinical Evidence</h2>
-                <p className="beq-section-intro">
-                  Based on articles retrieved from PubMed, National Library
-                  of Medicine.
-                </p>
-                {ingredient.studies.map(function (s, i) {
-                  return <StudyCard key={i} study={s} />;
-                })}
-              </section>
-            )}
-
-            {resolvedLink && ingredient.supplier && (
-              <section>
-                <h2 className="beq-section-title">
-                  Supplier Transparency
-                </h2>
-                <p className="beq-section-intro">
-                  We source {ingredient.branded || ingredient.name}{" "}
-                  directly from {ingredient.supplier}. Learn more about
-                  their research, quality standards, and certifications:
-                </p>
-                <a
-                  href={resolvedLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="beq-supplier-link"
-                >
-                  Visit {ingredient.supplier} &#8599;
-                </a>
-              </section>
-            )}
-
-            <div className="beq-safety">
-              <div className="beq-safety__title">Safety Profile</div>
-              <div className="beq-safety__text">
-                {ingredient.safety_note}
-              </div>
-            </div>
-
-            <div className="beq-disclaimer">
-              {CONTENT && CONTENT.brand ? CONTENT.brand.disclaimer : ""}
-            </div>
-          </article>
-        );
-      }
-
-      function ProductOverview({
-        product,
-        productData,
-        ingredients,
-        supplierLinks,
-        onIngredientClick,
-      }) {
-        var isFocus = product === "focus";
-        var productColor = isFocus ? "focus" : "restore";
-        var badgeClass =
-          "beq-hero__badge " +
-          (isFocus
-            ? "beq-hero__badge--focus"
-            : "beq-hero__badge--restore");
-
-        return (
-          <div className="beq-container">
-            {/* Hero */}
-            <header className="beq-hero">
-              <div className={badgeClass}>
-                {productData.timing} Formula
-              </div>
-              <h2 className="beq-hero__title">{productData.name}</h2>
-              <p className="beq-hero__subtitle">
-                {productData.description}
-              </p>
-              <div className="beq-hero__meta">
-                <span>Serving size: {productData.serving}</span>
-              </div>
-              <div class="focus-details-wrapper">
-                <span class="focus-detail">
-                  {ingredients.length} active ingredients
-                </span>
-                <span class="dot">&middot;</span>
-                <span class="focus-detail">
-                  {
-                    ingredients.filter(function (i) {
-                      return i.studies && i.studies.length > 0;
-                    }).length
-                  }{" "}
-                  with linked clinical studies
-                </span>
-              </div>
-            </header>
-
-            {/* Problem Statement */}
-            {productData.problem_statement && (
-              <section className="beq-problem glass">
-                <h3 className="beq-problem__title">
-                  The Problem {productData.name} Solves
-                </h3>
-                <p className="beq-problem__text">
-                  {productData.problem_statement}
-                </p>
-              </section>
-            )}
-
-            {/* Systems Framework (Focus) */}
-            {isFocus && productData.systems_framework && (
-              <section>
-                <h3 className="beq-section-title">
-                  Four Systems, One Formula
-                </h3>
-                <SystemsFramework
-                  systems={productData.systems_framework}
-                />
-              </section>
-            )}
-
-            {/* Transition Sequence (Restore) */}
-            {!isFocus && productData.transition_sequence && (
-              <section>
-                <h3 className="beq-section-title">
-                  The Transition Sequence
-                </h3>
-                <TransitionSequence
-                  steps={productData.transition_sequence}
-                />
-              </section>
-            )}
-
-            {/* Caffeine FAQ (Focus) */}
-            {isFocus && productData.caffeine_faq && (
-              <section>
-                <h3 className="beq-section-title">
-                  Does Focus Replace Caffeine?
-                </h3>
-                <div className="beq-callout">
-                  <div className="beq-callout__text">
-                    {productData.caffeine_faq}
-                  </div>
-                </div>
-              </section>
-            )}
-
-            {/* What Restore Is NOT */}
-            {!isFocus && productData.what_its_not && (
-              <section>
-                <h3 className="beq-section-title">
-                  What Restore Is NOT
-                </h3>
-                <div className="beq-callout">
-                  <ul className="beq-callout__list">
-                    {productData.what_its_not.map(function (item, i) {
-                      return <li key={i}>{item}</li>;
-                    })}
-                  </ul>
-                </div>
-              </section>
-            )}
-
-            {/* Who This Is For */}
-            {productData.personas && (
-              <section>
-                <h3 className="beq-section-title">Who This Is For</h3>
-                <PersonaCards personas={productData.personas} />
-              </section>
-            )}
-
-            {/* What to Expect Timeline */}
-            {productData.timeline && (
-              <section>
-                <h3 className="beq-section-title">What to Expect</h3>
-                <Timeline items={productData.timeline} />
-              </section>
-            )}
-
-            {/* Ingredient List */}
-            <section>
-              <h3 className="beq-section-title">Ingredients</h3>
-              <p className="beq-section-intro">
-                Click any ingredient for the full science deep-dive,
-                clinical studies, and supplier information.
-              </p>
-
-              {ingredients.map(function (ing) {
-                return (
-                  <div
-                    key={ing.id}
-                    className="beq-ingredient-card"
-                    onClick={function () {
-                      onIngredientClick(ing.id);
-                    }}
-                  >
-                    <div className="beq-ingredient-card__row">
-                      <div style={{ flex: 1 }}>
-                        <div className="beq-ingredient-card__name">
-                          {ing.name}
-                        </div>
-                        {ing.branded && (
-                          <div className="beq-ingredient-card__branded">
-                            {ing.branded}
-                            {ing.supplier ? " by " + ing.supplier : ""}
-                          </div>
-                        )}
-                        <div className="beq-ingredient-card__tagline">
-                          {ing.tagline}
-                        </div>
-                        {ing.studies && ing.studies.length > 0 && (
-                          <div className="beq-ingredient-card__studies">
-                            {ing.studies.length} clinical{" "}
-                            {ing.studies.length === 1
-                              ? "study"
-                              : "studies"}{" "}
-                            linked
-                          </div>
-                        )}
-                      </div>
-                      <div className="beq-ingredient-card__dose">
-                        {ing.dose}
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </section>
-
-            <div className="beq-disclaimer">
-              {CONTENT && CONTENT.brand ? CONTENT.brand.disclaimer : ""}
-            </div>
-          </div>
-        );
-      }
-
-      function BalanceEQSciencePages() {
-        var [data, setData] = useState(CONTENT);
-        var [loading, setLoading] = useState(!CONTENT);
-        var [hash, setHash] = useState(
-          window.location.hash || "#/science/focus",
-        );
-
-        // Load content from JSON (fetch for hosted, inline fallback for file://)
-        useEffect(function () {
-          if (CONTENT) {
-            setData(CONTENT);
-            setLoading(false);
-            return;
-          }
-          fetch("balanceeq-content.json")
-            .then(function (r) {
-              return r.json();
-            })
-            .then(function (json) {
-              CONTENT = json;
-              setData(json);
-              setLoading(false);
-            })
-            .catch(function () {
-              // Fallback: load inline if fetch fails (e.g. file:// protocol)
-              if (window.__BALANCEEQ_CONTENT) {
-                CONTENT = window.__BALANCEEQ_CONTENT;
-                setData(window.__BALANCEEQ_CONTENT);
-              }
-              setLoading(false);
-            });
-        }, []);
-
-        // Hash-based routing
-        useEffect(function () {
-          var onHash = function () {
-            setHash(window.location.hash || "#/science/focus");
-          };
-          window.addEventListener("hashchange", onHash);
-          return function () {
-            window.removeEventListener("hashchange", onHash);
-          };
-        }, []);
-
-        // Bridge: expose navigation function for vanilla JS ingredient tags
-        useEffect(function () {
-          window.sciencePageNavigate = function (ingredientId, product) {
-            window.location.hash =
-              "#/science/" + product + "/" + ingredientId;
-          };
-          return function () {
-            delete window.sciencePageNavigate;
-          };
-        }, []);
-
-        if (loading || !data) {
-          return (
-            <p
-              style={{
-                textAlign: "center",
-                padding: "4rem",
-                color: "#5A6C7D",
-              }}
-            >
-              Loading ingredient science...
-            </p>
-          );
-        }
-
-        // Parse hash route
-        var parts = hash
-          .replace("#/science", "")
-          .split("/")
-          .filter(Boolean);
-        var currentProduct = parts[0] || "focus";
-        var currentIngredientId = parts[1] || null;
-
-        var navigate = function (path) {
-          window.location.hash = "#/science/" + path;
-        };
-
-        var productData = data.products[currentProduct];
-        var ingredients = data.ingredients[currentProduct] || [];
-        var supplierLinks = data.supplier_links || {};
-
-        // System story section
-        var systemStory = data.brand.system_story;
-
-        // Render ingredient detail
-        if (currentIngredientId) {
-          var ing = ingredients.find(function (i) {
-            return i.id === currentIngredientId;
+      // Load data when Science page is first shown
+      function initScience() {
+        if (scienceLoaded) return;
+        scienceLoaded = true;
+        fetch("balanceeq-content.json")
+          .then(function (r) {
+            return r.json();
+          })
+          .then(function (json) {
+            scienceData = json;
+            renderScienceOverview("focus");
+            renderScienceOverview("restore");
+          })
+          .catch(function () {
+            document.getElementById("science-overview-focus").innerHTML =
+              '<p style="text-align:center;padding:2rem;color:#999">Could not load science data.</p>';
           });
-          if (ing) {
-            return (
-              <div style={{ fontFamily: "var(--beq-font)" }}>
-                <nav className="beq-tabs">
-                  <button
-                    className={
-                      "beq-tabs__btn" +
-                      (currentProduct === "focus"
-                        ? " beq-tabs__btn--active-focus"
-                        : "")
-                    }
-                    onClick={function () {
-                      navigate("focus");
-                    }}
-                  >
-                    EQ:Focus (AM)
-                  </button>
-                  <button
-                    className={
-                      "beq-tabs__btn" +
-                      (currentProduct === "restore"
-                        ? " beq-tabs__btn--active-restore"
-                        : "")
-                    }
-                    onClick={function () {
-                      navigate("restore");
-                    }}
-                  >
-                    EQ:Restore (PM)
-                  </button>
-                </nav>
-                <IngredientPage
-                  ingredient={ing}
-                  product={currentProduct}
-                  supplierLinks={supplierLinks}
-                  onBack={function () {
-                    navigate(currentProduct);
-                  }}
-                />
-              </div>
-            );
-          }
-        }
-
-        // Render product overview
-        return (
-          <div style={{ fontFamily: "var(--beq-font)" }}>
-            <nav className="beq-tabs">
-              <button
-                className={
-                  "beq-tabs__btn" +
-                  (currentProduct === "focus"
-                    ? " beq-tabs__btn--active-focus"
-                    : "")
-                }
-                onClick={function () {
-                  navigate("focus");
-                }}
-              >
-                EQ:Focus (AM)
-              </button>
-              <button
-                className={
-                  "beq-tabs__btn" +
-                  (currentProduct === "restore"
-                    ? " beq-tabs__btn--active-restore"
-                    : "")
-                }
-                onClick={function () {
-                  navigate("restore");
-                }}
-              >
-                EQ:Restore (PM)
-              </button>
-            </nav>
-
-            <ProductOverview
-              product={currentProduct}
-              productData={productData}
-              ingredients={ingredients}
-              supplierLinks={supplierLinks}
-              onIngredientClick={function (id) {
-                navigate(currentProduct + "/" + id);
-              }}
-            />
-
-            {/* System Story (shown on both overviews) */}
-            {systemStory && (
-              <div className="beq-container">
-                <section className="beq-system-story">
-                  <h3 className="beq-system-story__headline">
-                    {systemStory.headline}
-                  </h3>
-                  <p className="beq-system-story__body">
-                    {systemStory.body}
-                  </p>
-                  <div className="beq-system-story__glance">
-                    {systemStory.at_a_glance.map(function (item, i) {
-                      return (
-                        <div key={i} className="beq-system-story__half">
-                          <div className="beq-system-story__timing">
-                            {item.timing}
-                          </div>
-                          <div className="beq-system-story__desc">
-                            {item.summary}
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </section>
-              </div>
-            )}
-          </div>
-        );
       }
 
-      // Lazy mount: only render React when science page is first shown
-      var scienceRootMounted = false;
-      window.addEventListener("pageChanged", function (e) {
-        if (e.detail.pageId === "science" && !scienceRootMounted) {
-          var container = document.getElementById("science-root");
-          if (container) {
-            var root = ReactDOM.createRoot(container);
-            root.render(<BalanceEQSciencePages />);
-            scienceRootMounted = true;
-          }
+      // Toggle between Focus and Restore
+      function scienceToggle(product) {
+        scienceCurrentProduct = product;
+        document
+          .querySelectorAll(".science-product")
+          .forEach(function (el) {
+            el.classList.remove("active");
+          });
+        document
+          .getElementById("science-overview-" + product)
+          .classList.add("active");
+
+        // Update toggle buttons
+        var focusBtn = document.getElementById("science-btn-focus");
+        var restoreBtn = document.getElementById("science-btn-restore");
+        focusBtn.className =
+          "science-toggle__btn" +
+          (product === "focus"
+            ? " science-toggle__btn--active-focus"
+            : "");
+        restoreBtn.className =
+          "science-toggle__btn" +
+          (product === "restore"
+            ? " science-toggle__btn--active-restore"
+            : "");
+      }
+
+      // Show ingredient detail
+      function scienceShowDetail(ingredientId, product) {
+        var ingredients = scienceData.ingredients[product];
+        var ing = ingredients.find(function (i) {
+          return i.id === ingredientId;
+        });
+        if (!ing) return;
+
+        var isFocus = product === "focus";
+        var supplierLinks = scienceData.supplier_links || {};
+        var resolvedLink = ing.supplier_link
+          ? supplierLinks[ing.supplier_link]
+          : null;
+
+        var html = "";
+
+        // Back button
+        html +=
+          '<button class="science-back-btn" onclick="scienceHideDetail(\'' +
+          product +
+          "')\">&#8592; Back to " +
+          (isFocus ? "EQ:Focus (AM)" : "EQ:Restore (PM)") +
+          "</button>";
+
+        // Badge + title
+        html +=
+          '<span class="science-badge science-badge--' +
+          product +
+          '">' +
+          (isFocus ? "AM" : "PM") +
+          " Formula</span>";
+        html += '<h2 class="science-hero__name">' + ing.name;
+        if (ing.branded) {
+          html +=
+            ' <span class="science-ingredient-branded">' +
+            ing.branded +
+            "</span>";
         }
-      });
+        html += "</h2>";
+        html += '<p class="science-hero__desc">' + ing.tagline + "</p>";
+
+        // Meta grid
+        html += '<div class="science-meta">';
+        html +=
+          '<div><div class="science-meta__label">Dose per serving</div><div class="science-meta__value">' +
+          ing.dose +
+          "</div></div>";
+        html +=
+          '<div><div class="science-meta__label">Form</div><div class="science-meta__value">' +
+          ing.form +
+          "</div></div>";
+        html +=
+          '<div><div class="science-meta__label">Category</div><div class="science-meta__value">' +
+          ing.category +
+          "</div></div>";
+        html +=
+          '<div><div class="science-meta__label">Supplier</div><div class="science-meta__value">' +
+          (ing.supplier || "Generic (multi-source)") +
+          "</div></div>";
+        html += "</div>";
+
+        // Prose sections
+        html +=
+          '<h3 class="science-section-title">Why It Is in ' +
+          (isFocus ? "EQ:Focus" : "EQ:Restore") +
+          "</h3>";
+        html +=
+          '<p class="science-body-text">' + ing.why_its_here + "</p>";
+        html += '<h3 class="science-section-title">How It Works</h3>';
+        html +=
+          '<p class="science-body-text">' + ing.how_it_works + "</p>";
+        html += '<h3 class="science-section-title">What to Expect</h3>';
+        html +=
+          '<p class="science-body-text">' + ing.what_to_expect + "</p>";
+
+        // Studies
+        if (ing.studies && ing.studies.length > 0) {
+          html +=
+            '<h3 class="science-section-title">Clinical Evidence</h3>';
+          html +=
+            '<p class="science-section-intro">Based on articles retrieved from PubMed, National Library of Medicine.</p>';
+          ing.studies.forEach(function (s) {
+            html += '<div class="science-study">';
+            html +=
+              '<div class="science-study__title">' + s.title + "</div>";
+            html +=
+              '<div class="science-study__meta">' +
+              s.authors +
+              " &middot; " +
+              s.journal +
+              " (" +
+              s.year +
+              ")</div>";
+            html +=
+              '<div class="science-study__summary">' +
+              s.summary +
+              "</div>";
+            html +=
+              '<div class="science-study__finding">' +
+              s.key_finding +
+              "</div>";
+            html += '<div class="science-study__links">';
+            html +=
+              '<a href="https://doi.org/' +
+              s.doi +
+              '" target="_blank" rel="noopener noreferrer" class="science-study__link">DOI: ' +
+              s.doi +
+              " &#8599;</a>";
+            if (s.pmid) {
+              html +=
+                '<a href="https://pubmed.ncbi.nlm.nih.gov/' +
+                s.pmid +
+                '/" target="_blank" rel="noopener noreferrer" class="science-study__link">PubMed: ' +
+                s.pmid +
+                " &#8599;</a>";
+            }
+            html += "</div>";
+            html +=
+              '<div class="science-study__attr">Study retrieved from PubMed / National Library of Medicine</div>';
+            html += "</div>";
+          });
+        }
+
+        // Supplier link
+        if (resolvedLink && ing.supplier) {
+          html +=
+            '<h3 class="science-section-title">Supplier Transparency</h3>';
+          html +=
+            '<p class="science-section-intro">We source ' +
+            (ing.branded || ing.name) +
+            " directly from " +
+            ing.supplier +
+            ".</p>";
+          html +=
+            '<a href="' +
+            resolvedLink +
+            '" target="_blank" rel="noopener noreferrer" class="science-supplier-link">Visit ' +
+            ing.supplier +
+            " &#8599;</a>";
+        }
+
+        // Safety
+        html += '<div class="science-callout">';
+        html += "<strong>Safety Profile</strong><br>" + ing.safety_note;
+        html += "</div>";
+
+        // Disclaimer
+        html +=
+          '<div class="science-disclaimer">' +
+          scienceData.brand.disclaimer +
+          "</div>";
+
+        // Insert and show
+        document.getElementById("science-detail").innerHTML = html;
+        document
+          .querySelectorAll(".science-product")
+          .forEach(function (el) {
+            el.classList.remove("active");
+          });
+        document.getElementById("science-detail").classList.add("active");
+        window.scrollTo(0, 0);
+      }
+
+      // Hide detail, return to overview
+      function scienceHideDetail(product) {
+        document
+          .querySelectorAll(".science-product")
+          .forEach(function (el) {
+            el.classList.remove("active");
+          });
+        document
+          .getElementById("science-overview-" + product)
+          .classList.add("active");
+        window.scrollTo(0, 0);
+      }
+
+      // Build overview HTML for a product
+      function renderScienceOverview(product) {
+        var pd = scienceData.products[product];
+        var ings = scienceData.ingredients[product] || [];
+        var isFocus = product === "focus";
+        var html = "";
+
+        // Hero
+        html += '<div class="science-hero">';
+        html +=
+          '<span class="science-badge science-badge--' +
+          product +
+          '">' +
+          pd.timing +
+          " Formula</span>";
+        html += '<h2 class="science-hero__name">' + pd.name + "</h2>";
+        html += '<p class="science-hero__desc">' + pd.description + "</p>";
+        html +=
+          '<p class="science-hero__meta">Serving size: ' +
+          pd.serving +
+          "</p>";
+        html +=
+          '<p class="science-hero__meta"><strong>' +
+          ings.length +
+          " active ingredients</strong> &middot; " +
+          ings.filter(function (i) {
+            return i.studies && i.studies.length > 0;
+          }).length +
+          " with linked clinical studies</p>";
+        html += "</div>";
+
+        // Problem statement
+        if (pd.problem_statement) {
+          html +=
+            '<h3 class="science-section-title">The Problem ' +
+            pd.name +
+            " Solves</h3>";
+          html +=
+            '<p class="science-body-text">' +
+            pd.problem_statement +
+            "</p>";
+        }
+
+        // Systems Framework (Focus only)
+        if (isFocus && pd.systems_framework) {
+          html +=
+            '<h3 class="science-section-title">Four Systems, One Formula</h3>';
+          html += '<div class="science-cards">';
+          pd.systems_framework.forEach(function (s) {
+            html += '<div class="brick">';
+            html +=
+              '<strong style="color:var(--raven)">' + s.name + "</strong>";
+            html += '<p style="margin-top:0.5rem">' + s.summary + "</p>";
+            html += "</div>";
+          });
+          html += "</div>";
+        }
+
+        // Transition Sequence (Restore only)
+        if (!isFocus && pd.transition_sequence) {
+          html +=
+            '<h3 class="science-section-title">The Transition Sequence</h3>';
+          html += '<ol class="science-steps">';
+          pd.transition_sequence.forEach(function (s) {
+            html += '<li class="science-step">';
+            html +=
+              '<div class="science-step__number">' + s.step + "</div>";
+            html += '<div class="science-step__content">';
+            html +=
+              '<div class="science-step__title">' + s.title + "</div>";
+            html +=
+              '<div class="science-step__desc">' +
+              s.description +
+              "</div>";
+            html += "</div></li>";
+          });
+          html += "</ol>";
+        }
+
+        // Caffeine FAQ (Focus only)
+        if (isFocus && pd.caffeine_faq) {
+          html +=
+            '<h3 class="science-section-title">Does Focus Replace Caffeine?</h3>';
+          html +=
+            '<div class="science-callout">' + pd.caffeine_faq + "</div>";
+        }
+
+        // What Restore Is NOT
+        if (!isFocus && pd.what_its_not) {
+          html +=
+            '<h3 class="science-section-title">What Restore Is NOT</h3>';
+          html += '<div class="science-callout"><ul>';
+          pd.what_its_not.forEach(function (item) {
+            html += "<li>" + item + "</li>";
+          });
+          html += "</ul></div>";
+        }
+
+        // Who This Is For
+        if (pd.personas) {
+          html += '<h3 class="science-section-title">Who This Is For</h3>';
+          html += '<div class="science-cards">';
+          pd.personas.forEach(function (p) {
+            html += '<div class="brick">';
+            html += '<p style="color:var(--raven)">' + p + "</p>";
+            html += "</div>";
+          });
+          html += "</div>";
+        }
+
+        // What to Expect
+        if (pd.timeline) {
+          html += '<h3 class="science-section-title">What to Expect</h3>';
+          html += '<div class="science-timeline">';
+          pd.timeline.forEach(function (t) {
+            html += '<div class="science-timeline__item">';
+            html +=
+              '<div class="science-timeline__period">' +
+              t.period +
+              "</div>";
+            html +=
+              '<div class="science-timeline__desc">' +
+              t.description +
+              "</div>";
+            html += "</div>";
+          });
+          html += "</div>";
+        }
+
+        // Ingredients
+        html += '<h3 class="science-section-title">Ingredients</h3>';
+        html +=
+          '<p class="science-section-intro">Tap any ingredient for the full science deep-dive, clinical studies, and supplier information.</p>';
+        html += '<div class="offset-alternate">';
+        ings.forEach(function (ing) {
+          html +=
+            '<div class="offset-outer-wrapper" style="margin-bottom:1rem">';
+          html +=
+            '<div class="offset-inner-wrapper science-ingredient-row" onclick="scienceShowDetail(\'' +
+            ing.id +
+            "', '" +
+            product +
+            "')\">";
+          html += "<div>";
+          html +=
+            '<div class="science-ingredient-name">' + ing.name + "</div>";
+          if (ing.branded) {
+            html +=
+              '<div class="science-ingredient-branded">' +
+              ing.branded +
+              (ing.supplier ? " by " + ing.supplier : "") +
+              "</div>";
+          }
+          html +=
+            '<div class="science-ingredient-tagline">' +
+            ing.tagline +
+            "</div>";
+          if (ing.studies && ing.studies.length > 0) {
+            html +=
+              '<div class="science-ingredient-studies">' +
+              ing.studies.length +
+              " clinical " +
+              (ing.studies.length === 1 ? "study" : "studies") +
+              " linked</div>";
+          }
+          html += "</div>";
+          html +=
+            '<div class="science-ingredient-dose">' + ing.dose + "</div>";
+          html += "</div></div>";
+        });
+        html += "</div>";
+
+        // Disclaimer
+        html +=
+          '<div class="science-disclaimer">' +
+          scienceData.brand.disclaimer +
+          "</div>";
+
+        // System story (shown on both)
+        var story = scienceData.brand.system_story;
+        if (story) {
+          html += '<div class="science-story">';
+          html +=
+            '<h3 class="science-story__headline">' +
+            story.headline +
+            "</h3>";
+          html += '<p class="science-story__body">' + story.body + "</p>";
+          html += '<div class="science-story__glance">';
+          story.at_a_glance.forEach(function (item) {
+            html += "<div>";
+            html +=
+              '<div class="science-story__timing">' +
+              item.timing +
+              "</div>";
+            html +=
+              '<div class="science-story__desc">' +
+              item.summary +
+              "</div>";
+            html += "</div>";
+          });
+          html += "</div></div>";
+        }
+
+        document.getElementById("science-overview-" + product).innerHTML =
+          html;
+      }
+
+      // Hook into showPage — lazy-load science data on first visit
+      var _originalShowPage = showPage;
+      showPage = function (pageId) {
+        _originalShowPage(pageId);
+        if (pageId === "science") {
+          initScience();
+        }
+      };
     </script>
   </body>
 </html>
