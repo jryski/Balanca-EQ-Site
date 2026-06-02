@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Evidence Library | BalanceEQ</title>
+    <meta
+      name="description"
+      content="The clinical evidence behind every BalanceEQ ingredient. Peer-reviewed studies for EQ:Focus and EQ:Restore."
+    />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <link rel="stylesheet" href="../styles.css" />
+    <script
+      type="text/javascript"
+      async=""
+      src="https://static.klaviyo.com/onsite/js/X7Awu7/klaviyo.js"
+    ></script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="../">
+            <img
+              src="../assets/EQ-horizontal-light-bg-black.svg"
+              alt="BalanceEQ"
+            />
+          </a>
+        </div>
+        <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+          <li>
+            <a href="../#products" onclick="closeMobileMenu()"
+              >Products</a
+            >
+          </li>
+          <li>
+            <a href="../evidence/" class="active-link" onclick="closeMobileMenu()"
+              >Evidence</a
+            >
+          </li>
+          <li>
+            <a href="../science/" onclick="closeMobileMenu()"
+              >Science</a
+            >
+          </li>
+          <li>
+            <a href="../coa/" onclick="closeMobileMenu()"
+              >COAs</a
+            >
+          </li>
+          <li>
+            <a href="../transparency/" onclick="closeMobileMenu()"
+              >Transparency</a
+            >
+          </li>
+          <li>
+            <a href="../learn/" onclick="closeMobileMenu()"
+              >Learn</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div id="evidence" class="page active">
+      <div class="inner-pages" style="padding-top: 8rem">
+        <div class="section-inner">
+          <div style="text-align: center; margin-bottom: 4rem">
+            <div
+              class="glass"
+              style="
+                max-width: 760px;
+                margin: 0 auto;
+                padding: 2rem 2.25rem;
+                border-radius: 24px;
+              "
+            >
+            <p class="hero-products__eyebrow">
+              <img
+                src="../assets/cream-offset-checkmark.svg"
+                class="hero-products__eyebrow-icon"
+                alt="offset lemon yellow checkmark"
+              />
+              Peer-Reviewed Research
+            </p>
+            <h1 class="hero-products__headline">Evidence Library</h1>
+            <p
+              class="hero-products__subhead"
+              style="margin-left: auto; margin-right: auto"
+            >
+              Every ingredient has published clinical research behind it.
+              Browse the studies, read the citations, find the source
+              material. <strong>No marketing. Just the data.</strong>
+            </p>
+            </div>
+          </div>
+
+          <div style="max-width: 900px; margin: 0 auto">
+            <!-- Filter Tabs -->
+            <div
+              style="
+                display: flex;
+                gap: 1rem;
+                margin-bottom: 3rem;
+                flex-wrap: wrap;
+                justify-content: center;
+              "
+            >
+              <button
+                class="btn-all btn-all-active"
+                data-filter="all"
+                onclick="filterEvidence('all')"
+              >
+                All
+              </button>
+              <button
+                class="btn-focus"
+                data-filter="focus"
+                onclick="filterEvidence('focus')"
+              >
+                EQ:Focus
+              </button>
+              <button
+                class="btn-restore"
+                data-filter="restore"
+                onclick="filterEvidence('restore')"
+              >
+                EQ:Restore
+              </button>
+            </div>
+
+            <!-- Research Entries -->
+            <div id="evidenceEntries">
+              <div class="evidence-card brick" data-product="focus">
+                <h3>Citicoline: Attention & Focus</h3>
+                <div class="evidence-card__dose">
+                  <p>Our Dose: 500mg (Cognizin®)</p>
+                  <p>
+                    Supports working memory, attention, and cognitive
+                    function
+                  </p>
+                </div>
+                <div class="evidence-card__research">
+                  <p>Research:</p>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://doi.org/10.3390/nu15020386"
+                        target="_blank"
+                        >Cognizin® improves attention and psychomotor speed
+                        (2023)</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.scirp.org/journal/paperinformation.aspx?paperid=19921"
+                        target="_blank"
+                        >Citicoline enhances cognitive function (2012)</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="evidence-card brick" data-product="restore">
+                <h3>
+                  Magnesium L-Threonate: Cognitive Support & Recovery
+                </h3>
+                <div class="evidence-card__dose">
+                  <p>Our Dose: 1,000mg (Magtein&reg;)</p>
+                  <p>
+                    Supports the evening transition, memory consolidation,
+                    and brain magnesium levels
+                  </p>
+                </div>
+                <div class="evidence-card__research">
+                  <p>Research:</p>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://doi.org/10.1016/j.neuron.2009.12.026"
+                        target="_blank"
+                        >Mag L-threonate enhances learning and memory
+                        (2010)</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://doi.org/10.3390/nu14245235"
+                        target="_blank"
+                        >Magtein improves brain cognitive functions in
+                        healthy adults (Zhang et al. 2022)</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="evidence-card brick" data-product="focus">
+                <h3>L-Theanine: Calm Focus & Stress Resilience</h3>
+                <div class="evidence-card__dose">
+                  <p>Our Dose: 200mg (Suntheanine&reg;)</p>
+                  <p>
+                    Promotes calm focus without drowsiness; supports the
+                    evening transition
+                  </p>
+                </div>
+                <div class="evidence-card__research">
+                  <p>Research:</p>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://doi.org/10.3390/nu11102362"
+                        target="_blank"
+                        >L-Theanine reduces stress-related symptoms and
+                        improves cognitive function (Hidese et al. 2019)</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="evidence-card brick" data-product="restore">
+                <h3>L-Ornithine: Cortisol Clearing & Recovery</h3>
+                <div class="evidence-card__dose">
+                  <p>Our Dose: 400mg</p>
+                  <p>
+                    Supports stress recovery and the transition from work
+                    mode to presence mode
+                  </p>
+                </div>
+                <div class="evidence-card__research">
+                  <p>Research:</p>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://doi.org/10.1186/1475-2891-13-53"
+                        target="_blank"
+                        >L-Ornithine reduces cortisol and improves sleep
+                        quality in healthy workers (Miyake et al. 2014)</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="evidence-card brick" data-product="restore">
+                <h3>Saffron (affron&reg;): Mood & Evening Presence</h3>
+                <div class="evidence-card__dose">
+                  <p>Our Dose: 28mg (affron&reg;)</p>
+                  <p>
+                    Supports positive mood and the quality of your evening
+                    experience
+                  </p>
+                </div>
+                <div class="evidence-card__research">
+                  <p>Research:</p>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://doi.org/10.1016/j.ctim.2017.06.001"
+                        target="_blank"
+                        >affron improves mood in healthy adults over 4
+                        weeks (Kell et al. 2017)</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://doi.org/10.1016/j.sleep.2021.08.001"
+                        target="_blank"
+                        >Evening saffron extract supports mood and recovery
+                        (Lopresti et al. 2021)</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="evidence-card brick" data-product="restore">
+                <h3>Bacopa monnieri: Memory & Processing Speed</h3>
+                <div class="evidence-card__dose">
+                  <p>Our Dose: 300mg (50% bacosides)</p>
+                  <p>
+                    Supports memory consolidation, cognitive processing
+                    speed, and attention
+                  </p>
+                </div>
+                <div class="evidence-card__research">
+                  <p>Research:</p>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://doi.org/10.1089/acm.2008.0018"
+                        target="_blank"
+                        >Bacopa enhances word recall and reduces anxiety in
+                        elderly (Calabrese et al. 2008)</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://doi.org/10.1016/j.jep.2013.11.008"
+                        target="_blank"
+                        >Meta-analysis: Bacopa improves cognitive
+                        processing speed across 9 RCTs (Kongkeaw et al.
+                        2014)</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="evidence-card brick" data-product="focus">
+                <h3>Lion's Mane: Neuroplasticity & Nerve Growth</h3>
+                <div class="evidence-card__dose">
+                  <p>Our Dose: 500mg (30% polysaccharides)</p>
+                  <p>
+                    Traditionally valued for Nerve Growth Factor support.
+                    Our 500mg extract dose is below the 3g/day used in
+                    major trials; included for its traditional use profile
+                    and NGF-stimulating mechanism.
+                  </p>
+                </div>
+                <div class="evidence-card__research">
+                  <p>Research:</p>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://doi.org/10.1002/ptr.2634"
+                        target="_blank"
+                        >Lion's Mane improves cognitive function in mild
+                        cognitive impairment (Mori et al. 2009)</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://doi.org/10.3390/nu15224842"
+                        target="_blank"
+                        >Acute and chronic effects on cognition and mood in
+                        young adults (Docherty et al. 2023)</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="evidence-card brick" data-product="focus">
+                <h3>Rhodiola rosea: Stress Adaptation & Mental Stamina</h3>
+                <div class="evidence-card__dose">
+                  <p>Our Dose: 150mg (3% rosavins, 1% salidroside)</p>
+                  <p>
+                    Supports mental performance and resilience under stress
+                  </p>
+                </div>
+                <div class="evidence-card__research">
+                  <p>Research:</p>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://doi.org/10.1016/S0944-7113(00)80055-0"
+                        target="_blank"
+                        >Rhodiola improves cognitive function during
+                        stressful night duty (Darbinyan et al. 2000)</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="evidence-card brick" data-product="focus">
+                <h3>NMN + Apigenin: Cellular Energy</h3>
+                <div class="evidence-card__dose">
+                  <p>Our Dose: NMN 200mg (Uthever) + Apigenin 50mg</p>
+                  <p>
+                    NMN feeds the NAD+ salvage pathway (production) while
+                    pre-clinical research suggests Apigenin may help
+                    preserve NAD+ by inhibiting CD38. More NAD+ made, less
+                    destroyed.
+                  </p>
+                </div>
+                <div class="evidence-card__research">
+                  <p>Research:</p>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://doi.org/10.1016/j.cmet.2016.09.013"
+                        target="_blank"
+                        >NMN supplementation increases NAD+ levels and
+                        improves physiological function in aging (Mills et
+                        al. 2016, Cell Metabolism)</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://doi.org/10.1038/s41574-020-0355-2"
+                        target="_blank"
+                        >CD38 drives age-related NAD decline and is a
+                        target for NAD preservation (Chini et al. 2020,
+                        Nature Reviews Endocrinology)</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div
+              style="
+                text-align: center;
+                margin-top: 3rem;
+                padding: 2rem;
+                background: white;
+                border: 1px solid #e8edf2;
+                border-radius: 16px;
+              "
+            >
+              <p>Full Ingredient Science Now Available</p>
+              <p>
+                Explore detailed clinical studies, mechanisms of action,
+                and supplier transparency for every ingredient in our
+                formulas.
+              </p>
+              <button class="btn-secondary" onclick="location.href='../science/'">
+                View Ingredient Science
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section footer-info">
+          <a href="../">
+            <img
+              src="../assets/EQ-horizontal-white.svg"
+              alt="BalanceEQ"
+              class="footer-logo"
+            />
+          </a>
+          <p class="footer-bio">
+            Circadian nootropics from Balasana. Evidence-based ingredients,
+            public COAs, full transparency.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-section">
+            <h4>Products</h4>
+            <ul>
+              <li><a href="../#products">All Products</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Trust</h4>
+            <ul>
+              <li><a href="../evidence/">Evidence Library</a></li>
+              <li><a href="../science/">Ingredient Science</a></li>
+              <li><a href="../coa/">COAs</a></li>
+              <li><a href="../transparency/">Transparency</a></li>
+              <li><a href="../learn/">Learn</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="mailto:hello@balance-eq.com">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p style="font-size: 0.85rem; color: #8b9aad; margin-bottom: 1rem">
+          These statements have not been evaluated by the Food and Drug
+          Administration. This product is not intended to diagnose, treat,
+          cure, or prevent any disease.
+        </p>
+        <p>
+          © 2025-2026 Balasana LLC. BalanceEQ is a product line of
+          Balasana.
+        </p>
+      </div>
+    </footer>
+    <script src="../assets/site.js"></script>
+  </body>
+</html>

@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>The Science | BalanceEQ</title>
+    <meta
+      name="description"
+      content="Each ingredient targets a specific pathway. Read the mechanism, see the dose, check the studies. Biology, not marketing."
+    />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <link rel="stylesheet" href="../styles.css" />
+    <script
+      type="text/javascript"
+      async=""
+      src="https://static.klaviyo.com/onsite/js/X7Awu7/klaviyo.js"
+    ></script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="../">
+            <img
+              src="../assets/EQ-horizontal-light-bg-black.svg"
+              alt="BalanceEQ"
+            />
+          </a>
+        </div>
+        <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+          <li>
+            <a href="../#products" onclick="closeMobileMenu()"
+              >Products</a
+            >
+          </li>
+          <li>
+            <a href="../evidence/" onclick="closeMobileMenu()"
+              >Evidence</a
+            >
+          </li>
+          <li>
+            <a href="../science/" class="active-link" onclick="closeMobileMenu()"
+              >Science</a
+            >
+          </li>
+          <li>
+            <a href="../coa/" onclick="closeMobileMenu()"
+              >COAs</a
+            >
+          </li>
+          <li>
+            <a href="../transparency/" onclick="closeMobileMenu()"
+              >Transparency</a
+            >
+          </li>
+          <li>
+            <a href="../learn/" onclick="closeMobileMenu()"
+              >Learn</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div id="science" class="page active">
+      <div class="inner-pages" style="min-height: 100vh; padding-top: 0">
+        <div
+          style="
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 8rem 2rem 0;
+          "
+        >
+          <div
+            class="glass"
+            style="
+              max-width: 760px;
+              margin: 0 auto;
+              padding: 2rem 2.25rem;
+              border-radius: 24px;
+            "
+          >
+          <p class="hero-products__eyebrow">
+            <img
+              src="../assets/cream-offset-checkmark.svg"
+              class="hero-products__eyebrow-icon"
+              alt="offset lemon yellow checkmark"
+            />
+            How It Works
+          </p>
+          <h1 class="hero-products__headline">The Science</h1>
+          <p
+            class="hero-products__subhead"
+            style="margin-left: auto; margin-right: auto"
+          >
+            Each ingredient targets a specific pathway. Read the mechanism,
+            see the dose, check the studies.
+            <strong>Biology, not marketing.</strong>
+          </p>
+          </div>
+        </div>
+
+        <div class="science-container">
+          <!-- Toggle buttons -->
+          <div class="science-toggle">
+            <button
+              class="science-toggle__btn science-toggle__btn--active-focus"
+              onclick="scienceToggle('focus')"
+              id="science-btn-focus"
+            >
+              EQ:Focus (AM)
+            </button>
+            <button
+              class="science-toggle__btn"
+              onclick="scienceToggle('restore')"
+              id="science-btn-restore"
+            >
+              EQ:Restore (PM)
+            </button>
+          </div>
+
+          <!-- Focus overview (populated by JS) -->
+          <div
+            id="science-overview-focus"
+            class="science-product active"
+          ></div>
+
+          <!-- Restore overview (populated by JS) -->
+          <div id="science-overview-restore" class="science-product"></div>
+
+          <!-- Ingredient detail (single template, populated on click) -->
+          <div id="science-detail" class="science-product"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section footer-info">
+          <a href="../">
+            <img
+              src="../assets/EQ-horizontal-white.svg"
+              alt="BalanceEQ"
+              class="footer-logo"
+            />
+          </a>
+          <p class="footer-bio">
+            Circadian nootropics from Balasana. Evidence-based ingredients,
+            public COAs, full transparency.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-section">
+            <h4>Products</h4>
+            <ul>
+              <li><a href="../#products">All Products</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Trust</h4>
+            <ul>
+              <li><a href="../evidence/">Evidence Library</a></li>
+              <li><a href="../science/">Ingredient Science</a></li>
+              <li><a href="../coa/">COAs</a></li>
+              <li><a href="../transparency/">Transparency</a></li>
+              <li><a href="../learn/">Learn</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="mailto:hello@balance-eq.com">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p style="font-size: 0.85rem; color: #8b9aad; margin-bottom: 1rem">
+          These statements have not been evaluated by the Food and Drug
+          Administration. This product is not intended to diagnose, treat,
+          cure, or prevent any disease.
+        </p>
+        <p>
+          © 2025-2026 Balasana LLC. BalanceEQ is a product line of
+          Balasana.
+        </p>
+      </div>
+    </footer>
+    <script src="../assets/site.js"></script>
+  </body>
+</html>

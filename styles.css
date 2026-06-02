@@ -219,7 +219,7 @@ nav {
   display: none;
   min-height: 100vh;
   position: relative; /* anchor for the pseudo-elements */
-  overflow: hidden; /* clip the off-canvas glyphs */
+  overflow: clip; /* clip the off-canvas glyphs without becoming a scroll container (keeps #anchor jumps working) */
   isolation: isolate; /* keep stacking context contained */
   background: linear-gradient(
     180deg,
@@ -753,8 +753,6 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 100px;
-  z-index: 1;
 
   & .pass {
     display: flex;
@@ -1645,6 +1643,10 @@ footer {
     flex-basis: 80%;
   }
 
+  .glass {
+    background: rgba(255, 255, 255, 0.5);
+  }
+
   .form-wrapper {
     flex-basis: 80%;
 
@@ -1779,10 +1781,6 @@ footer {
 }
 
 @media (max-width: 560px) {
-  .coas-container .coa-outer-wrapper .coa-inner-wrapper {
-    padding: 1rem;
-  }
-
   .hero-products {
     padding: 10rem 1rem 5rem;
   }
