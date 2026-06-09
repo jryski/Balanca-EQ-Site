@@ -209,7 +209,11 @@ nav {
     border-radius: 50px;
 
     & form {
-      padding-top: 3rem !important;
+      padding-top: 2rem !important;
+
+      & .klaviyo-textinput:first-of-type {
+        margin-top: 2rem;
+      }
     }
   }
 }
@@ -1475,7 +1479,7 @@ footer {
 }
 
 .launch-card__bottle img {
-  width: 100%;
+  width: 275px;
   height: auto;
   display: block;
 }
@@ -1609,7 +1613,8 @@ footer {
   font-weight: 600;
   font-family: inherit;
   cursor: pointer;
-  margin-top: auto;
+  text-decoration: none;
+  display: inline-block;
   transition:
     background 150ms ease,
     transform 150ms ease;
@@ -1630,6 +1635,46 @@ footer {
 }
 .launch-card--restore .launch-card__ingredient {
   border-color: var(--pacific);
+}
+
+/* Products page: vertical stack wrapper for the two product cards.
+   (Same layout as the COA page's .coas-container, but named for this page —
+   COAs are the lab-result cards, a different page.) */
+.product-cards-wrapper {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* ----- Horizontal product cards (Products page) -----
+   Card body is a normal column (header on top, details below). The HEADER is
+   the horizontal part: bottle in-flow beside the launch/serving/tags facts. */
+.launch-card--horizontal .launch-card__header {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+.launch-card--horizontal .launch-card__bottle {
+  position: static; /* override the home grid's floating absolute bottle */
+  top: auto;
+  left: auto;
+  flex: 0 0 150px;
+  align-self: center;
+}
+.launch-card--horizontal .launch-card__facts {
+  flex: 1;
+}
+
+/* Benefits sit in a row on desktop; collapse to a column at tablet (≤900px, below). */
+.launch-card--horizontal .launch-card__benefits {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
+.restore-card {
+  margin-top: 4rem;
 }
 
 /* =============================================================================
@@ -1778,6 +1823,34 @@ footer {
   .science-container {
     padding: 0 1rem 2rem;
   }
+
+  .launch-card--horizontal .launch-card__header {
+    display: block;
+    position: relative;
+  }
+  .launch-card--horizontal .launch-card__benefits {
+    flex-direction: column;
+  }
+  .launch-card--horizontal .launch-card__bottle {
+    position: absolute;
+    top: -16rem;
+    left: 60%;
+    transform: translateX(-50%);
+    flex: none;
+  }
+
+  .launch-card__bottle img {
+    width: 330px;
+  }
+
+  .focus-card,
+  .restore-card {
+    margin-top: 12rem;
+  }
+  /* Extra separation for the lower (Restore) card so the stacked pair doesn't crowd. */
+  .restore-card {
+    margin-top: 18rem;
+  }
 }
 
 @media (max-width: 560px) {
@@ -1787,6 +1860,26 @@ footer {
 
   .hero-copy-wrapper {
     padding: 1.5rem;
+  }
+
+  .product-cards-wrapper .offset-outer-wrapper {
+    max-width: 90%;
+  }
+
+  .offset-outer-wrapper {
+    .offset-inner-wrapper {
+      padding: 6rem 2rem 2rem;
+    }
+  }
+
+  .launch-card__bottle img {
+    width: 235px;
+  }
+
+  .launch-card--horizontal .launch-card__bottle {
+    position: absolute;
+    top: -18rem;
+    left: 38%;
   }
 
   .footer-links {
