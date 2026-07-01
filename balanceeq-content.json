@@ -28,7 +28,7 @@
       "capsule_type": "Size 00 HPMC (vegan)",
       "total_actives_mg": 1766,
       "ingredient_count": 13,
-      "description": "Your morning cognitive formula, designed for sustained mental clarity, calm focus, and stress resilience throughout the day. Focus feeds four systems in parallel: brain chemical production, cellular energy, neural infrastructure, and stress adaptation. Every ingredient is dosed at evidence-based levels and chosen for how it works with the rest of the formula.",
+      "description": "Your morning cognitive formula, designed for sustained mental clarity, calm focus, and stress resilience throughout the day. Focus feeds four systems in parallel: brain chemical production, cellular energy, neural infrastructure, and stress adaptation. Every ingredient is evidence-based and chosen for how it works with the rest of the formula.",
       "problem_statement": "Here is how most people manage their cognitive performance: coffee, then more coffee, then something with sugar, then the 2pm crash. By 4pm you are wired but somehow still foggy. You got through the day, but you did not perform. You survived. Caffeine does not give you energy. It blocks the receptor that tells you that you are tired. Focus feeds the actual production of the brain chemicals that drive clarity, motivation, and processing speed.",
       "systems_framework": [
         {
@@ -85,7 +85,7 @@
       "serving": "2 capsules in the afternoon at the conclusion of the workday",
       "capsule_type": "Size 00 HPMC (vegan)",
       "ingredient_count": 9,
-      "description": "Your evening transition formula. When the workday ends but your brain keeps running, Restore helps your nervous system shift from performance mode to presence mode. It supports the transition that gives you your evening back. Every ingredient is dosed at evidence-based levels and chosen for how it works with the rest of the formula.",
+      "description": "Your evening transition formula. When the workday ends but your brain keeps running, Restore helps your nervous system shift from performance mode to presence mode. It supports the transition that gives you your evening back. Every ingredient is evidence-based and chosen for how it works with the rest of the formula.",
       "problem_statement": "It is 7pm. You closed the laptop. You are physically done working. But your brain did not get the memo. You are replaying the meeting. You are composing an email you will never send. You are mentally rearranging tomorrow's calendar while your partner is telling you about their day. You are home, but you are not here. This is not a sleep problem. This is a transition problem.",
       "transition_sequence": [
         {
@@ -560,7 +560,7 @@
         "why_its_here": "L-Ornithine plays a key role in the urea cycle (ammonia detoxification) and has been studied for its ability to support healthy cortisol levels and improve perceived recovery quality. After a mentally demanding day, elevated cortisol can keep your nervous system in on-mode, preventing the deep recovery your brain needs to consolidate memories and clear metabolic waste. L-Ornithine helps clear the biochemical residue that keeps your nervous system stuck in go-mode, so the transition to presence can actually happen.",
         "what_to_expect": "Over 8 weeks of use, clinical studies show reduced cortisol levels, decreased feelings of anger and tension, and improved subjective recovery quality. You may notice you are less irritable in the evening, more present in conversations, and that the transition from work to home happens faster and more completely.",
         "how_it_works": "L-Ornithine participates in the urea cycle to help clear ammonia from the body, a byproduct of protein metabolism that can contribute to fatigue. It also modulates the stress response, supporting healthy cortisol output and shifting the cortisol-to-DHEA ratio in a favorable direction. This creates a more recovery-friendly hormonal environment.",
-        "safety_note": "L-Ornithine is a naturally occurring amino acid with a strong safety profile. The 400mg dose used in EQ:Restore matches the evidence-based dose.",
+        "safety_note": "L-Ornithine is a naturally occurring amino acid with a strong safety profile. The 400mg dose used in EQ:Restore matches the dose used in the published research.",
         "studies": [
           {
             "title": "Randomised controlled trial of the effects of L-ornithine on stress markers and sleep quality in healthy workers",
